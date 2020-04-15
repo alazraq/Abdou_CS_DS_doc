@@ -1,0 +1,358 @@
+---
+title: "prenoms_dplyr_clean_data_if-at-all_en"
+output: html_document
+---
+
+
+
+Please, submit your work in shape of a zipped folder containing an RStudio project to xhec2018@thinkr.fr 
+
+Deadline : 4th november, 11:00 PM 
+
+The name of the project should be “dplyr_firstname_lastname”.
+
+The project must contain a .Rmd file and the corresponding rendered .html file. Packages should be loaded at the top of the .Rmd file. 
+
+
+
+```{r include = FALSE}
+knitr::opts_chunk$set(echo = TRUE,eval=TRUE)
+```
+
+## Warm-up
+
+### Make sure you've installed {dplyr} >= 0.7 and {prenoms} package
+
+```{r eval=FALSE, echo=FALSE}
+
+
+
+
+
+
+
+```
+
+
+### Load here `{dplyr}`, `{prenoms}` and any other needed package
+
+```{r}
+
+
+
+
+
+```
+
+### Import
+
+#### prenomsdataset
+
+Using `data(prenoms)` load `prenoms` dataset from  `{prenoms}` package.
+
+```{r}
+
+```
+
+What kind of object is `prenoms` ? 
+
+```{r}
+
+```
+
+Explore the database using the '5-functions-to-always-run-on-a-database'
+
+```{r, eval=FALSE}
+
+
+
+
+
+```
+
+Using `glimpse`, have a look at `prenoms`'s structure.
+
+```{r}
+
+```
+
+#### Regions, departements and surfaces
+
+Load the "dpt_data_modif.csv" dataset from IGN (French public state administrative establishment founded in 1940[1] to produce and maintain geographical information for France and its overseas departments and territories) using the appropriate function. Data have been prepared for you: the surface of departement has been calculated and spatial data removed.
+
+```{r}
+
+```
+
+
+#### Elementary and college schools
+
+We also fetched for you on [data.gouv.fr](https://www.data.gouv.fr/fr/datasets/adresse-et-geolocalisation-des-etablissements-denseignement-du-premier-et-second-degres/#_) the addresses of "primary and secondary schools, the administrative structures of the Ministry of National Education. Public and private sectors."
+
+1. Data preprocessing 
+    + Import the csv file : "DEPP-etab-1D2D.csv" and name it "depp_orig"
+        + Encoding is `"latin1"`
+    + Transform zip code ("code_postal_uai") into 5 characters with zeros
+    + Extract department numbers ("dpt") starting from column "code_postal_uai"
+    + Save the modifications into "depp_modif.csv"
+
+```{r}
+
+
+
+
+
+
+
+
+
+
+```
+
+2. Read the pre-processed "depp_modif.csv" file
+
+```{r}
+
+```
+
+
+#### Facts observed by the police services and national gendarmerie units by department
+
+We also gathered data from [data.gouv.fr](https://www.data.gouv.fr/fr/datasets/faits-constates-par-index-par-departement-et-par-annee/#_) concerning "all the facts observed by the police services and national gendarmerie units by department from 1996 to 2011"
+
+1. Data preprocessing 
+    - Import Excel sheet "2010" from "faitsconstatespardepartementde2002-a-2011.xls" file
+        + _beware of the original formatting_
+    - Copy it into "faits_2010_modif" in order to make some modifications:
+        + Delete Excel calculations:
+            + `Tout_département`, `Tout_index`
+        + Transform in long format using `gather`
+            + 4 columns : Index, Libellé, dpt, nombre
+        + save the dataframe into a csv file "faits_2010_modif.csv"
+
+```{r}
+
+
+
+
+
+
+
+
+
+
+
+```
+
+2. Read preprocessed file "faits_2010_modif.csv"
+
+```{r}
+
+```
+
+
+## Analyses
+
+Some assumptions to do the exercise:
+
+- every child born in a department stays into that department until the end of college
+- every children between 11 and 14 years old is in a college
+- the number of college is constant between 2010 and 2016
+- College "à ouvrir" (i.e. "to be open") do not have children. Others have.
+
+### Filter datasets to Metropolitan France
+
+Datasets to be filtered: `prenoms`, `depp_modif`, `faits_2010_modif`, `dpt_data_modif`
+
+- Department named "2A" and "2B" should be merged to "20"
+- We only work with data in Metropolitan France, which means for "dpt" between `01` and `95` included. Others needs to be filtered.
+
+```{r}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+```
+
+
+### National average number of children per college in 2010 ?
+
+```{r}
+
+
+
+
+
+
+
+
+
+
+
+
+
+```
+
+### Average number of children per college in 2010 in each department?
+
+- Arrange departments according to the calculated average in descending order
+
+```{r}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+```
+
+### Number of Facts observed by the police services in 2010 per department ? 
+
+```{r}
+
+
+
+
+```
+
+### Number of children born, number of colleges and facts related by the police services per department in 2010 ?
+
+- Group all information in the same table
+- Arrange by descending order of children, schools and facts
+
+```{r}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+```
+
+### Number of children born, number of colleges and facts related by the police services per km² in 2010 by department?
+
+```{r}
+
+
+
+
+
+```
+
+### Is there a correlation between the number of birth and the number of facts related by the police per km² in 2010 ?
+
+```{r}
+
+
+
+
+
+```
+
+### What is the mean regional density (in number/km²) of the 15 most given first names in France ?
+
+- Filter the 15 most given first names in France
+- Create a unique wide table with the department as observations and the 15 most given names in columns (as variables): the count is at the row-column intersection 
+- merge with the surface department infos
+- Compute the region surface and the density of names by region (e.g. number of people named "Bob", "Anna", ... by km² of each region)
+    + Region name is stored in variable `NOM_REG`. (There are multiple departments in each region)
+
+```{r}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+```
+
+#### Bonus question : map the mean regional density (in number/km²) of the 15 most given first names in France 
+
+- Use the "department" shapefile to cross information and map data
+    + Region name is stored in variable `NOM_REG`. (There are multiple departments in each region)
+
+```{r}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+```
+

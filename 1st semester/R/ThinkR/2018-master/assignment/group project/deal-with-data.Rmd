@@ -1,0 +1,28 @@
+---
+title: "Deal with Data"
+author: "Sébastien Rochette - ThinkR"
+date: "10 décembre 2018"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+To summarise, there are 2 possibilities: 1/ in data, 2/ in a folder in inst (not called 'data')
+
+- Your original data, you must put it in "data-raw"
+- You explain the different steps of cleaning your dataset in an Rmd file that will be located in the "data-raw" folder. All choices and steps must be informed and made explicit. You ensure that the HTML version of the Rmd is correctly produced.
+- At the end of the Rmd, you can create the cleaned dataset ("my_clean_dataset" is a R object in the R session) that will be written in "data" folder. You can use the command: usethis::use_data(my_clean_dataset) to create it in the right format in a "data" folder.
+- You do not have to do any functions to clean the dataset. Rmd will explain how you did it.
+- You can then use this specific data set within your R package.
+- You can create a vignette in the package with usethis::use_vignette("ma-vignette-explicative"). In this vignette you explain what your Shiny application will do, how it uses your own dataset.
+- Your Shiny application can be started with only one function. If you follow our blog post, you will see how to launch it.
+- Nothing prevents you from doing several functions inside the Shiny application. Moreover, if you follow our template in the blog post, you will necessarily have at least one function for the UI, and one function for SERVER. If you make modules, you will have other functions.
+- In this Shiny application, in the function code, you can load your internal dataset, either with my_pkg::my_clean_dataset, or with data(my_clean_dataset).
+
+- You don't need to make @importFrom for an internal function.
+
+=> If you consider that your data cleaning is reproducible for next year with the update of your dataset for example, you can decide to make the cleaning functions accessible in the package. In which case, the raw data will be stored in "inst/datasets" instead of "data-raw" and the explanation Rmd will be a vignette in the "vignette" directory and will load the raw data set using "system.file()". However, the Shiny application will always run only on the clean data. When your dataset is big, it may be better to put it in "inst/datasets" so that the build package step will not check the content of the dataset (contrary to it being in "data" folder).
+=> But you can also choose to make a download button on your Shiny App so that next year's updated file (if relevant) is read by the application and processed with your internal functions.
+

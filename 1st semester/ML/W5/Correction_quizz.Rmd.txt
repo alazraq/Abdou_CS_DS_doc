@@ -1,0 +1,124 @@
+---
+title: 'Final Exam'
+output:
+  html_document: default
+  pdf_document: default
+---
+# Prediction of the level of maturity of an apricot
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE, eval = TRUE)
+```
+
+The purpose of this study is to predict the level of maturity of fruits, here apricots, according to their characteristics. Such an analysis is important because it is not possible to sell rotten apricots. Of course, it is not possible to sort by hand all apricots and it is imperative to have automatic tools.
+It is easy to automatically weight, measure and have a colorimetric profile of the fruit using aspectrometer.  We  have at disposal a data set with 435  apricots  from  4  varieties  (37, bl, go, mo)  at  2  levels  of maturity (1 for the less mature, 2 for mature).  The variables L, a and b form the Lab color space: L stands for the lightness component (from the darkest
+black value 0 to the lightest white value 100) and a and b for the color-opponent red/green and yellow/blue dimensions.  For both of the former color-opponent dimensions, the value 0 defines a neutral gray. Weight gives the weight in kilogram and Diam the diameter in meter.
+
+
+```{r libraries}
+apricot <- read.table("maturity.txt",header=TRUE, sep="", dec=".", row.names=1)
+apricot$Maturity = as.factor(apricot$Maturity)
+summary(apricot)
+```
+
+The aim here is to predict the maturity level of an apricot given its characteristics (colorimetrics and biometric measurements).
+
+```{r libraries}
+apricot_mat3 = subset(apricot, Maturity != "3")
+# Keeps only rows with Maturity != "3"
+apricot_mat3 = droplevels(apricot_mat3) # Forgets the unused levels
+summary(apricot_mat3)
+write.csv(apricot_mat3, "apricot.csv", row.names = TRUE)
+
+don = read.table("apricot.csv",header = TRUE, sep =",", row.names = 1)
+summary(don)
+don[, "Maturity"]=as.factor(don[,"Maturity"])
+```
+
+## Implement a Linear Discriminant Analysis to predict the maturity given the variable "a". 
+
+1) What is the percentage of error of the LDA classifier on this data set.
+
+```{r libraries}
+library(MASS)
+maturity.lda = lda(Maturity~a,data=don)  # Moment estimation of the model
+probas = predict(maturity.lda)
+table(probas$class, don$Maturity)         
+(74+33)/(dim(don)[1])
+```
+
+**2) Predict the probability that the maturity is 2 for a value of "a" equal to 12.
+
+```{r}
+don[1, "a"] = 12 
+newdon = don[1,"a", drop = FALSE]
+predict(maturity.lda, newdata = newdon)
+```
+
+
+**3) Download the two graphics that you did to check the underlying Gaussian hypothesis in LDA. 
+
+```{r}
+hist(don[don$Maturity=="1", "a"], xlab ="", ylab = "a", main = "Distribution of the variable a for maturity 1")
+hist(don[don$Maturity=="2", "a"], xlab ="", ylab = "a", main = "Distribution of the variable a for maturity 2")
+```
+
+## Implement logistic regression to predict the maturity given the variable "a". 
+
+```{r}
+reg.glm <-glm(Maturity~a, data=don, family="binomial")
+summary(reg.glm)
+```
+
+4) Is there a significant relation between "a" and the maturity?
+
+
+5) What is the percentage of error on this data set given that you select a threshold of 0.5?
+
+```{r}
+pred = as.numeric(predict(reg.glm, type = "response")>0.5)
+table(pred, don$Maturity)
+(69+37)/ length(pred)
+```
+
+6) What is the percentage of false positive?
+
+```{r}
+pred = as.numeric(predict(reg.glm, type = "response")>0.5)
+table(pred, don$Maturity)
+(37)/ (37+114)
+```
+
+7) Could you explain on this specific data set the difference between false positive rate and false negative rate. 
+
+# PCA to explore the data
+
+Perform a PCA to explore the data set and answer the following questions.
+
+8) 
+- The variable "a" is uncorrelated to variable L : FALSE
+- Diam is positively correlated to L : TRUE
+- Varible a is negatively correlated to L : TRUE
+
+```{r}
+library(FactoMineR)
+res.pca=PCA(apricot_mat3, quali.sup = 6:7, graph=FALSE)
+plot(res.pca, choix = "var")
+```
+
+9) What is the percentage of variability of the two first dimensions?
+
+```{r}
+res.pca$eig[2,3]
+```
+
+10) 
+Variety mo has in average a diameter larger than the diameter of variety 37 : TRUE
+Variety go has a value for variable a smaller than the other varieties : FALSE
+Variety bl takes average values for almost all the variables : TRUE
+
+```{r}
+plot(res.pca, choix = "ind", habillage = 7)
+```
+
+

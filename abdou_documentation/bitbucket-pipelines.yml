@@ -1,0 +1,35 @@
+definitions:
+  steps:
+    - step: &compile-doc
+        name: Compile Documentation
+        image: python:3
+        cache:
+          - docker
+          - pip
+        artifacts: # defining the artifacts to be passed to each future step.
+          - docs/_build/**
+        script:
+          - pip install -r requirements.txt
+          - cd docs
+          - make clean
+          - make html
+
+    - step: &deploy-doc
+        name: Deploy on Google App Engine
+        cache:
+          - docker
+        script:
+          - pipe: atlassian/google-app-engine-deploy:0.5.0
+            variables:
+              KEY_FILE: $KEY_FILE
+              PROJECT: 'greengo-documentation'
+
+pipelines:
+  branches:
+    '**':
+      - step: *compile-doc
+
+    dev:
+      - step: *compile-doc
+      - step: *deploy-doc
+      

@@ -1,0 +1,11 @@
+runtime: python37
+
+handlers:
+- url: /
+  static_files: docs/_build/html/index.html
+  upload: docs/_build/html/index.html
+  secure: always
+
+- url: /
+  static_dir: docs/_build/html/
+  secure: always

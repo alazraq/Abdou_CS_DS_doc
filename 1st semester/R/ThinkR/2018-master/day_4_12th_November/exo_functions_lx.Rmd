@@ -1,0 +1,83 @@
+---
+title: "functions_lx"
+output: html_document
+---
+
+```{r setup, include = FALSE}
+
+
+
+
+
+```
+
+# Create functions
+
+Create a function called `all_csv` that takes a path, and lists all the csv contained in that folder. 
+
+```{r}
+
+
+
+
+```
+
+Create `file size`, a function that takes a folder path, and returns the list of all the file sizes in this folder.
+
+```{r}
+
+
+
+
+
+
+
+```
+
+Create `size_folder_df` that takes a file, and returns a data.frame with the name of the file, and its size.
+
+```{r}
+
+
+
+
+
+```
+
+Create a function that takes a folder path, and returns a data.frame with the size of all the files in this folder.
+
+```{r}
+
+
+
+
+
+```
+
+Using tidyeval, add a parameter to `folder_df` so that the user can specify a name for the size column.
+
+```{r}
+
+
+
+
+
+
+```
+
+Add a parameter to `search_folder_size_arrange` so that the user can arrange the size column. 
+
+```{r}
+
+
+
+
+
+
+
+
+
+
+```
+
+Add all these functions to a package! 

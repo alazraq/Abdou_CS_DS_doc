@@ -1,0 +1,150 @@
+---
+title: "Predict presence-absence on a spatial raster"
+output : 
+  html_document: default
+  bookdown::pdf_book:
+    fig_caption: yes
+    highlight: tango
+    includes:
+      before_body: before_body.tex
+      in_header: header_exo-mapmodelres_en.tex
+    keep_tex: no
+    number_sections: yes
+    toc: yes
+  bookdown::gitbook:
+    includes : 
+      in_header: "../header_gitbook_hide.html"
+    split_by: none
+    self_contained: true
+geometry: top=2.4cm, bottom=2.1cm, outer=2cm, inner=4cm, headheight=40pt
+lang: en
+documentclass: article
+classoption: a4paper
+---
+
+
+<!-- 
+1. cartography-for-modelling_en.Rmd
+2. modelling-presence-absence-simplified_en.Rmd
+3. cartography-map-model-predictions_en.Rmd
+-->
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(
+  echo = FALSE,
+  message = FALSE,
+  warning = FALSE,
+  results = "hide",
+  out.width = "90%",
+  fig.align = "center"
+)
+
+dataWD <- "data"
+```
+
+```{r, include=FALSE, eval=FALSE}
+# List of data
+"carto-data-orig/vilaine/"
+```
+
+
+
+# Objectives
+The aim of this tutorial is to predict the distribution of flatfishes in the Vilaine Estuary (France).  
+
+With this tutorial, you will have to (1) manipulate geographic data to prepare data necessary for the modelling procedure, (2) model average probability of presence of flatfishes on the study area and (3) produce maps of predictions of probabilities.  
+*The 3 parts may be independant if needed.*
+
+```{r, echo=FALSE, results="asis"}
+knitr::include_graphics(file.path(dataWD, "carto-data-orig", "Schema_Modele.png"))
+```
+
+# Part 3: Realise maps of model predictions
+
+## Load packages
+
+Load necessary packages like {sf}, {dplyr}, {ggplot2}, {raster}, {rasterVis}
+
+```{r LibrariesPA, purl=TRUE}
+library(dplyr)
+library(ggplot2)
+library(sf)
+library(raster)
+library(rasterVis)
+```
+
+## Read dataset
+
+- Read spatial dataset of stations with covariates:     
+    + "carto-data-orig/vilaine/data_vilaine_covariates_correction_l93.shp"
+- Transform as simple tibble for model exploration with `as_tibble`
+- Transform columns `Presence` as logical (TRUE/FALSE)
+- Transform columns `Year`, `Sedim`, `Zone`, `coasts` and `bathyclass` as character
+- Store the result of these operations in an object named `dataset`
+
+```{r R_LoadDataPA.T}
+# Get data 
+dataset <- st_read(
+  file.path(dataWD, "carto-data-orig/vilaine/data_vilaine_covariates_correction_l93.shp"),
+  quiet = TRUE) %>% 
+  as_tibble() %>% 
+  mutate(Presence = as.logical(Presence)) %>%
+  mutate_at(vars(Year, Sedim, Zone, coasts, bathyclass),
+            as.character)
+```
+
+## Fit a presence-absence model
+
+- The best model to predict average distribution is with "Zone" and "bathy"
+```
+glm1 <- glm(formula = Presence ~ as.character(Zone) + poly(bathy, 2),
+  family = "binomial", data = dataset)
+```
+    
+```{r}
+glm1 <- glm(formula = Presence ~ as.character(Zone) + poly(bathy, 2),
+  family = "binomial", data = dataset)
+```
+
+## Predictions on raster
+
+- Read raster for predictions in "carto-data-orig/vilaine/covar_raster_correction.grd"
+    + This is a multi-layer raster, read it with `stack`
+- From this stack, create a new stack containing only covariates of interest
+- Calculate predictions for each cell of the raster
+
+```{r}
+covar_raster <- stack(file.path(dataWD, "carto-data-orig/vilaine/covar_raster_correction.grd"))
+covar_for_pred <- dropLayer(covar_raster, c(2, 3, 5))
+# Raster are matrices of numeric values only
+# Character covariates used in a model can not work directly with prediction on raster
+# You need to specify in the formula of the glm model that covariate needs to be 
+# converted into factor or character
+
+pred_raster <- predict(covar_for_pred, glm1, type = "response")
+```
+
+- Plot the outputs
+
+```{r}
+# Get Study Area polygon
+dept_l93 <- st_read(file.path(dataWD, "carto-data-orig/departements/DEPARTEMENT.shp"), quiet = TRUE)
+ExtAreaPol_l93 <- st_read(file.path(dataWD, "carto-data-orig/vilaine/ExtAreaPol_wgs84.shp"),
+                          quiet = TRUE) %>% 
+  st_transform(crs = st_crs(dept_l93))
+dept_area_l93 <- st_intersection(dept_l93, st_buffer(ExtAreaPol_l93, units::set_units(20, "km")))
+
+gplot(pred_raster) +
+  geom_tile(aes(fill = value)) +
+  scale_fill_gradient(low = "yellow2", high = "red3", na.value = NA) +
+  geom_sf(data = dept_area_l93, inherit.aes = FALSE) +
+  geom_sf(data = ExtAreaPol_l93, color = "red", fill = NA, inherit.aes = FALSE) +
+  coord_sf(crs = st_crs(dept_l93), 
+           xlim = st_bbox(ExtAreaPol_l93)[c(1,3)],
+           ylim = st_bbox(ExtAreaPol_l93)[c(2,4)]) +
+  labs(title = "Predicted probability of presence", x = NULL, y = NULL) +
+  theme_classic() +
+  theme(panel.background = element_rect(fill = "#6AC0F2"))
+
+```
+

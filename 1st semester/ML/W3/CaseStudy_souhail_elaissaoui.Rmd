@@ -1,0 +1,362 @@
+---
+title: "Case Study"
+author: "Souhail Elaissaoui"
+output:
+  html_document: default
+  pdf_document: default
+---
+```{r setup, include=FALSE}
+rm(list = ls())
+knitr::opts_chunk$set(echo = TRUE)
+```
+```{r}
+#install.packages("logspline")
+#install.packages("fitdistrplus")
+#install.packages("fossil")
+```
+```{r, warning=FALSE, message = FALSE, results = 'hide'}
+library(dplyr)
+library(ggplot2)
+library(knitr)
+library(hexbin)
+library(MASS)
+library(gdata)
+library(fitdistrplus)
+library(logspline)
+library(FactoMineR)
+library(fossil)
+```
+
+# Presentation of the case study
+## EasyKost
+A common approach to determine the cost of products is the **should cost** method.
+It consists in estimating what a product should cost based on materials, labor, overhead, and profit margin. Although this strategy is very accurate, it has the drawback of being tedious and it requires expert knowledge of industrial technologies and processes. 
+To get a quick estimation, it is possible to build a statistical model to predict the cost of products given their characteristics.
+With such a model, it would no longer be necessary to be an expert or to wait several days to assess the impact of a design modification, a change in supplier or a change in production site. Before builing a model, it is important to explore the data which is the aim of this case study.
+
+## Die Casting
+This study was carried out for a company that sells parts for the car industry. They build many parts themselves, but because they don't have foundries, they don't make die-cast parts and they need to buy them. 
+To bid on tenders, they usually ask their supplier how much the die-cast part will cost them. However, suppliers may take time to respond and the company may lose the tender. Therefore, they want to try to use the data to estimate the price of die-casting accurately and quickly without consulting the supplier, and thus be able to respond to the call for tenders.
+
+Some explanation for some variables.
+"EXW cost" : unit price, (ex-works price: no transport) 
+"Yearly Volume":  Annual order volume: number of items ordered.
+                   
+This allows for an identical line in the data except for the volume to have a different price, since in general, the purchase volume is an important cost-driver.
+
+**1) Import and summarize the data.**
+```{r}
+diecasting <- read.csv("diecasting.csv", header = TRUE)
+```
+
+```{r}
+glimpse(diecasting)
+```
+
+**2)** __We start with univariate and bivariate descriptive statistics. Using appropriate plot(s) or summaries answer the following questions__
+
+**2.1** How is the distribution of the cost? Comment your plot with respect to the quartiles of the cost.
+```{r}
+x <- diecasting %>% arrange(desc(EXW.cost))
+x <- x$EXW.cost
+plot(density(x),main="Density estimate of data")
+plot(ecdf(x),main="Cumulative distribution of data")
+qqnorm(x)
+descdist(x, discrete = FALSE)
+fit.weibull <- fitdist(x, "weibull")
+fit.norm <- fitdist(x, "norm")
+plot(fit.norm)
+```
+
+The price seems to be distributed with a Beta distribution.
+
+**2.2** Which are the most frequent suppliers? 
+```{r}
+diecasting %>% group_by(Supplier) %>% summarize(total_occurence=length(Supplier)) %>% arrange(desc(total_occurence))
+```
+
+The most frequent supplier are "Les espaces Supplier" with 19 occurences, and "Excalibur Supplier" with 17 occurences.
+
+
+**2.3** _Does the cost depend on the Net weight? on Yearly Volume?  Does this make sense to you? Can you explain (from a business point of view) the form of the relationship for high volume values.
+```{r}
+pairs(diecasting[c(19,4,5,6)])
+pairs(diecasting[c(19,7,8,9,10)])
+pairs(diecasting[c(19,6,8)])
+```
+
+
+With the scatterplots of all the variables, we can see that there might be a dependence between the Price and the Volume, and between the Price and the net Weigth. 
+
+This makes sense from a business point of view. When a customer demands a high yearly volume, the suppliers might want to "fidelise" him by using a lower price. Same from the net Weight, if the customers needs a higher quantity, the price will be lower, that is called Economies of scale.
+
+
+But these are not the only dependecies that we can see:
+```{r}
+diecasting %>% group_by(Supplier) %>% summarize(mean_price=mean(EXW.cost)) %>%  arrange(desc(mean_price))
+diecasting %>% group_by(Raw.material) %>% summarize(mean_price=mean(EXW.cost)) %>% arrange(desc(mean_price))
+```
+The price varies a lot depending on which supplier and on the raw material used. Which seems logical as the suppliers might charge different price, and raw material have also different prices.
+
+**2.4** Let $n=25$.  Generate variables  $X$ and $Y$ by drawing observations from independent gaussian distributions with mean $\mu=(0)_{1 \times 2}$ and covariance matrix $\text{Id}_{2 \times 2}$. Compute the value of the correlation coefficient. Repeat the process 100 times and take the quantile at 95% of this empirical distribution (under the null hypothesis of no linear relationship) of the correlation coefficient.  Comment the results. What should be learned from this experience?
+
+
+```{r}
+cor <- NULL
+
+for (i in 1:100) {
+X <- mvrnorm(25,c(0,0),diag(2))
+Y <- mvrnorm(25,c(0,0),diag(2))
+test <- cor.test(X,Y)
+cor <- c(cor,abs(test$estimate[["cor"]]))
+}
+
+quantile(cor, 0.95)
+
+```
+From independant random distribution we see that we can find a correlation coefficient superior than 0.20 which is pretty high.
+The idea here is reminiscent of what you can see if you compute a correlation coefficient between two independent variables but on a small sample size. You can have large values even if the variables are orthogonal.
+
+**2.5** Does the cost depend on the Cooling ?
+```{r}
+pairs(diecasting[c(19,16)])
+```
+
+
+Yes with the scatterplot we can see that there is a dependency between the Cooling and the Price.
+
+
+**2.6** Which is the less expensive Supplier?
+```{r}
+diecasting %>% group_by(Supplier) %>% summarize(mean_price=mean(EXW.cost)) %>%  arrange(mean_price)
+```
+The less expensive supplier is "Admiral Supplier"
+
+**3)** __One important point in exploratory data analysis consists in identifying potential outliers.__
+
+**3.1** Could you give points which are suspect regarding the Cost variable. Give the characteristics (other features) of the observations. We could keep them but keep in mind their presence and check if results are not too affected by these points. 
+```{r}
+Boxplot <- boxplot.stats(diecasting$EXW.cost)
+Boxplot
+outlier_values <- Boxplot$out
+outlier_values
+
+diecasting %>% filter(EXW.cost %in% outlier_values)
+```
+We can see that the outliers seems to all have a supplier in China or Vietnam.
+
+**3.2** Inspect the variable nb Threading, in views of its values of  what could you suggest? 
+```{r}
+summary(diecasting$nb.Threading)
+pairs(diecasting[c(19,12)])
+```
+
+
+We can suggest that this variable might not be used in our dataset. The Threading number is highly distributed in a quantitative way and can hardly represent the data when taken in a quantitative way.
+
+**4)** __Perform a PCA on the dataset DieCast__.
+```{r}
+res.pca <- PCA(diecasting , quali.sup = c(1,2,3,4,5,7,9,12,13,14,16,17,18), scale.unit = TRUE, ncp = 4)
+ summary(res.pca, nbelements = 2, ncp = 4)
+```
+
+**4.1** Explain briefly what are the aims of PCA and how categorical variables are handled?_
+
+Principal Component Analysis is a dimension-reduction tool used to solve Multivariate Analysis problem. We find the best variables that represent the data the most and we project the dataset into these most respresentative variables.
+Categorical variables are handled by projecting the categories at the barycentre of the observations which take the categories, but there are more appropriate techniques to deal with mixed data types, namely Multiple Factor Analysis for mixed data
+
+**4.2** Compute the correlation matrix between the variables and comment it with respect to the correlation circle.
+```{r}
+#round(res.pca$var$cos2,2)
+#round(res.pca$var$contrib,2)
+cor(diecasting[-c(1,2,3,4,5,7,9,12,13,14,16,17,18)])
+```
+-The Yearly Volume is slightly positively correlated with nb.Cavities, and is negatively correlated with the cost, weigth and Surface. Indeed, in the correlation circle, nb.Cavities and Volume are relatively close to each other, meanwhile Volume and cost are relatively opposite. Cost, Weigth and Surface are close from each other.
+But here the arrows are not very long, which shows that the projection is not perfect and we have lost a fraction of the data.
+
+-The net Weigth is positively correlated with the surface Enveloppe and the Cost, as the correlation coeficient is higher than 0.5 and the arrow are close. The Weigth is negatively correlated with the Volume.
+Which means that an observation with high Weigth will have a high surface enveloppe and a high cost, but a low Volume.
+
+**4.3** On what kind of relationship PCA focuses? Is it a problem?
+
+PCA is a linear dimensionality reduction methods, thus it assumes that there is a linear relationship between the variables.
+PCA indeed works optimally only in the situation where the correlations are linear, which is most of the time an approximation.
+It can be a problem if the data has non-linear relationship. In that case we can try a transformation that will make them somehow linear.
+
+**4.4** Give the the R object with the two principal components which are the synthetic variables the most correlated to all the variables.
+
+```{r}
+res.pca$ind$coord[,c(1,2)]
+```
+
+
+```{r}
+res.pca$eig
+sum(res.pca$eig[,1])
+```
+
+The sum of all the eigevalue gives a variance of 6.
+The eigenvalue of each dimension explains the percentage of variance explained by the dimension.
+The two first dimensions have eigenvalues superior to 1, and then each of these two principal components explains more than a original variable. The two first dimesnions explains 61% of the variance which can be somehow satisfying.
+
+**5)** __Clustering__
+
+__5.1)__ Principal components methods such as PCA is often used as a pre-processing step before applying a clustering algorithm, explain the rationale of this approach and how many components you should keep.
+
+Clustering is used to retrieve classes of individuals, but some clustering algorithms, as the K-means clustering, requires to choose the number of clusters.
+That's why it is interesting to run a PCA on the data to help choose the number of cluster to run the clustering algorithm with.
+Here, by the PCA, we can see that the data are well represented by five dimensions (95% variance explained by 5 dimensiosn) . thus we could keep five components to run this clustering algorithm with K-means method.
+
+__5.2)__ To simultaneously take into account quantitative and categorical variables in the clustering you should use the clustering on the results of the FAMD ones. FAMD stands for Factorial Analysis of Mixed Data and is a PCA dedicated to mixed data. Explain what will be the impacts of such an analysis on the results?_
+
+FAMD is a principal component method dedicated to explore data with both continuous and categorical variables.
+This ensures to balance the influence of both continous and categorical variables in the analysis. It means that both variables are on a equal foot to determine the dimensions of variability. 
+Using FAMD instead of standard PCA will change the dimensiosn of variability as the qualitative variables do certainly influence the price. Thus there will be more variables taken into account.
+
+__5.3)__ Perform the FAMD, and keep the principal components you want for the clustering.   
+
+```{r}
+diecasting_FAMD <- diecasting[-c(1,2,3)] 
+#glimpse(diecasting_FAMD)
+res.famd <- FAMD(diecasting_FAMD, ncp = 45, graph = FALSE)#, sup.var = c(13,9,8))
+res.famd$eig
+
+```
+Running the FAMD, we can see that 95% of the variance is kept only if we use at least the first 45 dimensions
+
+__5.4)__ Perfom a kmeans algorithm on the selected principal components of FAMD. To select how many cluster you are keeping, you can represent the evolution of the ratio between/total intertia. Justify your choices.
+
+```{r}
+ratio <- 0
+for (i in 1 : 100) {
+res.kmeans <- kmeans(res.famd$ind$coord, i, nstart=100)
+ratio[i] <- res.kmeans$betweenss/res.kmeans$totss
+}
+```
+```{r}
+plot(1:100,ratio,main="Inertia ratio in function of number of clusters", xlab="K number of clusters", ylab="Inertia Ratio")
+abline(v = 34)
+```
+
+we want to have a high between class inertia and a little within class inertia, then we have to choose an appropriate number of clusters.
+For k less than k=34, the between class inertia/total inertia ratio tends to increase quickly, then for k superior than 34, the ratio remain less changing as compared to other k's. So for this data k=34 should be a good choice for number of clusters. The number k=34 is called the Elbow.
+
+__5.5)__ To Describe the clusters, you can use catdes function, by concatenating your dataset to the variable specifying in which cluster each observation is and indicating that you want to describe this variable (that must be as a factor).
+```{r}
+res.kmeans <- kmeans(res.famd$ind$coord, 34, nstart=100)
+don.comp <-cbind.data.frame(diecasting_FAMD,classe=factor(res.kmeans$cluster))
+res.catdes <- catdes(don.comp, num.var = ncol(don.comp))
+res.catdes$test.chi
+```
+First, we can see the categorical variables that most represent the clustering parameters.
+
+Then we have a description of each cluster by all the categorical variables
+```{r}
+res.catdes$category
+```
+
+Then we have the global description of the clustering variable by the quantitative variables
+```{r}
+res.catdes$quanti.var
+```
+Finally we have the description of each category of the clustering variable by the quantitative variable.
+```{r}
+res.catdes$quanti
+```
+
+
+__5.6)__ Comment the results and describe precisely one cluster._
+
+The categorical variables that most represent the clustering variable are, ordered by descending significancy : Supplier, Raw.material,Supplier.Country,Cooling,Process,Assembly.
+
+Then we can see which the categorical variables that are the most represented in each cluster. When the V-test value is positive, it means that the observations with this specific value of the categorical variable are well represented in this cluster, while if it is negative, the variable do not represent the population of this cluster.
+
+Then we can see that the quantitative variables that most represent the clusters are, by descending order, nb.Threading, EXW.cost, Net.Weight..kg., nb.Cavities, nb.Cores, Surface.envelop..LG.x.lg...mm2. and Yearly.Volume  
+
+Finally, we have, for each cluster, the quantitative variables that most caracterise it. When we see "NULL", it means that no quantitative variable caracterise the cluster.
+
+Let's describe the cluster "23":
+```{r}
+res.catdes$category$`23`
+res.catdes$quanti$`23`
+```
+The cluster 23 represent the observations that come from the supplier "Imaginaire Supplier". Indeed, 100% of the observations from this supplier are in this cluster, and 100% of the observations of this cluster are from this supplier. That explains the high value of the v.test for this supplier.
+Also, the cluster 5 represent the observations using the raw material "Al 5371" as the v.test is also positive.
+9% of the observations that uses this raw material are in cluster 5, and 57% of the observations of cluster 5 use Al 5371.
+
+For the quantitative variable, we can see that cluster 5 is correlated with observations that have a high Yearly Volume, as the v.test is positive. The mean volume in this cluster is 230935 while the overall mean is only 127232.
+
+
+**5.7)** If someone asks you why you have selected k components to perform the clustering and not k+1 or k-1, what is your answer? (could you suggest a strategy to assess the stability of the approach?  are there many differences between the clustering obtained on k components or on the initial data). You can have a look at the Rand Index.
+
+I selected k components because k=34 corresponds to the right number of clusters by the Elbow method. Indeed, while plotting the inertia ratio, it is the point in which the curve change in its coefficient.
+
+On the initial data, the clustering must omit the qualitative variables, which is a loss.
+
+To assess the stability of the Elow approach, let's try to minimize the AIC
+```{r}
+aic.res <- 0
+kmeansAIC = function(fit){
+
+m = ncol(fit$centers)
+n = length(fit$cluster)
+k = nrow(fit$centers)
+D = fit$tot.withinss
+return(D + 2*m*k)
+}
+for (i in 1 : 100) {
+res.kmeans <- kmeans(res.famd$ind$coord, i, nstart=100)
+aic.res[i] <- kmeansAIC(res.kmeans)
+}
+```
+
+```{r}
+plot(1:100,aic.res,main="AIC of kmeans in function of number of clusters", xlab="K number of clusters", ylab="AIC of kmeans")
+
+abline(v = 34)
+```
+
+
+By minimizing the AIC, we have the same result for k=34.
+```{r}
+initial.kmeans <- kmeans(diecasting_FAMD[-c(1,2,4,6,10,11,13,14)], 34)
+rand.index(initial.kmeans$cluster, res.kmeans$cluster)
+```
+There is a difference between the clustering obtained on k components or on the initial data, but the difference is not very high as the rand index is near 1.
+
+
+__6) The methodology that you have used to describe clusters can also be used to describe a categorical variable, for instance the supplier country. Use the function catdes and explain how this information can be useful for the company.__
+```{r}
+catdes(diecasting_FAMD, 2)
+```
+
+This information can be useful for the company to determine the differences between the suppliers based on their country. For example, we can see that in India, the nb.Cores are high whereas the bn.cavities are low.
+In Italia, The Yearly Volume is high but the net Weigth is low.
+
+Also, if the company is looking for a product made from some specific raw material, it can target the right supplier.
+If the company wants a specific caracteristic, looking at this informations can be very helpful to help choosing the right supplier.
+
+**7)** __Perform a model to predict the cost. Explain how the previous analysis can help you interpret the results.__
+```{r}
+firstmodel <- lm(EXW.cost~. , data = diecasting_FAMD)
+firstmodel$coefficients
+
+```
+The coefficient of the model are not easy at all to use, and this model is not accurate at all because there is too much variables and many of them are qualitative.
+Using the clustering, we can perform on linear model per cluster, depending on which variable affects the most each specific cluster.
+
+**8)** __If someone asked you why you did one global model and not one model per supplier, what would be your answer?__
+Fitting one combined model function allows to easily and efficiently answer research questions concerning the binary predictor variables.
+Here we are not sure if the data from each supplier has a different distribution from other suppliers or not. For the multiple models to be interesting, we want to perform one model per group of observations that are close enough. That's why performing one model per cluster can be interesting, as inside one cluster, we should have observations that are very closely distributed. If the number of cluster can be reduced, it can be even better.
+
+**9)** __These data contained missing values. One representative in the compagny suggests either to put 0 in the missing cells or to impute with the median of the variables. Comment. For the categorical variables with missing values, it is decided to create a new category ???missing???. Comment.__
+
+Putting 0 in the missing cells will create a lot of outliers in our dataset, and it can be even better to remove the observation or variable that has a lot of missing values than to replace them by 0.
+
+Replacing by the median can be acceptable for some quantitative variable. It is a crude way of treating missing values. Depending on the context, like if the variation is low or if the variable has low leverage over the response, such a rough approximation is acceptable and could possibly give satisfactory results. One disadvantage is that median imputation can reduces variance in the dataset.
+
+For the missing categorical values, if they might contain important information, it is wise to add a new category called "missing" to replace the missing values in order to avoid loosing important information.
+
+These choices should be made after trying to determine the missing values pattern : MAR, MCAR ou MNAR.
+
+

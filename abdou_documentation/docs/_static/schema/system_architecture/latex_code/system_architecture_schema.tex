@@ -1,0 +1,118 @@
+% !TeX program = xelatex
+
+\documentclass{standalone}
+
+\usepackage{fontspec}
+\usepackage{tikz}
+\usetikzlibrary{shapes, positioning, matrix, positioning, calc, fit}
+
+\usepackage{listings}
+\lstset{
+	basicstyle=\ttfamily\small
+}
+
+\setmainfont{Lato Regular}
+\setmonofont{Source Code Pro}
+
+\newcommand{\bigIcon}{\fontsize{1cm}{1.2cm}\FASolid}
+
+\setfontfamily{\FA}{Font Awesome 5 Free}
+\setfontfamily{\FASolid}{Font Awesome 5 Free Solid}
+
+\newcommand{\topic}[1]{\lstinline|#1|}
+
+\begin{document}
+	\scalebox{1.5}[1.5]{%
+		\newlength{\messageBusHeight}\setlength{\messageBusHeight}{1.5cm}
+		\begin{tikzpicture}[
+		every node/.style={
+			anchor=center,
+			align=center
+		},
+		inner sep=3mm,
+		edge name/.style = {
+			above=-2mm,
+			midway
+		},
+		vedge name/.style = {
+			xshift = -2.5mm,
+			midway,
+			rotate = 90
+		},
+		http/.style = {dashed, thick},
+		socketio/.style = {dotted, thick}
+		]
+		\matrix (table) [
+		matrix of nodes,
+		column sep=20mm,
+		row sep=40mm,
+		ampersand replacement=\&,
+		nodes in empty cells
+		] {
+			\node (training) {{\bigIcon\symbol{"F19D}}\\Training}; \&
+			\node (decision) {{\bigIcon\symbol{"F5DC}}\\Decision}; \&
+			\node (maker) {{\bigIcon\symbol{"F573}}\\Contract Maker}; \&
+			\node (traffic) {{\bigIcon\symbol{"F1B9}}\\Traffic}; \&
+			\node (authentication) {{\bigIcon\symbol{"F007}}\\Authentication};
+			\\
+			\node [text height=\messageBusHeight] (kafkaFirst) {\hspace*{2cm}}; \&
+			\node [text height=\messageBusHeight] (kafka2) {}; \&
+			\node [text height=\messageBusHeight] (kafka3) {}; \&
+			\node [text height=\messageBusHeight] (kafkaLast) {\hspace*{2cm}}; \&
+			\node (gateway) {{\bigIcon\symbol{"F52B}}\\Gateway}; \&
+			\node (app) {{\bigIcon\symbol{"F3CD}}\\App};
+			\\
+			\node (intersection) {{\bigIcon\symbol{"F067}}\\Intersection}; \&
+			\node (location) {{\bigIcon\symbol{"F14E}}\\Vehicle Location}; \&
+			\node (dispatcher) {{\bigIcon\symbol{"F0B2}{\hspace*{-1.8ex}\fontsize{4mm}{4mm}\selectfont\raisebox{-3mm}{\symbol{"F573}}}}\\Contract Dispatch}; \&
+			\node (billing) {{\bigIcon\symbol{"F155}}\\Billing}; \&
+			\&
+			\node (admin) {{\bigIcon\symbol{"F26C}}\\VTL Admin Space}; \&
+			\\
+		};
+		
+		\node[anchor = north] at (5cm, -1.5cm) {\tikz\draw[->, http] (0,0) -- (1,0) node [edge name] {HHTP};\\\tikz\draw[->, socketio] (0,0) -- (1,0) node [edge name] {\texttt{socket.io}};\\\tikz\draw[->] (0,0) -- (1,0) node [edge name] {Kafka topic};};
+		
+		% Connections
+		\draw [->, http] (training) -- (decision) node[edge name] {\topic{improved_nns}};
+		
+		\draw [->, http, transform canvas={yshift=-3mm}] (decision) -- (maker) node[edge name] {\topic{tentative_contracts}};
+		\draw [<-, http, transform canvas={yshift=3mm}] (decision) -- (maker) node[edge name] {\topic{informations}};
+		
+		\draw [->, transform canvas={xshift=-6mm}] (maker) -- (kafka3) node [vedge name] {\topic{intersection_contracts}};
+		\draw [->] (kafka3) -- (maker) node [vedge name] {\topic{traffic}};
+		\draw [->, transform canvas={xshift=7mm}] (kafka3) -- (maker) node [vedge name] {\topic{intersection_configurations}};
+		
+		\draw [->, transform canvas={xshift=-3mm}] (traffic) -- (kafkaLast) node[vedge name] {\topic{traffic}};
+		\draw [->, transform canvas={xshift=3mm}] (kafkaLast) -- (traffic) node[vedge name] {\topic{vehicle_waypoints}};
+		
+		\draw [->] (intersection) -- (kafkaFirst) node[vedge name] {\topic{intersection_configurations}};
+		
+		\draw [->, transform canvas={xshift=6mm}] (location) -- (kafka2) node[vedge name] {\topic{map_geometries}};
+		\draw [->] (location) -- (kafka2) node[vedge name] {\topic{roads_and_intersections}};
+		\draw [<-, transform canvas={xshift=-6mm}] (location) -- (kafka2) node[vedge name] {\topic{vehicle_waypoints}};
+		
+		\draw [->, transform canvas={xshift=-6mm}] (kafka3) -- (dispatcher) node[vedge name] {\topic{roads_and_intersections}};
+		\draw [->] (kafka3) -- (dispatcher) node[vedge name] {\topic{intersection_contracts}};
+		\draw [<-, transform canvas={xshift=6mm}] (kafka3) -- (dispatcher) node[vedge name] {\topic{vehicle_contracts}};
+		pdftoppm
+		\draw [->] (kafkaLast) -- (billing) node [vedge name] {\topic{?}};
+		
+		\draw [->, transform canvas={yshift = 6mm}] (kafkaLast) -- (gateway) node[edge name] {\topic{vehicle_contracts}};
+		\draw [->] (kafkaLast) -- (gateway) node[edge name] {\topic{map_geometries}};
+		\draw [<-, transform canvas={yshift = -6mm}] (kafkaLast) -- (gateway) node[edge name] {\topic{vehicle_waypoints}};
+		
+		\draw [->, socketio, transform canvas={yshift = 6mm}] (gateway) -- (app) node[edge name] {\topic{vehicle_contracts}};
+		\draw [->, socketio] (gateway) -- (app) node[edge name] {\topic{map_geometries}};
+		\draw [<-, socketio, transform canvas={yshift = -6mm}] (gateway) -- (app) node[edge name] {\topic{vehicle_waypoints}};
+		
+		\draw [<->, http] (app) |- (authentication) node [edge name] {\topic{jwt_authentication}};
+		
+		\draw [<->, http] (admin) -- (billing) node [edge name] {\topic{various_requests}};
+		
+		
+		\draw ($(kafkaFirst.south west) + (2mm, 2mm)$) rectangle ($(kafkaLast.north east) + (-2mm, -2mm)$);
+		\node at ($(kafkaFirst.south)!0.5!(kafkaLast.north)$) {Kafka Message Bus};
+		\end{tikzpicture}
+	}
+\end{document}

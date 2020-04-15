@@ -1,0 +1,316 @@
+---
+title: "td_obj_base_en"
+output: html_document
+---
+
+
+## About
+
+In this exercise, you'll learn how to manipulate R base objects, and to use RMarkdown to knit code and text. 
+
+Don't be afraid to click the `knit` button each time you enter a new answer, so that you will be sure you've got a working answer. 
+
+## Load the data
+
+Let's pretend for this exercise you're a data analyst working for a web agency. The web-design team has been running a yearlong A/B test that compares the performance of three designs for a website, and you're now in charge of analyzing the results. The design team measured the number of visits to the Contact page to determine the design's impact on the number of people contacting the company. 
+
+You've just received the data to analyse, contained in `td_base.Rdata`. Several data objects are here, and you need to inspect and discover them.
+
+```{r}
+
+```
+
+
+## Inspect the data
+
+How many objects are loaded in your environment? 
+
+```{r}
+
+```
+
+## Comments 
+
+What are `com_a`, `com_b`, `com_c` ?
+
+```{r}
+
+
+
+```
+
+Create one vector that will contain these three elements
+
+```{r}
+
+```
+
+## Visits
+
+`visit_a` contains the results from campaign A, `visit_b` the results of campaign B, and `visit_c` the results of campaign B. 
+
+What type of object are `visit_a`, `visit_b` and `visit_c`? 
+
+```{r}
+
+
+
+```
+
+We need to check these elements correpond to one year. Make sure of if by getting the size of each elements.
+
+```{r}
+
+
+
+```
+
+Unfortunately the data is not that clean. How many NA are there in each of these elements ? 
+
+```{r}
+
+
+
+```
+
+To get over this, we'll put 0 where there is a NA. 
+
+```{r}
+
+
+
+```
+
+Get the total number of visit __by day__
+
+```{r}
+
+```
+
+Get the total number of visit __during the year__ 
+
+```{r}
+
+```
+
+How many time is `visit_a` greater than `visit_b`?
+
+```{r}
+
+```
+
+How many time is `visit_a` greater than `visit_b` and lesser than `visit_c`?
+
+```{r}
+
+```
+
+
+## One day visits
+
+The `one_day` object contains, in row, a day of the week, and each row is a numeber of visit for that specific hour of the day.
+
+What object is `one_day`? 
+
+```{r}
+
+```
+
+Get the mean of each column
+
+```{r}
+
+```
+
+Get the sum of each column
+
+```{r}
+
+```
+
+Extract the 2nd column
+
+```{r}
+
+```
+
+Extract the 13th row
+
+```{r}
+
+```
+
+Extract everything except the 7th column
+
+```{r}
+
+```
+
+Add the 6th and 7th colum
+
+```{r}
+
+```
+
+Create a vector that test if the mean of the row is greater than 30. Use this vector to extract rows in `one_day`
+
+```{r}
+
+
+```
+
+
+Turn `one_day` into a data.frame
+
+```{r}
+
+```
+
+Create a vector that will contain the days of the week
+
+```{r}
+
+```
+
+
+Change the name of this dataframe so that each column is named after a day of the week.
+
+```{r}
+
+```
+
+
+## Inspect the pages 
+
+What is the type of the `pages` object?
+ 
+```{r}
+
+```
+
+Use the `5-functions-you-always-have-to-run` on the dataset object
+
+```{r}
+
+
+
+
+
+```
+
+How many row and columns does this element have? 
+
+```{r}
+
+
+```
+
+Get the mean of the home, about, blog and contact columns
+
+```{r}
+
+
+
+
+```
+
+Get the maximum of the home, about, blog and contact columns
+
+```{r}
+
+
+
+
+```
+
+Create a `total` column, that sum the visits from home, about, blog and contact
+
+```{r}
+
+```
+
+What is the sum of this newly create column? 
+
+```{r}
+
+```
+
+How many days count for more than 1500 visits?
+
+```{r}
+
+```
+
+How many days count for more than 1000 visits?
+
+```{r}
+
+```
+
+How many time the Contact page was more visited than the About page ? 
+
+```{r}
+
+```
+
+## Ten years
+
+What is the type of the `ten_years` object?
+
+```{r}
+
+```
+
+How many elements are in there?
+
+```{r}
+
+```
+
+Get the `summary` of each of the elements of the list
+
+```{r}
+
+```
+
+Get the 6 first rows of each data.frame.
+
+```{r}
+
+```
+
+Extract the first and second element of this list. Turn it into one data.frame
+
+```{r}
+
+
+
+
+```
+
+Give names to `ten_years`, from a to j
+
+```{r}
+
+```
+
+Extract the element `f` from this list
+
+```{r}
+
+```
+
+Extract the 2nd element from this list
+
+```{r}
+
+```
+
+Extract the 5th column from the third data.frame in the list. Try to find three methods to achieve that.
+
+```{r}
+
+
+
+```
+

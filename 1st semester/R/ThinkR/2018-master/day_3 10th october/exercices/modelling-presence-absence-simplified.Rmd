@@ -1,0 +1,273 @@
+---
+title: "Modelling presence-absence"
+output : 
+  html_document: default
+  bookdown::pdf_book:
+    fig_caption: yes
+    highlight: tango
+    includes:
+      before_body: before_body.tex
+      in_header: header_exo-model-presabs_en.tex
+    keep_tex: no
+    number_sections: yes
+    toc: yes
+  bookdown::gitbook:
+    includes : 
+      in_header: "../header_gitbook_hide.html"
+    split_by: none
+    self_contained: true
+geometry: top=2.4cm, bottom=2.1cm, outer=2cm, inner=4cm, headheight=40pt
+lang: en
+documentclass: article
+classoption: a4paper
+---
+
+<!-- 
+1. cartography-for-modelling_en.Rmd
+2. modelling-presence-absence-simplified_en.Rmd
+3. cartography-map-model-predictions_en.Rmd
+-->
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(
+  echo = FALSE,
+  message = FALSE,
+  warning = FALSE,
+  results = "hide",
+  out.width = "80%",
+  fig.align = "center"
+)
+
+dataWD <- "data"
+```
+
+```{r, include=FALSE, eval=FALSE}
+# List of data
+"carto-data-orig/vilaine/"
+```
+
+
+
+# Objectives
+The aim of this tutorial is to predict the distribution of flatfishes in the Vilaine Estuary (France).  
+
+With this tutorial, you will have to (1) manipulate geographic data to prepare data necessary for the modelling procedure, (2) model average probability of presence of flatfishes on the study area and (3) produce maps of predictions of probabilities.  
+*The 3 parts may be independant if needed.*
+
+```{r, echo=FALSE, results="asis"}
+knitr::include_graphics(file.path(dataWD, "carto-data-orig", "Schema_Modele.png"))
+```
+
+# Part 2: Modelling probability of presence
+
+## Load packages
+
+Load necessary packages like {sf}, {dplyr}, {tidyr}, {ggplot2}, {skimr}, {MASS}, {pROC}
+
+```{r LibrariesPA, purl=TRUE}
+library(dplyr)
+library(tidyr)
+library(ggplot2)
+library(sf)
+library(skimr)
+library(MASS)
+library(pROC)
+
+```
+
+## Outlines
+
+- Explore the dataset
+- Use a binomial distribution
+    + Test for covariates, quality criterion
+- Choose the best model to predict presence of flatfishes
+- Explore model outputs
+- Look at predictions
+
+## Exploration
+
+- Explore graphically the distribution of each covariate, relations between covariates and sampling plan balance
+- Try to guess which covariates may be important to explain the presence of fishes
+
+### Read dataset
+
+- Read spatial dataset of stations with covariates:     
+    + "carto-data-orig/vilaine/data_vilaine_covariates_correction_l93.shp"
+- Transform as simple tibble for model exploration with `as_tibble`
+- Transform columns `Presence` as logical (TRUE/FALSE)
+- Transform columns `Year`, `Sedim`, `Zone`, `coasts` and `bathyclass` as character
+- Store the result of these operations in an object named `dataset`
+
+```{r R_LoadDataPA.T}
+# Get data 
+dataset <- st_read(
+  file.path(dataWD, "carto-data-orig/vilaine/data_vilaine_covariates_correction_l93.shp"),
+  quiet = TRUE) %>% 
+  as_tibble() %>% 
+  mutate(Presence = as.logical(Presence)) %>%
+  mutate_at(vars(Year, Sedim, Zone, coasts, bathyclass),
+            as.character)
+```
+
+
+### Use the `5-functions-you-have-to-always-run` on the `dataset` object
+
+```{r}
+dim(dataset)
+names(dataset)
+head(dataset)
+View(dataset)
+summary(dataset)
+```
+
+### Explore the balance of the sampling plan
+
+- Calculate the number of stations for each group of bathyclass and Sedim
+    + Show the output as a wide format with `spread` for a better interpretation
+    + What do you think about a possible model that could include both these parameters ?
+- Calculate the repartition of presence-absence against _character_ covariates
+    + Show tables and figures
+    + Can you guess what may be important covariates to predict distribution ?
+
+```{r R_DataBalancePA, results='hide', fig.keep='last'}
+# Explore Presence/Absence data ====
+# _Balance of data between covariates ----
+dataset %>% 
+  count(bathyclass, Sedim) %>% 
+  spread(Sedim, n)
+
+# The sampling plan is unbalanced, but if it representative of the study area. If you look at it spatially, mud is the largest area and shallow waters are the most important for young flatfishes distribution.
+
+# _Balance of presence against covariates
+dataset %>% count(Presence)
+dataset %>% count(Presence, bathyclass) %>% spread(Presence, n)
+dataset %>% count(Presence, Sedim) %>% spread(Presence, n)
+dataset %>% count(Presence, Year) %>% spread(Presence, n)
+dataset %>% count(Presence, Zone) %>% spread(Presence, n)
+
+# All covariates may have a correlation with the presence, but there is no clue to say that we can use them all in the model. Some may be redondant.
+# We will need to try the multivariate model to know.
+
+# _Explore graphically - illustrates previous tables of contingency
+g <- ggplot(dataset) +
+  geom_bar(aes(Presence),
+                 fill = "orange", col = "grey40")
+
+g + facet_wrap(~bathyclass)
+g + facet_wrap(~Sedim)
+g + facet_grid(Sedim ~ bathyclass)
+```
+
+
+## Fit a binomial model
+
+The choice of a distribution for presence-absence data is simple, this is a binomial distribution.
+
+- Find the best model (combination of covariates) to predict presence-absence according to AIC
+
+*Remember the original question of this case study: We try to predict the average distribution of fishes according to environmental coavriates. Choose your model accordingly.*
+
+```{r R_FitPA.T, results='hide'}
+# Fitting a Bernoulli model on presence/absence data ====
+# _Compare fits
+glm1 <- glm(Presence ~ bathy + Sedim, data = dataset, family = "binomial")
+glm2 <- glm(Presence ~ bathyclass, data = dataset, family = "binomial")
+
+AIC(glm1, glm2)
+
+
+# _StepAIC
+complet.m <- glm(Presence ~ bathy + bathyclass + Sedim + Year + Zone + coasts,
+                      data = dataset, family = "binomial")
+Dens01.glm <- stepAIC(complet.m, direction = "both")
+AIC(Dens01.glm)
+
+# The aim of the model is to predict the average distribution,
+# we can say that there is no real interest in keeping the year inside the model
+# Because we would have to create a distribution for each year available
+# Remember also the sampling plan between years. Some are not well represented.
+# Hence, the best model is the following, even if AIC is higher.
+# By the way, you probably did not think about it but the response may not be linear
+# for continuous variable like "bathy". A small polynom can be tested...
+complet.m <- glm(Presence ~ bathy + bathyclass + Sedim + Zone + coasts + poly(bathy, 2),
+                      data = dataset, family = "binomial")
+Dens02.glm <- stepAIC(complet.m, direction = "both")
+AIC(Dens02.glm)
+
+# Also remember that it would be better to select the best model with 
+# a cross-validation procedure based on AUC result
+
+```
+
+## Analyse output of the best model
+
+- Analysis of residuals of a binomial model is also to be done, even if there is no really choice in the distribution. Visual outputs of residuals analysis of a binomial model are specific .
+
+```{r RFigOutputsPA}
+# _Outputs ----
+model <- Dens02.glm
+# Anova
+summary(model)
+anova(model, test = "Chisq")
+
+# % explained deviance
+pc_dev_expl <- anova(model)[-1, 2] * 100 / anova(model)[1, 4]
+# % explained per factor
+print(cbind(rownames(anova(model))[-1], round(pc_dev_expl , digit = 1)))
+# % explained per df
+print(cbind(rownames(anova(model))[-1], 
+            round(pc_dev_expl / anova(model)[-1, 1], digit = 1)))
+
+# Residuals
+par(mfrow = c(2, 2))
+plot(model, which = c(1, 2, 3, 4))
+
+```
+
+- Compare predictions and observations
+    + What would be the best probability of presence to separate presence from absence ?
+
+```{r R_OtherFig, purl=TRUE}
+# _Others interesting graphs ----
+dataset.pred <- dataset %>% 
+  mutate(PredictPA = c(model$fitted),
+         ResidPA = c(resid(model, type = "response")))
+
+# Fitted vs Observed
+ggplot(dataset.pred) +
+  geom_violin(aes(Presence, PredictPA, fill = Presence),
+              draw_quantiles = 0.5) +
+  labs(x = "Observations", y = "Predictions", title = "Comparison of observations vs predictions") +
+  theme_bw()
+
+```
+
+
+### Predictions on external dataset
+
+- Read simplified dataset "carto-data-orig/vilaine/predictions.csv"
+- Transform covariates with the correct type
+- Select only columns with covariates retained in the model
+- Remove duplicates
+- Add a new column with calculated predictions
+- Plot the averaged predictions considering each covariate retained in the model
+
+```{r}
+prediction <- readr::read_csv(file.path(dataWD, "carto-data-orig/vilaine/predictions.csv")) %>%
+  mutate_at(vars(Year, Sedim, Zone, bathyclass),
+            as.character) %>%
+  dplyr::select(bathy, Zone) %>%
+  distinct() %>%
+  mutate(fit = predict(model, newdata = ., type = "response")) 
+
+# Here, we are allowed to show these marginal predictions
+# as the new dataset is well-balanced and unique
+
+ggplot(prediction) +
+  aes(bathy, fit, colour = Zone) +
+  geom_point() +
+  geom_line() +
+  scale_color_brewer(type = "qual", palette = "Set2") +
+  scale_y_continuous(limits = c(0, 1))
+
+```

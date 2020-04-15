@@ -1,0 +1,16 @@
+Package: appprenom
+Title: prenom shiny app
+Version: 0.0.0.9000
+Authors@R: person("Vincent", "Guyader", email = "vincent@thinkr.Fr", role = c("aut", "cre"))
+Description: Simple demo.
+Depends: R (>= 3.5.0)
+License: GPL-3
+Encoding: UTF-8
+LazyData: true
+Imports: 
+    prenoms,
+    shiny,
+    DT,
+    glue,
+    dplyr
+RoxygenNote: 6.1.1

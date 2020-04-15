@@ -1,0 +1,332 @@
+---
+title: "intro_dplyr_en"
+output: html_document
+---
+
+
+# Init
+## Create an new R project.
+
+## load here the packages {tidyverse} and {prenoms} you need. You will add other required package in this chunk later.
+
+_ the {prenoms} package isn't on CRAN, if missing you can install it with : `remotes::install_github( "ThinkR-open/prenoms" )`
+
+```{r}
+
+
+
+
+
+
+```
+
+# Import
+## Using `data(prenoms)` preload the `prenoms` example prenoms from the {prenoms} packages. This is a function that will load the database without using the assignment arrow `<-`. the `data` function must not be used in any other case: only to import example dataset from a package.
+
+
+```{r}
+
+```
+
+## What kind of object is prenoms
+
+```{r}
+
+```
+
+
+
+## Use the `5-functions-you-have-to-always-run` on the prenoms object
+
+```{r}
+
+
+
+
+
+```
+
+_sometimes the `View` function does not allow you to compile your notebook. Feel free to comment this line._
+
+
+
+## Using `glimpse`, have a look to `prenoms` structure.
+
+
+```{r}
+
+```
+
+
+_In this Rmd you dont have to assign your results to an object, you dont have to replace/edit/transform the dataset `prenoms`. You only have to show the output in the rendered document._
+
+
+# Sorting the dataset 
+
+## Sort the dataset by year
+
+```{r}
+
+
+```
+
+## Sort the dataset by decreasing number of occurrences
+
+```{r}
+
+
+```
+
+## Sort the dataset by name in alphabetical order and by decreasing proportion
+
+```{r}
+
+
+```
+
+
+# Filtrer the dataset
+
+
+## Display only available information on male names
+
+```{r}
+
+
+```
+
+
+## Display only the lines corresponding to girls born in 2011
+
+
+```{r}
+
+
+
+
+```
+
+
+## Keep in the database only information on the first names "Vincent", "Diane", "Colin", "Sébastien" and "Cervan".
+
+```{r}
+
+
+```
+
+# Select
+
+## Keep only the `name`, `year` and `n` columns .
+
+```{r}
+
+
+```
+
+## Keep all variables except `sex` et `prop`
+
+```{r}
+
+
+```
+
+
+## Keep only variables that contain an "e" in their name. _(The name of the variable (= column header), not the first birth names inside variable "name" of this dataset !!)_
+
+
+```{r}
+
+
+```
+
+
+## Keep only variables whose names end with an "e"
+
+```{r}
+
+
+```
+
+
+
+# Transformation 
+
+## Multiply by 100 and do a relevant rounding on the `prop` variable
+
+```{r}
+
+
+
+```
+
+
+## Currently the `prop` column is calculated by sex and year, add another proportion column, calculated globally over the entire dataset. (No, this new variable does not make sense at all, so what ?)
+
+
+
+```{r}
+
+```
+
+
+# Resume 
+
+
+## How many babies were born in France between 1900 and 2017?
+
+
+```{r}
+
+
+```
+
+## How many births were there in France in 1925?
+
+
+```{r}
+
+
+
+```
+
+## How many births per year have there been in France?
+
+
+```{r}
+
+
+
+
+```
+
+# Explorer
+
+## How many different first names exist in the `prenoms` database?
+
+```{r}
+
+
+
+```
+
+
+## How many times has your first name been given in your department in your year of birth? (foreigner ? Use mine. My name is Vincent. I was born in 1986 in the department 76 :) )
+
+```{r}
+
+
+```
+
+
+
+## Find the most popular female name in Paris in 1950.
+
+```{r}
+
+
+
+
+
+
+
+
+
+```
+
+
+
+## What are the most common names given, by gender, year and department?
+
+```{r}
+
+
+
+```
+
+
+
+## What is the name that has been given most in absolute value all together?
+
+```{r}
+
+
+
+
+```
+
+
+
+## What is the most common boy's name given, all combined?
+
+```{r}
+
+
+
+
+
+```
+
+## Build a table that track the popularity of your first name over time ( You can use any name you want ) _(Each year, the number of times your first name has been given)_
+
+```{r}
+
+
+
+
+```
+
+## Build a database called `france` that removes the department scale (you must aggregate the departments by year and gender)
+
+- Do not forget to add the variable "proportion" to `france`. _(this variable must make sense... think carefully about its meaning)_
+
+```{r}
+
+
+
+
+
+
+
+
+
+
+
+```
+
+## In the `france` database, using `case_when` in the sex column, replace "M" with "Male" and "F" with "Female".
+
+```{r}
+
+
+
+
+
+
+
+```
+
+
+
+## Using the `france` database, only print information about names ending with the letter `z`.
+
+_You may want to look at the {stringr} package to do this_
+
+```{r}
+
+
+```
+
+
+## Make a database with 3 columns: `year`, `most given male name`, `most given female name`, each line contains a year and 2 names.
+
+```{r}
+
+
+
+
+
+
+
+
+```
+

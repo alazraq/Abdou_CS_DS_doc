@@ -1,0 +1,59 @@
+---
+title: "api"
+output: html_document
+---
+
+```{r include = FALSE}
+
+
+
+
+
+```
+
+## Basic API Call
+
+Build a function that takes an email adress, calls the [HaveIBeenPwned API](https://haveibeenpwned.com/), check if the status code is 200, and if it is, returns the results. 
+
+Note: if the email is not in the database, the API returns a 404. 
+
+``` r
+haveibeen(pwned = "example@gmail.com")
+```
+
+```{r eval = FALSE ,reponse=TRUE}
+
+
+
+
+
+
+
+
+
+
+
+
+```
+
+### Package
+
+Create one or more package(s) around these API (or another if you're inspired):
+
++ [The Cat API](https://thecatapi.com/)
+
++ [HTTP cat](https://http.cat/)
+
++ [Chuck Norris Fact](https://api.chucknorris.io/)
+
++ [International Space Station Current Location](http://open-notify.org)
+
++ [Musixmatch](https://developer.musixmatch.com/documentation)
+
++ [The Numbers API](http://numbersapi.com)
+
++ [Fun Translations API](https://funtranslations.com/api)
+
++ [REST COUNTRIES](https://restcountries.eu/)
+
++ [marvel.com](https://developer.marvel.com/)

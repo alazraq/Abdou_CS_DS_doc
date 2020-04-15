@@ -1,0 +1,49 @@
+---
+title: "Exam -- R part"
+author: "Stéphanie  Allassonnière,  Geneviève  Robin,  Elodie  Vernet  and  Zoltán  Szabó"
+date: "November 13 2018"
+header-includes:
+   - \usepackage{dsfont}
+output: pdf_document
+---
+
+
+```{r setup, include=F}
+library(ggplot2)
+set.seed(123)
+```
+
+**General instructions**:
+
+- Working in team is very useful, however this time please solve the following questions on your own.
+
+- Please write an Rmarkdown report which answers the following questions and save it to pdf.  Upload both files (call them **Firstname\_Lastname.Rmd** and **Firstname\_Lastname.pdf**) to moodle by 10pm (Tuesday November 13 2018). 
+
+- Include your codes and graphs in the report.
+
+**Exercise to solve**:
+
+A cholesterol level above $240mg/dl$ of blood is a risk factor for heart disease. A lab has changed the flavour of a medicine used to diminish the cholesterol level. A study to test the effectiveness of the new version was conducted. Fifty people with cholesterol level between $240$ and $260$ were assigned at random to each of two treatments groups. Group A received the standard medicine and  group B received the new medicine. The observed cholesterol level after the treatment are
+
+  - for group A:  275, 255, 247, 206, 245, 196, 229, 218, 238, 224, 217, 205, 252, 194, 203, 192, 232, 239, 223, 239, 217, 241, 230, 216, 227,
+  
+  - for group B: 238, 216, 214, 247, 250, 223, 207, 254, 228, 219, 223, 247, 228, 207, 204, 225, 201, 253, 216, 223, 219, 224, 225, 228, 225.
+  
+ The cholesterol levels of group A and B are independent and i.i.d.\ Gaussian random variables distributed as $\mathcal{N}(m_A,\sigma_A)$ and $\mathcal{N}(m_B,\sigma_B)$ respectively.  
+ 
+We don't expect to see a difference between these two medicines. We assume that $\sigma:=\sigma_A=\sigma_B$ and we want to test $H_0: ~ m_A=m_B$ against $H_1: ~ m_A \neq m_B$.
+
+
+1. Create a dataframe which contains the data.
+
+2. Check visually that the distribution of the cholesterol levels of group A and B can be modeled as Gaussian.
+
+3. Propose a test at level $\alpha$ for $H_0: ~ m_A=m_B$ against $H_0: ~ m_A \neq m_B$. Give the statistical model, the statistic that you use, its distribution under $H_0$, the test function and its p-value. Hint: You could look at PC8 as a source of inspiration.
+
+4. Write an R function  **test** with inputs $x=(x_1,\ldots, x_n)$, $y=(y_1,\ldots, y_n)$, $\alpha$ and output of a vector of size five containing the empirical mean of $x$, the empirical mean of $y$, the observed value of the statistics, the critical value of the rejection region, the observed value of the test function ($0$ or $1$) and the p-value.
+
+5. Check that significance level of your test through $I=1000$ simulations when $n=25$, $\alpha=0.05$, $m_A=m_B=220$ and $\sigma=20$.
+
+6. Approximate the probability that your test appropriately rejects $H_0$ when $n=25$, $\alpha=0.05$, $m_A=220$, $m_B=230$ and $\sigma=20$ using the Monte-Carlo method (using $I=1000$ simulations).
+
+7. Apply your test to the cholesterol data.

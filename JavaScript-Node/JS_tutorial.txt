@@ -1,0 +1,108 @@
+JavaScript Tutorial & examples:
+
+1- JavaScript to change the content of HTML elements using getElementById: innerHTML, src, etc
+-change img src: 
+<img id="myImage" src="pic_bulboff.gif" style="width:100px">
+<button onclick="document.getElementById('myImage').src='pic_bulboff.gif'">Turn off the light</button>
+- change paragraph text: 
+<p id="demo">JavaScript can change the style of an HTML element.</p>
+<button type="button" onclick='document.getElementById("demo").innerHTML = "Hello JavaScript!"'>Click Me!</button>
+- change the style of an HTML element
+<button type="button" onclick="document.getElementById('demo').style.fontSize='35px'">Click Me!</button>
+- hide HTML elements:
+<button type="button" onclick="document.getElementById('demo').style.display='none'">Click Me!</button>
+- show HTML elements:
+<p id="demo" style="display:none">Hello JavaScript!</p>
+<button type="button" onclick="document.getElementById('demo').style.display='block'">Click Me!</button>
+
+2- JavaScript where to:
+
+- In HTML, JavaScript code must be inserted between <script> and </script> tags,  these can be placed in head or in body, Placing scripts at the bottom of the <body> element improves the display speed, because script interpretation slows down the display.
+- Scripts can also be placed in external files:
+<!DOCTYPE html>
+<html>
+<body>
+
+<h2>External JavaScript</h2>
+
+<p id="demo">A Paragraph.</p>
+
+<button type="button" onclick="myFunction()">Try it</button>
+
+<p>(myFunction is stored in an external file called "myScript.js")</p>
+
+<script src="myScript.js"></script>
+
+</body>
+</html>
+
+3- JavaScript's types:
+
+# Number
+- There's no such thing as an integer in JavaScript, watch out for precision problems 0.1 + 0.2 == 0.30000000000000004;
+- Math is an object that provides advanced mathematical functions and constants: Math.sin(3.5); var circumference = 2 * Math.PI * r;
+- In practice, integer values are treated as 32-bit ints, and some implementations even store it that way until they are asked to perform an instruction that's valid on a Number but not on a 32-bit integer. 
+- String-> Int: parseInt('110', 10); // 110 and  parseInt('11', 2); // 3  wth the base as a second argument, by default its 10 Att: Strings starting with 0 could mean octal in some browsers, 0x means hexadecimal
+- Infinity, -Infinity and NaN values using the built-in isFinite() function: isFinite(-Infinity); // false and isFinite(NaN); // false
+# String
+- No char: If you want to represent a single character, you just use a string consisting of that single character.
+# Boolean
+# Symbol (new in ES2015)
+# Object
+    ## Function
+    ## Array
+    ## Date
+    ## RegExp
+    ## Math
+# null
+# undefined
+
+3- JavaScript Functions
+A JavaScript function is a block of JavaScript code, that can be executed when "called" for.
+For example, a function can be called when an event occurs, like when the user clicks a button.
+
+4- JavaScript events:
+
+Differences with Java:
+
+1- Objects Only - No Classes
+
+Javascript objects are just like a Java HashMap of related properties, where the keys are Strings only. 
+
+Example -------------
+// create an empty object - no class was needed !!
+var superhero = {};
+ 
+superhero.name = 'Superman';  
+superhero.strength = 100;
+// or
+
+var superman = {
+ 
+  heroName: 'Superman',  
+ 
+  sayHello: function() {
+      console.log("Hello, I'm " + this.heroName );
+  }  
+};
+--------------------
+
+2- Functions Are Just Values:
+
+Functions in Javascript are just values of type Function, that you can store in a variable as any other value.
+
+Example -------------
+var flyFunction = function() {  
+    console.log('Flying like a bird!');
+};
+ 
+superhero.fly = flyFunction;
+----------------------
+
+Functions can be invoked with parentheses:
+
+Example -------------
+// prints 'Flying like a bird!' to the console
+superhero.fly()
+---------------------
+

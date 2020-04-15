@@ -1,0 +1,352 @@
+---
+title: "Cartography for modelling"
+documentclass: article
+geometry: top=2.4cm, bottom=2.1cm, outer=2cm, inner=4cm, headheight=40pt
+output:
+  html_document: default
+  bookdown::pdf_book:
+    fig_caption: yes
+    highlight: tango
+    includes:
+      before_body: before_body.tex
+      in_header: header_exo-carto_en.tex
+    keep_tex: no
+    number_sections: yes
+    toc: yes
+  pdf_document:
+    toc: yes
+  bookdown::gitbook:
+    includes:
+      in_header: ../header_gitbook_hide.html
+    self_contained: yes
+    split_by: none
+lang: en
+classoption: a4paper
+---
+
+<!-- 
+1. cartography-for-modelling_en.Rmd
+2. modelling-presence-absence-simplified_en.Rmd
+3. cartography-map-model-predictions_en.Rmd
+-->
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(
+  echo = FALSE,
+  message = FALSE,
+  warning = FALSE,
+  results = "hide",
+  out.width = "80%",
+  fig.align = "center"
+)
+dataWD <- "data"
+```
+
+```{r, include=FALSE}
+# List of data
+"carto-data-orig/vilaine/"
+```
+
+
+# Objectives
+The aim of this tutorial is to predict the distribution of flatfishes in the Vilaine Estuary (France).  
+
+With this tutorial, you will have to (1) manipulate geographic data to prepare data necessary for the modelling procedure, (2) model average probability of presence of flatfishes on the study area and (3) produce maps of predictions of probabilities.  
+*The 3 parts may be independant if needed.*
+
+```{r, echo=FALSE, results="asis"}
+knitr::include_graphics(file.path(dataWD, "carto-data-orig", "Schema_Modele.png"))
+```
+
+# Part 1: Manipulate geographic data
+
+## Load packages
+
+Load necessary packages like {sf}, {raster}, {dplyr}, {readr}, {ggplot2}, {rasterVis}
+```{r packages}
+library(sf)
+library(raster)
+library(dplyr)
+library(readr)
+library(ggplot2)
+library(mapview)
+library(rasterVis)
+```
+
+This part aims at preparing a dataset for future modeling purpose. The future model will statistically link a variable of interest (a fish species presence) to environmental covariates. Then, the model can be used for predictions at the scale of the study area. This requires to retrieve covariates for the total area, to retrieve point observation sampled on the area and to know covariates at samples position.  
+
+Covariates are:
+
+- Sediment structure. Is the bottom made of mud, sand, gravels or rocks
+- Bathymetry. Similar to water depth but calculated from a reference line. Bathymetry does not change with modification of sea level because of tides.
+- Biological areas. Areas delimited by expertise considering combination of bathymetry and sediment structure. Related to fishes preys habitat and availability.
+- Area close to the coasts. Human disturbances on lands may have an impact on fishes. Distance to the coasts is one of the proxies to test for this.
+
+## Read map of France with departments
+
+To be able to create nice output maps, use map of France as background.  
+
+- Read "carto-data-orig/departements/DEPARTEMENT.shp"
+    + Store it in the R session with name `dept_l93`
+
+```{r}
+dept_l93 <- st_read(
+  "data/carto-data-orig/departements/DEPARTEMENT.shp"
+  , quiet = TRUE)
+
+dept_l93 <- st_read(
+  dsn = "data/carto-data-orig/departements/",
+layer = "DEPARTEMENT"
+  , quiet = TRUE)
+
+ggplot(dept_l93) +
+  geom_sf() +
+  coord_sf(crs = st_crs(dept_l93))
+```
+
+
+## Read sampling dataset
+
+The dataset is saved as a csv file: 
+
+- Data directory: "carto-data-orig/vilaine/Data_Vilaine_solea.csv"
+- Transform it as a spatial dataframe. Check function `st_as_sf`. Do not forget parameter `crs`.
+- Create a new column named "Presence" that stores `0` when Density is zero and `1` when Density observed is positive
+
+```{r}
+# Read point data
+data_wgs84 <- read_csv(file.path(dataWD, "carto-data-orig/vilaine/Data_Vilaine_solea.csv")) %>% 
+  st_as_sf(coords = c("lon", "lat"), crs = 4326) %>% 
+  mutate(Presence = 1 * (Density > 0))
+data_wgs84
+
+ggplot(dept_l93) +
+  geom_sf() +
+  geom_sf(data = data_wgs84, color = "blue") +
+  coord_sf(crs = st_crs(dept_l93))
+
+# mapview::mapview(data_wgs84)
+```
+
+
+## Read raw covariates and adjust to the study area
+
+- Use the study area polygon as the extent to crop covariates spatial files
+    + Data directory: "carto-data-orig/vilaine/ExtAreaPol_wgs84.shp"
+- Get original spatial data of sediments, bathymetry and biological areas
+    + Data directory: "carto-data-orig/vilaine/Sedim_GDG_wgs84.shp"
+    + Data directory: "carto-data-orig/vilaine/bathy_GDG_1000_merc.envi"
+    + Data directory: "carto-data-orig/vilaine/Zone_bio_wgs84.shp"
+        + Transform the "Zone" covariate into a "factor" class
+- Crop layers to adjust to the study area extent.
+    + Sediments and biological areas are shapefiles. Think about spatial intersection.
+    + Bathymetry is a raster. Think about cropping.  
+- Crop department spatial layer to restrict the field of view of maps
+
+*Be careful with projections... Use appropriate names for spatial objects in the R session.*
+
+
+```{r readcov}
+# Get Study Area polygon
+ExtAreaPol_l93 <- st_read(file.path(dataWD, "carto-data-orig/vilaine/ExtAreaPol_wgs84.shp"), quiet = TRUE) %>% 
+  st_transform(crs = st_crs(dept_l93))
+
+# Crop department polygons
+dept_area_l93 <- st_intersection(dept_l93, ExtAreaPol_l93)
+
+g1 <- ggplot(dept_area_l93) +
+  geom_sf() +
+  geom_sf(data = ExtAreaPol_l93, color = "red", fill = NA) +
+  coord_sf(crs = st_crs(dept_l93)) +
+  labs(title = "Crop department map") +
+  theme_classic()
+
+# Read and crop sediment
+sedim_area_l93 <- st_read(file.path(dataWD, "carto-data-orig/vilaine/Sedim_GDG_wgs84.shp")) %>% 
+  st_transform(crs = st_crs(dept_l93)) %>% 
+  st_intersection(ExtAreaPol_l93)
+
+sed_colors <- c("1mud" = "forestgreen", "2sand" = "orange", "3coarse" = "grey", "4rock" = "black")
+
+g2 <- ggplot(dept_area_l93) +
+  geom_sf() +
+  geom_sf(data = sedim_area_l93, aes(fill = Sedim)) +
+  geom_sf(data = ExtAreaPol_l93, color = "red", fill = NA) +
+  scale_fill_manual(values = sed_colors) +
+  coord_sf(crs = st_crs(dept_l93)) +
+  labs(title = "Crop Sediment structure map") +
+  theme_classic()
+
+# Read and crop biological areas
+zonebio_area_l93 <- st_read(file.path(dataWD, "carto-data-orig/vilaine/Zone_bio_wgs84.shp")) %>% 
+  mutate(Zone = as.factor(Zone)) %>% 
+  st_transform(crs = st_crs(dept_l93)) %>% 
+  st_intersection(ExtAreaPol_l93)
+
+g3 <- ggplot(dept_area_l93) +
+  geom_sf() +
+  geom_sf(data = zonebio_area_l93, aes(fill = Zone)) +
+  geom_sf(data = ExtAreaPol_l93, color = "red", fill = NA) +
+  scale_fill_viridis_d() +
+  coord_sf(crs = st_crs(dept_l93)) +
+  labs(title = "Crop Sediment structure map") +
+  theme_classic()
+
+# Read and crop Bathymetry
+bathy_l93 <- raster(file.path(dataWD, "carto-data-orig/vilaine/bathy_GDG_1000_merc.envi")) %>% 
+  projectRaster(crs=CRS(st_crs(dept_area_l93)$proj4string)) %>% 
+  crop(ExtAreaPol_l93)
+
+g4 <- gplot(bathy_l93) +
+  geom_tile(aes(fill = value)) +
+  scale_fill_gradient(high = "cyan", low = "blue4", na.value = NA) +
+  geom_sf(data = dept_area_l93, inherit.aes = FALSE) +
+  geom_sf(data = ExtAreaPol_l93, color = "red", fill = NA, inherit.aes = FALSE) +
+  coord_sf(crs = st_crs(dept_l93)) +
+  labs(title = "Crop Bathymetry map", x = NULL, y = NULL) +
+  theme_classic()
+
+cowplot::plot_grid(plotlist = list(g1, g2, g3, g4))
+```
+
+## Create extra covariate
+### Close to the coasts
+
+We need to find if human disturbances on the continent, simplified as distance to the coast, is a parameter influencing fish distribution. 
+
+- Create a polygon that covers the area between 0 and 4km to the coastline
+    + Merge all polygons of France department
+    + Create the correct area
+    + Crop to the study area
+
+```{r}
+coast_area_l93 <- dept_l93 %>% 
+  st_union() %>% 
+  st_sf() %>% 
+  st_buffer(dist = units::set_units(4, "km")) %>% 
+  st_intersection(ExtAreaPol_l93) %>% 
+  mutate(coasts = "coasts") %>% 
+  # Extra - not necessary: st_difference requires prior st_union in this case
+  st_difference(st_union(dept_l93))
+  
+ggplot(dept_area_l93) +
+  geom_sf() +
+  geom_sf(data = coast_area_l93, fill = "yellow",
+          alpha = 0.75, color = "purple") +
+  geom_sf(data = ExtAreaPol_l93, color = "red", fill = NA) +
+  coord_sf(crs = st_crs(dept_l93)) +
+  labs(title = "Area at 4km of the coasts", x = NULL, y = NULL) +
+  theme_classic()
+
+```
+
+### Bathymetry as class factor
+
+Depth may be a proxy for multiple environmental parameters. Distance to the river mouth, hiding areas, ... Dividing bathymetry into classes may makes more sense. For data exploration, it is interesting too.
+
+- Create a new raster covariate, which is the (opposite) bathymetry divided into classes
+    + Breaks to use on `-1*bathy`: `c(-10,5,10,20,50,100)`
+
+```{r}
+# There is a cut method for raster
+bathy_class_l93 <- cut(-1*bathy_l93, breaks = c(-10,5,10,20,50,100))
+
+gplot(bathy_class_l93) +
+  geom_tile(aes(fill = value)) +
+  scale_fill_gradient(low = "cyan", high = "blue4", na.value = NA) +
+  geom_sf(data = dept_area_l93, inherit.aes = FALSE) +
+  geom_sf(data = ExtAreaPol_l93, color = "red", fill = NA, inherit.aes = FALSE) +
+  coord_sf(crs = st_crs(dept_l93)) +
+  labs(title = "Bathymetry into classes", x = NULL, y = NULL) +
+  theme_classic()
+
+```
+
+
+## Extract covariates information at sampling positions
+
+The model will need all covariates information to be linked to presence data observation.
+
+- Extract information from each covariate at sampling positions
+    + Sediment, Bathymetry, Bathymetry classes, Biological areas, Area of the coasts
+    + Use `st_join` as some points may be out of the shapefiles
+    + Biological areas: Set value to `0` if a station is not over an area
+    + Coasts: Set value to `offshore` if not inside the area
+    + Bathymetry: Rename column to `bathy`
+    + Bathymetry classes: Rename column to `bathyclass`
+- Remove unnecessary columns
+- Save the resulting spatial layer on your drive as ESRI shapefile (default)
+    + Use file name: "data_vilaine_covariates_l93.shp"
+- Try to reproduce the multipanel figure
+
+```{r, fig.width=8, fig.height=5}
+# !! Pay attention to coordinate reference system !!
+# Transform data position
+data_l93 <- st_transform(data_wgs84, crs = st_crs(dept_area_l93)) %>% 
+# Add Vector data
+  st_join(sedim_area_l93) %>% 
+  st_join(zonebio_area_l93) %>% 
+  st_join(coast_area_l93) %>% 
+  select(-starts_with("X1"), -id) %>% 
+  mutate(Zone = ifelse(is.na(Zone), "0", Zone),
+         coasts = if_else(is.na(coasts), "offshore", coasts))
+
+# Extract raster data
+# `extract` can return a sp object that can be turned into sf with st_as_sf
+data_complete_l93 <- stack(bathy_l93, bathy_class_l93) %>% 
+  extract(data_l93, sp = TRUE) %>% 
+  st_as_sf() %>% 
+  rename(bathy = bathy_GDG_1000_merc,
+         bathyclass = layer)
+
+# Save
+st_write(data_complete_l93, file.path(dataWD, "carto-data-orig/vilaine/data_vilaine_covariates_correction_l93.shp"),
+         delete_layer = TRUE)
+
+# Plot
+plot(data_complete_l93, pch = 20, cex = 0.5)
+```
+
+
+## Create a complete multi-layer raster
+
+To do predictions after the modelling procedure, we will use a RasterStack containing all covariates in different layers.
+
+- Use the Bathymetry raster as a basis for all layers
+- Use `rasterize` to transform polygons as raster layers.
+- Use `stack` to stack all rasters together
+- Define layer names identical to covariates in stations data
+- Save the resulting stack on your drive using R `.grd` format (some formats do not allow to keep layer names)
+
+```{r}
+sedim <- rasterize(sedim_area_l93, bathy_l93)
+zonebio <- rasterize(zonebio_area_l93, bathy_l93)
+coasts <- rasterize(coast_area_l93, bathy_l93)
+
+covar_raster <- stack(bathy_l93, bathy_class_l93, sedim, zonebio, coasts)
+names(covar_raster) <- c("bathy", "bathyclass", "Sedim", "Zone", "coasts")
+
+writeRaster(covar_raster, filename = file.path(dataWD, "carto-data-orig/vilaine/covar_raster_correction.grd"),
+            overwrite = TRUE)
+
+plot(covar_raster)
+```
+
+```{r, include=FALSE}
+# Internal use only
+# Prepare table of predictions for models
+bathy <- c(-2, -7.5, -15, -30)
+bathyclass <- 1:4
+Sedim <- c("1mud", "2sand", "3coarse")
+Year <- c("1985", "1986")
+Zone <- 1:4
+
+predictions <- expand.grid(bathyclass = bathyclass, Sedim = Sedim,
+            Year = Year, Zone = Zone) %>% 
+  mutate(bathy = bathy[bathyclass])
+
+write_csv(predictions,
+          path = file.path(dataWD, "carto-data-orig/vilaine/predictions.csv"))
+```
+
+
