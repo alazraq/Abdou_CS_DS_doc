@@ -1,16 +1,11 @@
 # Abdou's Documentation
 
-This is the documentation of everything Abdou managed to learn working as a software developer, the goal is to have a centralized documentation to refer to if faced with similar tasks to accomplish.
+This is the documentation of the skills, tips and tricks Abdou managed to learn working as a software developer and data scientist, the goal is to have a centralized documentation to refer to if faced with similar tasks to accomplish.
 
 ## Build the Doc
 
 This documentation is compiled using Sphinx.
-It can be compiled to several output format including a static website and a PDF LaTeX document.
-
-### Online -- not yet done
-
-The online documentation is automatically updated when a new verison is merged into master.
-See the bitbucket pipeline for details.
+It can be compiled to several output formats including a static website and a PDF LaTeX document.
 
 ### Locally
 

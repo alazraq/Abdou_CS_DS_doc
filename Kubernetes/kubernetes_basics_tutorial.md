@@ -1,7 +1,8 @@
 # Kubernetes Basics tutorial 
 
+
 ## What is Kubernetes
-Kubernetes is a cluster orchestration system designed by Google.
+Kubernetes (abbreviated K8s) is a cluster orchestration system designed by Google.
 - Kubernetes coordinates a highly available cluster of computers that are connected to work as a single unit.
 - The goal is to be able to deploy **containerized** applications to a cluster without tying them specifically to individual machines.
 - Kubernetes automates the distribution and scheduling of application containers across a cluster in a more efficient way.
@@ -39,7 +40,7 @@ Minikube is a lightweight Kubernetes implementation that creates a VM on your lo
 
 Minikube is available for Linux, macOS, and Windows systems. 
 
-The Minikube CLI provides basic bootstrapping operations for working with your cluster, including start, stop, status, and delete.
+The Minikube CLI provides basic operations for working with your cluster, including start, stop, status, and delete.
 
 Commands:
 ```
@@ -47,9 +48,7 @@ Commands:
 minikube version  
 # Start the local Kubernetes cluster with 1 node (running is a VM created by Minikube)
 minikube start
-
 ```
-
 
 ## Deploy an app
 
@@ -171,7 +170,16 @@ Each Node should run at least two components, Kubelet for communication with the
     ```
 
 
-## Expose your app publicly
+## Expose your app publicly using a service
+
+### Goals
+
+- Learn about a Service in Kubernetes
+- Understand how labels and LabelSelector objects relate to a Service
+- Expose an application outside a Kubernetes cluster using a Service
+
+### Overview of Kubernetes Services
+
 
 ## Scale up your app
 

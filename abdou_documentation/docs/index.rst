@@ -19,3 +19,4 @@ The goal of this documentation is to provide a centralized place for future refe
    data_science/index
    cloud/index
    web_and_mobile_dev/index
+   personal_dev/index
