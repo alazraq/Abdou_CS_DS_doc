@@ -3,20 +3,24 @@
    You can adapt this file completely to your liking, but it should at least
    contain the root `toctree` directive.
 
-Abdou documentation
-###################
+Abderrahmane Lazraq's documentation
+###################################
 
-Welcome to Abdou documentation!
+Welcome to Abdou's documentation!
 
-This documentation contains tutorials, tips and tricks learned by Abdou during his carreer so far.
-The goal of this documentation is to provide a centralized place for future reference if confronted to similar tasks.
+This documentation contains tutorials, tips and tricks learned by Abdou during his studies in four different institutions - EPFL, Carnegie Mellon University, Ecole Polytechnique and HEC Paris - and working part-time as a software developer and data science intern for more than 2 years for Virtual Traffic Lights LLC. 
+
+The goal is to provide a centralized documentation for future reference if faced with similar tasks to accomplish and to share knowledge.
 
 .. toctree::
    :caption: Contents:
    :glob:
 
-   software_dev/index
+   software_eng/index
+   programming/index
    data_science/index
+   machine_learning/index
+   stats_math/index
    cloud/index
    web_and_mobile_dev/index
-   personal_dev/index
+   computer_science/index

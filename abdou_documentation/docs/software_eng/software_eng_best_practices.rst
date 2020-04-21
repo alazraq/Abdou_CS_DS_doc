@@ -1,7 +1,7 @@
-Software Engineering
-####################
+Software Engineering Best Practices
+###################################
 
-Following good practices are used for Greengo:
+Following are some good sofetware engineering practices:
 
 #. Use git and the GitFlow workflow.
 #. Use semantic versioning (see :ref:`semantic_versioning`).

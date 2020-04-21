@@ -1,6 +1,8 @@
-# Abdou's Documentation
+# Abderrahmane Lazraq's Documentation
 
-This is the documentation of the skills, tips and tricks Abdou managed to learn working as a software developer and data scientist, the goal is to have a centralized documentation to refer to if faced with similar tasks to accomplish.
+This documentation contains tutorials, tips and tricks learned by Abdou during his studies in four different institutions - EPFL, Carnegie Mellon University, Ecole Polytechnique and HEC Paris - and working part-time as a software developer and data science intern for more than 2 years for Virtual Traffic Lights LLC. 
+
+The goal is to provide a centralized documentation for future reference if faced with similar tasks to accomplish and to share knowledge.
 
 ## Build the Doc
 
