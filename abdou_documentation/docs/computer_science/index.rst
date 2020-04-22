@@ -1,5 +1,5 @@
 Computer Science - General
-######################
+##########################
 
 lorem ipsum
 
@@ -8,5 +8,6 @@ lorem ipsum
 
    computer_architechture
    computer_networks
+   OS_specific/index.rst
 
    
