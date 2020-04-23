@@ -7,4 +7,6 @@ lorem ipsum
 
    :maxdepth: 2
 
+   Learning_Paradigms
+   RL
    predictive_modeling
