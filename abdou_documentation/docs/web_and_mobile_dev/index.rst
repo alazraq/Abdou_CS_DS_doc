@@ -6,3 +6,4 @@ Mobile Development
 
    dart_tutorial
    flutter_getting_started
+   web_recurring_concepts

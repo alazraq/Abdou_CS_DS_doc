@@ -1,0 +1,2 @@
+1- ctrl + w : delete previous word
+2- ctrl + u : delete current command

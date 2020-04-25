@@ -1,0 +1,3 @@
+# Kaggle useful commands:
+## Download data: 
+kaggle competitions download -c titanic

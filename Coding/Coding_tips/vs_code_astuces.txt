@@ -1,0 +1,3 @@
+Visual Studio Code astuces:
+1- Command to start vscode in current folder: code .
+2- Markdown files preview: cmd + shift + v to toggle between views

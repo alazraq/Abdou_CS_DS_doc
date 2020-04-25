@@ -16,7 +16,7 @@ The goal is to provide a centralized documentation for future reference if faced
    :caption: Contents:
    :glob:
 
-   software_eng/index
+   software_dev/index
    programming/index
    data_science/index
    machine_learning/index
