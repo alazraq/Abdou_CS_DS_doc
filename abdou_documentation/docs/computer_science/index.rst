@@ -8,7 +8,8 @@ lorem ipsum
 
    computer_architechture
    computer_networks
-   OS_specific/index.rst
+   OS_specific/index
+   Editors/index
    cs_recurring_concepts
 
    
