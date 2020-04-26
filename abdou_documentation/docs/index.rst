@@ -24,3 +24,5 @@ The goal is to provide a centralized documentation for future reference if faced
    cloud/index
    web_and_mobile_dev/index
    computer_science/index
+   big_data/index
+   data_vis/index
