@@ -1,2 +1,0 @@
-Document conversion and resizing tips:
-- Extract the text from a pdf: http://www.free-online-ocr.com/

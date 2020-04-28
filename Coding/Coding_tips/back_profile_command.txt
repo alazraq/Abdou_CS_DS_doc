@@ -1,1 +1,0 @@
-touch ~/.bash_profile; open ~/.bash_profile

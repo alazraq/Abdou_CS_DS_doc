@@ -1,9 +1,12 @@
-## Python packages:
+# Essential Data Science Python packages
+
+Here is a list of the most important Python packages that every Data Scientist should be familiar with.
+
 - numpy:
 - pandas
 - matplotlib and seaborn:
-- scikit-learn:
 - scipy:
+- scikit-learn: Scikit-Learn is a Python module for machine learning built on top of SciPy and NumPy.
 - sympy:
 - pytorch: developed by facebook, much easier to use than tensorflow --> recommended by prof
 - tensorflow: developed by google, maybe bigger community

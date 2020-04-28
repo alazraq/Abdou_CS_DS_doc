@@ -7,5 +7,6 @@ lorem ipsum
    :maxdepth: 2
 
    idea
+   vs_code
 
    

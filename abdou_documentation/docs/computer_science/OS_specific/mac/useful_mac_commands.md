@@ -1,4 +1,6 @@
-# Mac useful terminal commands:
+# Mac useful terminal commands and shortcuts:
+
+## Useful commands:
 
 Clean terminal:
     clean
@@ -11,3 +13,8 @@ Show all files even hidden ones
 
 Reload the bash profile after its modification
     source ~/.bash_profile
+
+## Useful shortcuts:
+
+1. ``ctrl + w`` : delete previous word
+2. ``ctrl + u`` : delete all previous words in current command
