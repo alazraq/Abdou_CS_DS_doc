@@ -1,2 +1,3 @@
-GitKraken Astuces:
-1- Solo mode to compare two branches: right-click the first branch you want to compare and choose 'Solo'. Orange circles will appear to the left of the branches names instead of the eye. Then click the faded orange icon next to the second branch you want to solo. Only those branches will be shown in the commit view. Then you just select one commit, and click the second while holding Shift. The list of changed files will appear on the right. Clicking on a file will also show you the diff of contents.
+# GitKraken Astuces:
+
+- Solo mode to compare two branches: right-click the first branch you want to compare and choose 'Solo'. Orange circles will appear to the left of the branches names instead of the eye. Then click the faded orange icon next to the second branch you want to solo. Only those branches will be shown in the commit view. Then you just select one commit, and click the second while holding Shift. The list of changed files will appear on the right. Clicking on a file will also show you the diff of contents.
