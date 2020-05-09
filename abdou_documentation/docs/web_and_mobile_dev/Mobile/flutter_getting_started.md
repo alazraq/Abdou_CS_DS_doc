@@ -1,10 +1,17 @@
 # Flutter getting started:
+
 ## What is Flutter?
+
 Flutter is Google's mobile SDK for crafting high-quality native interfaces on iOS and Android in record time.
+
 ## What is Dart?
+
 ### Dart 
+
 Dart is a client-optimized programming language for fast apps on multiple platforms. It is developed by Google and is used to build mobile, desktop, backend and web applications. Dart is an object-oriented, class defined, garbage-collected language[7] using a C-style syntax that transcompiles optionally into JavaScript.
+
 ### Compiling Dart code:
+
 There are three main ways to run Dart code:
 
 1. Compiled as JavaScript:
@@ -20,6 +27,7 @@ The Dart software development kit (SDK) ships with a stand-alone Dart VM, allowi
 Dart code can be AOT-compiled into machine code (native instruction sets). Apps built with Flutter, a mobile app SDK built with Dart, are deployed to app stores as AOT-compiled Dart code.
 
 ## 1st app using flutter:
+
 - Part 1: https://codelabs.developers.google.com/codelabs/first-flutter-app-pt1/#0
 - Part 2: https://codelabs.developers.google.com/codelabs/first-flutter-app-pt2/#0
 

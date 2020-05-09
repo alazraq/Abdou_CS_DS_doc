@@ -1,0 +1,15 @@
+# Node.js introduction
+
+1. What exactly is Node.js?
+
+    - **Definition:** Node.js is an open-source, cross-platform JavaScript run-time environment that executes JavaScript code outside of a browser. Node.js lets developers use JavaScript to write command line tools and for server-side scripting—running scripts server-side to produce dynamic web page content before the page is sent to the user's web browser. 
+    
+    - Node is not a programming language, and not a framework for web development, it is a runtime environment for JS.
+
+    - Node.js goal is unifying web application development around a single programming language. Before, you could only run your javascript inside a browser, with each browser having a JS engine like v8 for chrome, spidermonkey for firefox etc. A browser has a JS engine and a runtime environment that can execute the javascript code. Node.js is a runtime environment to execute this JS code outside of a browser, in combination with the v8 JS engine of google you obtain node.exe that can execute javascript entirely outside of a browser. So chrome and Node.exe have the same v8 JS engine but different runtime environments.
+
+    - Node gives you more possibilities than the browser, for example access the file system, the network, etc...
+
+2. How does Node.js work?
+
+    - Node.js request are executed asynchronously by default using an event queue, hence it is ideal for i/o intensive and real-time apps, not ideal for CPU intensive apps,

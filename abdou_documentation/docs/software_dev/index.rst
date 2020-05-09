@@ -16,6 +16,7 @@ Software engineering starts with the analysis of users requirements, and then de
    test
    Packaging&deploying/index
    software_eng_best_practices
+   version_control/index
    agile_scrum
 
 

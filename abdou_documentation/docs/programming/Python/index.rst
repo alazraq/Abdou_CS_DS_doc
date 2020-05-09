@@ -7,4 +7,5 @@ In the section, we will focus on the basics of python programming like writing a
 
    :maxdepth: 2
 
+   main
    args_parse

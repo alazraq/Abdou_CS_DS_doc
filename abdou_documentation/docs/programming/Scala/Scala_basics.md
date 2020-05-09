@@ -1,13 +1,16 @@
-# Scala
-## Useful resources:
+# Scala basics
+
+## Useful resources
+
 - Learning Scala by Jason Swartz: https://www.oreilly.com/library/view/learning-scala/9781449368814/ch09.html
 
-## Importing:
-- Importing many classes fro the same package
+## Importing
+
+- Importing many classes from the same package
 
 import com.typesafe.config.{Config, ConfigFactory}
 
-## Loggers:
+## Loggers
 
 - **Importation:**
 
@@ -30,6 +33,7 @@ Change level in logback.xml
         <appender-ref ref="CLOUD" />
         <appender-ref ref="STDOUT" />
     </root>
+
 ## Classes, Objects, Case classes, and Traits
 
 ### Classes

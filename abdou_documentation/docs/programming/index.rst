@@ -8,5 +8,5 @@ lorem ipsum
    :maxdepth: 2
 
    paradigms
-   Python/index.rst
-   Scala
+   Python/index
+   Scala/index
