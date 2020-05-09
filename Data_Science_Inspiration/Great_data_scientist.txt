@@ -1,1 +1,0 @@
-Solving various problems using data analytics and machine learning with R, Python, Spark, TensorFlow, Keras, Hive, Hadoop ecosystem, Tableau and the Elastic Stack

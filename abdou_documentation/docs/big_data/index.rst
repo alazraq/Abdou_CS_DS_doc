@@ -7,4 +7,4 @@ lorem ipsum
    :caption: Contents:
    :glob:
 
-   spark/index
+   Spark/index

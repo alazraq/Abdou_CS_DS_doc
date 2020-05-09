@@ -7,4 +7,4 @@ lorem ipsum
    :caption: Contents:
    :glob:
 
-   tableau/index
+   Tableau/index

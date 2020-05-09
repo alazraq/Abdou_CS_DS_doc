@@ -5,8 +5,7 @@ CI/CD makes it possible to automate building and deploying a project. Here we pr
 
 .. toctree::
 
-   :maxdepth: 2
-
    CI_CD_intro
    python_packaging
    scala_packaging
+   bitbucket_pipelines

@@ -1,3 +1,3 @@
 # Bitbucket pipelines
 
-TO DO: repo variables, pipline.yml files, instructions from bitbucket itself
+TO DO: repo variables, pipeline.yml files, instructions from bitbucket itself

@@ -4,7 +4,7 @@ Java
 lorem
 
 .. toctree::
-
-   :maxdepth: 2
+   :caption: Contents:
+   :glob:
 
    java_tips

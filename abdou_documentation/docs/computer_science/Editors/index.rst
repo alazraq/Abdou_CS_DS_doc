@@ -6,7 +6,7 @@ lorem ipsum
 .. toctree::
    :maxdepth: 2
 
-   idea
-   vs_code
+   idea_tips
+   vs_code_tips
 
    

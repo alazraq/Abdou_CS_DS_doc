@@ -26,3 +26,4 @@ The goal is to provide a centralized documentation for future reference if faced
    computer_science/index
    big_data/index
    data_vis/index
+   database/index

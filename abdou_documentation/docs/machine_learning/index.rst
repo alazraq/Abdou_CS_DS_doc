@@ -4,8 +4,8 @@ Machine Learning
 lorem ipsum
 
 .. toctree::
-
-   :maxdepth: 2
+   :caption: Contents:
+   :glob:
 
    Learning_Paradigms
    RL

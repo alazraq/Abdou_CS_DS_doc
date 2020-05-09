@@ -11,6 +11,7 @@ lorem ipsum
    OS_specific/index
    Editors/index
    Document_tips
+   languages_same_keyboard
    cs_recurring_concepts
 
    

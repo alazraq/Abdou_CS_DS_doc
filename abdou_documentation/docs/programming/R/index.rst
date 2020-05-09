@@ -5,6 +5,5 @@ lorem
 
 .. toctree::
 
-   :maxdepth: 2
 
    

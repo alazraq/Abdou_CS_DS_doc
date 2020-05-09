@@ -7,8 +7,6 @@ Software engineering starts with the analysis of users requirements, and then de
 
 .. toctree::
 
-   :maxdepth: 2
-
    analysis
    design
    build
