@@ -26,6 +26,7 @@ Given a version number MAJOR.MINOR.PATCH, increment the:
 * MINOR version when you add functionality in a backwards-compatible manner, and
 * PATCH version when you make backwards-compatible bug fixes.
 
+.. _folder_organization:
 
 Folder Organization
 *******************
