@@ -8,5 +8,5 @@ lorem ipsum
    :glob:
 
    Learning_Paradigms
-   RL
+   RL.rst
    predictive_modeling
