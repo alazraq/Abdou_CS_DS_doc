@@ -8,9 +8,9 @@ Software engineering starts with the analysis of users requirements, and then de
 .. toctree::
 
    analysis
-   design
+   design.rst
    build
-   document
+   documentation/index
    test
    Packaging&deploying/index
    software_eng_best_practices

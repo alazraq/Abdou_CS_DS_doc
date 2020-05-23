@@ -67,3 +67,14 @@ Approach 2: Q-Learning
 Deep Q-Learning:
 
 
+RL in Python
+------------
+
+Gym library
+~~~~~~~~~~~
+
+Gym is a toolkit for developing and comparing reinforcement learning algorithms.
+
+The gym library is a collection of test problems — environments — that you can use to work out your reinforcement learning algorithms. These environments have a shared interface, allowing you to write general algorithms.
+
+
