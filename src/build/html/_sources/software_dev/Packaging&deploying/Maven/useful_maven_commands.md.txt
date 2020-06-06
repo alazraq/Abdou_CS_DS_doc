@@ -1,0 +1,6 @@
+# Maven useful commands
+
+- Clean all tests that are compiled and stored in target: 
+    ```
+    maven clean
+    ```
