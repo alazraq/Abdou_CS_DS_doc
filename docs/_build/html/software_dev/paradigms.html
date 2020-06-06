@@ -1,0 +1,468 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Programming paradigms &mdash; Abdou Documentation  documentation</title>
+  
+
+  
+  
+  
+  
+
+  
+  <script type="text/javascript" src="../_static/js/modernizr.min.js"></script>
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+        <script type="text/javascript" src="../_static/jquery.js"></script>
+        <script type="text/javascript" src="../_static/underscore.js"></script>
+        <script type="text/javascript" src="../_static/doctools.js"></script>
+        <script type="text/javascript" src="../_static/language_data.js"></script>
+    
+    <script type="text/javascript" src="../_static/js/theme.js"></script>
+
+    
+
+  
+  <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Scala" href="Scala.html" />
+    <link rel="prev" title="Software Development" href="index.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="../index.html" class="icon icon-home"> Abdou Documentation
+          
+
+          
+            
+            <img src="../_static/logo_2.png" class="logo" alt="Logo"/>
+          
+          </a>
+
+          
+            
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption"><span class="caption-text">Contents:</span></p>
+<ul class="current">
+<li class="toctree-l1 current"><a class="reference internal" href="index.html">Software Development</a><ul class="current">
+<li class="toctree-l2 current"><a class="current reference internal" href="#">Programming paradigms</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#definition">Definition</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#list-of-programming-paradigms">List of programming paradigms</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#description-of-the-most-important-paradigms">Description of the most important paradigms:</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#declarative-vs-imperative">Declarative vs Imperative</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#important-declarative-programming-paradigms">Important declarative programming paradigms:</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#object-oriented-proramming">Object-oriented proramming:</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="Scala.html">Scala</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="Scala.html#useful-resources">Useful resources:</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Scala.html#importing">Importing:</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Scala.html#loggers">Loggers:</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Scala.html#classes-objects-case-classes-and-traits">Classes, Objects, Case classes, and Traits</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="Scala.html#classes">Classes</a></li>
+<li class="toctree-l4"><a class="reference internal" href="Scala.html#objects">Objects</a></li>
+<li class="toctree-l4"><a class="reference internal" href="Scala.html#apply-method">apply method</a></li>
+<li class="toctree-l4"><a class="reference internal" href="Scala.html#case-classes">Case Classes</a></li>
+<li class="toctree-l4"><a class="reference internal" href="Scala.html#inner-classes">Inner classes:</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="Scala.html#lazy-values">Lazy Values</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../data_science/index.html">Data Science</a><ul class="simple">
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../cloud/index.html">Cloud</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../cloud/cloud_batch_info.html">Cloud Batch Info</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../cloud/cloud_batch_info.html#tools">Tools:</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../cloud/cloud_batch_info.html#concepts">Concepts:</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../cloud/cloud_batch_info.html#websites">Websites:</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../web_and_mobile_dev/index.html">Mobile Development</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../web_and_mobile_dev/dart_tutorial.html">Dart tutorial</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../web_and_mobile_dev/dart_tutorial.html#language-tour">Language tour</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../web_and_mobile_dev/dart_tutorial.html#basic-dart-program">Basic Dart Program</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../web_and_mobile_dev/dart_tutorial.html#important-concepts">Important concepts</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../web_and_mobile_dev/dart_tutorial.html#variables">Variables</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../web_and_mobile_dev/dart_tutorial.html#useful-tools">Useful tools:</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../web_and_mobile_dev/flutter_getting_started.html">Flutter getting started:</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../web_and_mobile_dev/flutter_getting_started.html#what-is-flutter">What is Flutter?</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../web_and_mobile_dev/flutter_getting_started.html#what-is-dart">What is Dart?</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../web_and_mobile_dev/flutter_getting_started.html#dart">Dart</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../web_and_mobile_dev/flutter_getting_started.html#compiling-dart-code">Compiling Dart code:</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../web_and_mobile_dev/flutter_getting_started.html#st-app-using-flutter">1st app using flutter:</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../web_and_mobile_dev/flutter_getting_started.html#run-in-release-mode">Run in release mode:</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../personal_dev/index.html">Personal Development</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../personal_dev/1_LMI_concept.html">LMI Sales: Lesson 1: The LMI Concept</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../personal_dev/1_LMI_concept.html#success">♕ Success</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../personal_dev/1_LMI_concept.html#motivation">☆ Motivation</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../personal_dev/1_LMI_concept.html#definition">Definition</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../personal_dev/1_LMI_concept.html#types">Types</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../personal_dev/1_LMI_concept.html#example-to-illustrate-the-differente-types-of-motivation-the-donkey-pulling-a-cart">Example to illustrate the differente types of motivation: The donkey pulling a cart</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../personal_dev/1_LMI_concept.html#attitude-change-the-power-of-habits">Attitude change: the power of habits</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../personal_dev/1_LMI_concept.html#the-power-of-habits">The Power of habits</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../personal_dev/1_LMI_concept.html#sparsed-repetitions-to-success">Sparsed repetitions to success</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../personal_dev/1_LMI_concept.html#conclusion-you-can-get-to-success-by-manipulating-your-spaced-repetitions">Conclusion: you can get to success by manipulating your spaced repetitions</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">Abdou Documentation</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content style-external-links">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../index.html">Docs</a> &raquo;</li>
+        
+          <li><a href="index.html">Software Development</a> &raquo;</li>
+        
+      <li>Programming paradigms</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="../_sources/software_dev/paradigms.md.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="programming-paradigms">
+<h1>Programming paradigms<a class="headerlink" href="#programming-paradigms" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="definition">
+<h2>Definition<a class="headerlink" href="#definition" title="Permalink to this headline">¶</a></h2>
+<p>A <strong>programming paradigm</strong> is a style of building the structure and elements of computer programs.</p>
+</div>
+<div class="section" id="list-of-programming-paradigms">
+<h2>List of programming paradigms<a class="headerlink" href="#list-of-programming-paradigms" title="Permalink to this headline">¶</a></h2>
+<p>See https://en.wikipedia.org/wiki/Programming_paradigm and https://en.wikipedia.org/wiki/Comparison_of_multi-paradigm_programming_languages for further info</p>
+<ul class="simple">
+<li><p>Action</p></li>
+<li><p>Agent-oriented</p></li>
+<li><p>Array-oriented</p></li>
+<li><p>Automata-based</p></li>
+<li><p>Concurrent computing</p>
+<ul>
+<li><p>Relativistic programming</p></li>
+</ul>
+</li>
+<li><p>Data-driven</p></li>
+<li><p>Declarative (contrast: Imperative)</p>
+<ul>
+<li><p>Functional</p>
+<ul>
+<li><p>Functional logic</p></li>
+<li><p>Purely functional</p></li>
+</ul>
+</li>
+<li><p>Logic</p>
+<ul>
+<li><p>Abductive logic</p></li>
+<li><p>Answer set</p></li>
+<li><p>Concurrent logic</p></li>
+<li><p>Functional logic</p></li>
+<li><p>Inductive logic</p></li>
+</ul>
+</li>
+<li><p>Constraint</p>
+<ul>
+<li><p>Constraint logic</p>
+<ul>
+<li><p>Concurrent constraint logic</p></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p>Dataflow</p>
+<ul>
+<li><p>Flow-based</p></li>
+<li><p>Reactive</p></li>
+</ul>
+</li>
+<li><p>Ontology</p></li>
+</ul>
+</li>
+<li><p>Differentiable</p></li>
+<li><p>Dynamic/scripting</p></li>
+<li><p>Event-driven</p></li>
+<li><p>Function-level (contrast: Value-level)</p>
+<ul>
+<li><p>Point-free style</p>
+<ul>
+<li><p>Concatenative</p></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p>Generic</p></li>
+<li><p>Imperative (contrast: Declarative)</p>
+<ul>
+<li><p>Procedural</p></li>
+<li><p>Object-oriented</p>
+<ul>
+<li><p>Polymorphic</p></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p>Intentional</p></li>
+<li><p>Language-oriented</p>
+<ul>
+<li><p>Domain-specific</p></li>
+</ul>
+</li>
+<li><p>Literate</p></li>
+<li><p>Natural-language programming</p></li>
+<li><p>Metaprogramming</p>
+<ul>
+<li><p>Automatic</p>
+<ul>
+<li><p>Inductive programming</p></li>
+</ul>
+</li>
+<li><p>Reflective</p>
+<ul>
+<li><p>Attribute-oriented</p></li>
+</ul>
+</li>
+<li><p>Macro</p></li>
+<li><p>Template</p></li>
+</ul>
+</li>
+<li><p>Non-structured (contrast: Structured)</p>
+<ul>
+<li><p>Array</p></li>
+</ul>
+</li>
+<li><p>Nondeterministic</p></li>
+<li><p>Parallel computing</p>
+<ul>
+<li><p>Process-oriented</p></li>
+</ul>
+</li>
+<li><p>Probabilistic</p></li>
+<li><p>Quantum</p></li>
+<li><p>Set-theoretic</p></li>
+<li><p>Stack-based</p></li>
+<li><p>Structured (contrast: Non-structured)</p>
+<ul>
+<li><p>Block-structured</p>
+<ul>
+<li><p>Structured concurrency</p></li>
+</ul>
+</li>
+<li><p>Object-oriented</p>
+<ul>
+<li><p>Actor-based</p></li>
+<li><p>Class-based</p></li>
+<li><p>Concurrent</p></li>
+<li><p>Prototype-based</p></li>
+<li><p>By separation of concerns:</p>
+<ul>
+<li><p>Aspect-oriented</p></li>
+<li><p>Role-oriented</p></li>
+<li><p>Subject-oriented</p></li>
+</ul>
+</li>
+<li><p>Recursive</p></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p>Symbolic</p></li>
+<li><p>Value-level (contrast: Function-level)</p></li>
+</ul>
+</div>
+<div class="section" id="description-of-the-most-important-paradigms">
+<h2>Description of the most important paradigms:<a class="headerlink" href="#description-of-the-most-important-paradigms" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="declarative-vs-imperative">
+<h3>Declarative vs Imperative<a class="headerlink" href="#declarative-vs-imperative" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li><p><strong>Imperative programming:</strong> programming paradigm that uses statements (ex: assignment, call, loops) that change a program’s state (remembered information from receding events or user interactions). An imperative program consists of commands for the computer to perform just like the imperative mood in languages. Imperative programming focuses on describing how a program operates.</p></li>
+<li><p><strong>Declarative programming:</strong> programming paradigm that expresses the logic of a computation without describing its control flow. Many languages that apply this style attempt to minimize or eliminate side effects (change of state) by describing what the program must accomplish in terms of the problem domain (expressions and declarations), rather than describe how to accomplish it as a sequence of statements (the how being left up to the language’s implementation). This is in contrast with imperative programming, which implements algorithms in explicit steps. Declarative programming may greatly simplify writing parallel programs. Common declarative languages include those of database query languages (e.g., SQL), regular expressions, logic programming and functional programming.</p></li>
+</ul>
+</div>
+<div class="section" id="important-declarative-programming-paradigms">
+<h3>Important declarative programming paradigms:<a class="headerlink" href="#important-declarative-programming-paradigms" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li><p><strong>Functional Programming</strong>
+A declarative programming paradigm that treats computation as the evaluation of mathematical functions and avoids changing-state and mutable data. Programming is done with expressions or declarations instead of statements. In functional code, the output value of a function depends only on its arguments, and not on the global program state unlke imperative programming. (In FunProg, same input to fct -&gt; same result) Eliminating side effects, that is, changes in state that do not depend on the function inputs, can make understanding a program easier, which is one of the key motivations for the development of functional programming. Functional programming has its origins in lambda calculus, and many functional programming languages can be viewed as elaborations on the lambda calculus.</p></li>
+<li><p><strong>Logic Programming</strong></p>
+<ul>
+<li><p>Logic programming is a declarative programming paradigm largely based on formal logic.</p></li>
+<li><p>Any program written in a logic programming language is a set of sentences in logical form, expressing facts and rules about some problem domain.</p>
+<ul>
+<li><p>Rules: “H :- B1, …, Bn.” meaning H if B1 and … and Bn. H is called the head of the rule and B1, …, Bn is called the body.</p></li>
+<li><p>Facts: “H.” rules that have no body.</p></li>
+</ul>
+</li>
+<li><p>Major logic programming language families include Prolog, answer set programming (ASP) and Datalog.</p></li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="section" id="object-oriented-proramming">
+<h3>Object-oriented proramming:<a class="headerlink" href="#object-oriented-proramming" title="Permalink to this headline">¶</a></h3>
+<p>Object-oriented programming (OOP) is a programming paradigm based on the concept of “objects”, which can contain data, in the form of fields (often known as attributes or properties), and code, in the form of procedures (often known as methods). A feature of objects is an object’s procedures that can access and often modify the data fields of the object with which they are associated (objects have a notion of “this” or “self”). In OOP, computer programs are designed by making them out of objects that interact with one another.[1][2] OOP languages are diverse, but the most popular ones are class-based, meaning that objects are instances of classes, which also determine their types. Many of the most widely used programming languages (such as C++, Java, Python, etc.) are multi-paradigm and they support object-oriented programming to a greater or lesser degree</p>
+</div>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="Scala.html" class="btn btn-neutral float-right" title="Scala" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="index.html" class="btn btn-neutral float-left" title="Software Development" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2019, VTL LLC
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>

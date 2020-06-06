@@ -1,0 +1,558 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Scala &mdash; Abdou Documentation  documentation</title>
+  
+
+  
+  
+  
+  
+
+  
+  <script type="text/javascript" src="../_static/js/modernizr.min.js"></script>
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+        <script type="text/javascript" src="../_static/jquery.js"></script>
+        <script type="text/javascript" src="../_static/underscore.js"></script>
+        <script type="text/javascript" src="../_static/doctools.js"></script>
+        <script type="text/javascript" src="../_static/language_data.js"></script>
+    
+    <script type="text/javascript" src="../_static/js/theme.js"></script>
+
+    
+
+  
+  <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Data Science - General" href="../data_science/index.html" />
+    <link rel="prev" title="Argument Parsing" href="Python/args_parse.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="../index.html" class="icon icon-home"> Abdou Documentation
+          
+
+          
+            
+            <img src="../_static/logo_2.png" class="logo" alt="Logo"/>
+          
+          </a>
+
+          
+            
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption"><span class="caption-text">Contents:</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../software_dev/index.html">Software Development</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../software_dev/analysis.html">Analysis of users requirements</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../software_dev/analysis.html#user-stories">User stories</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../software_dev/design.html">Designing Software</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../software_dev/design.html#separating-configuration-files-from-code">Separating configuration files from code</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../software_dev/design.html#section-2">Section 2</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../software_dev/build.html">Building Software</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../software_dev/build.html#section-1">Section 1</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../software_dev/build.html#section-2">Section 2</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../software_dev/document.html">Documenting Software</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../software_dev/document.html#section-1">Section 1</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../software_dev/document.html#section-2">Section 2</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../software_dev/test.html">Testing Software</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../software_dev/test.html#section-1">Section 1</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../software_dev/test.html#section-2">Section 2</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../software_dev/Packaging&amp;deploying/index.html">Packaging and deploying Software</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../software_dev/Packaging&amp;deploying/Docker/index.html">Docker</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../software_dev/Packaging&amp;deploying/Docker/docker_tutorial.html">Docker Tutorial:</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../software_dev/Packaging&amp;deploying/Docker/docker_astuces.html">Docker tips</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../software_dev/Packaging&amp;deploying/Kubernetes/index.html">Kubernetes</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../software_dev/Packaging&amp;deploying/Kubernetes/kubernetes_basics_tutorial.html">Kubernetes Basics tutorial</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../software_dev/Packaging&amp;deploying/Kubernetes/kubernetes_links.html">Kubernetes:</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../software_dev/software_eng_best_practices.html">Software Engineering Best Practices</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../software_dev/software_eng_best_practices.html#semantic-versioning">Semantic Versioning</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../software_dev/agile_scrum.html">Agile methodology</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../software_dev/agile_scrum.html#section-1">Section 1</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../software_dev/agile_scrum.html#section-2">Section 2</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1 current"><a class="reference internal" href="index.html">Programming Languages</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="paradigms.html">Programming paradigms</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="paradigms.html#definition">Definition</a></li>
+<li class="toctree-l3"><a class="reference internal" href="paradigms.html#list-of-programming-paradigms">List of programming paradigms</a></li>
+<li class="toctree-l3"><a class="reference internal" href="paradigms.html#description-of-the-most-important-paradigms">Description of the most important paradigms:</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="paradigms.html#declarative-vs-imperative">Declarative vs Imperative</a></li>
+<li class="toctree-l4"><a class="reference internal" href="paradigms.html#important-declarative-programming-paradigms">Important declarative programming paradigms:</a></li>
+<li class="toctree-l4"><a class="reference internal" href="paradigms.html#object-oriented-proramming">Object-oriented proramming:</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="Python/index.html">Python programming basics</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="Python/args_parse.html">Argument Parsing</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="Python/args_parse.html#complete-example">Complete example</a></li>
+<li class="toctree-l4"><a class="reference internal" href="Python/args_parse.html#command-line-usage">Command line usage</a></li>
+<li class="toctree-l4"><a class="reference internal" href="Python/args_parse.html#useful-optional-arguments">Useful optional arguments</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">Scala</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#useful-resources">Useful resources:</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#importing">Importing:</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#loggers">Loggers:</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#classes-objects-case-classes-and-traits">Classes, Objects, Case classes, and Traits</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#classes">Classes</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#objects">Objects</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#apply-method">apply method</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#case-classes">Case Classes</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#inner-classes">Inner classes:</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#lazy-values">Lazy Values</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../data_science/index.html">Data Science - General</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../data_science/jupyter_astuces.html">Jupyter notebooks astuces</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../data_science/nbconvert.html">Converting jupyter notebook into pdf, html or latex</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../data_science/nbconvert.html#modifications-to-make-to-the-notebook-before-generating-the-pdf">Modifications to make to the notebook before generating the pdf</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../data_science/nbconvert.html#command-line-for-conversion">Command line for conversion</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../data_science/nbconvert.html#issues">Issues</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../machine_learning/index.html">Machine Learning</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../machine_learning/Learning_Paradigms.html">Learning Paradigms:</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../machine_learning/RL.html">Reinforcement Learning</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../machine_learning/RL.html#goal">Goal</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../machine_learning/RL.html#what-is-special-about-rl">What is special about RL?</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../machine_learning/RL.html#concepts">Concepts:</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../machine_learning/predictive_modeling.html">Predictive Modeling (19 questions)</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../stats_math/index.html">Mathematical foundations, probability and statistics</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../stats_math/stats.html">Statistics for Data Science</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../cloud/index.html">Cloud Computing</a><ul class="simple">
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../web_and_mobile_dev/index.html">Web and Mobile Development</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../web_and_mobile_dev/Web/index.html">Web Development</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../web_and_mobile_dev/Web/web_recurring_concepts.html">Recurring concepts in web development</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../web_and_mobile_dev/Web/curl_http.html">Curl command</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../web_and_mobile_dev/Web/curl_http.html#what-is-it">What is it?</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../web_and_mobile_dev/Web/curl_http.html#curl-for-http-scripting">Curl for HTTP scripting</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../web_and_mobile_dev/Web/curl_http.html#example">Example</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../web_and_mobile_dev/Mobile/index.html">Mobile Development</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../web_and_mobile_dev/Mobile/dart_tutorial.html">Dart tutorial</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../web_and_mobile_dev/Mobile/dart_tutorial.html#language-tour">Language tour</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../web_and_mobile_dev/Mobile/dart_tutorial.html#useful-tools">Useful tools:</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../web_and_mobile_dev/Mobile/flutter_getting_started.html">Flutter getting started:</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../web_and_mobile_dev/Mobile/flutter_getting_started.html#what-is-flutter">What is Flutter?</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../web_and_mobile_dev/Mobile/flutter_getting_started.html#what-is-dart">What is Dart?</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../web_and_mobile_dev/Mobile/flutter_getting_started.html#st-app-using-flutter">1st app using flutter:</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../web_and_mobile_dev/Mobile/flutter_getting_started.html#run-in-release-mode">Run in release mode:</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../computer_science/index.html">Computer Science - General</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../computer_science/computer_architechture.html">Computer Architecture</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../computer_science/computer_networks.html">Computer Networks</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../computer_science/OS_specific/index.html">OS specific tips</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../computer_science/OS_specific/windows/index.html">Windows tips</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../computer_science/OS_specific/windows/command_line_aliases.html">Setting up command line aliases:</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../computer_science/OS_specific/windows/Windows_useful_terminal_commands.html">Windows useful terminal commands</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../computer_science/OS_specific/windows/windows_shortcuts.html">Windows shortcuts:</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../computer_science/OS_specific/windows/Linux_subsystem.html">Windows Ubuntu Linux Subsystem</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../computer_science/OS_specific/mac/index.html">Mac tips</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../computer_science/OS_specific/mac/command_line_aliases.html">Command Line Aliases</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../computer_science/OS_specific/mac/useful_mac_commands.html">Mac useful terminal commands and shortcuts:</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../computer_science/Editors/index.html">IDE and code editors tips</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../computer_science/Editors/vs_code.html">Visual Studio Code tips</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../computer_science/Document_tips.html">Document format conversion</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../computer_science/cs_recurring_concepts.html">Recurring concepts in computer science</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../big_data/index.html">Big Data</a><ul class="simple">
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../data_vis/index.html">Data Visualization</a><ul class="simple">
+</ul>
+</li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">Abdou Documentation</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content style-external-links">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../index.html">Docs</a> &raquo;</li>
+        
+          <li><a href="index.html">Programming Languages</a> &raquo;</li>
+        
+      <li>Scala</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="../_sources/programming/Scala.md.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="scala">
+<h1>Scala<a class="headerlink" href="#scala" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="useful-resources">
+<h2>Useful resources:<a class="headerlink" href="#useful-resources" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li><p>Learning Scala by Jason Swartz: https://www.oreilly.com/library/view/learning-scala/9781449368814/ch09.html</p></li>
+</ul>
+</div>
+<div class="section" id="importing">
+<h2>Importing:<a class="headerlink" href="#importing" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li><p>Importing many classes fro the same package</p></li>
+</ul>
+<p>import com.typesafe.config.{Config, ConfigFactory}</p>
+</div>
+<div class="section" id="loggers">
+<h2>Loggers:<a class="headerlink" href="#loggers" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li><p><strong>Importation:</strong></p></li>
+</ul>
+<blockquote>
+<div><p>import org.slf4j.{Logger, LoggerFactory}</p>
+</div></blockquote>
+<p>where Logger is an interface and LoggerFactory is a utility class producing Loggers for various logging APIs and has a method getLogger</p>
+<ul class="simple">
+<li><p><strong>Definition:</strong> define inside your object or class:</p></li>
+</ul>
+<blockquote>
+<div><p>val logger: Logger = LoggerFactory.getLogger(classOf[Main])</p>
+</div></blockquote>
+<ul class="simple">
+<li><p><strong>Usage:</strong></p></li>
+</ul>
+<blockquote>
+<div><p>logger.info(“Setting up instance…”)</p>
+</div></blockquote>
+<ul class="simple">
+<li><p><strong>Changing logging level: info, debug…</strong></p></li>
+</ul>
+<p>Change level in logback.xml
+<root level="debug">
+<appender-ref ref="CLOUD" />
+<appender-ref ref="STDOUT" />
+</root></p>
+</div>
+<div class="section" id="classes-objects-case-classes-and-traits">
+<h2>Classes, Objects, Case classes, and Traits<a class="headerlink" href="#classes-objects-case-classes-and-traits" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="classes">
+<h3>Classes<a class="headerlink" href="#classes" title="Permalink to this headline">¶</a></h3>
+<p>Classes are the core building block of object-oriented languages, a combination of data structures with functions (“methods”). A class defined with values and variables can be instantiated as many times as needed, each one initialized with its own input data. With inheritance classes can extend other classes, creating a hierarchy of subclasses and superclasses.</p>
+</div>
+<div class="section" id="objects">
+<h3>Objects<a class="headerlink" href="#objects" title="Permalink to this headline">¶</a></h3>
+<p>An object is a type of class that can have no more than one instance, known in object-oriented design as a singleton. Instead of creating an instance with a new keyword, just access the object directly by name.</p>
+<p>When is it instanciated?  An object gets automatically instantiated the first time it is accessed in a running JVM, which also means that until it is accessed the first time it won’t get instantiated.</p>
+<ul class="simple">
+<li><p>Syntax object <identifier> [extends <identifier>] [{ fields, methods, and classes }]</p></li>
+<li><p>Ex:</p></li>
+</ul>
+<blockquote>
+<div><p>object Hello { println(“in Hello”); def hi = “hi” }
+println(Hello.hi) // initialization occurs when accessed for first time
+println(Hello.hi) // no initialization, same object is used</p>
+</div></blockquote>
+<div class="section" id="the-factory-pattern-and-companion-objects">
+<h4>The “factory pattern” and companion objects:<a class="headerlink" href="#the-factory-pattern-and-companion-objects" title="Permalink to this headline">¶</a></h4>
+<ul class="simple">
+<li><p><strong>Companion object of a class:</strong>
+A companion object is an object that shares the same name as a class and is defined together in the same file as the class. Having a companion object for a class is a common pattern in Scala, but there is also a feature from which they can benefit. Companion objects and classes are considered a single unit in terms of access controls, so they can access each other’s private and protected fields and methods.</p></li>
+<li><p><strong>Factory pattern:</strong>
+Using the apply method (see below) in a companion object to generate instances of the class instead of writing new.</p></li>
+<li><p>Ex:</p></li>
+</ul>
+<p>scala&gt; :paste
+// Entering paste mode (ctrl-D to finish)</p>
+<p>class Multiplier(val x: Int) { def product(y: Int) = x * y }</p>
+<p>object Multiplier { def apply(x: Int) = new Multiplier(x) }</p>
+<p>// Exiting paste mode, now interpreting.</p>
+<p>defined class Multiplier
+defined object Multiplier</p>
+<p>scala&gt; val tripler = Multiplier(3)
+tripler: Multiplier = Multiplier&#64;5af28b27</p>
+<p>scala&gt; val result = tripler.product(13)
+result: Int = 39</p>
+</div>
+</div>
+<div class="section" id="apply-method">
+<h3>apply method<a class="headerlink" href="#apply-method" title="Permalink to this headline">¶</a></h3>
+<p>Methods named “apply,” sometimes referred to as a default method or an injector method, can be invoked without the method name. The apply method is essentially a shortcut, providing functionality that can be triggered using parentheses but without a method name.</p>
+<ul class="simple">
+<li><p>Example:</p></li>
+</ul>
+<p>scala&gt; class Multiplier(factor: Int) {
+|   def apply(input: Int) = input * factor
+| }
+defined class Multiplier</p>
+<p>scala&gt; val tripleMe = new Multiplier(3)
+tripleMe: Multiplier = Multiplier&#64;339cde4b</p>
+<p>scala&gt; val tripled = tripleMe.apply(10)
+tripled: Int = 30</p>
+<p>scala&gt; val tripled2 = tripleMe(10)
+tripled2: Int = 30</p>
+</div>
+<div class="section" id="case-classes">
+<h3>Case Classes<a class="headerlink" href="#case-classes" title="Permalink to this headline">¶</a></h3>
+<p>A case class is an instantiable class that includes several automatically generated methods. It also includes an automatically generated companion object with its own automatically generated methods. All of these methods in the class and in the companion object are based on the class’s parameter list, with the parameters being used to formulate methods like an equals implemention that iteratively compares every field, a toString method that cleanly prints out the class name and all of its field values, an apply factory method to instanciate the case class, a copy method and unapply methos which extracts the instance into a tuple of its fields, making it possible to use case class instances for pattern matching.</p>
+<ul>
+<li><p>When to use a case class?</p>
+<p>Use case classes for data transfer objects, the kind of classes that are mainly used for storing data, but don’t use for inheritance.</p>
+</li>
+<li><p>Syntax:
+case class <identifier> ([var] <identifier>: <type>[, … ])
+[extends <identifier>(<input parameters>)]
+[{ fields and methods }]</p></li>
+<li><p>Example:
+scala&gt; case class Character(name: String, isThief: Boolean)
+defined class Character</p></li>
+</ul>
+<p>scala&gt; val h = Character(“Hadrian”, true) // use of apply factory method of companion object<br />h: Character = Character(Hadrian,true) // clean toString zhen printing the instance</p>
+<p>// Example of use of unapply method
+scala&gt; h match {
+|   case Character(x, true) =&gt; s”$x is a thief”<br />|   case Character(x, false) =&gt; s”$x is not a thief”
+| }
+res1: String = Hadrian is a thief</p>
+</div>
+<div class="section" id="inner-classes">
+<h3>Inner classes:<a class="headerlink" href="#inner-classes" title="Permalink to this headline">¶</a></h3>
+<p>Classes defined inside classes or objects:</p>
+<p>Example:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>// Definition
+class Graph {
+class Node {
+    var connectedNodes: List[Node] = Nil
+    def connectTo(node: Node): Unit = {
+    if (!connectedNodes.exists(node.equals)) {
+        connectedNodes = node :: connectedNodes
+    }
+    }
+}
+var nodes: List[Node] = Nil
+def newNode: Node = {
+    val res = new Node
+    nodes = res :: nodes
+    res
+}
+}
+
+// Usage
+val graph1: Graph = new Graph
+val node1: graph1.Node = graph1.newNode
+val node2: graph1.Node = graph1.newNode
+val node3: graph1.Node = graph1.newNode
+node1.connectTo(node2)
+node3.connectTo(node1)
+</pre></div>
+</div>
+</div>
+</div>
+<div class="section" id="lazy-values">
+<h2>Lazy Values<a class="headerlink" href="#lazy-values" title="Permalink to this headline">¶</a></h2>
+<p>Lazy values, however, are only created the first time they are instantiated. You can create a lazy value by adding the keyword lazy before the val keyword when defining a value.</p>
+<ul class="simple">
+<li><p>Example:</p></li>
+</ul>
+<p>scala&gt; class RandomPoint {
+|   val x = { println(“creating x”); util.Random.nextInt }
+|   lazy val y = { println(“now y”); util.Random.nextInt }
+| }
+defined class RandomPoint</p>
+<p>scala&gt; val p = new RandomPoint()
+creating x
+p: RandomPoint = RandomPoint&#64;6c225adb</p>
+<p>scala&gt; println(s”Location is ${p.x}, ${p.y}”)
+now y
+Location is 2019268581, -806862774</p>
+<p>scala&gt; println(s”Location is ${p.x}, ${p.y}”)
+Location is 2019268581, -806862774</p>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="../data_science/index.html" class="btn btn-neutral float-right" title="Data Science - General" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="Python/args_parse.html" class="btn btn-neutral float-left" title="Argument Parsing" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2019, VTL LLC
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>

@@ -298,9 +298,6 @@ utils/regression_test.js
 
 node_modules/
 
-# Sphinx build folder
-_build/
-
 # Compiled source #
 ###################
 *.com
