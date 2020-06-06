@@ -1,0 +1,507 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Learning Paradigms: &mdash; Abdou Documentation  documentation</title>
+  
+
+  
+  
+  
+  
+
+  
+  <script type="text/javascript" src="../_static/js/modernizr.min.js"></script>
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+        <script type="text/javascript" src="../_static/jquery.js"></script>
+        <script type="text/javascript" src="../_static/underscore.js"></script>
+        <script type="text/javascript" src="../_static/doctools.js"></script>
+        <script type="text/javascript" src="../_static/language_data.js"></script>
+        <script async="async" type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    
+    <script type="text/javascript" src="../_static/js/theme.js"></script>
+
+    
+
+  
+  <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Reinforcement Learning (RL)" href="RL.html" />
+    <link rel="prev" title="Machine Learning" href="index.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="../index.html" class="icon icon-home"> Abdou Documentation
+          
+
+          
+            
+            <img src="../_static/logo_2.png" class="logo" alt="Logo"/>
+          
+          </a>
+
+          
+            
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption"><span class="caption-text">Contents:</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../software_dev/index.html">Software Development</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../software_dev/analysis.html">Analysis of users requirements</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../software_dev/analysis.html#user-stories">User stories</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../software_dev/design.html">Designing Software</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../software_dev/design.html#separating-configuration-files-from-code">Separating configuration files from code</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../software_dev/design.html#packages-naming-conventions">Packages naming conventions</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../software_dev/design.html#providing-requirement-files">Providing requirement files</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../software_dev/build.html">Building Software</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../software_dev/documentation/index.html">Documenting Software</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../software_dev/documentation/rst_syntax.html">RST syntax tips</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../software_dev/documentation/markdown_syntax.html">Markdown syntax tips</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../software_dev/documentation/rst_vs_md.html">Markdown vs reStructuredText for writing documentation</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../software_dev/documentation/sphinx.html">Sphinx: the standard Python documentation system</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../software_dev/test.html">Testing Software</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../software_dev/test.html#section-1">Section 1</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../software_dev/test.html#section-2">Section 2</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../software_dev/Packaging&amp;deploying/index.html">Packaging and deploying Software</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../software_dev/Packaging&amp;deploying/CI_CD/index.html">Continuous Integration and continuous delivery (CI/CD)</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../software_dev/Packaging&amp;deploying/CI_CD/CI_CD_intro.html">CI/CD Introduction</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../software_dev/Packaging&amp;deploying/CI_CD/python_packaging.html">Python project packaging</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../software_dev/Packaging&amp;deploying/CI_CD/scala_packaging.html">Scala project packaging</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../software_dev/Packaging&amp;deploying/CI_CD/bitbucket_pipelines.html">Bitbucket pipelines</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../software_dev/Packaging&amp;deploying/Docker/index.html">Docker</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../software_dev/Packaging&amp;deploying/Docker/docker_tutorial.html">Docker Tutorial:</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../software_dev/Packaging&amp;deploying/Docker/docker_astuces.html">Docker tips</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../software_dev/Packaging&amp;deploying/Kubernetes/index.html">Kubernetes</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../software_dev/Packaging&amp;deploying/Kubernetes/kubernetes_basics_tutorial.html">Kubernetes Basics tutorial</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../software_dev/Packaging&amp;deploying/Kubernetes/kubernetes_links.html">Kubernetes:</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../software_dev/Packaging&amp;deploying/Kubernetes/kubernetes_advanced_concepts.html">More advanced K8s concepts</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../software_dev/Packaging&amp;deploying/Maven/index.html">Maven</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../software_dev/Packaging&amp;deploying/Maven/useful_maven_commands.html">Maven useful commands</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../software_dev/Packaging&amp;deploying/Gradle/index.html">Gradle</a><ul class="simple">
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../software_dev/Packaging&amp;deploying/ML_CI_CD/index.html">Machine Learning Models Continuous Integration and Delivery (CI/CD)</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../software_dev/Packaging&amp;deploying/ML_CI_CD/Kubeflow_tutorial.html">Kubeflow Tutorial</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../software_dev/software_eng_best_practices.html">Software Engineering Best Practices</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../software_dev/software_eng_best_practices.html#semantic-versioning">Semantic Versioning</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../software_dev/software_eng_best_practices.html#folder-organization">Folder Organization</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../software_dev/software_eng_best_practices.html#documenting-a-service">Documenting a service</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../software_dev/software_eng_best_practices.html#writing-code-documentation">Writing Code Documentation</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../software_dev/software_eng_best_practices.html#readmes">READMEs</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../software_dev/version_control/index.html">Version control</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../software_dev/version_control/git_commands.html">Useful git commands:</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../software_dev/version_control/gitflow.html">What is Gitflow:</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../software_dev/version_control/gitflow.html#gitflow-ideas">Gitflow ideas:</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../software_dev/version_control/gitkraken.html">Gitkraken</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../software_dev/version_control/gitkraken.html#what-is-gitkraken">What is Gitkraken</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../software_dev/version_control/gitkraken.html#gitkraken-tips">GitKraken tips:</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../software_dev/agile_scrum.html">Agile methodology</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../software_dev/agile_scrum.html#section-1">Section 1</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../software_dev/agile_scrum.html#section-2">Section 2</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../programming/index.html">Programming Languages</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../programming/paradigms.html">Programming paradigms</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../programming/paradigms.html#definition">Definition</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../programming/paradigms.html#list-of-programming-paradigms">List of programming paradigms</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../programming/paradigms.html#description-of-the-most-important-paradigms">Description of the most important paradigms:</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../programming/paradigms.html#declarative-vs-imperative">Declarative vs Imperative</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../programming/paradigms.html#important-declarative-programming-paradigms">Important declarative programming paradigms:</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../programming/paradigms.html#object-oriented-proramming">Object-oriented proramming:</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../programming/Python/index.html">Python programming basics</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../programming/Python/main.html">Python main function</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../programming/Python/main.html#python-interpreter-functionning">Python interpreter functionning</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../programming/Python/main.html#setting-up-special-variables">Setting up special variables</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../programming/Python/main.html#executing-the-module-s-code-sequentially">Executing the Module’s Code Sequentially</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../programming/Python/main.html#example">Example</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../programming/Python/main.html#why-does-it-work-this-way">Why Does It Work This Way?</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../programming/Python/args_parse.html">Argument Parsing</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../programming/Python/args_parse.html#complete-example">Complete example</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../programming/Python/args_parse.html#command-line-usage">Command line usage</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../programming/Python/args_parse.html#useful-optional-arguments">Useful optional arguments</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../programming/Python/variable_args.html">Variable number of arguments: *args and **kwargs</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../programming/Python/variable_args.html#args"><code class="docutils literal notranslate"><span class="pre">*args</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="../programming/Python/variable_args.html#kwargs"><code class="docutils literal notranslate"><span class="pre">**kwargs</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="../programming/Python/variable_args.html#using-args-and-kwargs-to-call-a-function">Using <code class="docutils literal notranslate"><span class="pre">*args</span></code> and <code class="docutils literal notranslate"><span class="pre">**kwargs</span></code> to call a function</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../programming/Python/variable_args.html#combining-args-and-kwargs">Combining <code class="docutils literal notranslate"><span class="pre">*args</span></code> and <code class="docutils literal notranslate"><span class="pre">**kwargs</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../programming/Scala/index.html">Scala</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../programming/Scala/Scala_basics.html">Scala basics</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../programming/Scala/Scala_basics.html#useful-resources">Useful resources</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../programming/Scala/Scala_basics.html#importing">Importing</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../programming/Scala/Scala_basics.html#loggers">Loggers</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../programming/Scala/Scala_basics.html#classes-objects-case-classes-and-traits">Classes, Objects, Case classes, and Traits</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../programming/Scala/Scala_basics.html#lazy-values">Lazy Values</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../programming/Scala/Scala_tips.html">Scala tips</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../programming/Scala/Scala_tests.html">Scala tests</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../programming/Java/index.html">Java</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../programming/Java/java_tips.html">Programming in Java tips:</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../programming/R/index.html">R programming language</a><ul class="simple">
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../data_science/index.html">Data Science - General</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../data_science/jupyter_astuces.html">Jupyter notebooks astuces</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../data_science/nbconvert.html">Converting jupyter notebook into pdf, html or latex</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../data_science/nbconvert.html#modifications-to-make-to-the-notebook-before-generating-the-pdf">Modifications to make to the notebook before generating the pdf</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../data_science/nbconvert.html#command-line-for-conversion">Command line for conversion</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../data_science/nbconvert.html#issues">Issues</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1 current"><a class="reference internal" href="index.html">Machine Learning</a><ul class="current">
+<li class="toctree-l2 current"><a class="current reference internal" href="#">Learning Paradigms:</a></li>
+<li class="toctree-l2"><a class="reference internal" href="RL.html">Reinforcement Learning (RL)</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="RL.html#goal">Goal</a></li>
+<li class="toctree-l3"><a class="reference internal" href="RL.html#what-is-special-about-rl">What is special about RL?</a></li>
+<li class="toctree-l3"><a class="reference internal" href="RL.html#concepts-elements-of-rl">Concepts - Elements of RL:</a></li>
+<li class="toctree-l3"><a class="reference internal" href="RL.html#how-to-achieve-this-goal">How to achieve this Goal?</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="RL.html#approach-1-value-iteration-and-policy-iteration">Approach 1: Value Iteration and Policy Iteration</a></li>
+<li class="toctree-l4"><a class="reference internal" href="RL.html#approach-2-q-learning">Approach 2: Q-Learning</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="RL.html#rl-in-python">RL in Python</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="RL.html#gym-library">Gym library</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="predictive_modeling.html">Predictive Modeling (19 questions)</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../stats_math/index.html">Mathematical foundations, probability and statistics</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../stats_math/stats.html">Statistics for Data Science</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../cloud/index.html">Cloud Computing</a><ul class="simple">
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../web_and_mobile_dev/index.html">Web and Mobile Development</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../web_and_mobile_dev/Web/index.html">Web Development</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../web_and_mobile_dev/Web/web_recurring_concepts.html">Recurring concepts in web development</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../web_and_mobile_dev/Web/curl_http.html">Curl command</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../web_and_mobile_dev/Web/curl_http.html#what-is-it">What is it?</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../web_and_mobile_dev/Web/curl_http.html#curl-for-http-scripting">Curl for HTTP scripting</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../web_and_mobile_dev/Web/curl_http.html#example">Example</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../web_and_mobile_dev/Web/JS_tutorial.html">JavaScript Tutorial &amp; examples:</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../web_and_mobile_dev/Web/JS_tutorial.html#javascript-batch-info">Javascript batch info</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../web_and_mobile_dev/Web/JS_tutorial.html#differences-with-java">Differences with Java</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../web_and_mobile_dev/Web/node.js_introduction.html">Node.js introduction</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../web_and_mobile_dev/Web/Flask/flask_tutorial.html">Flask tutorial</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../web_and_mobile_dev/Web/Flask/flask_tutorial.html#what-is-flask">What is Flask?</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../web_and_mobile_dev/Web/Flask/flask_tutorial.html#installing-flask">Installing Flask:</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../web_and_mobile_dev/Web/Flask/flask_tutorial.html#flask-hello-world">Flask Hello world:</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../web_and_mobile_dev/Mobile/index.html">Mobile Development</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../web_and_mobile_dev/Mobile/dart_tutorial.html">Dart tutorial</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../web_and_mobile_dev/Mobile/dart_tutorial.html#language-tour">Language tour</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../web_and_mobile_dev/Mobile/dart_tutorial.html#useful-tools">Useful tools:</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../web_and_mobile_dev/Mobile/flutter_getting_started.html">Flutter getting started:</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../web_and_mobile_dev/Mobile/flutter_getting_started.html#what-is-flutter">What is Flutter?</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../web_and_mobile_dev/Mobile/flutter_getting_started.html#what-is-dart">What is Dart?</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../web_and_mobile_dev/Mobile/flutter_getting_started.html#st-app-using-flutter">1st app using flutter:</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../web_and_mobile_dev/Mobile/flutter_getting_started.html#run-in-release-mode">Run in release mode:</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../computer_science/index.html">Computer Science - General</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../computer_science/computer_architechture.html">Computer Architecture</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../computer_science/computer_networks.html">Computer Networks</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../computer_science/OS_specific/index.html">OS specific tips</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../computer_science/OS_specific/windows/index.html">Windows tips</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../computer_science/OS_specific/windows/command_line_aliases.html">Setting up command line aliases:</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../computer_science/OS_specific/windows/Windows_useful_terminal_commands.html">Windows useful terminal commands</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../computer_science/OS_specific/windows/windows_shortcuts.html">Windows shortcuts:</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../computer_science/OS_specific/windows/Linux_subsystem.html">Windows Ubuntu Linux Subsystem</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../computer_science/OS_specific/mac/index.html">Mac tips</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../computer_science/OS_specific/mac/command_line_aliases.html">Command Line Aliases</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../computer_science/OS_specific/mac/useful_mac_commands.html">Mac useful terminal commands and shortcuts:</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../computer_science/Editors/index.html">IDE and code editors tips</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../computer_science/Editors/idea_tips.html">Intellij Idea tips</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../computer_science/Editors/idea_tips.html#search">Search</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../computer_science/Editors/idea_tips.html#theme">Theme</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../computer_science/Editors/vs_code_tips.html">Visual Studio Code tips</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../computer_science/Document_tips.html">Document format conversion</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../computer_science/Document_tips.html#universal-tool-for-document-conversion-pandoc">Universal tool for document conversion: Pandoc</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../computer_science/Document_tips.html#what-is-it">What is it?</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../computer_science/Document_tips.html#installing-pandoc">Installing Pandoc</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../computer_science/Document_tips.html#using-pandoc">Using Pandoc</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../computer_science/Document_tips.html#extracting-from-pdf">Extracting from pdf</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../computer_science/languages_same_keyboard.html">Use different languages on same keyboard</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../computer_science/cs_recurring_concepts.html">Recurring concepts in computer science</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../big_data/index.html">Big Data</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../big_data/Spark/index.html">Spark</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../big_data/Spark/spark_tips.html">Spark tips</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../data_vis/index.html">Data Visualization</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../data_vis/Tableau/index.html">Tableau</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../data_vis/Tableau/tableau_tips.html">Tableau tips</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../database/index.html">Database Design and Development</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../database/PostgresSQL_tutorials/index.html">PostgresSQL tutorials</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../database/PostgresSQL_tutorials/postgesSQL_importing_data.html">PostgresSQL importing data tutorial:</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">Abdou Documentation</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content style-external-links">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../index.html">Docs</a> &raquo;</li>
+        
+          <li><a href="index.html">Machine Learning</a> &raquo;</li>
+        
+      <li>Learning Paradigms:</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="../_sources/machine_learning/Learning_Paradigms.md.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="learning-paradigms">
+<h1>Learning Paradigms:<a class="headerlink" href="#learning-paradigms" title="Permalink to this headline">¶</a></h1>
+<ol class="simple">
+<li><p><strong>Supervised:</strong> we have labelled data D = {(x_i, y_i) for i in 1 to N}</p>
+<ul class="simple">
+<li><p>Regression: y_i in R</p></li>
+<li><p>Classification: y_i in 1 to K (Binary classification when y_i in {-1,+1})</p></li>
+<li><p>Structured Prediction: y_i is a vector</p></li>
+</ul>
+</li>
+<li><p><strong>Unsupervized:</strong> we have unlabelled data D = {x_i for i in 1 to N}</p></li>
+<li><p><strong>Semi-supervized:</strong> we have a small number N1 of labelled data and the rest is unlabelled.
+Ex: Image recognition with few labelled images and a lot of unlabelled images.</p></li>
+<li><p><strong>Online learning:</strong> Examples coming as a stream of data not with a fixed number D = {(x_1, y_1), (x_2, y_2), …}</p></li>
+<li><p><strong>Active learning:</strong> We have unlabelled data but we can query aour oracle function y_i = c*(.) at some cost</p></li>
+<li><p><strong>Imitation learning:</strong> data consists of a stream of state action pairs D = {(s_1, a_1), (s_2, a_2), …}
+Ex: collect examples of what an ideal robot would do on a particular state.</p></li>
+<li><p><strong>Reiforcement learning:</strong> data consists of a stream of tuples (state, action, reward) D = {(s_1, a_1, r_1), (s_2, a_2, r_2), …}.
+Ex: robot interacting with an environment, initially in a state, taking an action and getting a reward and transition to another state.</p></li>
+</ol>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="RL.html" class="btn btn-neutral float-right" title="Reinforcement Learning (RL)" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="index.html" class="btn btn-neutral float-left" title="Machine Learning" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2019, VTL LLC
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>
