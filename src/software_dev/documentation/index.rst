@@ -1,7 +1,8 @@
 Documenting Software
 ####################
 
-Documenting software is in my opinion one of the most important phases of software development. To me, a software that is not documented does not exisist. Period.
+Documenting software is in my opinion one of the most important phases of software development. 
+To me, a software that is not documented does not exist. Period.
 
 Here we explore the most important markup languages commonly used for writing documentation and 
 
@@ -10,9 +11,10 @@ For smaller projects it is acceptable to have the doc of each service in its cor
 
 .. toctree::
 
+   sphinx
    rst_syntax
    markdown_syntax
    rst_vs_md
-   sphinx
+   
 
 

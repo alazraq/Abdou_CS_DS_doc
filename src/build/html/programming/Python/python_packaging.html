@@ -97,10 +97,17 @@
 </li>
 <li class="toctree-l2"><a class="reference internal" href="../../software_dev/build.html">Building Software</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../software_dev/documentation/index.html">Documenting Software</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../software_dev/documentation/sphinx.html">Sphinx: Documentation generator</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../software_dev/documentation/sphinx.html#what-is-sphinx">What is Sphinx?</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../software_dev/documentation/sphinx.html#installation">Installation</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../software_dev/documentation/sphinx.html#jumping-right-into-it-sphinx-quickstart">Jumping right into it: sphinx-quickstart</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../software_dev/documentation/sphinx.html#command-for-doc-generation">Command for doc generation</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../software_dev/documentation/sphinx.html#linking-your-doc-with-github-pages-for-github-users">Linking your doc with Github pages (for Github users)</a></li>
+</ul>
+</li>
 <li class="toctree-l3"><a class="reference internal" href="../../software_dev/documentation/rst_syntax.html">RST syntax tips</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../software_dev/documentation/markdown_syntax.html">Markdown syntax tips</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../software_dev/documentation/rst_vs_md.html">Markdown vs reStructuredText for writing documentation</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../../software_dev/documentation/sphinx.html">Sphinx: the standard Python documentation system</a></li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="../../software_dev/test.html">Testing Software</a><ul>
@@ -437,7 +444,7 @@
 <li><p>You want to distribute your python libraries to other developers</p></li>
 <li><p>You want to package a python application in a production setting</p></li>
 </ol>
-<p>Both cases are covered in this tutorial.</p>
+<p>Both cases are covered in this tutorial. The last section is about <code class="docutils literal notranslate"><span class="pre">pip</span></code>, the Python package manager.</p>
 <div class="section" id="use-case-1-packaging-python-libraries">
 <h2>Use case 1: Packaging Python libraries<a class="headerlink" href="#use-case-1-packaging-python-libraries" title="Permalink to this headline">¶</a></h2>
 <div class="section" id="option-1-python-standalone-modules-py">
@@ -469,6 +476,29 @@
 </div>
 <div class="section" id="use-case-2-packaging-python-applications">
 <h2>Use case 2: Packaging Python applications<a class="headerlink" href="#use-case-2-packaging-python-applications" title="Permalink to this headline">¶</a></h2>
+</div>
+<div class="section" id="python-package-manager-pip">
+<h2>Python package manager: pip<a class="headerlink" href="#python-package-manager-pip" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="what-is-pip">
+<h3>What is pip?<a class="headerlink" href="#what-is-pip" title="Permalink to this headline">¶</a></h3>
+<p>Pip is the most used Python package manager used to install and manage software packages written in Python.
+Many of these packages can be found in the Python Package Index (PyPI).
+You will use pip to install packages on the virtual environments you create for your various Pyton projects.</p>
+</div>
+<div class="section" id="pip-cli-most-useful-commands">
+<h3>pip CLI most useful commands?<a class="headerlink" href="#pip-cli-most-useful-commands" title="Permalink to this headline">¶</a></h3>
+<ul>
+<li><p>Installing a package:</p>
+<p>pip install some-package-name</p>
+</li>
+<li><p>Removing a package:</p>
+<p>pip uninstall some-package-name</p>
+</li>
+<li><p>Installing packages from a requirements file:</p>
+<p>pip install -r requirements.txt</p>
+</li>
+</ul>
+</div>
 </div>
 </div>
 

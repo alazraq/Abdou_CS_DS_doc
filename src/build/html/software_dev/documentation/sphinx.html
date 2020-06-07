@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>Sphinx: the standard Python documentation system &mdash; Abdou Documentation  documentation</title>
+  <title>Sphinx: Documentation generator &mdash; Abdou Documentation  documentation</title>
   
 
   
@@ -36,8 +36,8 @@
   <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
-    <link rel="next" title="Testing Software" href="../test.html" />
-    <link rel="prev" title="Markdown vs reStructuredText for writing documentation" href="rst_vs_md.html" /> 
+    <link rel="next" title="RST syntax tips" href="rst_syntax.html" />
+    <link rel="prev" title="Documenting Software" href="index.html" /> 
 </head>
 
 <body class="wy-body-for-nav">
@@ -99,10 +99,17 @@
 </li>
 <li class="toctree-l2"><a class="reference internal" href="../build.html">Building Software</a></li>
 <li class="toctree-l2 current"><a class="reference internal" href="index.html">Documenting Software</a><ul class="current">
+<li class="toctree-l3 current"><a class="current reference internal" href="#">Sphinx: Documentation generator</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#what-is-sphinx">What is Sphinx?</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#installation">Installation</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#jumping-right-into-it-sphinx-quickstart">Jumping right into it: sphinx-quickstart</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#command-for-doc-generation">Command for doc generation</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#linking-your-doc-with-github-pages-for-github-users">Linking your doc with Github pages (for Github users)</a></li>
+</ul>
+</li>
 <li class="toctree-l3"><a class="reference internal" href="rst_syntax.html">RST syntax tips</a></li>
 <li class="toctree-l3"><a class="reference internal" href="markdown_syntax.html">Markdown syntax tips</a></li>
 <li class="toctree-l3"><a class="reference internal" href="rst_vs_md.html">Markdown vs reStructuredText for writing documentation</a></li>
-<li class="toctree-l3 current"><a class="current reference internal" href="#">Sphinx: the standard Python documentation system</a></li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="../test.html">Testing Software</a><ul>
@@ -416,13 +423,13 @@
         
           <li><a href="index.html">Documenting Software</a> &raquo;</li>
         
-      <li>Sphinx: the standard Python documentation system</li>
+      <li>Sphinx: Documentation generator</li>
     
     
       <li class="wy-breadcrumbs-aside">
         
             
-            <a href="../../_sources/software_dev/documentation/sphinx.md.txt" rel="nofollow"> View page source</a>
+            <a href="../../_sources/software_dev/documentation/sphinx.rst.txt" rel="nofollow"> View page source</a>
           
         
       </li>
@@ -435,9 +442,82 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
             
-  <div class="section" id="sphinx-the-standard-python-documentation-system">
-<h1>Sphinx: the standard Python documentation system<a class="headerlink" href="#sphinx-the-standard-python-documentation-system" title="Permalink to this headline">¶</a></h1>
-<p>Guetting started with Sphinx: https://www.sphinx-doc.org/en/master/usage/quickstart.html</p>
+  <div class="section" id="sphinx-documentation-generator">
+<h1>Sphinx: Documentation generator<a class="headerlink" href="#sphinx-documentation-generator" title="Permalink to this headline">¶</a></h1>
+<p>I like Sphinx very much, the proof being that the documentation you are
+reading right now (Abdou_doc) was generated using Sphinx.</p>
+<div class="section" id="what-is-sphinx">
+<h2>What is Sphinx?<a class="headerlink" href="#what-is-sphinx" title="Permalink to this headline">¶</a></h2>
+<p>Sphinx is a documentation generator or a tool that translates a set of
+plain text source files into various output formats, the most famous
+output formats being html, pdf, … That is, if you have a directory
+containing a bunch of reStructuredText (rst) or Markdown (md) documents,
+Sphinx can generate a series of HTML files, a PDF file (via LaTeX), and
+much more.</p>
+<p>In the next articles, you can read more about <a class="reference internal" href="rst_syntax.html#rst-syntax"><span class="std std-ref">RST syntax tips</span></a>, <a class="reference internal" href="markdown_syntax.html#md-syntax"><span class="std std-ref">Markdown syntax tips</span></a> and <a class="reference internal" href="rst_vs_md.html#rst-vs-md"><span class="std std-ref">Markdown vs reStructuredText for writing documentation</span></a>.</p>
+</div>
+<div class="section" id="installation">
+<h2>Installation<a class="headerlink" href="#installation" title="Permalink to this headline">¶</a></h2>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ pip install -U sphinx
+</pre></div>
+</div>
+<p>If this doesn’t work for you, all installation options can be found
+<a class="reference external" href="https://www.sphinx-doc.org/en/master/usage/installation.html">here</a>.</p>
+</div>
+<div class="section" id="jumping-right-into-it-sphinx-quickstart">
+<h2>Jumping right into it: sphinx-quickstart<a class="headerlink" href="#jumping-right-into-it-sphinx-quickstart" title="Permalink to this headline">¶</a></h2>
+<p>Sphinx offers an easy quickstart:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ mkdir my_doc
+$ cd my_doc
+# Sphinx quickstart command, select yes for splitting build and source, specify project name, developer&#39;s name and project release version
+$ sphinx-quickstart
+$ sphinx
+</pre></div>
+</div>
+<p>This will generate inside my_doc folder the following structure:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">build</span><span class="o">/</span>
+<span class="n">source</span><span class="o">/</span>
+    <span class="n">index</span><span class="o">.</span><span class="n">rst</span>
+<span class="n">make</span><span class="o">.</span><span class="n">bat</span> <span class="c1"># If using Windows</span>
+<span class="n">Makefile</span>
+</pre></div>
+</div>
+<ul class="simple">
+<li><p>The source folder is where you put your rst or md files used to
+generate the doc.</p></li>
+<li><p>The build folder is where the generated html, latex etc go.</p></li>
+<li><p>The Makefile (or make.bat batch file) contains all the instructions
+for the make command that you will use to generate the doc.</p></li>
+</ul>
+</div>
+<div class="section" id="command-for-doc-generation">
+<h2>Command for doc generation<a class="headerlink" href="#command-for-doc-generation" title="Permalink to this headline">¶</a></h2>
+<p>HTML doc for example can be generated using the following command:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">make</span> <span class="n">html</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="linking-your-doc-with-github-pages-for-github-users">
+<h2>Linking your doc with Github pages (for Github users)<a class="headerlink" href="#linking-your-doc-with-github-pages-for-github-users" title="Permalink to this headline">¶</a></h2>
+<ol class="arabic simple">
+<li><p>Create a <code class="docutils literal notranslate"><span class="pre">docs</span></code> folder alongside your doc root folder (my_doc or
+whichever folder contains the Makefile) and put both in a folder you
+will upload to github repo</p></li>
+<li><p>Add a file named <code class="docutils literal notranslate"><span class="pre">.nojekyll</span></code> to the docs folder to turn off Jekyll</p></li>
+<li><p>Add my_doc/build/ to your .gitignore</p></li>
+<li><p>Add the following to the Makefile that sphinx generated for you under
+docsrc/Makefile
+<code class="docutils literal notranslate"><span class="pre">github:</span>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160; <span class="pre">&#64;make</span> <span class="pre">html</span>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160; <span class="pre">&#64;cp</span> <span class="pre">-a</span> <span class="pre">_build/html/.</span> <span class="pre">../docs</span></code>
+or the following to make.bat if you are on Windows:
+<code class="docutils literal notranslate"><span class="pre">if</span> <span class="pre">&quot;%1&quot;</span> <span class="pre">==</span> <span class="pre">&quot;github&quot;</span> <span class="pre">(</span>&#160;&#160;&#160;&#160; <span class="pre">%SPHINXBUILD%</span> <span class="pre">-M</span> <span class="pre">html</span> <span class="pre">%SOURCEDIR%</span> <span class="pre">%BUILDDIR%</span> <span class="pre">%SPHINXOPTS%</span>&#160;&#160;&#160;&#160; <span class="pre">robocopy</span> <span class="pre">%BUILDDIR%/html</span> <span class="pre">../docs</span> <span class="pre">/E</span> <span class="pre">&gt;</span> <span class="pre">nul</span>&#160;&#160;&#160;&#160; <span class="pre">echo.Generated</span> <span class="pre">files</span> <span class="pre">copied</span> <span class="pre">to</span> <span class="pre">../docs</span>&#160;&#160;&#160;&#160; <span class="pre">goto</span> <span class="pre">end</span>&#160;&#160;&#160;&#160; <span class="pre">)</span></code>
+After the following line: <code class="docutils literal notranslate"><span class="pre">if</span> <span class="pre">&quot;%1&quot;</span> <span class="pre">==</span> <span class="pre">&quot;&quot;</span> <span class="pre">goto</span> <span class="pre">help</span></code></p></li>
+<li><p>Then you can run <code class="docutils literal notranslate"><span class="pre">make</span> <span class="pre">github</span></code> from the my_doc directory to
+generate the docs and move them to where GitHub wants them (the docs
+folder)</p></li>
+<li><p>On your github repo settings, activate github pages and select
+<code class="docutils literal notranslate"><span class="pre">master</span> <span class="pre">branch</span> <span class="pre">/docs</span> <span class="pre">folder</span></code> as the source</p></li>
+</ol>
+</div>
 </div>
 
 
@@ -448,10 +528,10 @@
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="../test.html" class="btn btn-neutral float-right" title="Testing Software" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+        <a href="rst_syntax.html" class="btn btn-neutral float-right" title="RST syntax tips" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
       
       
-        <a href="rst_vs_md.html" class="btn btn-neutral float-left" title="Markdown vs reStructuredText for writing documentation" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+        <a href="index.html" class="btn btn-neutral float-left" title="Documenting Software" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
       
     </div>
   
