@@ -7,7 +7,7 @@ There are two cases why you want to package your code:
 1. You want to distribute your python libraries to other developers
 2. You want to package a python application in a production setting
 
-Both cases are covered in this tutorial.
+Both cases are covered in this tutorial. The last section is about ``pip``, the Python package manager.
 
 ## Use case 1: Packaging Python libraries
 
@@ -40,6 +40,31 @@ https://packaging.python.org/tutorials/packaging-projects/
 Very good step by step tutorial can be found [here](https://medium.com/@d.tresoldi5/deploying-a-pypi-server-in-minutes-with-gcp-17c6b0b92e79)
 
 ## Use case 2: Packaging Python applications
+
+
+## Python package manager: pip
+
+### What is pip?
+
+Pip is the most used Python package manager used to install and manage software packages written in Python. 
+Many of these packages can be found in the Python Package Index (PyPI). 
+You will use pip to install packages on the virtual environments you create for your various Pyton projects.
+
+### pip CLI most useful commands?
+
+- Installing a package:
+
+    pip install some-package-name
+
+- Removing a package:
+
+    pip uninstall some-package-name
+
+- Installing packages from a requirements file:
+
+    pip install -r requirements.txt
+
+
 
 
 

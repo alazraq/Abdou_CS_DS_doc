@@ -10,9 +10,10 @@ For smaller projects it is acceptable to have the doc of each service in its cor
 
 .. toctree::
 
+   sphinx
    rst_syntax
    markdown_syntax
    rst_vs_md
-   sphinx
+   
 
 
