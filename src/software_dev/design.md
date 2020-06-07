@@ -33,3 +33,46 @@ pip freeze > requirements.txt
 ```
 pip install -r requirements.txt
 ```
+
+## Creating a virtual environment for your project
+
+In this section, I will show you how to use virtualenv and virtualenvwrapper for creating virtual environments. 
+
+We use Virtual Environment so we can test python code in encapsulated environments and to also avoid filling our base Python installation with a bunch of libraries we might use for only one project.
+
+### What are virtualenv and virtualenvwrapper?
+
+- ``virtualenv`` is a tool to create isolated Python environments.
+- ``virtualenvwrapper`` provides a set of commands which makes working with virtual environments much more pleasant (like the workon command) and places all your virtual environments in one place.
+
+### Installing
+
+```
+$ pip install virtualenv
+$ pip install virtualenvwrapper # or virtualenvwrapper-win if on Windows
+$ export WORKON_HOME=~/Envs # or %USERPROFILE%\Envs if on Windows
+$ source /usr/local/bin/virtualenvwrapper.sh
+```
+
+### Usage
+
+- Creating a virtual environment:
+    ```
+    mkvirtualenv abdou_venv
+    ```
+- Activating the virtual environment:
+    ```
+    workon abdou_venv
+    ```
+- Installing some packages on the virtual environment: (from a requirements.txt file for example)
+    ```
+    pip install -r requirements.txt
+    ```
+- Deactivating the virtual environment:
+    ```
+    deactivate
+    ````
+- Deleting the virtual environment:
+    ```
+    rmvirtualenv venv
+    ```
