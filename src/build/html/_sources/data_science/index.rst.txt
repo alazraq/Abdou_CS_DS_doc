@@ -8,7 +8,5 @@ lorem ipsum
 
    jupyter_astuces
    nbconvert
-   Markdown_syntax
-   rst_syntax
 
    
