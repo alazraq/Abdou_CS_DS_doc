@@ -11,6 +11,7 @@ Software engineering starts with the analysis of users requirements, and then de
    design.rst
    build
    documentation/index
+   Serialization/index
    test
    Packaging&deploying/index
    software_eng_best_practices
