@@ -4,17 +4,13 @@ Documenting Software
 Documenting software is in my opinion one of the most important phases of software development. 
 To me, a software that is not documented does not exist. Period.
 
-Here we explore the most important markup languages commonly used for writing documentation and 
+All independent pieces of software should be documented. Typically, a single service (generally speaking, a single repository) inside a bigger project will have two documentations:
 
-The Process of deploying the general documentation and code documentations should be automized using pipelines and should trigger upon commiting to a release branch. 
-For smaller projects it is acceptable to have the doc of each service in its corresponding Readme.md but as the system gets bigger and more compicated, the documentation should be in its own repo to allow some parts of the doc to reference others, and should probably be written in rst which offers much more features than md, and built using Sphinx. Sphinx is a tool to create beautiful documentation, in fact, this doc you are currently reading is built using `Read the Docs Sphinx Theme <https://github.com/readthedocs/sphinx_rtd_theme>`__.
+- **General documentation:** High-level overview of what that service does and how it is implemented. This should contain an overview of the service, instructions for CI/CD and deployments, and tutorials if some are needed. This should probably be contained in its own repo if the project is big enough and published to a website dedicated to the doc, or in the readme.rst (prefer .rst to .md) for smaller projects.
+
+- **Code documentation:** Low-level code documentation for classes, packages, functions, variabes, etc. This documentation should be placed inside a specific folder (for example /docs folder) in the service’s repository. It should be generated automatically using pipelines and be made available online as well with proper authentication using GCP app engine for example.
 
 .. toctree::
 
-   sphinx
-   rst_syntax
-   markdown_syntax
-   rst_vs_md
-   
-
-
+   general_doc/index
+   code_doc/index

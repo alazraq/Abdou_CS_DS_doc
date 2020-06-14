@@ -20,6 +20,12 @@ A quick reference of rst syntax can be found
 
       pip freeze > requirements.txt
 
+- Including a python file (code):
+
+::
+
+   .. literalinclude:: example.py
+
 -  Referencing other sections (in other rst files from the same
    project):
 
