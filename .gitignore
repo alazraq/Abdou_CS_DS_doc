@@ -1,4 +1,6 @@
- 
+ src/build/doctrees/
+ src/build/html/_sources/
+
 ## Core latex/pdflatex auxiliary files:
 *.aux
 *.lof
