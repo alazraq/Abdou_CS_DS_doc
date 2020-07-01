@@ -2,10 +2,10 @@
 
 
 ## What is Kubernetes
-Kubernetes (abbreviated K8s) is a cluster orchestration system designed by Google.
+Kubernetes (abbreviated k8s) is a **cluster orchestration** platform for automating deployment, scaling, and operations of application containers across clusters of hosts. It was initially designed by Google and now maintained by the Cloud Native Computing Foundation.
 - Kubernetes coordinates a highly available cluster of computers that are connected to work as a single unit.
 - The goal is to be able to deploy **containerized** applications to a cluster without tying them specifically to individual machines.
-- Kubernetes automates the distribution and scheduling of application containers across a cluster in a more efficient way.
+- Kubernetes automates the distribution, scaling and scheduling of application containers across a cluster in a more efficient way.
 
 ## Goals of this tutorial
 Learn to:

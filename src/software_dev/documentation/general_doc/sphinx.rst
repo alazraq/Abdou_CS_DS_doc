@@ -74,9 +74,24 @@ Linking your doc with Github pages (for Github users)
 3. Add my_doc/build/ to your .gitignore
 4. Add the following to the Makefile that sphinx generated for you under
    docsrc/Makefile
-   ``github:         @make html         @cp -a _build/html/. ../docs``
+   
+   ::
+
+      github:         
+            @make html         
+            @cp -a _build/html/. ../docs
+
    or the following to make.bat if you are on Windows:
-   ``if "%1" == "github" (     %SPHINXBUILD% -M html %SOURCEDIR% %BUILDDIR% %SPHINXOPTS%     robocopy %BUILDDIR%/html ../docs /E > nul     echo.Generated files copied to ../docs     goto end     )``
+   
+   ::
+
+      if "%1" == "github" (
+      %SPHINXBUILD% -M html %SOURCEDIR% %BUILDDIR% %SPHINXOPTS%
+      robocopy %BUILDDIR%/html ../docs /E > nul
+      echo.Generated files copied to ../docs
+      goto end
+      )
+
    After the following line: ``if "%1" == "" goto help``
 5. Then you can run ``make github`` from the my_doc directory to
    generate the docs and move them to where GitHub wants them (the docs

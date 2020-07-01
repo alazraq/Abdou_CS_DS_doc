@@ -1,5 +1,26 @@
 # Dart tutorial
 
+
+## What is Dart?
+
+Dart is a client-optimized programming language for fast apps on multiple platforms. It is developed by Google and is used to build mobile, desktop, backend and web applications. Dart is an object-oriented, class defined, garbage-collected language using a C-style syntax that transcompiles optionally into JavaScript.
+
+## Compiling Dart code
+
+There are three main ways to run Dart code:
+
+1. Compiled as JavaScript:
+
+To run in mainstream web browsers, Dart relies on a source-to-source compiler to JavaScript. When running Dart code in a web browser the code is precompiled into JavaScript using the dart2js compiler. Compiled as JavaScript, Dart code is compatible with all major browsers with no need for browsers to adopt Dart. 
+
+2. Stand-alone:
+
+The Dart software development kit (SDK) ships with a stand-alone Dart VM, allowing Dart code to run in a command-line interface environment.
+
+3. Ahead-of-time compiled:
+
+Dart code can be AOT-compiled into machine code (native instruction sets). Apps built with Flutter, a mobile app SDK built with Dart, are deployed to app stores as AOT-compiled Dart code.
+
 ## Language tour
 
 ### Basic Dart Program
@@ -24,7 +45,7 @@ main() {
 
 > **Object vs dynamic:** never use dynamic: Two types in Dart permit all values: Object and dynamic. However, they convey different things. If you simply want to state that you allow all objects, use Object, as you would in Java or C#. Using dynamic sends a more complex signal. It may mean that Dart’s type system isn’t sophisticated enough to represent the set of types that are allowed
 
-3. Private variables in dart: Unlike Java, Dart doesn’t have the keywords public, protected, and private. If an identifier starts with an underscore (_), it’s private to its library.
+3. Private variables in dart: Unlike Java, Dart doesn’t have the keywords public, protected, and private. If an identifier starts with an underscore (_), it is private to its library.
 
 ### Variables
 

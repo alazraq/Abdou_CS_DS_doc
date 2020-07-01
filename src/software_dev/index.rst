@@ -1,7 +1,7 @@
 Software Development
 ####################
 
-Software development is the process of specifying the requirements, designing, programming, building, documenting, testing, and bug fixing involved in creating and maintaining applications, frameworks, or other software components. 
+Software development is the process of planning, designing, documenting, implementing (programming), testing, building, and deploying involved in creating and maintaining applications, libraries, frameworks, or other software components. 
 
 Software engineering starts with the analysis of users requirements, and then designing, building, testing and deploying a software application which will satisfy those requirements.
 
