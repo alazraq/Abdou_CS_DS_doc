@@ -37,7 +37,7 @@
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
     <link rel="next" title="Designing Software" href="design.html" />
-    <link rel="prev" title="Software Development" href="index.html" /> 
+    <link rel="prev" title="Software development in a nutshell" href="Software_development_in_a_nutshell.html" /> 
 </head>
 
 <body class="wy-body-for-nav">
@@ -87,6 +87,7 @@
               <p class="caption"><span class="caption-text">Contents:</span></p>
 <ul class="current">
 <li class="toctree-l1 current"><a class="reference internal" href="index.html">Software Development</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="Software_development_in_a_nutshell.html">Software development in a nutshell</a></li>
 <li class="toctree-l2 current"><a class="current reference internal" href="#">Analysis of users requirements</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="#user-stories">User stories</a></li>
 </ul>
@@ -131,7 +132,7 @@
 <li class="toctree-l3"><a class="reference internal" href="test.html#section-2">Section 2</a></li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="Packaging&amp;deploying/index.html">Packaging and deploying Software</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="Packaging&amp;deploying/index.html">Packaging, Containerization and deployment of Software</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="Packaging&amp;deploying/CI_CD/index.html">Continuous Integration and continuous delivery (CI/CD)</a><ul>
 <li class="toctree-l4"><a class="reference internal" href="Packaging&amp;deploying/CI_CD/CI_CD_intro.html">CI/CD Introduction</a></li>
 <li class="toctree-l4"><a class="reference internal" href="Packaging&amp;deploying/CI_CD/python_packaging.html">Python project packaging</a></li>
@@ -146,7 +147,7 @@
 </li>
 <li class="toctree-l3"><a class="reference internal" href="Packaging&amp;deploying/Kubernetes/index.html">Kubernetes</a><ul>
 <li class="toctree-l4"><a class="reference internal" href="Packaging&amp;deploying/Kubernetes/kubernetes_basics_tutorial.html">Kubernetes Basics tutorial</a></li>
-<li class="toctree-l4"><a class="reference internal" href="Packaging&amp;deploying/Kubernetes/kubernetes_links.html">Kubernetes:</a></li>
+<li class="toctree-l4"><a class="reference internal" href="Packaging&amp;deploying/Kubernetes/kubernetes_links.html">Kubernetes tutorials links</a></li>
 <li class="toctree-l4"><a class="reference internal" href="Packaging&amp;deploying/Kubernetes/kubernetes_advanced_concepts.html">More advanced K8s concepts</a></li>
 </ul>
 </li>
@@ -187,6 +188,10 @@
 <li class="toctree-l2"><a class="reference internal" href="agile_scrum.html">Agile methodology</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="agile_scrum.html#section-1">Section 1</a></li>
 <li class="toctree-l3"><a class="reference internal" href="agile_scrum.html#section-2">Section 2</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="software_components.html">Software components</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="software_components.html#library-vs-framework">Library vs Framework</a></li>
 </ul>
 </li>
 </ul>
@@ -327,14 +332,17 @@
 </li>
 <li class="toctree-l2"><a class="reference internal" href="../web_and_mobile_dev/Mobile/index.html">Mobile Development</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="../web_and_mobile_dev/Mobile/dart_tutorial.html">Dart tutorial</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../web_and_mobile_dev/Mobile/dart_tutorial.html#what-is-dart">What is Dart?</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../web_and_mobile_dev/Mobile/dart_tutorial.html#compiling-dart-code">Compiling Dart code</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../web_and_mobile_dev/Mobile/dart_tutorial.html#language-tour">Language tour</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../web_and_mobile_dev/Mobile/dart_tutorial.html#useful-tools">Useful tools:</a></li>
 </ul>
 </li>
 <li class="toctree-l3"><a class="reference internal" href="../web_and_mobile_dev/Mobile/flutter_getting_started.html">Flutter getting started:</a><ul>
 <li class="toctree-l4"><a class="reference internal" href="../web_and_mobile_dev/Mobile/flutter_getting_started.html#what-is-flutter">What is Flutter?</a></li>
-<li class="toctree-l4"><a class="reference internal" href="../web_and_mobile_dev/Mobile/flutter_getting_started.html#what-is-dart">What is Dart?</a></li>
-<li class="toctree-l4"><a class="reference internal" href="../web_and_mobile_dev/Mobile/flutter_getting_started.html#st-app-using-flutter">1st app using flutter:</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../web_and_mobile_dev/Mobile/flutter_getting_started.html#quick-start-on-vs-code">Quick start on VS code</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../web_and_mobile_dev/Mobile/flutter_getting_started.html#useful-commands">Useful commands</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../web_and_mobile_dev/Mobile/flutter_getting_started.html#st-app-using-flutter-tutorials-by-google">1st app using flutter tutorials by google</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../web_and_mobile_dev/Mobile/flutter_getting_started.html#run-in-release-mode">Run in release mode:</a></li>
 </ul>
 </li>
@@ -472,11 +480,13 @@
             
   <div class="section" id="analysis-of-users-requirements">
 <h1>Analysis of users requirements<a class="headerlink" href="#analysis-of-users-requirements" title="Permalink to this headline">¶</a></h1>
-<p>Requirements Analysis is the process of defining the expectations of the users for an application that is to be built or modified. It is at the intersection of Business and Software Development since the requirement modeling should be high level to make sense to stakeholders, but should also be simple, specific and clear enough for the developers to be able to implement them.</p>
-<p>The requirements analysis process involves eliciting, analyzing, modeling and then reviewing the requirements. Here we only focus on the modeling part and leave the rest for the Business expertise section.</p>
+<p>Requirements Analysis is the process of defining the expectations of the users for an application that is to be built or modified.
+It is at the intersection of <em>Business</em> and <em>Software Development</em> since the requirement modeling should be high level to make sense to stakeholders, but should also be simple, specific and clear enough for the developers to be able to implement them.</p>
+<p>The requirements analysis process involves eliciting, analyzing, modeling and then reviewing the requirements.
+Here we only focus on the modeling part and leave the rest for the Business expertise section.</p>
 <div class="section" id="user-stories">
 <h2>User stories<a class="headerlink" href="#user-stories" title="Permalink to this headline">¶</a></h2>
-<p>User stories are the preferred format for modeling the requirements in the Agile methodology</p>
+<p>User stories are the preferred format for modeling the requirements in the Agile methodology.</p>
 </div>
 </div>
 
@@ -491,7 +501,7 @@
         <a href="design.html" class="btn btn-neutral float-right" title="Designing Software" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
       
       
-        <a href="index.html" class="btn btn-neutral float-left" title="Software Development" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+        <a href="Software_development_in_a_nutshell.html" class="btn btn-neutral float-left" title="Software development in a nutshell" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
       
     </div>
   

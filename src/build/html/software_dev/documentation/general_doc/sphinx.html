@@ -87,6 +87,7 @@
               <p class="caption"><span class="caption-text">Contents:</span></p>
 <ul class="current">
 <li class="toctree-l1 current"><a class="reference internal" href="../../index.html">Software Development</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../../Software_development_in_a_nutshell.html">Software development in a nutshell</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../analysis.html">Analysis of users requirements</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="../../analysis.html#user-stories">User stories</a></li>
 </ul>
@@ -131,7 +132,7 @@
 <li class="toctree-l3"><a class="reference internal" href="../../test.html#section-2">Section 2</a></li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="../../Packaging&amp;deploying/index.html">Packaging and deploying Software</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../Packaging&amp;deploying/index.html">Packaging, Containerization and deployment of Software</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="../../Packaging&amp;deploying/CI_CD/index.html">Continuous Integration and continuous delivery (CI/CD)</a><ul>
 <li class="toctree-l4"><a class="reference internal" href="../../Packaging&amp;deploying/CI_CD/CI_CD_intro.html">CI/CD Introduction</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../Packaging&amp;deploying/CI_CD/python_packaging.html">Python project packaging</a></li>
@@ -146,7 +147,7 @@
 </li>
 <li class="toctree-l3"><a class="reference internal" href="../../Packaging&amp;deploying/Kubernetes/index.html">Kubernetes</a><ul>
 <li class="toctree-l4"><a class="reference internal" href="../../Packaging&amp;deploying/Kubernetes/kubernetes_basics_tutorial.html">Kubernetes Basics tutorial</a></li>
-<li class="toctree-l4"><a class="reference internal" href="../../Packaging&amp;deploying/Kubernetes/kubernetes_links.html">Kubernetes:</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../Packaging&amp;deploying/Kubernetes/kubernetes_links.html">Kubernetes tutorials links</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../Packaging&amp;deploying/Kubernetes/kubernetes_advanced_concepts.html">More advanced K8s concepts</a></li>
 </ul>
 </li>
@@ -187,6 +188,10 @@
 <li class="toctree-l2"><a class="reference internal" href="../../agile_scrum.html">Agile methodology</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="../../agile_scrum.html#section-1">Section 1</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../agile_scrum.html#section-2">Section 2</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../software_components.html">Software components</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../software_components.html#library-vs-framework">Library vs Framework</a></li>
 </ul>
 </li>
 </ul>
@@ -327,14 +332,17 @@
 </li>
 <li class="toctree-l2"><a class="reference internal" href="../../../web_and_mobile_dev/Mobile/index.html">Mobile Development</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="../../../web_and_mobile_dev/Mobile/dart_tutorial.html">Dart tutorial</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../../web_and_mobile_dev/Mobile/dart_tutorial.html#what-is-dart">What is Dart?</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../web_and_mobile_dev/Mobile/dart_tutorial.html#compiling-dart-code">Compiling Dart code</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../../web_and_mobile_dev/Mobile/dart_tutorial.html#language-tour">Language tour</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../../web_and_mobile_dev/Mobile/dart_tutorial.html#useful-tools">Useful tools:</a></li>
 </ul>
 </li>
 <li class="toctree-l3"><a class="reference internal" href="../../../web_and_mobile_dev/Mobile/flutter_getting_started.html">Flutter getting started:</a><ul>
 <li class="toctree-l4"><a class="reference internal" href="../../../web_and_mobile_dev/Mobile/flutter_getting_started.html#what-is-flutter">What is Flutter?</a></li>
-<li class="toctree-l4"><a class="reference internal" href="../../../web_and_mobile_dev/Mobile/flutter_getting_started.html#what-is-dart">What is Dart?</a></li>
-<li class="toctree-l4"><a class="reference internal" href="../../../web_and_mobile_dev/Mobile/flutter_getting_started.html#st-app-using-flutter">1st app using flutter:</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../web_and_mobile_dev/Mobile/flutter_getting_started.html#quick-start-on-vs-code">Quick start on VS code</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../web_and_mobile_dev/Mobile/flutter_getting_started.html#useful-commands">Useful commands</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../web_and_mobile_dev/Mobile/flutter_getting_started.html#st-app-using-flutter-tutorials-by-google">1st app using flutter tutorials by google</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../../web_and_mobile_dev/Mobile/flutter_getting_started.html#run-in-release-mode">Run in release mode:</a></li>
 </ul>
 </li>
@@ -531,18 +539,30 @@ for the make command that you will use to generate the doc.</p></li>
 </div>
 <div class="section" id="linking-your-doc-with-github-pages-for-github-users">
 <h2>Linking your doc with Github pages (for Github users)<a class="headerlink" href="#linking-your-doc-with-github-pages-for-github-users" title="Permalink to this headline">¶</a></h2>
-<ol class="arabic simple">
+<ol class="arabic">
 <li><p>Create a <code class="docutils literal notranslate"><span class="pre">docs</span></code> folder alongside your doc root folder (my_doc or
 whichever folder contains the Makefile) and put both in a folder you
 will upload to github repo</p></li>
 <li><p>Add a file named <code class="docutils literal notranslate"><span class="pre">.nojekyll</span></code> to the docs folder to turn off Jekyll</p></li>
 <li><p>Add my_doc/build/ to your .gitignore</p></li>
 <li><p>Add the following to the Makefile that sphinx generated for you under
-docsrc/Makefile
-<code class="docutils literal notranslate"><span class="pre">github:</span>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160; <span class="pre">&#64;make</span> <span class="pre">html</span>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160; <span class="pre">&#64;cp</span> <span class="pre">-a</span> <span class="pre">_build/html/.</span> <span class="pre">../docs</span></code>
-or the following to make.bat if you are on Windows:
-<code class="docutils literal notranslate"><span class="pre">if</span> <span class="pre">&quot;%1&quot;</span> <span class="pre">==</span> <span class="pre">&quot;github&quot;</span> <span class="pre">(</span>&#160;&#160;&#160;&#160; <span class="pre">%SPHINXBUILD%</span> <span class="pre">-M</span> <span class="pre">html</span> <span class="pre">%SOURCEDIR%</span> <span class="pre">%BUILDDIR%</span> <span class="pre">%SPHINXOPTS%</span>&#160;&#160;&#160;&#160; <span class="pre">robocopy</span> <span class="pre">%BUILDDIR%/html</span> <span class="pre">../docs</span> <span class="pre">/E</span> <span class="pre">&gt;</span> <span class="pre">nul</span>&#160;&#160;&#160;&#160; <span class="pre">echo.Generated</span> <span class="pre">files</span> <span class="pre">copied</span> <span class="pre">to</span> <span class="pre">../docs</span>&#160;&#160;&#160;&#160; <span class="pre">goto</span> <span class="pre">end</span>&#160;&#160;&#160;&#160; <span class="pre">)</span></code>
-After the following line: <code class="docutils literal notranslate"><span class="pre">if</span> <span class="pre">&quot;%1&quot;</span> <span class="pre">==</span> <span class="pre">&quot;&quot;</span> <span class="pre">goto</span> <span class="pre">help</span></code></p></li>
+docsrc/Makefile</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">github</span><span class="p">:</span>
+      <span class="nd">@make</span> <span class="n">html</span>
+      <span class="nd">@cp</span> <span class="o">-</span><span class="n">a</span> <span class="n">_build</span><span class="o">/</span><span class="n">html</span><span class="o">/.</span> <span class="o">../</span><span class="n">docs</span>
+</pre></div>
+</div>
+<p>or the following to make.bat if you are on Windows:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">if</span> <span class="s2">&quot;%1&quot;</span> <span class="o">==</span> <span class="s2">&quot;github&quot;</span> <span class="p">(</span>
+<span class="o">%</span><span class="n">SPHINXBUILD</span><span class="o">%</span> <span class="o">-</span><span class="n">M</span> <span class="n">html</span> <span class="o">%</span><span class="n">SOURCEDIR</span><span class="o">%</span> <span class="o">%</span><span class="n">BUILDDIR</span><span class="o">%</span> <span class="o">%</span><span class="n">SPHINXOPTS</span><span class="o">%</span>
+<span class="n">robocopy</span> <span class="o">%</span><span class="n">BUILDDIR</span><span class="o">%/</span><span class="n">html</span> <span class="o">../</span><span class="n">docs</span> <span class="o">/</span><span class="n">E</span> <span class="o">&gt;</span> <span class="n">nul</span>
+<span class="n">echo</span><span class="o">.</span><span class="n">Generated</span> <span class="n">files</span> <span class="n">copied</span> <span class="n">to</span> <span class="o">../</span><span class="n">docs</span>
+<span class="n">goto</span> <span class="n">end</span>
+<span class="p">)</span>
+</pre></div>
+</div>
+<p>After the following line: <code class="docutils literal notranslate"><span class="pre">if</span> <span class="pre">&quot;%1&quot;</span> <span class="pre">==</span> <span class="pre">&quot;&quot;</span> <span class="pre">goto</span> <span class="pre">help</span></code></p>
+</li>
 <li><p>Then you can run <code class="docutils literal notranslate"><span class="pre">make</span> <span class="pre">github</span></code> from the my_doc directory to
 generate the docs and move them to where GitHub wants them (the docs
 folder)</p></li>

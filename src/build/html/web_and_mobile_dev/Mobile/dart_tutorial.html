@@ -87,6 +87,7 @@
               <p class="caption"><span class="caption-text">Contents:</span></p>
 <ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="../../software_dev/index.html">Software Development</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../software_dev/Software_development_in_a_nutshell.html">Software development in a nutshell</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../software_dev/analysis.html">Analysis of users requirements</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="../../software_dev/analysis.html#user-stories">User stories</a></li>
 </ul>
@@ -131,7 +132,7 @@
 <li class="toctree-l3"><a class="reference internal" href="../../software_dev/test.html#section-2">Section 2</a></li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="../../software_dev/Packaging&amp;deploying/index.html">Packaging and deploying Software</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../software_dev/Packaging&amp;deploying/index.html">Packaging, Containerization and deployment of Software</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="../../software_dev/Packaging&amp;deploying/CI_CD/index.html">Continuous Integration and continuous delivery (CI/CD)</a><ul>
 <li class="toctree-l4"><a class="reference internal" href="../../software_dev/Packaging&amp;deploying/CI_CD/CI_CD_intro.html">CI/CD Introduction</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../software_dev/Packaging&amp;deploying/CI_CD/python_packaging.html">Python project packaging</a></li>
@@ -146,7 +147,7 @@
 </li>
 <li class="toctree-l3"><a class="reference internal" href="../../software_dev/Packaging&amp;deploying/Kubernetes/index.html">Kubernetes</a><ul>
 <li class="toctree-l4"><a class="reference internal" href="../../software_dev/Packaging&amp;deploying/Kubernetes/kubernetes_basics_tutorial.html">Kubernetes Basics tutorial</a></li>
-<li class="toctree-l4"><a class="reference internal" href="../../software_dev/Packaging&amp;deploying/Kubernetes/kubernetes_links.html">Kubernetes:</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../software_dev/Packaging&amp;deploying/Kubernetes/kubernetes_links.html">Kubernetes tutorials links</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../software_dev/Packaging&amp;deploying/Kubernetes/kubernetes_advanced_concepts.html">More advanced K8s concepts</a></li>
 </ul>
 </li>
@@ -187,6 +188,10 @@
 <li class="toctree-l2"><a class="reference internal" href="../../software_dev/agile_scrum.html">Agile methodology</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="../../software_dev/agile_scrum.html#section-1">Section 1</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../software_dev/agile_scrum.html#section-2">Section 2</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../software_dev/software_components.html">Software components</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../software_dev/software_components.html#library-vs-framework">Library vs Framework</a></li>
 </ul>
 </li>
 </ul>
@@ -327,14 +332,17 @@
 </li>
 <li class="toctree-l2 current"><a class="reference internal" href="index.html">Mobile Development</a><ul class="current">
 <li class="toctree-l3 current"><a class="current reference internal" href="#">Dart tutorial</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#what-is-dart">What is Dart?</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#compiling-dart-code">Compiling Dart code</a></li>
 <li class="toctree-l4"><a class="reference internal" href="#language-tour">Language tour</a></li>
 <li class="toctree-l4"><a class="reference internal" href="#useful-tools">Useful tools:</a></li>
 </ul>
 </li>
 <li class="toctree-l3"><a class="reference internal" href="flutter_getting_started.html">Flutter getting started:</a><ul>
 <li class="toctree-l4"><a class="reference internal" href="flutter_getting_started.html#what-is-flutter">What is Flutter?</a></li>
-<li class="toctree-l4"><a class="reference internal" href="flutter_getting_started.html#what-is-dart">What is Dart?</a></li>
-<li class="toctree-l4"><a class="reference internal" href="flutter_getting_started.html#st-app-using-flutter">1st app using flutter:</a></li>
+<li class="toctree-l4"><a class="reference internal" href="flutter_getting_started.html#quick-start-on-vs-code">Quick start on VS code</a></li>
+<li class="toctree-l4"><a class="reference internal" href="flutter_getting_started.html#useful-commands">Useful commands</a></li>
+<li class="toctree-l4"><a class="reference internal" href="flutter_getting_started.html#st-app-using-flutter-tutorials-by-google">1st app using flutter tutorials by google</a></li>
 <li class="toctree-l4"><a class="reference internal" href="flutter_getting_started.html#run-in-release-mode">Run in release mode:</a></li>
 </ul>
 </li>
@@ -474,6 +482,26 @@
             
   <div class="section" id="dart-tutorial">
 <h1>Dart tutorial<a class="headerlink" href="#dart-tutorial" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="what-is-dart">
+<h2>What is Dart?<a class="headerlink" href="#what-is-dart" title="Permalink to this headline">¶</a></h2>
+<p>Dart is a client-optimized programming language for fast apps on multiple platforms. It is developed by Google and is used to build mobile, desktop, backend and web applications. Dart is an object-oriented, class defined, garbage-collected language using a C-style syntax that transcompiles optionally into JavaScript.</p>
+</div>
+<div class="section" id="compiling-dart-code">
+<h2>Compiling Dart code<a class="headerlink" href="#compiling-dart-code" title="Permalink to this headline">¶</a></h2>
+<p>There are three main ways to run Dart code:</p>
+<ol class="simple">
+<li><p>Compiled as JavaScript:</p></li>
+</ol>
+<p>To run in mainstream web browsers, Dart relies on a source-to-source compiler to JavaScript. When running Dart code in a web browser the code is precompiled into JavaScript using the dart2js compiler. Compiled as JavaScript, Dart code is compatible with all major browsers with no need for browsers to adopt Dart.</p>
+<ol class="simple">
+<li><p>Stand-alone:</p></li>
+</ol>
+<p>The Dart software development kit (SDK) ships with a stand-alone Dart VM, allowing Dart code to run in a command-line interface environment.</p>
+<ol class="simple">
+<li><p>Ahead-of-time compiled:</p></li>
+</ol>
+<p>Dart code can be AOT-compiled into machine code (native instruction sets). Apps built with Flutter, a mobile app SDK built with Dart, are deployed to app stores as AOT-compiled Dart code.</p>
+</div>
 <div class="section" id="language-tour">
 <h2>Language tour<a class="headerlink" href="#language-tour" title="Permalink to this headline">¶</a></h2>
 <div class="section" id="basic-dart-program">
@@ -501,7 +529,7 @@
 <div><p><strong>Object vs dynamic:</strong> never use dynamic: Two types in Dart permit all values: Object and dynamic. However, they convey different things. If you simply want to state that you allow all objects, use Object, as you would in Java or C#. Using dynamic sends a more complex signal. It may mean that Dart’s type system isn’t sophisticated enough to represent the set of types that are allowed</p>
 </div></blockquote>
 <ol class="simple">
-<li><p>Private variables in dart: Unlike Java, Dart doesn’t have the keywords public, protected, and private. If an identifier starts with an underscore (_), it’s private to its library.</p></li>
+<li><p>Private variables in dart: Unlike Java, Dart doesn’t have the keywords public, protected, and private. If an identifier starts with an underscore (_), it is private to its library.</p></li>
 </ol>
 </div>
 <div class="section" id="variables">

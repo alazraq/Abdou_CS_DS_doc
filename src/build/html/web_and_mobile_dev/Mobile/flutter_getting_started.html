@@ -87,6 +87,7 @@
               <p class="caption"><span class="caption-text">Contents:</span></p>
 <ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="../../software_dev/index.html">Software Development</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../software_dev/Software_development_in_a_nutshell.html">Software development in a nutshell</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../software_dev/analysis.html">Analysis of users requirements</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="../../software_dev/analysis.html#user-stories">User stories</a></li>
 </ul>
@@ -131,7 +132,7 @@
 <li class="toctree-l3"><a class="reference internal" href="../../software_dev/test.html#section-2">Section 2</a></li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="../../software_dev/Packaging&amp;deploying/index.html">Packaging and deploying Software</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../software_dev/Packaging&amp;deploying/index.html">Packaging, Containerization and deployment of Software</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="../../software_dev/Packaging&amp;deploying/CI_CD/index.html">Continuous Integration and continuous delivery (CI/CD)</a><ul>
 <li class="toctree-l4"><a class="reference internal" href="../../software_dev/Packaging&amp;deploying/CI_CD/CI_CD_intro.html">CI/CD Introduction</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../software_dev/Packaging&amp;deploying/CI_CD/python_packaging.html">Python project packaging</a></li>
@@ -146,7 +147,7 @@
 </li>
 <li class="toctree-l3"><a class="reference internal" href="../../software_dev/Packaging&amp;deploying/Kubernetes/index.html">Kubernetes</a><ul>
 <li class="toctree-l4"><a class="reference internal" href="../../software_dev/Packaging&amp;deploying/Kubernetes/kubernetes_basics_tutorial.html">Kubernetes Basics tutorial</a></li>
-<li class="toctree-l4"><a class="reference internal" href="../../software_dev/Packaging&amp;deploying/Kubernetes/kubernetes_links.html">Kubernetes:</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../software_dev/Packaging&amp;deploying/Kubernetes/kubernetes_links.html">Kubernetes tutorials links</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../software_dev/Packaging&amp;deploying/Kubernetes/kubernetes_advanced_concepts.html">More advanced K8s concepts</a></li>
 </ul>
 </li>
@@ -187,6 +188,10 @@
 <li class="toctree-l2"><a class="reference internal" href="../../software_dev/agile_scrum.html">Agile methodology</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="../../software_dev/agile_scrum.html#section-1">Section 1</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../software_dev/agile_scrum.html#section-2">Section 2</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../software_dev/software_components.html">Software components</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../software_dev/software_components.html#library-vs-framework">Library vs Framework</a></li>
 </ul>
 </li>
 </ul>
@@ -327,14 +332,17 @@
 </li>
 <li class="toctree-l2 current"><a class="reference internal" href="index.html">Mobile Development</a><ul class="current">
 <li class="toctree-l3"><a class="reference internal" href="dart_tutorial.html">Dart tutorial</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="dart_tutorial.html#what-is-dart">What is Dart?</a></li>
+<li class="toctree-l4"><a class="reference internal" href="dart_tutorial.html#compiling-dart-code">Compiling Dart code</a></li>
 <li class="toctree-l4"><a class="reference internal" href="dart_tutorial.html#language-tour">Language tour</a></li>
 <li class="toctree-l4"><a class="reference internal" href="dart_tutorial.html#useful-tools">Useful tools:</a></li>
 </ul>
 </li>
 <li class="toctree-l3 current"><a class="current reference internal" href="#">Flutter getting started:</a><ul>
 <li class="toctree-l4"><a class="reference internal" href="#what-is-flutter">What is Flutter?</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#what-is-dart">What is Dart?</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#st-app-using-flutter">1st app using flutter:</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#quick-start-on-vs-code">Quick start on VS code</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#useful-commands">Useful commands</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#st-app-using-flutter-tutorials-by-google">1st app using flutter tutorials by google</a></li>
 <li class="toctree-l4"><a class="reference internal" href="#run-in-release-mode">Run in release mode:</a></li>
 </ul>
 </li>
@@ -476,33 +484,28 @@
 <h1>Flutter getting started:<a class="headerlink" href="#flutter-getting-started" title="Permalink to this headline">¶</a></h1>
 <div class="section" id="what-is-flutter">
 <h2>What is Flutter?<a class="headerlink" href="#what-is-flutter" title="Permalink to this headline">¶</a></h2>
-<p>Flutter is Google’s mobile SDK for crafting high-quality native interfaces on iOS and Android in record time.</p>
+<p>Flutter is Google’s mobile app SDK for crafting high-quality native interfaces on iOS and Android in record time.</p>
+<p>Flutter is a mobile app SDK, complete with framework, widgets, and tools, that gives developers a way to build and deploy mobile apps, written in Dart (which is in my opinion one of the most easy languages to write code in from a developer’s perspective).</p>
 </div>
-<div class="section" id="what-is-dart">
-<h2>What is Dart?<a class="headerlink" href="#what-is-dart" title="Permalink to this headline">¶</a></h2>
-<div class="section" id="dart">
-<h3>Dart<a class="headerlink" href="#dart" title="Permalink to this headline">¶</a></h3>
-<p>Dart is a client-optimized programming language for fast apps on multiple platforms. It is developed by Google and is used to build mobile, desktop, backend and web applications. Dart is an object-oriented, class defined, garbage-collected language[7] using a C-style syntax that transcompiles optionally into JavaScript.</p>
+<div class="section" id="quick-start-on-vs-code">
+<h2>Quick start on VS code<a class="headerlink" href="#quick-start-on-vs-code" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li><p>Install Dart and Flutter plugins</p></li>
+<li><p>From command palette (cmd + shift + P) run Flutter: New Project, this will create a complete structure of a basic flutter project for you</p></li>
+<li><p>From command palette (cmd + shift + P) run Flutter: Launch Emulator, this will launch an emulator if you have already setup one (PS: the emulator is independent of the IDE)</p></li>
+</ul>
+<p>Now you can modify and run your app, you can also modify your app while running thanks to hot reload.</p>
 </div>
-<div class="section" id="compiling-dart-code">
-<h3>Compiling Dart code:<a class="headerlink" href="#compiling-dart-code" title="Permalink to this headline">¶</a></h3>
-<p>There are three main ways to run Dart code:</p>
-<ol class="simple">
-<li><p>Compiled as JavaScript:</p></li>
-</ol>
-<p>To run in mainstream web browsers, Dart relies on a source-to-source compiler to JavaScript. When running Dart code in a web browser the code is precompiled into JavaScript using the dart2js compiler. Compiled as JavaScript, Dart code is compatible with all major browsers with no need for browsers to adopt Dart.</p>
-<ol class="simple">
-<li><p>Stand-alone:</p></li>
-</ol>
-<p>The Dart software development kit (SDK) ships with a stand-alone Dart VM, allowing Dart code to run in a command-line interface environment.</p>
-<ol class="simple">
-<li><p>Ahead-of-time compiled:</p></li>
-</ol>
-<p>Dart code can be AOT-compiled into machine code (native instruction sets). Apps built with Flutter, a mobile app SDK built with Dart, are deployed to app stores as AOT-compiled Dart code.</p>
+<div class="section" id="useful-commands">
+<h2>Useful commands<a class="headerlink" href="#useful-commands" title="Permalink to this headline">¶</a></h2>
+<ul>
+<li><p>Run a flutter app once you have launched an emulator or connected a device:</p>
+<p>flutter run</p>
+</li>
+</ul>
 </div>
-</div>
-<div class="section" id="st-app-using-flutter">
-<h2>1st app using flutter:<a class="headerlink" href="#st-app-using-flutter" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="st-app-using-flutter-tutorials-by-google">
+<h2>1st app using flutter tutorials by google<a class="headerlink" href="#st-app-using-flutter-tutorials-by-google" title="Permalink to this headline">¶</a></h2>
 <ul class="simple">
 <li><p>Part 1: https://codelabs.developers.google.com/codelabs/first-flutter-app-pt1/#0</p></li>
 <li><p>Part 2: https://codelabs.developers.google.com/codelabs/first-flutter-app-pt2/#0</p></li>
