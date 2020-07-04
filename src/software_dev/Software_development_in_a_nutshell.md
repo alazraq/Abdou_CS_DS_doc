@@ -2,7 +2,7 @@
 
 Let me start by describing the different steps of the software development process in a very informal way adapted from a StackExchange comment that can be found [here](https://softwareengineering.stackexchange.com/questions/308338/what-does-packaging-refer-to-in-the-software-deployment-process).
 
-First, you **plan** your project. What does it need to do? How will it do it? Who will it make it? And when?
+First, you **plan** your project. What does it need to do? How will it do it? Who will make it? And when?
 
 Then you **design** the system. Lots of diagrams. And documentation!
 

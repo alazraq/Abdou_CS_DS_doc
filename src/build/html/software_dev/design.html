@@ -89,7 +89,13 @@
 <li class="toctree-l1 current"><a class="reference internal" href="index.html">Software Development</a><ul class="current">
 <li class="toctree-l2"><a class="reference internal" href="Software_development_in_a_nutshell.html">Software development in a nutshell</a></li>
 <li class="toctree-l2"><a class="reference internal" href="analysis.html">Analysis of users requirements</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="analysis.html#user-stories">User stories</a></li>
+<li class="toctree-l3"><a class="reference internal" href="analysis.html#user-stories">User stories</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="analysis.html#what-are-user-stories">What are user stories?</a></li>
+<li class="toctree-l4"><a class="reference internal" href="analysis.html#components-of-a-user-story">Components of a user story</a></li>
+<li class="toctree-l4"><a class="reference internal" href="analysis.html#writing-good-stories-invest-criteria">Writing good stories: INVEST criteria</a></li>
+<li class="toctree-l4"><a class="reference internal" href="analysis.html#examples-of-good-user-stories">Examples of good user stories</a></li>
+</ul>
+</li>
 </ul>
 </li>
 <li class="toctree-l2 current"><a class="current reference internal" href="#">Designing Software</a><ul>
@@ -480,7 +486,7 @@
             
   <div class="section" id="designing-software">
 <h1>Designing Software<a class="headerlink" href="#designing-software" title="Permalink to this headline">¶</a></h1>
-<p>Here I mean by software design the activity following requirements
+<p>Here, I mean by software design the activity following requirements
 specification and before programming when you, as a software developper,
 put together the initial structure of the project. There are multiple
 sets of rules and design considerations to follow that many software
@@ -490,14 +496,9 @@ experience designing software.</p>
 <h2>Separating configuration files from code<a class="headerlink" href="#separating-configuration-files-from-code" title="Permalink to this headline">¶</a></h2>
 <p>The separation of configuration from code is a good practice that makes
 your system customisable as you can load different configurations
-according to the environment you are running it in.</p>
+according to the environment you are running your application in.</p>
 <ul class="simple">
-<li><dl class="simple">
-<dt><strong>Scala:</strong> Article on loading configurations in Scala from a file,</dt><dd><p>from command line parameters or from environment variables is available
-<a class="reference external" href="https://danielasfregola.com/2015/06/01/loading-configurations-in-scala/">here</a>.</p>
-</dd>
-</dl>
-</li>
+<li><p><strong>Scala:</strong> An Article on loading configurations in Scala from a file, from command line parameters or from environment variables is available <a class="reference external" href="https://danielasfregola.com/2015/06/01/loading-configurations-in-scala/">here</a>.</p></li>
 <li><p><strong>Python:</strong> A complete article on loading configuration files in
 Python can be found
 <a class="reference external" href="https://martin-thoma.com/configuration-files-in-python/">here</a>.</p></li>
@@ -506,25 +507,25 @@ Python can be found
 <div class="section" id="packages-naming-conventions">
 <h2>Packages naming conventions<a class="headerlink" href="#packages-naming-conventions" title="Permalink to this headline">¶</a></h2>
 <p>Packages should be put in src folder under src/sourceset/language.
-Please refer to <a class="reference internal" href="software_eng_best_practices.html#folder-organization"><span class="std std-ref">Folder Organization</span></a>.</p>
-<p>These conventions are the ones recommended by the official Java
+Please refer to <a class="reference internal" href="software_eng_best_practices.html#folder-organization"><span class="std std-ref">Folder Organization</span></a> for more details.</p>
+<p>The following packages naming conventions are the ones recommended by the official Java
 documentaion but can be applied to any other programming language:</p>
 <ul class="simple">
 <li><p>Package names are written in <strong>all lower case</strong> to avoid conflict
 with the names of classes or interfaces.</p></li>
-<li><p>Use the reversed Internet domain name of the company you are working
-for to begin their package names. For example,
+<li><p>Use the <strong>reversed internet domain name</strong> of the company you are working
+for to begin your package names. For example, use
 com.company_x.project_y.mypackage for a package named mypackage
-created by a programmer at working at company_x.com on project
-project_y.</p></li>
+created by a programmer working at a company whose internet domain name iscompany_x.com on project project_y.</p></li>
 </ul>
 </div>
 <div class="section" id="providing-requirement-files">
 <h2>Providing requirement files<a class="headerlink" href="#providing-requirement-files" title="Permalink to this headline">¶</a></h2>
 <p>Providing requirement files is a good practice to capture what libraries
 are necessary for future developpers to run your software. The
-requirement file usually named <code class="docutils literal notranslate"><span class="pre">requirements.txt</span></code> contains a pinned
+requirement file, usually named <code class="docutils literal notranslate"><span class="pre">requirements.txt</span></code>, contains a pinned
 version of everything that was installed when pip freeze was run.</p>
+<p>Here are two useful commands for capturing or installing requirements using a requirements file:</p>
 <ul class="simple">
 <li><p>Freezing the requirements:</p></li>
 </ul>

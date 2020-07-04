@@ -89,7 +89,13 @@
 <li class="toctree-l1 current"><a class="reference internal" href="index.html">Software Development</a><ul class="current">
 <li class="toctree-l2"><a class="reference internal" href="Software_development_in_a_nutshell.html">Software development in a nutshell</a></li>
 <li class="toctree-l2 current"><a class="current reference internal" href="#">Analysis of users requirements</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="#user-stories">User stories</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#user-stories">User stories</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#what-are-user-stories">What are user stories?</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#components-of-a-user-story">Components of a user story</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#writing-good-stories-invest-criteria">Writing good stories: INVEST criteria</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#examples-of-good-user-stories">Examples of good user stories</a></li>
+</ul>
+</li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="design.html">Designing Software</a><ul>
@@ -486,7 +492,55 @@ It is at the intersection of <em>Business</em> and <em>Software Development</em>
 Here we only focus on the modeling part and leave the rest for the Business expertise section.</p>
 <div class="section" id="user-stories">
 <h2>User stories<a class="headerlink" href="#user-stories" title="Permalink to this headline">¶</a></h2>
-<p>User stories are the preferred format for modeling the requirements in the Agile methodology.</p>
+<p>This section is a summary of what I learned in the analysis of users requirements part of the <code class="docutils literal notranslate"><span class="pre">Database</span> <span class="pre">design</span> <span class="pre">and</span> <span class="pre">development</span></code> course (67262) at Carnegie Mellon University and Mike Cohn’s book <code class="docutils literal notranslate"><span class="pre">User</span> <span class="pre">Stories</span> <span class="pre">Applied</span></code>.</p>
+<div class="section" id="what-are-user-stories">
+<h3>What are user stories?<a class="headerlink" href="#what-are-user-stories" title="Permalink to this headline">¶</a></h3>
+<p>User stories are the preferred format for modeling the requirements in the Agile methodology. They describe a desired functionality to achieve the user’s goal.</p>
+<p>User stories usually follow the following structure:</p>
+<ul class="simple">
+<li><p>As a <code class="docutils literal notranslate"><span class="pre">type</span> <span class="pre">of</span> <span class="pre">user</span></code></p></li>
+<li><p>I want <code class="docutils literal notranslate"><span class="pre">goal</span></code></p></li>
+<li><p>So that <code class="docutils literal notranslate"><span class="pre">business</span> <span class="pre">value</span></code></p></li>
+</ul>
+</div>
+<div class="section" id="components-of-a-user-story">
+<h3>Components of a user story<a class="headerlink" href="#components-of-a-user-story" title="Permalink to this headline">¶</a></h3>
+<p>There are three parts to a user story:</p>
+<ul class="simple">
+<li><p>A <strong>card</strong> used for planning and as a reminder, traditionally written but can be digital.</p></li>
+<li><p>A <strong>conversation</strong> with the product owner to flesh out details of the story that can then be turned into:</p></li>
+<li><p>Acceptance <strong>tests</strong> that can be used to determine when the story was coded correctly.</p></li>
+</ul>
+</div>
+<div class="section" id="writing-good-stories-invest-criteria">
+<h3>Writing good stories: INVEST criteria<a class="headerlink" href="#writing-good-stories-invest-criteria" title="Permalink to this headline">¶</a></h3>
+<p>A good user story should be:</p>
+<ul class="simple">
+<li><p>I ndependent</p></li>
+<li><p>N egotiable</p></li>
+<li><p>V aluable</p></li>
+<li><p>E stimable</p></li>
+<li><p>S mall / appropriately sized</p></li>
+<li><p>T estable</p></li>
+</ul>
+<p>Let’s now discuss these quickly in more details:</p>
+<ul class="simple">
+<li><p><strong>Independent</strong> means stories should be written so that they can be developed in any order whenever possible.</p></li>
+<li><p><strong>Negotiable</strong> means that the details of a story are negotiated between the user and the developers.</p></li>
+<li><p><strong>Valuable</strong> means that stories should be written so that their value to users or the customer (the company for which you are implementing the software) is clear. Having the customer write the user stories is best.</p></li>
+<li><p><strong>Estimable</strong> means that</p></li>
+<li><p><strong>Small</strong> means that if they are too big, compound and complex stories may be split into multi- ple smaller stories.</p></li>
+<li><p><strong>Testable</strong> means that we should be able to assess when the coding of a story is complete, and providing the test cases prior to the implementation of that user story is best.</p></li>
+</ul>
+</div>
+<div class="section" id="examples-of-good-user-stories">
+<h3>Examples of good user stories<a class="headerlink" href="#examples-of-good-user-stories" title="Permalink to this headline">¶</a></h3>
+<p>These are from Construction Junction company:</p>
+<ul class="simple">
+<li><p>We would like online users to be able to add specific categories to a wish list so that they can receive notifications whenever those types of items are received at Construction Junction.</p></li>
+<li><p>We would like online purchases to be held in a queue so that Construction Junction staff can confirm that the item is available before the customer credit card gets debited.</p></li>
+</ul>
+</div>
 </div>
 </div>
 
