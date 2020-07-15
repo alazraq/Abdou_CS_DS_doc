@@ -1,0 +1,10 @@
+Example documentation
+#####################
+
+This is an example doc.
+
+.. automodule:: hello
+    :members:
+    :undoc-members:
+    :inherited-members:
+    :show-inheritance:

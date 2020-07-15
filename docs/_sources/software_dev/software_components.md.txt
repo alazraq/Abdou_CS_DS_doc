@@ -1,0 +1,14 @@
+# Software components
+
+- An **application** is some code you write to serve a particular purpose.
+- A **library** is someone else's code that you use in your application where and whenever you need it, you are in control of the flow of your app. It is like going to Ikea and picking up things to putin your house. Example: NumPy is a library for the Python programming language, adding support for large, multi-dimensional arrays and mathematical functions to operate on these arrays.
+- A **framework** is also someone else's code but it is like an app model where your code goes in some predifined places but the framework is in charge of the flow. It provides some places for you to plug in your code, and it calls the code you plugged in as needed. It is like building a model home. You have a set of predefined components and a few limited choices when it comes to architecture and design. Example: Vue.js is an open-source JavaScript framework for building user interfaces and single-page applications.
+- A **software development kit (SDK)** is a collection of software development tools in one installable package. They ease creation of applications by having compiler, debugger and perhaps a software framework (see previous bullet point). Example: Flutter is an open-source software development kit created by Google used to develop applications for Android, iOS, Windows, Mac, Linux, Google Fuchsia and the web from a single codebase. 
+
+
+## Library vs Framework
+
+Frameworks and libraries are both code written by someone else that helps you perform some common tasks in a less verbose way. 
+The technical difference between a framework and library lies in a term called **inversion of control**. 
+A framework inverts the control of the program, it tells the developer what it need him to fill. 
+A library doesn’t, the programmer calls the library where and when they need it.
