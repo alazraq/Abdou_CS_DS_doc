@@ -36,7 +36,7 @@
   <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
-    <link rel="next" title="Value and Policy Iteration" href="Value_and_policy_iteration.html" />
+    <link rel="next" title="Value functions, Policies and optimality" href="Value_functions_and_policies.html" />
     <link rel="prev" title="Introduction to RL" href="RL_introduction.html" /> 
 </head>
 
@@ -155,6 +155,12 @@
 <li class="toctree-l4"><a class="reference internal" href="../../software_dev/Packaging&amp;deploying/Kubernetes/kubernetes_basics_tutorial.html">Kubernetes Basics tutorial</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../software_dev/Packaging&amp;deploying/Kubernetes/kubernetes_links.html">Kubernetes tutorials links</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../software_dev/Packaging&amp;deploying/Kubernetes/kubernetes_advanced_concepts.html">More advanced K8s concepts</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../../software_dev/Packaging&amp;deploying/Terraform/index.html">Terraform</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../software_dev/Packaging&amp;deploying/Terraform/terraform_intro.html">Terraform basics</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../software_dev/Packaging&amp;deploying/Terraform/terraform_modules.html">Terraform Modules</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../software_dev/Packaging&amp;deploying/Terraform/terraform_backends.html">Terraform Backends</a></li>
 </ul>
 </li>
 <li class="toctree-l3"><a class="reference internal" href="../../software_dev/Packaging&amp;deploying/Maven/index.html">Maven</a><ul>
@@ -322,13 +328,34 @@
 </ul>
 </li>
 <li class="toctree-l3 current"><a class="current reference internal" href="#">Markov Decision Process (MDP)</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="#components-of-an-mdp">Components Of an MDP</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#mdp-notation">MDP Notation</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#components-of-an-mdp-in-mathematical-notations">Components Of an MDP in mathematical notations</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#mdp-model">MDP model</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#mdp-goal">MDP Goal</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#exploration-vs-exploitation-trade-off">Exploration vs Exploitation Trade-off</a></li>
 </ul>
 </li>
-<li class="toctree-l3"><a class="reference internal" href="Value_and_policy_iteration.html">Value and Policy Iteration</a></li>
-<li class="toctree-l3"><a class="reference internal" href="Q_learning.html">Q Learning</a></li>
-<li class="toctree-l3"><a class="reference internal" href="Deep_Q_learning.html">Deep Q-Learning</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Value_functions_and_policies.html">Value functions, Policies and optimality</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="Value_functions_and_policies.html#policies-how-probable-is-it-for-an-agent-to-select-any-action-from-a-given-state">Policies: How probable is it for an agent to select any action from a given state?</a></li>
+<li class="toctree-l4"><a class="reference internal" href="Value_functions_and_policies.html#value-functions-how-good-is-a-state-or-an-action-at-a-given-state">Value functions: How good is a state, or an action at a given state?</a></li>
+<li class="toctree-l4"><a class="reference internal" href="Value_functions_and_policies.html#optimality">Optimality</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="Value_Iteration.html">Value Iteration</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Policy_Iteration.html">Policy Iteration</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Q_learning.html">Q Learning</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="Q_learning.html#motivation">Motivation</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="Q_learning_2.html">Q_learning (continued)</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="Q_learning_2.html#q-learning-algorithm">Q-Learning Algorithm</a></li>
+<li class="toctree-l4"><a class="reference internal" href="Q_learning_2.html#example-q-learning-in-action">Example: Q-learning in action</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="Deep_Q_learning.html">Deep Q-Learning</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="Deep_Q_learning.html#motivation">Motivation</a></li>
+<li class="toctree-l4"><a class="reference internal" href="Deep_Q_learning.html#key-idea">Key Idea</a></li>
+</ul>
+</li>
 </ul>
 </li>
 </ul>
@@ -500,7 +527,7 @@
       <li class="wy-breadcrumbs-aside">
         
             
-            <a href="../../_sources/machine_learning/RL/Markov_Decision_Process.md.txt" rel="nofollow"> View page source</a>
+            <a href="../../_sources/machine_learning/RL/Markov_Decision_Process.rst.txt" rel="nofollow"> View page source</a>
           
         
       </li>
@@ -515,25 +542,87 @@
             
   <div class="section" id="markov-decision-process-mdp">
 <h1>Markov Decision Process (MDP)<a class="headerlink" href="#markov-decision-process-mdp" title="Permalink to this headline">¶</a></h1>
-<p>We introduce Markov Decision processes as a formal way to model sequential decision making to frame our RL problems (where does RL data come from? an MDP). We already defined the notions of Agent - Environment - State - Action and Reward in the introduction, please refer to these definitions if needed.</p>
-<div class="section" id="components-of-an-mdp">
-<h2>Components Of an MDP<a class="headerlink" href="#components-of-an-mdp" title="Permalink to this headline">¶</a></h2>
+<p><span class="math notranslate nohighlight">\(\newcommand{\R}{\mathbb{R}}\)</span></p>
+<p>We introduce Markov Decision processes as a formal way to model
+sequential decision making to frame our RL problems (where does RL data
+come from? an MDP). We already defined the notions of Agent -
+Environment - State - Action and Reward in the introduction, please
+refer to these definitions if needed.</p>
+<div class="section" id="components-of-an-mdp-in-mathematical-notations">
+<h2>Components Of an MDP in mathematical notations<a class="headerlink" href="#components-of-an-mdp-in-mathematical-notations" title="Permalink to this headline">¶</a></h2>
 <p>There are 4 components in a Markov Decision Process:</p>
-<ol class="simple">
-<li><p><strong>S</strong> - set of states</p></li>
-<li><p><strong>A</strong> - set of actions</p></li>
-<li><p>$R(s,a) : S \times A -&gt; \mathbb{R}$ - the reward function</p></li>
-<li><p><strong>P(s’/ s, a)</strong> - transition probability which is the probability of transitioning (at time t) from state s to state s’ under action a.</p></li>
+<ol class="arabic simple">
+<li><p><span class="math notranslate nohighlight">\(S\)</span> - set of states</p></li>
+<li><p><span class="math notranslate nohighlight">\(A\)</span> - set of actions</p></li>
+<li><p><span class="math notranslate nohighlight">\(R(s,a) : S \times A -&gt; \mathbb{R}\)</span> - the reward function</p></li>
+<li><p><span class="math notranslate nohighlight">\(P(s'/ s, a)\)</span> - transition probabilities which are the
+probabilities of transitioning (at time t) from state s to state s’
+under action a.</p></li>
 </ol>
-<p>In an MDP, we have a decision maker, called an agent, that interacts with the environment it’s placed in.
-These interactions occur sequentially over time.
-At each time step, the agent will get some representation of the environment’s state s in S the set of states.
-Given this representation, the agent selects an action to take among a set A of possible actions.
-The environment is then transitioned into a new state according to the transion probabilities, and the agent is given a reward as a consequence of the previous action determined by the reward function.
-We call the succession of (state, action, reward) a trajectory.</p>
+<p>A fifth component could be the discount factor <span class="math notranslate nohighlight">\(\gamma\)</span>.</p>
 </div>
-<div class="section" id="mdp-notation">
-<h2>MDP Notation<a class="headerlink" href="#mdp-notation" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="mdp-model">
+<h2>MDP model<a class="headerlink" href="#mdp-model" title="Permalink to this headline">¶</a></h2>
+<p>So here is the setup for an MDP:</p>
+<ul class="simple">
+<li><p>In an MDP, we have a decision maker, called an agent, that interacts
+with the environment it’s placed in. These interactions occur
+sequentially over time.</p></li>
+<li><p>At each time step, the agent will get some representation of the
+environment’s state s in S the set of states.</p></li>
+<li><p>Given this representation, the agent selects an action to take among
+a set A of possible actions.</p></li>
+<li><p>The environment is then transitioned into a new state according to
+the transion probabilities, and the agent is given a reward as a
+consequence of the previous action determined by the reward function.
+The deterministic case is when the transition always go as excpected:
+if action a is taken at state s then transition to s’ with
+probability 1. The bobdeterministic case is when this probability is
+not equal to 1 (like a robot can slip when taking the action and fall
+in another state than the one intended).</p></li>
+<li><p>We call the succession of (state, action, reward) a trajectory.</p></li>
+</ul>
+<p>So using our mathematical notations:</p>
+<ul class="simple">
+<li><p>The agent starts at state <span class="math notranslate nohighlight">\(s_0\)</span></p></li>
+<li><p>At each time <span class="math notranslate nohighlight">\(t\)</span>, agent:</p>
+<ul>
+<li><p>observes state <span class="math notranslate nohighlight">\(s_t \in S\)</span></p></li>
+<li><p>then chooses an action <span class="math notranslate nohighlight">\(a_t \in A\)</span></p></li>
+<li><p>then receives reward <span class="math notranslate nohighlight">\(r_t \in \R\)</span> from the environment where
+<span class="math notranslate nohighlight">\(r_t = R(s_t , a_t)\)</span></p></li>
+<li><p>and finally transitions to state <span class="math notranslate nohighlight">\(s_{t+1} \in S\)</span> sampled
+from the transition probability <span class="math notranslate nohighlight">\(s_{t+1} ~ P(./ s_t, a_t)\)</span></p></li>
+</ul>
+</li>
+<li><p>The total payoff is
+<span class="math notranslate nohighlight">\((r_0 + \gamma r_1 + \gamma^2 r_2 + \gamma^3 r_3 + ...)\)</span> where
+<span class="math notranslate nohighlight">\(\gamma\)</span> is the discount factor (<span class="math notranslate nohighlight">\(0&lt; \gamma &lt;1\)</span>)</p></li>
+</ul>
+</div>
+<div class="section" id="mdp-goal">
+<h2>MDP Goal<a class="headerlink" href="#mdp-goal" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li><p><strong>Definition:</strong> We execute policy <span class="math notranslate nohighlight">\(\pi : S \to A\)</span> by taking
+action <span class="math notranslate nohighlight">\(a = \pi(s)\)</span> when the agent is in state <span class="math notranslate nohighlight">\(s\)</span></p></li>
+<li><p>The goal is to learn a policy <span class="math notranslate nohighlight">\(\pi : S \to A\)</span> - for choosing an
+action when in any state - that maximizes the <strong>infinite-horizon
+expected discounted reward</strong>
+<span class="math notranslate nohighlight">\(E[r_0 + \gamma r_1 + \gamma^2 r_2 + \gamma^3 r_3 + ...] = \sum_{t=0}^{\infty} \gamma^t E[r_t]\)</span></p></li>
+</ul>
+</div>
+<div class="section" id="exploration-vs-exploitation-trade-off">
+<h2>Exploration vs Exploitation Trade-off<a class="headerlink" href="#exploration-vs-exploitation-trade-off" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li><p><strong>Exploitation:</strong> Exploiting the knowledge that you have of the
+system (ex: constantly going to slot machine 1 if it yielded the best
+results previously)</p></li>
+<li><p><strong>Exploration:</strong> Exploring something new even if previously observed
+results do not look promising (ex: trying slot machines 2 and 3 even
+if we lost some money in them before - or in the maze setting we
+might never reach +1000 if we keep going to +1 and don’t take any
+risk)</p></li>
+</ul>
 </div>
 </div>
 
@@ -545,7 +634,7 @@ We call the succession of (state, action, reward) a trajectory.</p>
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="Value_and_policy_iteration.html" class="btn btn-neutral float-right" title="Value and Policy Iteration" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+        <a href="Value_functions_and_policies.html" class="btn btn-neutral float-right" title="Value functions, Policies and optimality" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
       
       
         <a href="RL_introduction.html" class="btn btn-neutral float-left" title="Introduction to RL" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>

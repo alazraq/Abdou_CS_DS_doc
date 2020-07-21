@@ -7,8 +7,11 @@ This section aims at first introducing the basics of Reinforcement Learning, the
    :caption: Contents:
    :glob:
 
-   RL_introduction
-   Markov_Decision_Process
-   Value_and_policy_iteration
-   Q_learning
-   Deep_Q_learning
+   RL_introduction.rst
+   Markov_Decision_Process.rst
+   Value_functions_and_policies.rst
+   Value_Iteration
+   Policy_Iteration
+   Q_learning.rst
+   Q_learning_2.rst
+   Deep_Q_learning.rst

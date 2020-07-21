@@ -42,7 +42,7 @@ Concepts - Elements of RL:
 -  **Set of states:** S The set of all possible states of the environment (might be infinite).
 -  **Action:** Given the state of the environment, the agent selects an action to take. 
 -  **Set of actions:** A The set of all possible actions the agent can take at any given state.
--  **Policy:** mapping from state space to action space, may be stochastic (see transition probabilities in MDP)
+-  **Policy:** mapping from state space to action space, may be stochastic (the policy at each state is a probability distribution over the set of actions)
 -  **Reward function:** mapping from each state action pair, to a real number, called reward.
 -  **Value function:** a mapping from a state or state action pair to the total expected future reward (we don't have access to this function).
 
@@ -61,9 +61,6 @@ There are two main approaches to the solve the problem of learning a policy tell
    A more recent approach to the problem, and a temporal difference learning method. Deep Q-Learning is a variant of Q_learning making use of convolutional neural networks.
 
 
-Deep Q-Learning:
-
-
 RL in Python
 ------------
 
@@ -73,5 +70,7 @@ Gym library
 Gym is a toolkit for developing and comparing reinforcement learning algorithms.
 
 The gym library is a collection of test problems — environments — that you can use to work out your reinforcement learning algorithms. These environments have a shared interface, allowing you to write general algorithms.
+
+You can of course also create your own reinforcement learning environment, like the one I created for training a model to learn the optimal state of virtual traffic lights at an intersection.
 
 

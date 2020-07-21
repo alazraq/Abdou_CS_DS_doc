@@ -11,6 +11,7 @@ Here we mainly focus on Docker as a packaging tool and Kubernetes for deployment
    CI_CD/index
    Docker/index
    Kubernetes/index
+   Terraform/index
    Maven/index
    Gradle/index
    ML_CI_CD/index
