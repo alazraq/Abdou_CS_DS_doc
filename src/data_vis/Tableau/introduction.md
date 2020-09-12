@@ -25,6 +25,26 @@ First open the Excel file, click on the `Orders` sheet and then launch a new Tab
 
 ## The Tableau workspace
 
+Here we explore the most important elements of the Tableau interface when you open a worksheet. These are numbered in the figure below:
+
+1. **The canvas:** where ou can drag and drop dimensions and measures to visualize them.
+2. **The Title of the worksheet**
+3. **Data Pane and Analytics Pane:** The Data Pane includes Dimensions and Measures, and the Analytics Pane will be discussed in greater detail in Chapter 7 of the book and we won't be able to cover that here.
+4. **Dimensions:** Categorical (non-numerical) data.
+5. **Hiearchical dimensions:** Hiearchical categorical data (ex: country, state, city).
+6. **Measures:** Numerical data.
+7. **Columns:** The columns of the visualization, dragging dimensions or measures here is the same as dragging them in the vertical area to the left side of the canvas.
+8. **Rows:** The rows of the visualization, dragging dimensions or measures here is the same as dragging them in the horizontal area to top of the canvas.
+9. **Marks:** Used for changing color, size or showing a tooltip wth a certain measure or dimension. Fields from the data pane (dimensions and measures) can also be dragged here. For example, dragging the Segment dimension into the color pane colors the graph based on segment. Tooltips are little messages that appear when you hover on one of the sections in the graph.
+10. **Filters:**You can drag a field from the data pane here as well to filter data to be visualized by a certain rule on that field.
+11. **Pages:** To Document
+12. **Data Source:** Get back to the Data Source Tab to potentially add new sources of data.
+13. **Sheet 1**: You can design multiple data visualizations in different sheets in parallel.
+14. **The Menu Bar:** To Document (page 36-37 of the book)
+15. **The Toolbar:** The toolbar contains three important buttons:
+    - The Tableau icon to go back to the start screen.
+    - The Undo button to cancel changes made in the worksheet.
+    - The Redo button to redo what you cancelled.
 
 ## Working with measures and dimensions
 ## Working with marks
