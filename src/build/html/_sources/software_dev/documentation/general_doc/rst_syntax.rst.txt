@@ -6,6 +6,13 @@ RST syntax tips
 A quick reference of rst syntax can be found
 `here <https://docutils.sourceforge.io/docs/user/rst/quickref.html>`__.
 
+
+-  Images:
+
+::
+   .. image:: images/get_started_sphinx.png
+      :width: 600
+
 -  Links:
 
 ::
