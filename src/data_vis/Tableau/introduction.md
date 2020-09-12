@@ -19,8 +19,13 @@ If the dataset you are presented with is not in this raw format, you should modi
 
 ## The sample dataset
 
+Located in `C:\Users\My_user\Documents\My Tableau Repository\Datasources\2020.3\en_US-US` or a similar path, the sample dataset `Sample - Superstore.xls` contains three sheets `Orders`, `People` and `Returns` of a fictuous company. We will use this dataset to get along with Tableau Desktop features.
+
+First open the Excel file, click on the `Orders` sheet and then launch a new Tableau worksheet by clicking on `Sheet 1` Tab in the bottom.
 
 ## The Tableau workspace
+
+
 ## Working with measures and dimensions
 ## Working with marks
 ## Saving, opening and sharing workbooks
