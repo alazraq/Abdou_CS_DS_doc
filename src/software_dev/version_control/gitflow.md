@@ -1,6 +1,6 @@
 # What is Gitflow:
 
-Gitflow Workflow is a Git workflow design that defines a strict branching model designed around the project release. This provides a robust framework for managing larger projects with a scheduled release cycle. It assigns very specific roles to different branches and defines how and when they should interact.
+Gitflow is a Git workflow design that defines a strict branching model designed around the project release. This provides a robust framework for managing larger projects with a scheduled release cycle. It assigns very specific roles to different branches and defines how and when they should interact.
 
 # Gitflow ideas:
 
