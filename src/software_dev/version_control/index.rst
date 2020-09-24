@@ -7,6 +7,7 @@ A version control system is a system that records changes to a file or set of fi
    :caption: Contents:
    :glob:
 
+   git
    git_commands
    gitflow
    gitkraken
