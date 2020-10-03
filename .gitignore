@@ -341,3 +341,7 @@ Thumbs.db
 *.vscode/
 
 *.odg#
+
+*.icloud
+
+Data_Science/Python_for_data_science/PythonDataScienceHandbook
