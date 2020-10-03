@@ -5,7 +5,7 @@ Tableau is an interactive data visualization software and a must to have tool in
 
 The goal of this article is to give you an overview of Tableau's capabilities, to highlight some of the cool aspects of the visual analytics process in Tableau and finally to gather all the tips and tricks I assembled during my use of Tableau in a single place.
 
-Parts of this article are based on the excellent book ``Visual analytics with Tableau`` by Alexander Loth, referred to as ``Tableau book`` in subsequent sections.
+Parts of this article are based on the excellent book ``Visual analytics with Tableau`` by Alexander Loth, referred to as ``Tableau book`` in subsequent sections. But most of the book is based on the Tableau class I took at HEC Paris.
 
 .. toctree::
    :caption: Contents:
