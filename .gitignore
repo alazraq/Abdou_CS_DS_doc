@@ -345,3 +345,5 @@ Thumbs.db
 *.icloud
 
 Data_Science/Python_for_data_science/PythonDataScienceHandbook
+
+*.pdf
