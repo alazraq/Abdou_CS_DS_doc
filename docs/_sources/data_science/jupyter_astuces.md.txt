@@ -1,5 +1,9 @@
 # Jupyter notebooks astuces
 
+- Get rid of outputs from notebooks to be able to version it with git more easily:
+
+> nbstripout --install
+
 - Import functions from extrternal file in the same folder as ipynb file:
 
 > from helpers import *

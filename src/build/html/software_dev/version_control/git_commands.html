@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>Useful git commands: &mdash; Abdou Documentation  documentation</title>
+  <title>Useful git commands &mdash; Abdou Documentation  documentation</title>
   
 
   
@@ -37,7 +37,7 @@
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
     <link rel="next" title="What is Gitflow:" href="gitflow.html" />
-    <link rel="prev" title="Version control" href="index.html" /> 
+    <link rel="prev" title="Git intoduction" href="git.html" /> 
 </head>
 
 <body class="wy-body-for-nav">
@@ -134,8 +134,13 @@
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="../test.html">Testing Software</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="../test.html#section-1">Section 1</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../test.html#section-2">Section 2</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../test.html#types-of-tests">Types of tests</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../test.html#unit-tests">Unit tests</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../test.html#integration-tests">Integration tests</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../test.html#testing-in-python">Testing in python</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../test.html#source-code-coverage">Source code coverage</a></li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="../Packaging&amp;deploying/index.html">Packaging, Containerization and deployment of Software</a><ul>
@@ -187,7 +192,29 @@
 </ul>
 </li>
 <li class="toctree-l2 current"><a class="reference internal" href="index.html">Version control</a><ul class="current">
-<li class="toctree-l3 current"><a class="current reference internal" href="#">Useful git commands:</a></li>
+<li class="toctree-l3"><a class="reference internal" href="git.html">Git intoduction</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="git.html#what-is-git">What is git?</a></li>
+<li class="toctree-l4"><a class="reference internal" href="git.html#characteristics-of-git">Characteristics of git</a></li>
+<li class="toctree-l4"><a class="reference internal" href="git.html#some-nomenclature">Some nomenclature</a></li>
+<li class="toctree-l4"><a class="reference internal" href="git.html#git-configuration">Git configuration</a></li>
+<li class="toctree-l4"><a class="reference internal" href="git.html#git-initialization">Git initialization</a></li>
+<li class="toctree-l4"><a class="reference internal" href="git.html#how-does-git-save-work">How does git save work?</a></li>
+<li class="toctree-l4"><a class="reference internal" href="git.html#git-commit-tricks">Git commit tricks</a></li>
+</ul>
+</li>
+<li class="toctree-l3 current"><a class="current reference internal" href="#">Useful git commands</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#basic-configuration">Basic configuration</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#initialization">Initialization</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#gitignore">.gitignore</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#status-and-viewing-changes">Status and viewing changes</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#add-from-working-directory">Add from working directory</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#commit-from-staging-area-to-working-directory">Commit from staging area to working directory</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#tags">Tags</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#aliases">Aliases</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#branching-and-checkout">Branching and checkout</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#corrective-actions">Corrective actions</a></li>
+</ul>
+</li>
 <li class="toctree-l3"><a class="reference internal" href="gitflow.html">What is Gitflow:</a></li>
 <li class="toctree-l3"><a class="reference internal" href="gitflow.html#gitflow-ideas">Gitflow ideas:</a></li>
 <li class="toctree-l3"><a class="reference internal" href="gitkraken.html">Gitkraken</a><ul>
@@ -461,12 +488,7 @@
 <li class="toctree-l1"><a class="reference internal" href="../../data_vis/index.html">Data Visualization</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="../../data_vis/Tableau/index.html">Tableau</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="../../data_vis/Tableau/introduction.html">Introduction and getting started with Tableau</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="../../data_vis/Tableau/introduction.html#data-preparation">Data preparation</a></li>
-<li class="toctree-l4"><a class="reference internal" href="../../data_vis/Tableau/introduction.html#the-sample-dataset">The sample dataset</a></li>
-<li class="toctree-l4"><a class="reference internal" href="../../data_vis/Tableau/introduction.html#the-tableau-workspace">The Tableau workspace</a></li>
-<li class="toctree-l4"><a class="reference internal" href="../../data_vis/Tableau/introduction.html#working-with-measures-and-dimensions">Working with measures and dimensions</a></li>
-<li class="toctree-l4"><a class="reference internal" href="../../data_vis/Tableau/introduction.html#working-with-marks">Working with marks</a></li>
-<li class="toctree-l4"><a class="reference internal" href="../../data_vis/Tableau/introduction.html#saving-opening-and-sharing-workbooks">Saving, opening and sharing workbooks</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../data_vis/Tableau/introduction.html#best-practices-of-data-visualization">Best practices of data visualization</a></li>
 </ul>
 </li>
 <li class="toctree-l3"><a class="reference internal" href="../../data_vis/Tableau/tableau_tips.html">Tableau tips</a></li>
@@ -477,6 +499,45 @@
 <li class="toctree-l1"><a class="reference internal" href="../../database/index.html">Database Design and Development</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="../../database/PostgresSQL_tutorials/index.html">PostgresSQL tutorials</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="../../database/PostgresSQL_tutorials/postgesSQL_importing_data.html">PostgresSQL importing data tutorial:</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../business/index.html">Business</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../business/finance/index.html">Finance</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../business/finance/1_introduction_to_finance.html">Introduction to finance</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../business/finance/1_introduction_to_finance.html#overview-of-finance-and-financial-markets">Overview of finance and financial markets</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../../business/finance/2_Asset_Valuation.html">Asset Valuation</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../business/finance/2_Asset_Valuation.html#introduction-to-asset-valuation">Introduction to asset valuation</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../business/finance/2_Asset_Valuation.html#risk-free-assets">Risk-free assets</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../business/finance/2_Asset_Valuation.html#risky-assets">Risky assets</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../business/finance/2_Asset_Valuation.html#diversification">Diversification</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../business/finance/2_Asset_Valuation.html#the-capm-capital-asset-pricing-model">The CAPM: Capital Asset Pricing Model</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../../business/finance/3_Market_Efficiency.html">Market Efficiency</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../business/finance/3_Market_Efficiency.html#introduction">Introduction</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../business/finance/3_Market_Efficiency.html#are-markets-efficient">Are markets efficient</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../business/finance/3_Market_Efficiency.html#issues-for-data-scientists">Issues for data scientists</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../../business/finance/4_limit_order_books.html">Limit Order Books and Algorithmic Trading</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../business/finance/4_limit_order_books.html#limt-order-books">Limt order books</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../business/finance/4_limit_order_books.html#overview-of-the-industry">Overview of the industry</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../../business/finance/5_fixed_income_and_credit_risk.html">Fixed Income and Credit Risk</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../business/finance/5_fixed_income_and_credit_risk.html#overview-of-fixed-income-markets">Overview of fixed income markets</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../business/finance/5_fixed_income_and_credit_risk.html#vocabulary">Vocabulary</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../business/finance/5_fixed_income_and_credit_risk.html#market-functioning">Market functioning</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../business/finance/5_fixed_income_and_credit_risk.html#forecasting-credit-losses">Forecasting credit losses</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../business/finance/5_fixed_income_and_credit_risk.html#credit-ratings">Credit Ratings</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../business/finance/5_fixed_income_and_credit_risk.html#merton-s-model-deviation">Merton’s Model - deviation</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../business/finance/5_fixed_income_and_credit_risk.html#merton-s-model-implications">Merton’s Model - implications</a></li>
+</ul>
+</li>
 </ul>
 </li>
 </ul>
@@ -542,7 +603,7 @@
         
           <li><a href="index.html">Version control</a> &raquo;</li>
         
-      <li>Useful git commands:</li>
+      <li>Useful git commands</li>
     
     
       <li class="wy-breadcrumbs-aside">
@@ -562,8 +623,179 @@
            <div itemprop="articleBody">
             
   <div class="section" id="useful-git-commands">
-<h1>Useful git commands:<a class="headerlink" href="#useful-git-commands" title="Permalink to this headline">¶</a></h1>
+<h1>Useful git commands<a class="headerlink" href="#useful-git-commands" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="basic-configuration">
+<h2>Basic configuration<a class="headerlink" href="#basic-configuration" title="Permalink to this headline">¶</a></h2>
 <ul>
+<li><p>Setting your user name</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">git</span> <span class="n">config</span> <span class="o">--</span><span class="k">global</span> <span class="n">user</span><span class="o">.</span><span class="n">name</span> <span class="s2">&quot;&lt;Your-Full-Name&gt;&quot;</span>
+</pre></div>
+</div>
+</li>
+<li><p>Setting your email</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">git</span> <span class="n">config</span> <span class="o">--</span><span class="k">global</span> <span class="n">user</span><span class="o">.</span><span class="n">email</span> <span class="s2">&quot;&lt;your-email-address&gt;&quot;</span>
+</pre></div>
+</div>
+</li>
+<li><p>Set your preferred git editor (for example for editing commit messages)</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">git</span> <span class="n">config</span> <span class="o">--</span><span class="k">global</span> <span class="n">core</span><span class="o">.</span><span class="n">editor</span> <span class="s2">&quot;vim&quot;</span>
+<span class="n">git</span> <span class="n">config</span> <span class="o">--</span><span class="k">global</span> <span class="n">core</span><span class="o">.</span><span class="n">editor</span> <span class="s2">&quot;code --wait&quot;</span>
+</pre></div>
+</div>
+</li>
+</ul>
+</div>
+<div class="section" id="initialization">
+<h2>Initialization<a class="headerlink" href="#initialization" title="Permalink to this headline">¶</a></h2>
+<ul>
+<li><p>Initialize an empty git repo in the current directory (create a .git folder in that directory)</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">git</span> <span class="n">init</span>
+</pre></div>
+</div>
+</li>
+<li><p>Clone locally an existing repository by making a full copy of it</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">git</span> <span class="n">clone</span> <span class="o">&lt;</span><span class="n">URL</span><span class="o">&gt;</span>
+
+</pre></div>
+</div>
+</li>
+</ul>
+</div>
+<div class="section" id="gitignore">
+<h2>.gitignore<a class="headerlink" href="#gitignore" title="Permalink to this headline">¶</a></h2>
+<ul>
+<li><p>Download the standard Python.gitignore file by running this command in the root of your repo:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">curl</span> <span class="n">https</span><span class="p">:</span><span class="o">//</span><span class="n">raw</span><span class="o">.</span><span class="n">githubusercontent</span><span class="o">.</span><span class="n">com</span><span class="o">/</span><span class="n">github</span><span class="o">/</span><span class="n">gitignore</span><span class="o">/</span><span class="n">master</span><span class="o">/</span><span class="n">Python</span><span class="o">.</span><span class="n">gitignore</span> <span class="o">&gt;</span> <span class="o">.</span><span class="n">gitignore</span>
+</pre></div>
+</div>
+</li>
+</ul>
+</div>
+<div class="section" id="status-and-viewing-changes">
+<h2>Status and viewing changes<a class="headerlink" href="#status-and-viewing-changes" title="Permalink to this headline">¶</a></h2>
+<ul>
+<li><p>Check the status of working directory and staging area</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">git</span> <span class="n">status</span>
+</pre></div>
+</div>
+</li>
+<li><p>Show changes between HEAD and working directory</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">git</span> <span class="n">diff</span>
+</pre></div>
+</div>
+</li>
+<li><p>View commit history</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">git</span> <span class="n">log</span>
+</pre></div>
+</div>
+</li>
+<li><p>Show the list of commits in one line format</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">git</span> <span class="n">log</span> <span class="o">--</span><span class="n">oneline</span>
+</pre></div>
+</div>
+</li>
+<li><p>View changes to a particular file or directory</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">git</span> <span class="n">log</span> <span class="n">path</span><span class="o">/</span><span class="n">to</span><span class="o">/</span><span class="nb">dir</span><span class="o">-</span><span class="ow">or</span><span class="o">-</span><span class="n">file</span>
+</pre></div>
+</div>
+</li>
+<li><p>Details about a specific commit</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">git</span> <span class="n">show</span> <span class="n">hash_of_commit</span>
+
+</pre></div>
+</div>
+</li>
+</ul>
+</div>
+<div class="section" id="add-from-working-directory">
+<h2>Add from working directory<a class="headerlink" href="#add-from-working-directory" title="Permalink to this headline">¶</a></h2>
+<ul>
+<li><p>Add a file to the staging area</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">git</span> <span class="n">add</span> <span class="n">path</span><span class="o">/</span><span class="n">to</span><span class="o">/</span><span class="n">file</span>
+</pre></div>
+</div>
+</li>
+<li><p>Add all* files of a folder to the staging area</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">git</span> <span class="n">add</span> <span class="n">path</span><span class="o">/</span><span class="n">to</span><span class="o">/</span><span class="nb">dir</span>
+</pre></div>
+</div>
+</li>
+<li><p>Add all* files in the working directory (use with caution)</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">git</span> <span class="n">add</span> <span class="o">.</span>
+</pre></div>
+</div>
+</li>
+</ul>
+<p>PS: * Provided they are not listed in a specific .gitignore file containing the files that should be ignored</p>
+</div>
+<div class="section" id="commit-from-staging-area-to-working-directory">
+<h2>Commit from staging area to working directory<a class="headerlink" href="#commit-from-staging-area-to-working-directory" title="Permalink to this headline">¶</a></h2>
+<ul>
+<li><p>Commit everything in the staging area with a message</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">git</span> <span class="n">commit</span> <span class="o">-</span><span class="n">m</span> <span class="s2">&quot;Your message&quot;</span>
+</pre></div>
+</div>
+</li>
+<li><p>Editing previous commit: adding more changes or editing message</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">The</span> <span class="n">git</span> <span class="n">commit</span> <span class="o">--</span><span class="n">amend</span> <span class="o">-</span><span class="n">m</span> <span class="s2">&quot;New message&quot;</span>
+</pre></div>
+</div>
+</li>
+<li><p>Skip staging area for tracked files</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">git</span> <span class="n">commit</span> <span class="o">-</span><span class="n">a</span>
+</pre></div>
+</div>
+</li>
+</ul>
+</div>
+<div class="section" id="tags">
+<h2>Tags<a class="headerlink" href="#tags" title="Permalink to this headline">¶</a></h2>
+<ul>
+<li><p>List all tags</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">git</span> <span class="n">tag</span>
+</pre></div>
+</div>
+</li>
+<li><p>Add a tag to the current version’s HEAD</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">git</span> <span class="n">tag</span> <span class="n">name_of_tag</span>
+</pre></div>
+</div>
+</li>
+<li><p>Delete a tag to the current version’s HEAD</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">git</span> <span class="n">tag</span> <span class="o">-</span><span class="n">d</span> <span class="n">name_of_tag</span>
+</pre></div>
+</div>
+</li>
+</ul>
+</div>
+<div class="section" id="aliases">
+<h2>Aliases<a class="headerlink" href="#aliases" title="Permalink to this headline">¶</a></h2>
+<ul>
+<li><p>The following command will add s the alias <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">hist</span></code> for pretty printing commits log</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">git</span> <span class="n">config</span> <span class="o">--</span><span class="k">global</span> <span class="n">alias</span><span class="o">.</span><span class="n">hist</span> <span class="s2">&quot;log --pretty=format:&#39;%h </span><span class="si">%a</span><span class="s2">d | </span><span class="si">%s%d</span><span class="s2"> [</span><span class="si">%a</span><span class="s2">n]&#39; --graph --date=short&quot;</span>
+</pre></div>
+</div>
+</li>
+</ul>
+</div>
+<div class="section" id="branching-and-checkout">
+<h2>Branching and checkout<a class="headerlink" href="#branching-and-checkout" title="Permalink to this headline">¶</a></h2>
+<ul>
+<li><p>Checkout a specific commit</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">git</span> <span class="n">checkout</span> <span class="n">commit</span><span class="o">-</span><span class="nb">hash</span>
+</pre></div>
+</div>
+</li>
+<li><p>Checkout the n th parent of current commit</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">git</span> <span class="n">checkout</span> <span class="n">HEAD</span><span class="o">~</span><span class="n">n</span>
+</pre></div>
+</div>
+</li>
+<li><p>Checkout a parent of the current commit: <code class="docutils literal notranslate"><span class="pre">HEAD^</span></code>is parent <code class="docutils literal notranslate"><span class="pre">HEAD^^</span></code>grandparent etc</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">git</span> <span class="n">checkout</span> <span class="n">HEAD</span><span class="o">^</span>
+</pre></div>
+</div>
+</li>
 <li><p>Create new branch</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">git</span> <span class="n">checkout</span> <span class="o">-</span><span class="n">b</span> <span class="p">[</span><span class="n">name_of_your_new_branch</span><span class="p">]</span>
 <span class="n">git</span> <span class="n">push</span> <span class="n">origin</span> <span class="p">[</span><span class="n">name_of_your_new_branch</span><span class="p">]</span>
@@ -571,6 +803,17 @@
 </div>
 </li>
 </ul>
+</div>
+<div class="section" id="corrective-actions">
+<h2>Corrective actions<a class="headerlink" href="#corrective-actions" title="Permalink to this headline">¶</a></h2>
+<ul>
+<li><p>Discard unstaged modifs</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">git</span> <span class="n">checkout</span> <span class="n">commit</span><span class="o">-</span><span class="nb">hash</span> 
+</pre></div>
+</div>
+</li>
+</ul>
+</div>
 </div>
 
 
@@ -584,7 +827,7 @@
         <a href="gitflow.html" class="btn btn-neutral float-right" title="What is Gitflow:" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
       
       
-        <a href="index.html" class="btn btn-neutral float-left" title="Version control" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+        <a href="git.html" class="btn btn-neutral float-left" title="Git intoduction" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
       
     </div>
   

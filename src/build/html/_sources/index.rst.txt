@@ -27,4 +27,5 @@ The goal is to provide a centralized documentation for future reference if faced
    big_data/index
    data_vis/index
    database/index
+   business/index
    extracurricular/index

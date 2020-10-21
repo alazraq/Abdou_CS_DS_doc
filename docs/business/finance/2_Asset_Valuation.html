@@ -1,0 +1,794 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Asset Valuation &mdash; Abdou Documentation  documentation</title>
+  
+
+  
+  
+  
+  
+
+  
+  <script type="text/javascript" src="../../_static/js/modernizr.min.js"></script>
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
+        <script type="text/javascript" src="../../_static/jquery.js"></script>
+        <script type="text/javascript" src="../../_static/underscore.js"></script>
+        <script type="text/javascript" src="../../_static/doctools.js"></script>
+        <script type="text/javascript" src="../../_static/language_data.js"></script>
+        <script async="async" type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    
+    <script type="text/javascript" src="../../_static/js/theme.js"></script>
+
+    
+
+  
+  <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="Market Efficiency" href="3_Market_Efficiency.html" />
+    <link rel="prev" title="Introduction to finance" href="1_introduction_to_finance.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="../../index.html" class="icon icon-home"> Abdou Documentation
+          
+
+          
+            
+            <img src="../../_static/logo_2.png" class="logo" alt="Logo"/>
+          
+          </a>
+
+          
+            
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption"><span class="caption-text">Contents:</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../../software_dev/index.html">Software Development</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../software_dev/Software_development_in_a_nutshell.html">Software development in a nutshell</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../software_dev/analysis.html">Analysis of users requirements</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../software_dev/analysis.html#user-stories">User stories</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../software_dev/analysis.html#what-are-user-stories">What are user stories?</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../software_dev/analysis.html#components-of-a-user-story">Components of a user story</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../software_dev/analysis.html#writing-good-stories-invest-criteria">Writing good stories: INVEST criteria</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../software_dev/analysis.html#examples-of-good-user-stories">Examples of good user stories</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../software_dev/design.html">Designing Software</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../software_dev/design.html#separating-configuration-files-from-code">Separating configuration files from code</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../software_dev/design.html#packages-naming-conventions">Packages naming conventions</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../software_dev/design.html#providing-requirement-files">Providing requirement files</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../software_dev/build.html">Building Software</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../software_dev/documentation/index.html">Documenting Software</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../software_dev/documentation/general_doc/index.html">General Documentation</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../software_dev/documentation/general_doc/sphinx.html">Sphinx: Documentation generator</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../software_dev/documentation/general_doc/rst_syntax.html">RST syntax tips</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../software_dev/documentation/general_doc/markdown_syntax.html">Markdown syntax tips</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../software_dev/documentation/general_doc/rst_vs_md.html">Markdown vs reStructuredText for writing documentation</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../../software_dev/documentation/code_doc/index.html">Code Documentation</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../software_dev/documentation/code_doc/writing.html">Writing code documentation</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../software_dev/documentation/code_doc/generation_and_deployment.html">Generating and deploying code documentation</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../software_dev/Serialization/index.html">Serialization</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../software_dev/Serialization/Protocol_Buffers.html">Serialization: Protocol Buffer</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../software_dev/Serialization/Protocol_Buffers.html#what-are-protocol-buffers">What are Protocol Buffers?</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../software_dev/Serialization/Protocol_Buffers.html#how-do-they-work">How do they work?</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../software_dev/Serialization/Protocol_Buffers.html#compiling-proto-file-to-generate-classes-in-desired-programming-language">Compiling .proto file to generate classes in desired programming language:</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../software_dev/Serialization/Protocol_Buffers.html#using-the-classes-generated-by-protocol-buffer-compiler">Using the classes generated by protocol buffer compiler:</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../software_dev/Serialization/Protocol_Buffers.html#adding-new-fields-to-existing-protocol-buffers">Adding new fields to existing protocol buffers</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../software_dev/Serialization/Protocol_Buffers.html#sending-protobuf-messages-on-pubsub">Sending protobuf messages on pubsub:</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../software_dev/Serialization/Protocol_Buffers.html#astuces">Astuces:</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../software_dev/test.html">Testing Software</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../software_dev/test.html#types-of-tests">Types of tests</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../software_dev/test.html#unit-tests">Unit tests</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../software_dev/test.html#integration-tests">Integration tests</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../../software_dev/test.html#testing-in-python">Testing in python</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../software_dev/test.html#source-code-coverage">Source code coverage</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../software_dev/Packaging&amp;deploying/index.html">Packaging, Containerization and deployment of Software</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../software_dev/Packaging&amp;deploying/CI_CD/index.html">Continuous Integration and continuous delivery (CI/CD)</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../software_dev/Packaging&amp;deploying/CI_CD/CI_CD_intro.html">CI/CD Introduction</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../software_dev/Packaging&amp;deploying/CI_CD/python_packaging.html">Python project packaging</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../software_dev/Packaging&amp;deploying/CI_CD/scala_packaging.html">Scala project packaging</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../software_dev/Packaging&amp;deploying/CI_CD/bitbucket_pipelines.html">Bitbucket pipelines</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../../software_dev/Packaging&amp;deploying/Docker/index.html">Docker</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../software_dev/Packaging&amp;deploying/Docker/docker_tutorial.html">Docker Tutorial:</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../software_dev/Packaging&amp;deploying/Docker/docker_astuces.html">Docker tips</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../../software_dev/Packaging&amp;deploying/Kubernetes/index.html">Kubernetes</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../software_dev/Packaging&amp;deploying/Kubernetes/kubernetes_basics_tutorial.html">Kubernetes Basics tutorial</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../software_dev/Packaging&amp;deploying/Kubernetes/kubernetes_links.html">Kubernetes tutorials links</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../software_dev/Packaging&amp;deploying/Kubernetes/kubernetes_advanced_concepts.html">More advanced K8s concepts</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../../software_dev/Packaging&amp;deploying/Terraform/index.html">Terraform</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../software_dev/Packaging&amp;deploying/Terraform/terraform_intro.html">Terraform basics</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../software_dev/Packaging&amp;deploying/Terraform/terraform_modules.html">Terraform Modules</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../software_dev/Packaging&amp;deploying/Terraform/terraform_backends.html">Terraform Backends</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../../software_dev/Packaging&amp;deploying/Maven/index.html">Maven</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../software_dev/Packaging&amp;deploying/Maven/useful_maven_commands.html">Maven useful commands</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../../software_dev/Packaging&amp;deploying/Gradle/index.html">Gradle</a><ul class="simple">
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../../software_dev/Packaging&amp;deploying/ML_CI_CD/index.html">Machine Learning Models Continuous Integration and Delivery (CI/CD)</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../software_dev/Packaging&amp;deploying/ML_CI_CD/Kubeflow_tutorial.html">Kubeflow Tutorial</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../software_dev/software_eng_best_practices.html">Software Engineering Best Practices</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../software_dev/software_eng_best_practices.html#semantic-versioning">Semantic Versioning</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../software_dev/software_eng_best_practices.html#folder-organization">Folder Organization</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../software_dev/software_eng_best_practices.html#documenting-a-service">Documenting a service</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../software_dev/software_eng_best_practices.html#writing-code-documentation">Writing Code Documentation</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../software_dev/software_eng_best_practices.html#readmes">READMEs</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../software_dev/version_control/index.html">Version control</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../software_dev/version_control/git.html">Git intoduction</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../software_dev/version_control/git.html#what-is-git">What is git?</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../software_dev/version_control/git.html#characteristics-of-git">Characteristics of git</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../software_dev/version_control/git.html#some-nomenclature">Some nomenclature</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../software_dev/version_control/git.html#git-configuration">Git configuration</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../software_dev/version_control/git.html#git-initialization">Git initialization</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../software_dev/version_control/git.html#how-does-git-save-work">How does git save work?</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../software_dev/version_control/git.html#git-commit-tricks">Git commit tricks</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../../software_dev/version_control/git_commands.html">Useful git commands</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../software_dev/version_control/git_commands.html#basic-configuration">Basic configuration</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../software_dev/version_control/git_commands.html#initialization">Initialization</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../software_dev/version_control/git_commands.html#gitignore">.gitignore</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../software_dev/version_control/git_commands.html#status-and-viewing-changes">Status and viewing changes</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../software_dev/version_control/git_commands.html#add-from-working-directory">Add from working directory</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../software_dev/version_control/git_commands.html#commit-from-staging-area-to-working-directory">Commit from staging area to working directory</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../software_dev/version_control/git_commands.html#tags">Tags</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../software_dev/version_control/git_commands.html#aliases">Aliases</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../software_dev/version_control/git_commands.html#branching-and-checkout">Branching and checkout</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../software_dev/version_control/git_commands.html#corrective-actions">Corrective actions</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../../software_dev/version_control/gitflow.html">What is Gitflow:</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../software_dev/version_control/gitflow.html#gitflow-ideas">Gitflow ideas:</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../software_dev/version_control/gitkraken.html">Gitkraken</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../software_dev/version_control/gitkraken.html#what-is-gitkraken">What is Gitkraken</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../software_dev/version_control/gitkraken.html#gitkraken-tips">GitKraken tips:</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../software_dev/agile_scrum.html">Agile methodology</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../software_dev/agile_scrum.html#section-1">Section 1</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../software_dev/agile_scrum.html#section-2">Section 2</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../software_dev/software_components.html">Software components</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../software_dev/software_components.html#library-vs-framework">Library vs Framework</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../programming/index.html">Programming Languages</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../programming/paradigms.html">Programming paradigms</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../programming/paradigms.html#definition">Definition</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../programming/paradigms.html#list-of-programming-paradigms">List of programming paradigms</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../programming/paradigms.html#description-of-the-most-important-paradigms">Description of the most important paradigms:</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../programming/paradigms.html#declarative-vs-imperative">Declarative vs Imperative</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../programming/paradigms.html#important-declarative-programming-paradigms">Important declarative programming paradigms:</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../programming/paradigms.html#object-oriented-proramming">Object-oriented proramming:</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../programming/Python/index.html">Python programming basics</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../programming/Python/main.html">Python main function</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../programming/Python/main.html#python-interpreter-functionning">Python interpreter functionning</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../programming/Python/main.html#setting-up-special-variables">Setting up special variables</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../programming/Python/main.html#executing-the-module-s-code-sequentially">Executing the Module’s Code Sequentially</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../programming/Python/main.html#example">Example</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../programming/Python/main.html#why-does-it-work-this-way">Why Does It Work This Way?</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../../programming/Python/args_parse.html">Argument Parsing</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../programming/Python/args_parse.html#complete-example">Complete example</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../programming/Python/args_parse.html#command-line-usage">Command line usage</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../programming/Python/args_parse.html#useful-optional-arguments">Useful optional arguments</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../../programming/Python/variable_args.html">Variable number of arguments: *args and **kwargs</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../programming/Python/variable_args.html#args"><code class="docutils literal notranslate"><span class="pre">*args</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../programming/Python/variable_args.html#kwargs"><code class="docutils literal notranslate"><span class="pre">**kwargs</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../programming/Python/variable_args.html#using-args-and-kwargs-to-call-a-function">Using <code class="docutils literal notranslate"><span class="pre">*args</span></code> and <code class="docutils literal notranslate"><span class="pre">**kwargs</span></code> to call a function</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../programming/Python/variable_args.html#combining-args-and-kwargs">Combining <code class="docutils literal notranslate"><span class="pre">*args</span></code> and <code class="docutils literal notranslate"><span class="pre">**kwargs</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../../programming/Python/docstrings.html">Python docstrings to generate Sphinx code documentation</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../programming/Python/docstrings.html#additions-to-conf-py-for-autodoc-support">Additions to conf.py for autodoc support</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../programming/Python/docstrings.html#example">Example</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../programming/Python/docstrings.html#module-docstring_example">Result</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../../programming/Python/python_packaging.html">Overview of Packaging for Python</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../programming/Python/python_packaging.html#use-case-1-packaging-python-libraries">Use case 1: Packaging Python libraries</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../programming/Python/python_packaging.html#use-case-2-packaging-python-applications">Use case 2: Packaging Python applications</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../programming/Python/python_packaging.html#python-package-manager-pip">Python package manager: pip</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../../programming/Python/miscellaneous.html">Miscellaneous</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../programming/Python/miscellaneous.html#shebang-to-select-an-interpreter-in-linux">Shebang (#!) to select an interpreter in Linux</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../programming/Scala/index.html">Scala</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../programming/Scala/Scala_basics.html">Scala basics</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../programming/Scala/Scala_basics.html#useful-resources">Useful resources</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../programming/Scala/Scala_basics.html#importing">Importing</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../programming/Scala/Scala_basics.html#loggers">Loggers</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../programming/Scala/Scala_basics.html#classes-objects-case-classes-and-traits">Classes, Objects, Case classes, and Traits</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../programming/Scala/Scala_basics.html#lazy-values">Lazy Values</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../../programming/Scala/Scala_tips.html">Scala tips</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../programming/Scala/Scala_tests.html">Scala tests</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../programming/Java/index.html">Java</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../programming/Java/java_tips.html">Programming in Java tips:</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../programming/R/index.html">R programming language</a><ul class="simple">
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../data_science/index.html">Data Science - General</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../data_science/python_for_data_science/index.html">Python for Data Science</a><ul class="simple">
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../data_science/jupyter_astuces.html">Jupyter notebooks astuces</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../data_science/nbconvert.html">Converting jupyter notebook into pdf, html or latex</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../data_science/nbconvert.html#modifications-to-make-to-the-notebook-before-generating-the-pdf">Modifications to make to the notebook before generating the pdf</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../data_science/nbconvert.html#command-line-for-conversion">Command line for conversion</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../data_science/nbconvert.html#issues">Issues</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../machine_learning/index.html">Machine Learning</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../machine_learning/Learning_Paradigms.html">Learning Paradigms</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../machine_learning/Supervised/index.html">Supervised Learning</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../machine_learning/Supervised/Classification/index.html">Classification</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../machine_learning/Supervised/Classification/Linear_classifiers/index.html">Linear Classifiers</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../../machine_learning/Supervised/Regression/index.html">Regression</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../machine_learning/Supervised/Regression/Linear_regression.html">Linear regression</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../machine_learning/Unsupervised/index.html">Unsupervised Learning</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../machine_learning/Unsupervised/Clustering/index.html">Clustering</a><ul class="simple">
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../../machine_learning/Unsupervised/Dimensionality_reduction/index.html">Dimensionality reduction</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../machine_learning/Unsupervised/Dimensionality_reduction/Linear_dimensionality_reduction_methods.html">Linear dimensionality reduction methods</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../machine_learning/RL/index.html">Reinforcement Learning (RL)</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../machine_learning/RL/RL_introduction.html">Introduction to RL</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../machine_learning/RL/RL_introduction.html#goal">Goal</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../machine_learning/RL/RL_introduction.html#what-is-special-about-rl">What is special about RL?</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../machine_learning/RL/RL_introduction.html#concepts-elements-of-rl">Concepts - Elements of RL:</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../machine_learning/RL/RL_introduction.html#how-to-achieve-this-goal">How to achieve this Goal?</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../machine_learning/RL/RL_introduction.html#rl-in-python">RL in Python</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../../machine_learning/RL/Markov_Decision_Process.html">Markov Decision Process (MDP)</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../machine_learning/RL/Markov_Decision_Process.html#components-of-an-mdp-in-mathematical-notations">Components Of an MDP in mathematical notations</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../machine_learning/RL/Markov_Decision_Process.html#mdp-model">MDP model</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../machine_learning/RL/Markov_Decision_Process.html#mdp-goal">MDP Goal</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../machine_learning/RL/Markov_Decision_Process.html#exploration-vs-exploitation-trade-off">Exploration vs Exploitation Trade-off</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../../machine_learning/RL/Value_functions_and_policies.html">Value functions, Policies and optimality</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../machine_learning/RL/Value_functions_and_policies.html#policies-how-probable-is-it-for-an-agent-to-select-any-action-from-a-given-state">Policies: How probable is it for an agent to select any action from a given state?</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../machine_learning/RL/Value_functions_and_policies.html#value-functions-how-good-is-a-state-or-an-action-at-a-given-state">Value functions: How good is a state, or an action at a given state?</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../machine_learning/RL/Value_functions_and_policies.html#optimality">Optimality</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../../machine_learning/RL/Value_Iteration.html">Value Iteration</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../machine_learning/RL/Policy_Iteration.html">Policy Iteration</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../machine_learning/RL/Q_learning.html">Q Learning</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../machine_learning/RL/Q_learning.html#motivation">Motivation</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../../machine_learning/RL/Q_learning_2.html">Q_learning (continued)</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../machine_learning/RL/Q_learning_2.html#q-learning-algorithm">Q-Learning Algorithm</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../machine_learning/RL/Q_learning_2.html#example-q-learning-in-action">Example: Q-learning in action</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../../machine_learning/RL/Deep_Q_learning.html">Deep Q-Learning</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../machine_learning/RL/Deep_Q_learning.html#motivation">Motivation</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../machine_learning/RL/Deep_Q_learning.html#key-idea">Key Idea</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../stats_math/index.html">Mathematical foundations, probability and statistics</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../stats_math/stats.html">Statistics for Data Science</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../cloud/index.html">Cloud Computing</a><ul class="simple">
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../web_and_mobile_dev/index.html">Web and Mobile Development</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../web_and_mobile_dev/Web/index.html">Web Development</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../web_and_mobile_dev/Web/web_recurring_concepts.html">Recurring concepts in web development</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../web_and_mobile_dev/Web/curl_http.html">Curl command</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../web_and_mobile_dev/Web/curl_http.html#what-is-it">What is it?</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../web_and_mobile_dev/Web/curl_http.html#curl-for-http-scripting">Curl for HTTP scripting</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../web_and_mobile_dev/Web/curl_http.html#example">Example</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../../web_and_mobile_dev/Web/JS_tutorial.html">JavaScript Tutorial &amp; examples:</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../web_and_mobile_dev/Web/JS_tutorial.html#javascript-batch-info">Javascript batch info</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../web_and_mobile_dev/Web/JS_tutorial.html#differences-with-java">Differences with Java</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../../web_and_mobile_dev/Web/node.js_introduction.html">Node.js introduction</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../web_and_mobile_dev/Web/Flask/flask_tutorial.html">Flask tutorial</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../web_and_mobile_dev/Web/Flask/flask_tutorial.html#what-is-flask">What is Flask?</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../web_and_mobile_dev/Web/Flask/flask_tutorial.html#installing-flask">Installing Flask:</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../web_and_mobile_dev/Web/Flask/flask_tutorial.html#flask-hello-world">Flask Hello world:</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../web_and_mobile_dev/Mobile/index.html">Mobile Development</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../web_and_mobile_dev/Mobile/dart_tutorial.html">Dart tutorial</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../web_and_mobile_dev/Mobile/dart_tutorial.html#what-is-dart">What is Dart?</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../web_and_mobile_dev/Mobile/dart_tutorial.html#compiling-dart-code">Compiling Dart code</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../web_and_mobile_dev/Mobile/dart_tutorial.html#language-tour">Language tour</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../web_and_mobile_dev/Mobile/dart_tutorial.html#useful-tools">Useful tools:</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../../web_and_mobile_dev/Mobile/flutter_getting_started.html">Flutter getting started:</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../web_and_mobile_dev/Mobile/flutter_getting_started.html#what-is-flutter">What is Flutter?</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../web_and_mobile_dev/Mobile/flutter_getting_started.html#quick-start-on-vs-code">Quick start on VS code</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../web_and_mobile_dev/Mobile/flutter_getting_started.html#useful-commands">Useful commands</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../web_and_mobile_dev/Mobile/flutter_getting_started.html#st-app-using-flutter-tutorials-by-google">1st app using flutter tutorials by google</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../web_and_mobile_dev/Mobile/flutter_getting_started.html#run-in-release-mode">Run in release mode:</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../computer_science/index.html">Computer Science - General</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../computer_science/computer_architechture.html">Computer Architecture</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../computer_science/computer_networks.html">Computer Networks</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../computer_science/OS_specific/index.html">OS specific tips</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../computer_science/OS_specific/windows/index.html">Windows tips</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../computer_science/OS_specific/windows/command_line_aliases.html">Setting up command line aliases:</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../computer_science/OS_specific/windows/Windows_useful_terminal_commands.html">Windows useful terminal commands</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../computer_science/OS_specific/windows/windows_shortcuts.html">Windows shortcuts:</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../computer_science/OS_specific/windows/Linux_subsystem.html">Windows Ubuntu Linux Subsystem</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../../computer_science/OS_specific/mac/index.html">Mac tips</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../computer_science/OS_specific/mac/command_line_aliases.html">Command Line Aliases</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../computer_science/OS_specific/mac/useful_mac_commands.html">Mac useful terminal commands and shortcuts:</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../computer_science/Editors/index.html">IDE and code editors tips</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../computer_science/Editors/idea_tips.html">Intellij Idea tips</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../computer_science/Editors/idea_tips.html#search">Search</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../computer_science/Editors/idea_tips.html#theme">Theme</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../../computer_science/Editors/vs_code_tips.html">Visual Studio Code tips</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../computer_science/Document_tips.html">Document format conversion</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../computer_science/Document_tips.html#universal-tool-for-document-conversion-pandoc">Universal tool for document conversion: Pandoc</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../computer_science/Document_tips.html#what-is-it">What is it?</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../computer_science/Document_tips.html#installing-pandoc">Installing Pandoc</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../computer_science/Document_tips.html#using-pandoc">Using Pandoc</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../../computer_science/Document_tips.html#extracting-from-pdf">Extracting from pdf</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../computer_science/languages_same_keyboard.html">Use different languages on same keyboard</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../computer_science/cs_recurring_concepts.html">Recurring concepts in computer science</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../big_data/index.html">Big Data</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../big_data/Spark/index.html">Spark</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../big_data/Spark/spark_tips.html">Spark tips</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../data_vis/index.html">Data Visualization</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../data_vis/Tableau/index.html">Tableau</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../data_vis/Tableau/introduction.html">Introduction and getting started with Tableau</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../data_vis/Tableau/introduction.html#best-practices-of-data-visualization">Best practices of data visualization</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../../data_vis/Tableau/tableau_tips.html">Tableau tips</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../database/index.html">Database Design and Development</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../database/PostgresSQL_tutorials/index.html">PostgresSQL tutorials</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../database/PostgresSQL_tutorials/postgesSQL_importing_data.html">PostgresSQL importing data tutorial:</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1 current"><a class="reference internal" href="../index.html">Business</a><ul class="current">
+<li class="toctree-l2 current"><a class="reference internal" href="index.html">Finance</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="1_introduction_to_finance.html">Introduction to finance</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="1_introduction_to_finance.html#overview-of-finance-and-financial-markets">Overview of finance and financial markets</a></li>
+</ul>
+</li>
+<li class="toctree-l3 current"><a class="current reference internal" href="#">Asset Valuation</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#introduction-to-asset-valuation">Introduction to asset valuation</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#risk-free-assets">Risk-free assets</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#risky-assets">Risky assets</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#diversification">Diversification</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#the-capm-capital-asset-pricing-model">The CAPM: Capital Asset Pricing Model</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="3_Market_Efficiency.html">Market Efficiency</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="3_Market_Efficiency.html#introduction">Introduction</a></li>
+<li class="toctree-l4"><a class="reference internal" href="3_Market_Efficiency.html#are-markets-efficient">Are markets efficient</a></li>
+<li class="toctree-l4"><a class="reference internal" href="3_Market_Efficiency.html#issues-for-data-scientists">Issues for data scientists</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="4_limit_order_books.html">Limit Order Books and Algorithmic Trading</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="4_limit_order_books.html#limt-order-books">Limt order books</a></li>
+<li class="toctree-l4"><a class="reference internal" href="4_limit_order_books.html#overview-of-the-industry">Overview of the industry</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="5_fixed_income_and_credit_risk.html">Fixed Income and Credit Risk</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="5_fixed_income_and_credit_risk.html#overview-of-fixed-income-markets">Overview of fixed income markets</a></li>
+<li class="toctree-l4"><a class="reference internal" href="5_fixed_income_and_credit_risk.html#vocabulary">Vocabulary</a></li>
+<li class="toctree-l4"><a class="reference internal" href="5_fixed_income_and_credit_risk.html#market-functioning">Market functioning</a></li>
+<li class="toctree-l4"><a class="reference internal" href="5_fixed_income_and_credit_risk.html#forecasting-credit-losses">Forecasting credit losses</a></li>
+<li class="toctree-l4"><a class="reference internal" href="5_fixed_income_and_credit_risk.html#credit-ratings">Credit Ratings</a></li>
+<li class="toctree-l4"><a class="reference internal" href="5_fixed_income_and_credit_risk.html#merton-s-model-deviation">Merton’s Model - deviation</a></li>
+<li class="toctree-l4"><a class="reference internal" href="5_fixed_income_and_credit_risk.html#merton-s-model-implications">Merton’s Model - implications</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../extracurricular/index.html">Extracurricular</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../extracurricular/personal_dev/index.html">Personal Development</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../extracurricular/personal_dev/goal_planning_system.html">Goal Planning System</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../extracurricular/personal_dev/goal_planning_system.html#elements-of-the-goal-planning-system">Elements of the Goal Planning System</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../extracurricular/personal_dev/goal_planning_system.html#personal-development-concepts">Personal development concepts</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../../extracurricular/personal_dev/atomic_habits_system.html">Atomic habits system</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../index.html">Abdou Documentation</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content style-external-links">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../../index.html">Docs</a> &raquo;</li>
+        
+          <li><a href="../index.html">Business</a> &raquo;</li>
+        
+          <li><a href="index.html">Finance</a> &raquo;</li>
+        
+      <li>Asset Valuation</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="../../_sources/business/finance/2_Asset_Valuation.md.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="asset-valuation">
+<h1>Asset Valuation<a class="headerlink" href="#asset-valuation" title="Permalink to this headline">¶</a></h1>
+<p>The goal of this session is to answer the following question:</p>
+<blockquote>
+<div><p>What determines the value of assets, i.e., the price at which assets trade in markets?
+What they are used for: financing, sharing risk, etc.
+How they are created and traded: IPOs, exchanges, etc.</p>
+</div></blockquote>
+<p>Ex.: Lemonade sold 20% of its shares for $319M. How investors came up with this valuation?</p>
+<div class="section" id="introduction-to-asset-valuation">
+<h2>Introduction to asset valuation<a class="headerlink" href="#introduction-to-asset-valuation" title="Permalink to this headline">¶</a></h2>
+<p>– <strong>Assets:</strong> include stocks, bonds, bank loans, insurance contracts, etc.</p>
+<ul class="simple">
+<li><p><strong>Valuation principle:</strong> Value of asset = Value of benefits (cash flow, see next point) generated by the asset.</p></li>
+<li><p><strong>Cash Flow</strong> or CF for brevity, refers to all the benefits generated by an asset. These benefits can be non-monetary (e.g. environmental) but are usually in cash:</p>
+<ul>
+<li><p>bonds and loans -&gt; interests</p></li>
+<li><p>stocks -&gt; dividends</p></li>
+<li><p>patents -&gt; royalties etc</p></li>
+</ul>
+</li>
+<li><p><strong>Challenges in asset valuation:</strong></p>
+<ul>
+<li><p><code class="docutils literal notranslate"><span class="pre">Forcasting</span> <span class="pre">the</span> <span class="pre">Cash</span> <span class="pre">Flow</span></code> using data, this is the job of data scientists.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">Determining</span> <span class="pre">the</span> <span class="pre">value</span> <span class="pre">of</span> <span class="pre">the</span> <span class="pre">forcated</span> <span class="pre">Cash</span> <span class="pre">Flow</span></code>, this is the job of economists. This class about this second point.</p></li>
+</ul>
+</li>
+<li><p>Finance is all about valuing future (discounting for time) uncertain (discounting for risk) cash flows.</p></li>
+</ul>
+</div>
+<div class="section" id="risk-free-assets">
+<h2>Risk-free assets<a class="headerlink" href="#risk-free-assets" title="Permalink to this headline">¶</a></h2>
+<p>In risk-free cashflows, we only account for time discounting.</p>
+<div class="section" id="time-discounting">
+<h3>Time discounting<a class="headerlink" href="#time-discounting" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li><p><strong>Time preference:</strong> Future cash flows are discounted as people always prefer money today as opposed to many tomorrow.</p></li>
+<li><p><strong>Present Value (PV):</strong> If you are indifferent between having X € now and 1 € is one year, then X is the present value of 1 € in one year. The Present value (PV) of an asset is how much it is worth today.</p></li>
+<li><p><strong>Discount rate (r):</strong> r such that PV = 1/(1+r) is called the discount rate. It is often expressed on a per year basis (e.g. every year 5% is discounted)</p></li>
+<li><p>Example: If you are indifferent between having 0.95 € now and 1 € in one year, then the PV of 1 € in one year is 0.95 € and the discount rate is r = 1/0.95 - 1 = 0.05 = 5 %</p></li>
+<li><p><strong>Maturity:</strong> when the bond or loan is due to be paid.</p></li>
+</ul>
+</div>
+<div class="section" id="pv-of-risk-free-cash-flow-valuing-risk-free-assets">
+<h3>PV of risk-free cash flow: Valuing risk-free assets<a class="headerlink" href="#pv-of-risk-free-cash-flow-valuing-risk-free-assets" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li><p>The <strong>PV of a cash flow</strong> $D_t$ € in t years is $PV = D_t / (1 + r)^t$ accounting for the fact that r is on a per-year basis.</p></li>
+<li><p>The <strong>PV of a stream of such cash flows</strong> is the sum of this previous term for t going from 1 to infinity.</p></li>
+<li><p>Example: valuing_risk_free.png</p></li>
+<li><p>The <strong>return rate</strong> is (what you get)/(what you paid) and refers to how much you win in percentage. It is equal to the discount rate for a risk-free asset.</p></li>
+</ul>
+</div>
+<div class="section" id="risk-free-interest-rate">
+<h3>Risk-free interest rate<a class="headerlink" href="#risk-free-interest-rate" title="Permalink to this headline">¶</a></h3>
+<ul>
+<li><p>For a risk-free asset, the <strong>risk-free interest rate (r_f)</strong> is defined as:</p>
+<blockquote>
+<div><p>Discount rate = return rate = risk-free interest rate</p>
+</div></blockquote>
+</li>
+<li><p>r_f is the same for all risk-free assets with cash flow at the same date in the same currency.</p></li>
+<li><p>Risk-free interest rate depends on</p>
+<ul class="simple">
+<li><p>The maturity (Horizon of the cash flow)</p></li>
+<li><p>The currency</p></li>
+</ul>
+</li>
+<li><p>Risk-free interest rate can be nefgative, explanation given in another class.</p></li>
+</ul>
+</div>
+<div class="section" id="market-efficiency">
+<h3>Market efficiency<a class="headerlink" href="#market-efficiency" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li><p>Negative return rate -&gt; You give the government 101 euros to buy a bond, and you get 100 euro in return in one year</p></li>
+<li><p>Many people want to save they money -&gt; More people want to buy bonds</p></li>
+</ul>
+</div>
+</div>
+<div class="section" id="risky-assets">
+<h2>Risky assets<a class="headerlink" href="#risky-assets" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="risk-aversion">
+<h3>Risk aversion<a class="headerlink" href="#risk-aversion" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li><p>Risk averse: staying away fron risk, investores are willing to accept a lower payoff if the risk is lower.</p></li>
+</ul>
+</div>
+<div class="section" id="valuing-risky-assets">
+<h3>Valuing risky assets<a class="headerlink" href="#valuing-risky-assets" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li><p>Commodities: gold, silver etc have high risk (Standard deviation) and not so high return in mean.</p></li>
+</ul>
+</div>
+<div class="section" id="valuing-the-stock-market">
+<h3>Valuing the stock market<a class="headerlink" href="#valuing-the-stock-market" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li><p>The dot-com bubble (also known as the dot-com boom, the tech bubble, and the Internet bubble) was a stock market bubble caused by excessive speculation in Internet-related companies in the late 1990s, a period of massive growth in the use and adoption of the Internet. They tought g was high.</p></li>
+</ul>
+</div>
+</div>
+<div class="section" id="diversification">
+<h2>Diversification<a class="headerlink" href="#diversification" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li><p>Cov = 0.2 sigma^2 -&gt; there is some positive correlation between the companies so they tend to move in the same direction (for example in the same industry) so investing in these companies together is riskier.</p></li>
+<li><p>Law of large numbers: when the correlation is 0 then when n the number of investments in diversified companies is high, the risk disapears.</p></li>
+<li><p>Risk is either idiosyncratic (can be eliminated by diversification) or systematic (cannot be diversified away)</p></li>
+<li><p>We require higher expected return on risquier portfolios (rho high), we only require risk free returns (risk premium of 0) for safe portfolios (rho = 0)</p></li>
+</ul>
+</div>
+<div class="section" id="the-capm-capital-asset-pricing-model">
+<h2>The CAPM: Capital Asset Pricing Model<a class="headerlink" href="#the-capm-capital-asset-pricing-model" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li><p>Market portfolio: all assets traded on the market</p></li>
+<li><p>Market beta: exposure to market risk, covariance between our return and the return of all the assets in the economy -&gt; captures only systematic risk. Higher beta means the industry varies beta when the market grows by 1%. Negative beta can also exist but are rare.</p></li>
+<li><p>Assumptions: People can diversify, no market segmentation -&gt; iprovement of the CAPM in this case.</p></li>
+<li><p>CAPM: The risk premium of asset I = market beta of the asset * market risk premium</p></li>
+<li><p>Industry is procyclical: goes up 1.2%</p></li>
+</ul>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="3_Market_Efficiency.html" class="btn btn-neutral float-right" title="Market Efficiency" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="1_introduction_to_finance.html" class="btn btn-neutral float-left" title="Introduction to finance" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2019, VTL LLC
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>
