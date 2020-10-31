@@ -1,7 +1,7 @@
 Spark
 #####
 
-lorem ipsum
+
 
 .. toctree::
    :caption: Contents:

@@ -1,8 +1,6 @@
 Database Design and Development
 ###############################
 
-lorem ipsum
-
 .. toctree::
    :caption: Contents:
    :glob:

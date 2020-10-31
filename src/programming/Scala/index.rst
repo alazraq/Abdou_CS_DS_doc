@@ -1,7 +1,7 @@
 Scala
 #####
 
-lorem ipsum
+
 
 .. toctree::
 

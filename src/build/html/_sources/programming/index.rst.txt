@@ -1,8 +1,6 @@
 Programming Languages
 #####################
 
-lorem ipsum
-
 .. toctree::
 
    paradigms

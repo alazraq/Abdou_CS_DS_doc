@@ -1,7 +1,7 @@
 OS specific tips 
 ################
 
-lorem ipsum
+
 
 .. toctree::
    :maxdepth: 2

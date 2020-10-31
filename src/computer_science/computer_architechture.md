@@ -1,3 +1,2 @@
 # Computer Architecture
 
-lorem ipsum

@@ -1,7 +1,7 @@
 Windows tips 
 ############
 
-lorem ipsum
+
 
 .. toctree::
    :maxdepth: 2

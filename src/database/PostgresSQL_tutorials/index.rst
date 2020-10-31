@@ -1,7 +1,7 @@
 PostgresSQL tutorials
 #####################
 
-lorem ipsum
+
 
 .. toctree::
    :caption: Contents:

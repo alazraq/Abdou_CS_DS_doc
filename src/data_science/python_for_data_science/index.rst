@@ -1,7 +1,7 @@
 Python for Data Science
 #######################
 
-lorem ipsum
+
 
 .. toctree::
    :maxdepth: 2

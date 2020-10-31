@@ -1,6 +1,6 @@
 # Agile methodology
 
-lorem ipsum jebhfehbfebfje
+ jebhfehbfebfje
 
 ## Section 1
 
