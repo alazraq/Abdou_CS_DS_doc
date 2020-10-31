@@ -12,4 +12,6 @@ Parts of this article are based on the excellent book ``Visual analytics with Ta
    :glob:
 
    introduction
+   Tableau_desktop
+   Tabpy
    tableau_tips

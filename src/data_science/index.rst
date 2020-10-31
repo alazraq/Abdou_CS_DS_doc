@@ -7,7 +7,6 @@ lorem ipsum
    :maxdepth: 2
 
    python_for_data_science/index
-   jupyter_astuces
-   nbconvert
+   notebooks/index
 
    

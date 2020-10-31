@@ -47,7 +47,7 @@ Here is an example of a report with multiple pages:
       :width: 600
 
 Dashboards
----------
+----------
 
 When you're ready to share a single page from a report, or a collection of visualizations, you create a **dashboard**. Often, it's a selected group of visuals that provide quick insight into the data or story you're trying to present.
 
@@ -60,5 +60,5 @@ In Power BI, a **tile** is a single visualization on a report or a dashboard. It
 
 A tile is shown in red in the dashboard below:
 
-.. image:: power_bi_tile
+.. image:: power_bi_tile.png
       :width: 600

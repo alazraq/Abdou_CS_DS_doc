@@ -11,3 +11,4 @@ In this section, I will focus on the three basic Machine Learning paradigms: sup
    Supervised/index
    Unsupervised/index
    RL/index
+   Miscellaneous/index
