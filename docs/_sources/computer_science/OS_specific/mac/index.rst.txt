@@ -1,7 +1,7 @@
 Mac tips 
 ########
 
-lorem ipsum
+
 
 .. toctree::
    :maxdepth: 2
