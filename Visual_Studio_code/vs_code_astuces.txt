@@ -1,3 +1,0 @@
-Visual Studio Code astuces:
-1- Command to start vscode in current folder: code .
-2- alt + click for multiple cursors

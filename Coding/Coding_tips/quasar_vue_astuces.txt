@@ -1,5 +1,0 @@
-Quasar - Vue astuces:
-
-1- Tu peux definir une balise html avec le nom d'un autre component .vue que tu as deja definis
-2- Les 2 point apres un composant dans une div signifient que quasr doit evaluer dinamiquement le contenu de cet attribut comme si c'etait du javascript
-3
