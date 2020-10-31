@@ -44,7 +44,7 @@ exclude_patterns = ['_build', 'Thumbs.db', '.DS_Store']
 #
 html_theme = 'sphinx_rtd_theme'
 
-html_logo = '_static/img/logo_2.png'
+html_logo = '_static/img/logo_2.jpg'
 
 # Add any paths that contain custom static files (such as style sheets) here,
 # relative to this directory. They are copied after the builtin static files,
