@@ -1,4 +1,4 @@
-# Privacy preserving ML
+# An Introduction to Privacy preserving ML
 
 ## Why is it important?
 
@@ -7,14 +7,14 @@
 - We need new techniques reconcile privacy and efficiency in ML.
 
 
-## Privacy preserving ML techniques
+## An overview of privacy preserving ML techniques
 
 
 - **Homomorphic Encryption (HE)** public key cryptographic scheme. Steps:
     - user creates a pair of secret and public key
     - uses the public one to encrypt her data
     - send encrypted data to a third party which will perform computations on the encrypted data. 
-    - the user can get the encrypted result and decode it with her own private key -> Because of the homomorphic properties of the encryption and decryption
+    - the user can get the encrypted result and decode it with her own private key because of the homomorphic properties of the encryption and decryption
 
 
 - **Secure Multi Party Computation (SMPC)** is a different paradigm which relies more on communication between the participants. 

@@ -2,12 +2,14 @@
 
 
 ## What is Kubernetes
+
 Kubernetes (abbreviated k8s) is a **cluster orchestration** platform for automating deployment, scaling, and operations of application containers across clusters of hosts. It was initially designed by Google and now maintained by the Cloud Native Computing Foundation.
 - Kubernetes coordinates a highly available cluster of computers that are connected to work as a single unit.
 - The goal is to be able to deploy **containerized** applications to a cluster without tying them specifically to individual machines.
-- Kubernetes automates the distribution, scaling and scheduling of application containers across a cluster in a more efficient way.
+- Kubernetes automates **the distribution, scaling and scheduling** of application containers across a cluster in a more efficient way.
 
 ## Goals of this tutorial
+
 Learn to:
 - Deploy a containerized application on a cluster.
 - Scale the deployment.
@@ -17,22 +19,29 @@ Learn to:
 ## Create a Kubernetes cluster
 
 ### Kubernetes Clusters (and pods)
+
 A Kubernetes cluster consists of two types of resources:
 
-- The **Master** coordinates the cluster
-- **Nodes** are VMs or a physical computers that serves as a worker machines in a Kubernetes cluster. A Kubernetes cluster that handles production traffic should have a minimum of three nodes. Each node should have:
+- The **Master** coordinates the cluster, it is composed of:
+    - **API Server:** The API server is a component of the Kubernetes control plane that exposes the Kubernetes API.
+    - **Controller:** which is also made of several components:
+        - Node controller: Responsible for noticing and responding when nodes go down.
+        - Replication controller: Responsible for maintaining the correct number of pods for every replication controller object in the system.
+        - Endpoints controller: Populates the Endpoints object (that is, joins Services & Pods).
+        - Service Account & Token controllers: Create default accounts and API access tokens for new namespaces
+    - **Scheduler:** Control component that watches for newly created Pods with no assigned node, and selects a node for them to run on.
+    - **ETCD:** Consistent and highly-available key value store used as Kubernetes' backing store for all cluster data.
+
+- **Nodes** are VMs or physical computers that serve as a worker machines in a Kubernetes cluster. A Kubernetes cluster that handles production traffic should have a minimum of three nodes. Each node should have:
     - a **Kubelet**, which is an agent for managing the node and communicating with the Kubernetes master. 
     - a tool for handling container operations, such as **Docker or rkt**. (PS: rkt is containerization software by CoreOS deigned to be more secure than and in competition with Docker)
 
 When you deploy applications on Kubernetes, you tell the master to start the application containers. The master schedules the containers to run on the cluster's nodes.
 
-
-
 A **Kubernetes pod** is a group of containers that are deployed together on the same host with shared storage/network, and a specification for how to run the containers. 
 
-1 Pod runs on a single Node of the cluster (but a Node can host multiple Pods), and the containerized apps inside the same pod have a shared ip address and access the same storage volumes.
-
-See more about Pods and Nodes on Explore your app.
+    - 1 Pod runs on a single Node of the cluster (but a Node can host multiple Pods), and the containerized apps inside the same pod have a shared ip address and access the same storage volumes.
+    - A pod is the smallest unit of deployment in k8s, if you want to deploy a container then a pod is created for this deployment.
 
 ### Minikube
 
@@ -53,11 +62,12 @@ minikube start
 ## Deploy an app
 
 ### Kubernetes Deployments
+
 Once you have a running Kubernetes cluster, you can deploy your containerized applications on top of it. To do so, you create a **Kubernetes Deployment configuration**. The Deployment instructs Kubernetes how to create and update instances of your application. 
 
-Once you've created a Deployment, the Kubernetes master schedules the application instances included in that Deployment to run on individual Nodes in the cluster, with a self-healing mechanism to address machine failure or maintenance.
+Once you've created a Deployment, the Kubernetes master schedules the application instances included in that Deployment to run on individual Node in the cluster, with a self-healing mechanism to address machine failure or maintenance.
 
-When you create a Deployment, you'll need to specify the container image for your application and the number of replicas that you want to run. You can change that information later by updating your Deployment
+When you create a Deployment, you'll need to specify the container image for your application and the number of replicas that you want to run. You can change that information later by updating your Deployment.
 
 
 ### Command line interface kubectl
