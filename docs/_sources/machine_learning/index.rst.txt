@@ -12,3 +12,4 @@ In this section, I will focus on the three basic Machine Learning paradigms: sup
    Unsupervised/index
    RL/index
    Miscellaneous/index
+   Privacy_preserving_ml/index
