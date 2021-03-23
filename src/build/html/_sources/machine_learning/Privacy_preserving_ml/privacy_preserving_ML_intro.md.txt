@@ -6,6 +6,11 @@
 - For instance, a speech-to-text model might require people to record their voices, a diagnosis tool will require private health data to be sent, or a credit analysis tool might need to have a look at private financial information.
 - We need new techniques reconcile privacy and efficiency in ML.
 
+## What is Federated Learning?
+
+- **Federated learning** means training your machine learning model on data that is **stored on different devices or servers** across the world, without having to centrally collect the data samples.
+- **Idea:** Instead of moving the data to the model, **copies of the global model are sent** to where the data is located, and the local data samples remain at their source devices.
+- **How it works:** A model is sent to the device and trained on the local data, after which the newly improved model with it’s update is sent back to the main server to be aggregated with the main model.
 
 ## An overview of privacy preserving ML techniques
 
@@ -28,9 +33,9 @@
     - All data inbound and outbound is encrypted, and computation in clear only happens within the enclave. 
     - The enclave code and integrity can then be checked externally using attestations.
 
-## Differential privacy
+- **Differential privacy**
 
-- The goal of **differential privacy** is to be able to publicly share information about a dataset by describing the patterns of groups within the dataset while withholding information about individuals in the dataset. 
-- The idea is for query results not to be used to infer much about any single individual, and therefore providing privacy. 
-- For machine learning models, this means the model should not reveal any private information about a particular individual whether he participated in the training data set or not. The aim is to control the influence of the training data during the training process.
-- For the math behind this and a differentially private implementation of SGD algorithm, please refer to the following excellent [medium article](https://medium.com/secure-and-private-ai-writing-challenge/summary-of-deep-learning-with-differential-privacy-d7ffa2033e8f). Basically the idea here is at each step of SGD to take a step in the opposite direction of an average noisy version of the gradient
+    - The goal of **differential privacy** is to be able to publicly share information about a dataset by describing the patterns of groups within the dataset while withholding information about individuals in the dataset. 
+    - The idea is for query results not to be used to infer much about any single individual, and therefore providing privacy. 
+    - For machine learning models, this means the model should not reveal any private information about a particular individual whether he participated in the training data set or not. The aim is to control the influence of the training data during the training process.
+    - For the math behind this and a differentially private implementation of SGD algorithm, please refer to the following excellent [medium article](https://medium.com/secure-and-private-ai-writing-challenge/summary-of-deep-learning-with-differential-privacy-d7ffa2033e8f). Basically the idea here is at each step of SGD to take a step in the opposite direction of an average noisy version of the gradient

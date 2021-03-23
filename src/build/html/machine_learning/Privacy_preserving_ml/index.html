@@ -408,8 +408,26 @@
 <li class="toctree-l2 current"><a class="current reference internal" href="#">Privacy-Preserving Machine Learning</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="privacy_preserving_ML_intro.html">An Introduction to Privacy preserving ML</a><ul>
 <li class="toctree-l4"><a class="reference internal" href="privacy_preserving_ML_intro.html#why-is-it-important">Why is it important?</a></li>
+<li class="toctree-l4"><a class="reference internal" href="privacy_preserving_ML_intro.html#what-is-federated-learning">What is Federated Learning?</a></li>
 <li class="toctree-l4"><a class="reference internal" href="privacy_preserving_ML_intro.html#an-overview-of-privacy-preserving-ml-techniques">An overview of privacy preserving ML techniques</a></li>
-<li class="toctree-l4"><a class="reference internal" href="privacy_preserving_ML_intro.html#differential-privacy">Differential privacy</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="threats.html">Threats to non-privacy-aware ML algorithms</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="threats.html#roles-in-an-ml-task">Roles in an ML task</a></li>
+<li class="toctree-l4"><a class="reference internal" href="threats.html#types-of-threats">Types of threats</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="cryptographic_approaches.html">Cryptographic Approaches</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="cryptographic_approaches.html#homomorphic-encryption-he">Homomorphic Encryption (HE)</a></li>
+<li class="toctree-l4"><a class="reference internal" href="cryptographic_approaches.html#secure-multi-party-computation-smpc-or-secret-sharing">Secure Multi Party Computation (SMPC) or Secret Sharing</a></li>
+<li class="toctree-l4"><a class="reference internal" href="cryptographic_approaches.html#trusted-execution-environments-tee-or-confidential-computing-secure-processors">Trusted Execution Environments (TEE) or Confidential Computing / Secure Processors</a></li>
+<li class="toctree-l4"><a class="reference internal" href="cryptographic_approaches.html#other-cryptographic-approaches-not-explored-here">Other cryptographic approaches (not explored here)</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="perturbation_approaches.html">Perturbation Approaches</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="perturbation_approaches.html#differential-privacy-dp">Differential Privacy (DP)</a></li>
+<li class="toctree-l4"><a class="reference internal" href="perturbation_approaches.html#local-differential-privacy">Local Differential Privacy</a></li>
+<li class="toctree-l4"><a class="reference internal" href="perturbation_approaches.html#dimensionality-reduction-dr">Dimensionality Reduction (DR)</a></li>
 </ul>
 </li>
 </ul>
@@ -722,15 +740,48 @@
             
   <div class="section" id="privacy-preserving-machine-learning">
 <h1>Privacy-Preserving Machine Learning<a class="headerlink" href="#privacy-preserving-machine-learning" title="Permalink to this headline">¶</a></h1>
-<p><strong>Privacy-Preserving Machine Learning (or PPML for short)</strong> refers to the  privacy-enhancing techniques concentrated on allowing multiple input parties to collaboratively train ML models without releasing their private data in its original form.</p>
-<p>In this blog, we focus on the foundations of cryptographic protection of data processing, and steadily build-up to advanced PPML techniques. I wrote this blog as part of my personal project at HEC Paris in March 2021.</p>
+<p>Traditionally, training a model would require transferring this data to a central server, but this raises numerous concerns about the privacy and security of the data.</p>
+<p><strong>Privacy-Preserving Machine Learning (or PPML for short)</strong> refers to the  privacy-enhancing techniques concentrated on allowing multiple input parties to collaboratively train ML models without releasing their private data in its original form. In other words, PPML consists of allowing models to be trained without having direct access to the private data in its original form.</p>
+<p>In these articles, we focus on the foundations of cryptographic protection of data processing, and steadily build-up to advanced PPML techniques. I wrote this blog as part of my personal project at HEC Paris in March 2021.</p>
+<p>References:
+- Openmined Privacy-Preserving Data Science, Explained series: <a class="reference external" href="https://arxiv.org/ftp/arxiv/papers/1804/1804.11238.pdf">https://arxiv.org/ftp/arxiv/papers/1804/1804.11238.pdf</a>
+- Privacy Preserving Machine Learning: Threats and Solutions paper by Al-Rubaie and Chang: <a class="reference external" href="https://blog.openmined.org/private-machine-learning-explained/">https://blog.openmined.org/private-machine-learning-explained/</a></p>
 <div class="toctree-wrapper compound">
 <p class="caption"><span class="caption-text">Contents:</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="privacy_preserving_ML_intro.html">An Introduction to Privacy preserving ML</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="privacy_preserving_ML_intro.html#why-is-it-important">Why is it important?</a></li>
+<li class="toctree-l2"><a class="reference internal" href="privacy_preserving_ML_intro.html#what-is-federated-learning">What is Federated Learning?</a></li>
 <li class="toctree-l2"><a class="reference internal" href="privacy_preserving_ML_intro.html#an-overview-of-privacy-preserving-ml-techniques">An overview of privacy preserving ML techniques</a></li>
-<li class="toctree-l2"><a class="reference internal" href="privacy_preserving_ML_intro.html#differential-privacy">Differential privacy</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="threats.html">Threats to non-privacy-aware ML algorithms</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="threats.html#roles-in-an-ml-task">Roles in an ML task</a></li>
+<li class="toctree-l2"><a class="reference internal" href="threats.html#types-of-threats">Types of threats</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="threats.html#private-data-in-the-clear">Private Data in the Clear</a></li>
+<li class="toctree-l3"><a class="reference internal" href="threats.html#reconstruction-attacks">Reconstruction Attacks</a></li>
+<li class="toctree-l3"><a class="reference internal" href="threats.html#model-inversion-attacks">Model Inversion Attacks</a></li>
+<li class="toctree-l3"><a class="reference internal" href="threats.html#membership-inference-attacks">Membership Inference Attacks</a></li>
+<li class="toctree-l3"><a class="reference internal" href="threats.html#more-threats-to-be-explored">More threats to be explored</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="cryptographic_approaches.html">Cryptographic Approaches</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="cryptographic_approaches.html#homomorphic-encryption-he">Homomorphic Encryption (HE)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="cryptographic_approaches.html#secure-multi-party-computation-smpc-or-secret-sharing">Secure Multi Party Computation (SMPC) or Secret Sharing</a></li>
+<li class="toctree-l2"><a class="reference internal" href="cryptographic_approaches.html#trusted-execution-environments-tee-or-confidential-computing-secure-processors">Trusted Execution Environments (TEE) or Confidential Computing / Secure Processors</a></li>
+<li class="toctree-l2"><a class="reference internal" href="cryptographic_approaches.html#other-cryptographic-approaches-not-explored-here">Other cryptographic approaches (not explored here)</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="perturbation_approaches.html">Perturbation Approaches</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="perturbation_approaches.html#differential-privacy-dp">Differential Privacy (DP)</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="perturbation_approaches.html#differential-privacy-mathematical-definition">𝜀-Differential privacy mathematical definition</a></li>
+<li class="toctree-l3"><a class="reference internal" href="perturbation_approaches.html#types-of-dp">Types of DP</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="perturbation_approaches.html#local-differential-privacy">Local Differential Privacy</a></li>
+<li class="toctree-l2"><a class="reference internal" href="perturbation_approaches.html#dimensionality-reduction-dr">Dimensionality Reduction (DR)</a></li>
 </ul>
 </li>
 </ul>
