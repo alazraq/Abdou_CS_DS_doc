@@ -8,9 +8,12 @@ Abderrahmane Lazraq's documentation
 
 Welcome to Abdou's documentation!
 
-This documentation contains tutorials, tips and tricks learned by Abdou during his studies in four different institutions - EPFL, Carnegie Mellon University, Ecole Polytechnique and HEC Paris - and working part-time as a software developer and data science intern for more than 2 years for Virtual Traffic Lights LLC. 
+This documentation contains tutorials, tips and tricks learned by Abdou during his studies in four different institutions - Ecole Polytechnique, HEC Paris, Carnegie Mellon University and EPFL - as well as during my internship at Microsoft and working part-time as a software developer / data scientist for more than 2 years for Virtual Traffic Lights LLC prior to my internship at Microsoft. 
 
-The goal is to provide a centralized documentation for future reference if faced with similar tasks to accomplish and to share knowledge.
+The goal is to provide a centralized documentation for future reference if faced with similar tasks to accomplish and to share knowledge. 
+
+Please note that this is work in progress as I continue writing articles while learning, but I don't necessarily have time to document everything I learned so I will tend to focus on the subjects that are more relevant to my current work and interests.
+
 
 .. toctree::
    :caption: Contents:
