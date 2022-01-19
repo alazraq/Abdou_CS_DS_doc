@@ -8,6 +8,8 @@
 
 > from helpers import *
 
-then functions can bu used directly as:
+then functions can be used directly as:
 
 > height, weight, gender = load_data(sub_sample=False, add_outlier=False)
+
+- Shift + Tab shows function signature

@@ -15,3 +15,4 @@ This section aims at first introducing the basics of Reinforcement Learning, the
    Q_learning.rst
    Q_learning_2.rst
    Deep_Q_learning.rst
+   MARL

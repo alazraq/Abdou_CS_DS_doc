@@ -9,5 +9,7 @@ These are mostly basic finance knowledge and strategy skills necessary for a suc
 
    finance/index
    strategy_consulting/index
+   sales/index
+   management/index
 
    

@@ -8,11 +8,11 @@ Software development is the process of analysing user requirements, designing, d
    Software_development_in_a_nutshell
    analysis
    design.rst
-   build
+   building_packaging/index
    documentation/index
    Serialization/index
    test
-   Packaging&deploying/index
+   deploying/index
    software_eng_best_practices
    version_control/index
    agile_scrum

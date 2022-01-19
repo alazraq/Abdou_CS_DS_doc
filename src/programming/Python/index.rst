@@ -12,4 +12,5 @@ In the section, we will focus on the basics of python programming like writing a
    variable_args
    docstrings
    python_packaging
+   types
    miscellaneous
