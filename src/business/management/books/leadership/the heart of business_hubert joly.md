@@ -8,7 +8,7 @@
 
 ## Introduction:
 
-- This book reflects that the leader I have become is an amassing and meshing of thousands of ideas from thousands of places. 
+- This book reflects that the leader I have become is an **amassing and meshing of thousands of ideas from thousands of places.** 
 
 ## Book outline
 
@@ -26,7 +26,15 @@ There are four parts in this book:
 
 ### 1 - Adam's curse
 
+- Work historically seen as a burden
+- This book is about how to turn disengaged people that merely show up for work or are actively hating their jobs into engaged employees.
 
+### 2 - Why we work
+
+- Work is part of a man's search for meaning
+- Victor Frankl: Life, he concluded, is not a quest for pleasure or for power. It is instead **a quest for meaning**, which ultimately is the path to fulfillment and happiness. And according to him, one can find meaning in three possible places: work, love, and courage. In truth, they often converge; doing something significant through work often involves caring for others and overcoming adversity.
+- Author's purpose in life: making a positive difference for people around me and using the platform I have to make a positive difference in the world.
+- 
 
 
 

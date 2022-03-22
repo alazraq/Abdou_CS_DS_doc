@@ -14,5 +14,6 @@ In the section, we will focus on the basics of python programming like writing a
    python_packaging
    types
    abstract_base_class
+   decorators
    miscellaneous
-   pybuilder_build_locally.md
+   pybuilder_build_locally

@@ -1,3 +1,3 @@
 # New words
 
-- **colloquially**: in the language of ordinary or familiar conversation; informally.
+- **colloquially**: in the language of familiar conversation; informally.
