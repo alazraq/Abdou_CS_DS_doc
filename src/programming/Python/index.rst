@@ -17,3 +17,4 @@ In the section, we will focus on the basics of python programming like writing a
    decorators
    miscellaneous
    pybuilder_build_locally
+   poetry

@@ -1,6 +1,8 @@
-Sales  
-#####
+Management 
+##########
 
+Management is the administration of an organization, whether it is a business, a non-profit organization, or a government body. 
+It is the art and science of managing resources of the business.
 
 .. toctree::
    :maxdepth: 2
