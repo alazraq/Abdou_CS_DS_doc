@@ -81,7 +81,7 @@ The personal development concepts cover Success, Motivation, Attitudes, Conditio
 
 - Your goals are ✍ **PERSONAL**. They must be your goals. Someone else does not choose them for you. When you work to achieve someone else’s goals, you are not as motivated as when you work to reach your own.
 
-- And finally, the word GOALS. Your Goals must be **Specific, Measurable, Attainable, Realistic, and Tangible – and encompass every area of your life**: Family and Home; Financial and Career; Mental and Educational; Physical and Health; Social and Cultural; and Spiritual and Ethical.
+- And finally, your Goals must be SMART, **Specific, Measurable, Attainable, Realistic, and Tangible – and encompass every area of your life**: Family and Home; Financial and Career; Mental and Educational; Physical and Health; Social and Cultural; and Spiritual and Ethical.
 
 ### ☆ Motivation
 
