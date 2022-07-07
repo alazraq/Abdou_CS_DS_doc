@@ -11,12 +11,8 @@ In this tutorial we give an overview of the clustering workflow starting with da
 .. toctree::
    :caption: Contents:
    :glob:
-   clustering_data_preparation.md
-   clustering_similarity_measures.md
-   clustering_algorithms.md
-   clustering_results_interpretation.md
 
-
-   
-
-   
+   clustering_data_preparation
+   clustering_similarity_metrics
+   clustering_algorithms
+   clustering_results_interpretation

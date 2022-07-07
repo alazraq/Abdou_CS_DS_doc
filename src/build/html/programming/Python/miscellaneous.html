@@ -38,8 +38,8 @@
     
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
-    <link rel="next" title="Scala" href="../Scala/index.html" />
-    <link rel="prev" title="Python types tips" href="types.html" /> 
+    <link rel="next" title="Building a package locally using pybuilder" href="pybuilder_build_locally.html" />
+    <link rel="prev" title="Python decorators" href="decorators.html" /> 
 </head>
 
 <body class="wy-body-for-nav">
@@ -131,6 +131,7 @@
 <li class="toctree-l4"><a class="reference internal" href="../../software_dev/documentation/code_doc/generation_and_deployment.html">Generating and deploying code documentation</a></li>
 </ul>
 </li>
+<li class="toctree-l3"><a class="reference internal" href="../../software_dev/documentation/flowcharts.html">Flowcharts for programming</a></li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="../../software_dev/Serialization/index.html">Serialization</a><ul>
@@ -291,10 +292,25 @@
 <li class="toctree-l4"><a class="reference internal" href="types.html#string">String</a></li>
 </ul>
 </li>
+<li class="toctree-l3"><a class="reference internal" href="abstract_base_class.html">Abstract base class (ABC)</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="abstract_base_class.html#goals-of-an-abc">Goals of an ABC</a></li>
+<li class="toctree-l4"><a class="reference internal" href="abstract_base_class.html#declaring-an-abc">Declaring an ABC</a></li>
+<li class="toctree-l4"><a class="reference internal" href="abstract_base_class.html#abc-vs-plain-inheritance">ABC vs plain inheritance</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="decorators.html">Python decorators</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="decorators.html#definition-of-a-decorator">Definition of a decorator</a></li>
+<li class="toctree-l4"><a class="reference internal" href="decorators.html#usefullness">Usefullness</a></li>
+<li class="toctree-l4"><a class="reference internal" href="decorators.html#example">Example</a></li>
+<li class="toctree-l4"><a class="reference internal" href="decorators.html#decorators-that-can-take-arguments-themselves">Decorators that can take arguments themselves</a></li>
+</ul>
+</li>
 <li class="toctree-l3 current"><a class="current reference internal" href="#">Miscellaneous</a><ul>
 <li class="toctree-l4"><a class="reference internal" href="#shebang-to-select-an-interpreter-in-linux">Shebang (#!) to select an interpreter in Linux</a></li>
 </ul>
 </li>
+<li class="toctree-l3"><a class="reference internal" href="pybuilder_build_locally.html">Building a package locally using pybuilder</a></li>
+<li class="toctree-l3"><a class="reference internal" href="poetry.html">Poetry</a></li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="../Scala/index.html">Scala</a><ul>
@@ -307,7 +323,10 @@
 </ul>
 </li>
 <li class="toctree-l3"><a class="reference internal" href="../Scala/Scala_tips.html">Scala tips</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../Scala/Scala_tests.html">Scala tests</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../Scala/Scala_tests.html">Scala unit testing</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../Scala/Scala_tests.html#writing-your-first-test-using-scalatest">Writing your first test using Scalatest</a></li>
+</ul>
+</li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="../Java/index.html">Java</a><ul>
@@ -400,6 +419,7 @@
 <li class="toctree-l4"><a class="reference internal" href="../../machine_learning/RL/Deep_Q_learning.html#key-idea">Key Idea</a></li>
 </ul>
 </li>
+<li class="toctree-l3"><a class="reference internal" href="../../machine_learning/RL/MARL.html">Multi-agent Reinforcement Learning (MARL)</a></li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="../../machine_learning/Miscellaneous/index.html">Miscellaneous Topics in Machine Learning</a><ul>
@@ -522,6 +542,7 @@
 <li class="toctree-l4"><a class="reference internal" href="../../computer_science/OS_specific/windows/command_line_aliases.html">Setting up command line aliases:</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../computer_science/OS_specific/windows/Windows_useful_terminal_commands.html">Windows useful terminal commands</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../computer_science/OS_specific/windows/windows_shortcuts.html">Windows shortcuts:</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../computer_science/OS_specific/windows/file_renaming_tool.html">Bulk file renaming tool</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../computer_science/OS_specific/windows/Linux_subsystem.html">Windows Ubuntu Linux Subsystem</a></li>
 </ul>
 </li>
@@ -619,6 +640,21 @@
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="../../business/index.html">Business</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../business/business_basics.html">Business basics</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../business/business_basics.html#making-a-profit">Making a profit</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../business/business_basics.html#parts-of-the-business">Parts of the Business</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../business/management/index.html">Management</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../business/management/docs_management/index.html">Docs management</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../business/management/docs_management/drive.html">Organizing drive</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../../business/management/hiring/index.html">Hiring</a><ul class="simple">
+</ul>
+</li>
+</ul>
+</li>
 <li class="toctree-l2"><a class="reference internal" href="../../business/finance/index.html">Finance</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="../../business/finance/1_introduction_to_finance.html">Introduction to finance</a><ul>
 <li class="toctree-l4"><a class="reference internal" href="../../business/finance/1_introduction_to_finance.html#overview-of-finance-and-financial-markets">Overview of finance and financial markets</a></li>
@@ -655,7 +691,16 @@
 </li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="../../business/strategy_consulting/index.html">Strategy consulting</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../business/sales/index.html">Sales</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../business/sales/developing_a_winning_sales_strategy.html">Developing a winning sales strategy</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../business/sales/developing_a_winning_sales_strategy.html#what-is-a-selling-strategy">What is a selling strategy?</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../business/sales/developing_a_winning_sales_strategy.html#lean-startup-sales-strategy">Lean startup sales strategy</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../business/sales/developing_a_winning_sales_strategy.html#building-blocks-of-a-successful-sales-strategy">Building blocks of a successful sales strategy</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../../business/sales/mvp.html">Minimum Viable Product</a></li>
+</ul>
+</li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="../../extracurricular/index.html">Extracurricular</a><ul>
@@ -666,6 +711,9 @@
 </ul>
 </li>
 <li class="toctree-l3"><a class="reference internal" href="../../extracurricular/personal_dev/atomic_habits_system.html">Atomic habits system</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../extracurricular/social_dev/index.html">Social development</a><ul class="simple">
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="../../extracurricular/chess/index.html">Chess</a><ul>
@@ -777,8 +825,8 @@ In Windows, the interpreter is chosen based on the extension of the file, which 
           </div>
           <footer>
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
-        <a href="../Scala/index.html" class="btn btn-neutral float-right" title="Scala" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
-        <a href="types.html" class="btn btn-neutral float-left" title="Python types tips" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="pybuilder_build_locally.html" class="btn btn-neutral float-right" title="Building a package locally using pybuilder" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+        <a href="decorators.html" class="btn btn-neutral float-left" title="Python decorators" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
     </div>
 
   <hr/>

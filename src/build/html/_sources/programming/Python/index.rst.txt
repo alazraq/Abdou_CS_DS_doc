@@ -13,4 +13,9 @@ In the section, we will focus on the basics of python programming like writing a
    docstrings
    python_packaging
    types
-   miscellaneous
+   abstract_base_class
+   decorators
+   shebang
+   pybuilder_build_locally
+   poetry
+   pycharm

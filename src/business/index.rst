@@ -13,6 +13,6 @@ These are basic business concepts including rudimentary management, finance, acc
    business_basics
    management/index
    finance/index
-   accounting/index
    sales/index
-   marketing/index
+..   accounting/index
+..   marketing/index

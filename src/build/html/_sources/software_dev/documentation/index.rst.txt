@@ -14,3 +14,4 @@ All independent pieces of software should be documented. Typically, a single ser
 
    general_doc/index
    code_doc/index
+   flowcharts

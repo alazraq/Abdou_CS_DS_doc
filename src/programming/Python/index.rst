@@ -15,6 +15,7 @@ In the section, we will focus on the basics of python programming like writing a
    types
    abstract_base_class
    decorators
-   miscellaneous
+   shebang
    pybuilder_build_locally
    poetry
+   pycharm
