@@ -12,6 +12,8 @@ This section aims at first introducing the basics of Reinforcement Learning, the
    Value_functions_and_policies.rst
    Value_Iteration
    Policy_Iteration
-   Q_learning.rst
-   Q_learning_2.rst
-   Deep_Q_learning.rst
+   Q_learning/index
+   ppo
+   MARL
+   ray_rllib/index
+   books/index

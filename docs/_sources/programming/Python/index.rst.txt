@@ -12,4 +12,10 @@ In the section, we will focus on the basics of python programming like writing a
    variable_args
    docstrings
    python_packaging
-   miscellaneous
+   types
+   abstract_base_class
+   decorators
+   shebang
+   pybuilder_build_locally
+   poetry
+   pycharm

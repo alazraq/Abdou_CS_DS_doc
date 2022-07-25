@@ -8,7 +8,7 @@ The goal of this section is to share with you the concepts and ideas that had th
 Here, I will focus on two complementary systems that are the backbone of personal development in my opinion: 
 
 - The Goal Planning System, or GPS for short, which is about the results you want to achieve. 
-- The Atomic Habits System which is about the processes that lead to those results.
+- The Atomic Habits System which is about the processes that leads to those results.
 
 
 .. toctree::

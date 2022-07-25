@@ -1,0 +1,4 @@
+# Pycharm issues
+
+- Problem 1: Pycharm not recognizing imports in files from the same package.
+- Solution 1: Mark all python folders from src to your python files as sources root.
