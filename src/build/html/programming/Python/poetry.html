@@ -7,7 +7,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   
-  <title>Poetry &mdash; Abdou Documentation  documentation</title>
+  <title>Poetry basic usage &mdash; Abdou Documentation  documentation</title>
   
 
   
@@ -307,7 +307,12 @@
 </li>
 <li class="toctree-l3"><a class="reference internal" href="shebang.html">Shebang (#!)</a></li>
 <li class="toctree-l3"><a class="reference internal" href="pybuilder_build_locally.html">Building a package locally using pybuilder</a></li>
-<li class="toctree-l3 current"><a class="current reference internal" href="#">Poetry</a></li>
+<li class="toctree-l3 current"><a class="current reference internal" href="#">Poetry basic usage</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#project-setup">Project setup</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#using-poetry-virtual-environment">Using poetry virtual environment</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#installing-dependencies">Installing dependencies</a></li>
+</ul>
+</li>
 <li class="toctree-l3"><a class="reference internal" href="pycharm.html">Pycharm issues</a></li>
 </ul>
 </li>
@@ -728,7 +733,12 @@
 <li class="toctree-l4"><a class="reference internal" href="../../extracurricular/personal_dev/goal_planning_system.html#personal-development-concepts">Personal development concepts</a></li>
 </ul>
 </li>
-<li class="toctree-l3"><a class="reference internal" href="../../extracurricular/personal_dev/atomic_habits_system.html">Atomic habits system</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../extracurricular/personal_dev/atomic_habits_system.html">Atomic Habits System</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../extracurricular/personal_dev/atomic_habits_system.html#introduction">Introduction</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../extracurricular/personal_dev/atomic_habits_system.html#how-to-build-a-good-habit">How to build a good habit</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../extracurricular/personal_dev/atomic_habits_system.html#how-to-break-a-bad-habit">How to break a bad habit</a></li>
+</ul>
+</li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="../../extracurricular/social_dev/index.html">Social development</a><ul>
@@ -809,7 +819,7 @@
         
           <li><a href="index.html">Python programming basics</a> &raquo;</li>
         
-      <li>Poetry</li>
+      <li>Poetry basic usage</li>
     
     
       <li class="wy-breadcrumbs-aside">
@@ -828,9 +838,142 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
             
-  <div class="section" id="poetry">
-<h1>Poetry<a class="headerlink" href="#poetry" title="Permalink to this headline">¶</a></h1>
+  <div class="section" id="poetry-basic-usage">
+<h1>Poetry basic usage<a class="headerlink" href="#poetry-basic-usage" title="Permalink to this headline">¶</a></h1>
 <p>Poetry is a tool for dependency management and packaging in Python. It allows you to declare the libraries your project depends on and it will manage (install/update) them for you.</p>
+<p>We refer to the following <a class="reference external" href="https://python-poetry.org/docs/basic-usage/">tutorial</a> to document basic usage of Poetry.</p>
+<div class="section" id="project-setup">
+<h2>Project setup<a class="headerlink" href="#project-setup" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="creating-a-new-project">
+<h3>Creating a new project<a class="headerlink" href="#creating-a-new-project" title="Permalink to this headline">¶</a></h3>
+<ul>
+<li><p>Command:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">poetry</span> <span class="n">new</span> <span class="n">poetry</span><span class="o">-</span><span class="n">demo</span>
+</pre></div>
+</div>
+</li>
+</ul>
+</div>
+<div class="section" id="initialising-a-pre-existing-project">
+<h3>Initialising a pre-existing project<a class="headerlink" href="#initialising-a-pre-existing-project" title="Permalink to this headline">¶</a></h3>
+<ul>
+<li><p>Commands</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">cd</span> <span class="n">pre</span><span class="o">-</span><span class="n">existing</span><span class="o">-</span><span class="n">project</span>
+<span class="n">poetry</span> <span class="n">init</span>
+</pre></div>
+</div>
+</li>
+</ul>
+</div>
+<div class="section" id="project-structure-ans-toml-file">
+<h3>Project structure ans toml file<a class="headerlink" href="#project-structure-ans-toml-file" title="Permalink to this headline">¶</a></h3>
+<p>A usual poetry project includes the following content (new project <code class="docutils literal notranslate"><span class="pre">poetry-demo</span></code> given as an example):</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>poetry-demo
+├── pyproject.toml
+├── README.rst
+├── poetry_demo
+│   └── __init__.py
+└── tests
+    ├── __init__.py
+    └── test_poetry_demo.py
+</pre></div>
+</div>
+<p>The <code class="docutils literal notranslate"><span class="pre">pyproject.toml</span></code> file is the most important here. It orchestrates your project and its dependencies and looks like this for a new project:</p>
+<div class="highlight-toml notranslate"><div class="highlight"><pre><span></span><span class="k">[tool.poetry]</span>
+<span class="n">name</span> <span class="o">=</span> <span class="s">&quot;poetry-demo&quot;</span>
+<span class="n">version</span> <span class="o">=</span> <span class="s">&quot;0.1.0&quot;</span>
+<span class="n">description</span> <span class="o">=</span> <span class="s">&quot;&quot;</span>
+<span class="n">authors</span> <span class="o">=</span> <span class="k">[&quot;Sébastien Eustace &lt;sebastien@eustace.io&gt;&quot;]</span>
+
+<span class="k">[tool.poetry.dependencies]</span>
+<span class="n">python</span> <span class="o">=</span> <span class="s">&quot;*&quot;</span>
+
+<span class="k">[tool.poetry.dev-dependencies]</span>
+<span class="n">pytest</span> <span class="o">=</span> <span class="s">&quot;^3.4&quot;</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="specifying-dependencies">
+<h3>Specifying dependencies<a class="headerlink" href="#specifying-dependencies" title="Permalink to this headline">¶</a></h3>
+<p>There are 2 ways to specify dependencies:</p>
+<ol>
+<li><p>Specify them in the <code class="docutils literal notranslate"><span class="pre">tool.poetry.dependencies</span></code> section of the <code class="docutils literal notranslate"><span class="pre">pyproject.toml</span></code> file by specifying package names and version constraints (feel free to read more on how to specify version constraints <a class="reference external" href="https://python-poetry.org/docs/dependency-specification/">here</a>).</p>
+<p>For example to add the pendulum dependency:</p>
+<div class="highlight-toml notranslate"><div class="highlight"><pre><span></span><span class="k">[tool.poetry.dependencies]</span>
+<span class="n">pendulum</span> <span class="o">=</span> <span class="s">&quot;^1.4&quot;</span>
+</pre></div>
+</div>
+<p>It takes a mapping of package names and version constraints.</p>
+<p>Poetry uses this information to search for the right set of files in package “repositories” that you register in the tool.poetry.repositories section, or on PyPI by default.</p>
+</li>
+<li><p>Use the <code class="docutils literal notranslate"><span class="pre">poetry</span> <span class="pre">add</span></code> command:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">poetry</span> <span class="n">add</span> <span class="n">pendulum</span>
+</pre></div>
+</div>
+<p>It will automatically find a suitable version constraint and install the package and subdependencies.</p>
+</li>
+</ol>
+</div>
+</div>
+<div class="section" id="using-poetry-virtual-environment">
+<h2>Using poetry virtual environment<a class="headerlink" href="#using-poetry-virtual-environment" title="Permalink to this headline">¶</a></h2>
+<p>By default, poetry creates a virtual environment in <code class="docutils literal notranslate"><span class="pre">{cache-dir}/virtualenvs</span></code> (or <code class="docutils literal notranslate"><span class="pre">{cache-dir}\virtualenvs</span></code> on Windows).</p>
+<p>There are several ways to run commands within this virtual environment.</p>
+<div class="section" id="using-poetry-run-to-run-scripts">
+<h3>Using poetry run (to run scripts)<a class="headerlink" href="#using-poetry-run-to-run-scripts" title="Permalink to this headline">¶</a></h3>
+<ul>
+<li><p>To run your script in the default virtual env, simply use:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">poetry</span> <span class="n">run</span> <span class="n">python</span> <span class="n">your_script</span><span class="o">.</span><span class="n">py</span>
+</pre></div>
+</div>
+</li>
+<li><p>Likewise if you have command line tools such as pytest or black you can run them using the run command, for example:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">poetry</span> <span class="n">run</span> <span class="n">pytest</span>
+</pre></div>
+</div>
+</li>
+</ul>
+</div>
+<div class="section" id="using-poetry-shell-to-activate-th-virtual-env">
+<h3>Using poetry shell (to activate th virtual env)<a class="headerlink" href="#using-poetry-shell-to-activate-th-virtual-env" title="Permalink to this headline">¶</a></h3>
+<ul>
+<li><p>The easiest way to activate the virtual environment is to create a new shell with:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">poetry</span> <span class="n">shell</span>
+</pre></div>
+</div>
+</li>
+<li><p>To deactivate the virtual environment and exit this new shell type</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">exit</span>
+</pre></div>
+</div>
+</li>
+<li><p>To deactivate the virtual environment without leaving the shell use</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">deactivate</span>
+</pre></div>
+</div>
+</li>
+</ul>
+</div>
+</div>
+<div class="section" id="installing-dependencies">
+<h2>Installing dependencies<a class="headerlink" href="#installing-dependencies" title="Permalink to this headline">¶</a></h2>
+<p>To install the defined dependencies for your project, just run the install command.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">poetry</span> <span class="n">install</span>
+</pre></div>
+</div>
+<p>When you run this command, one of two things may happen depending on whether this is your first time installing and your project incudes no <code class="docutils literal notranslate"><span class="pre">poetry.lock</span></code> file or not:</p>
+<ol>
+<li><p>If you have never run the <code class="docutils literal notranslate"><span class="pre">poetry</span> <span class="pre">install</span></code> command before and there is also no poetry.lock file present, Poetry simply resolves all dependencies listed in your pyproject.toml file and downloads the latest version of their files.</p>
+<p>When Poetry has finished installing, it writes all of the packages and the exact versions of them that it downloaded to the <code class="docutils literal notranslate"><span class="pre">poetry.lock</span></code> file, locking the project to those specific versions.</p>
+<blockquote>
+<div><p><strong>Note:</strong> You should commit the <code class="docutils literal notranslate"><span class="pre">poetry.lock</span></code> file to your project repo so that all people working on the project are locked to the same versions of dependencies (more below).</p>
+</div></blockquote>
+</li>
+<li><p>Running install when a <code class="docutils literal notranslate"><span class="pre">poetry.lock</span></code> file is present resolves and installs all dependencies that you listed in <code class="docutils literal notranslate"><span class="pre">pyproject.toml</span></code>, but Poetry uses the exact versions listed in <code class="docutils literal notranslate"><span class="pre">poetry.lock</span></code> to ensure that the package versions are consistent for everyone working on your project.</p>
+<p>As a result you will have all dependencies requested by your <code class="docutils literal notranslate"><span class="pre">pyproject.toml</span></code> file, but they may not all be at the very latest available versions (some of the dependencies listed in the <code class="docutils literal notranslate"><span class="pre">poetry.lock</span></code> file may have released newer versions since the file was created). This is by design, it ensures that your project does not break because of unexpected changes in dependencies.</p>
+</li>
+</ol>
+</div>
 </div>
 
 
