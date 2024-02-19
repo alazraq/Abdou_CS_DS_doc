@@ -4,8 +4,7 @@ Spark
 
 
 .. toctree::
-   :caption: Contents:
-   :glob:
+   :maxdepth: 2
 
    spark_intro
    spark_tips

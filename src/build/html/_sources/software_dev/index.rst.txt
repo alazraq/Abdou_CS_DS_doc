@@ -13,6 +13,7 @@ Software development is the process of analysing user requirements, designing, d
    Serialization/index
    test
    deploying/index
+   communication/index
    software_eng_best_practices
    version_control/index
    agile_scrum

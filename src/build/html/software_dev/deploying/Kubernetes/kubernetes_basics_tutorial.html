@@ -1,41 +1,40 @@
 
 
 <!DOCTYPE html>
-<html class="writer-html5" lang="en" >
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
 <head>
-  <meta charset="utf-8" />
-  
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta charset="utf-8">
+  <meta name="generator" content="Docutils 0.19: https://docutils.sourceforge.io/" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
   <title>Kubernetes Basics tutorial &mdash; Abdou Documentation  documentation</title>
   
 
   
-  <link rel="stylesheet" href="../../../_static/css/theme.css" type="text/css" />
-  <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
-
+  
   
   
 
   
-  
-
-  
-
-  
-  <!--[if lt IE 9]>
-    <script src="../../../_static/js/html5shiv.min.js"></script>
-  <![endif]-->
+  <script type="text/javascript" src="../../../_static/js/modernizr.min.js"></script>
   
     
       <script type="text/javascript" id="documentation_options" data-url_root="../../../" src="../../../_static/documentation_options.js"></script>
-        <script src="../../../_static/jquery.js"></script>
-        <script src="../../../_static/underscore.js"></script>
+        <script data-url_root="../../../" id="documentation_options" src="../../../_static/documentation_options.js"></script>
         <script src="../../../_static/doctools.js"></script>
+        <script src="../../../_static/sphinx_highlight.js"></script>
     
     <script type="text/javascript" src="../../../_static/js/theme.js"></script>
 
     
+
+  
+  <link rel="stylesheet" href="../../../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../../../_static/css/theme.css" type="text/css" />
     <link rel="index" title="Index" href="../../../genindex.html" />
     <link rel="search" title="Search" href="../../../search.html" />
     <link rel="next" title="Kubernetes tutorials links" href="kubernetes_links.html" />
@@ -57,9 +56,6 @@
           
 
           
-            
-            <img src="../../../_static/logo_2.jpg" class="logo" alt="Logo"/>
-          
           </a>
 
           
@@ -79,7 +75,6 @@
           
         </div>
 
-        
         <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
           
             
@@ -87,7 +82,7 @@
               
             
             
-              <p class="caption"><span class="caption-text">Contents:</span></p>
+              <p class="caption" role="heading"><span class="caption-text">Contents:</span></p>
 <ul class="current">
 <li class="toctree-l1 current"><a class="reference internal" href="../../index.html">Software Development</a><ul class="current">
 <li class="toctree-l2"><a class="reference internal" href="../../Software_development_in_a_nutshell.html">Software development in a nutshell</a></li>
@@ -184,6 +179,13 @@
 </li>
 <li class="toctree-l3"><a class="reference internal" href="../ML_CI_CD/index.html">Machine Learning Models Continuous Integration and Delivery (CI/CD)</a><ul>
 <li class="toctree-l4"><a class="reference internal" href="../ML_CI_CD/Kubeflow_tutorial.html">Kubeflow Tutorial</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../communication/index.html">Inter-Process Communication</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../communication/IPC_technologies_categorization_criteria.html">IPC technologies categorization criteria</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../communication/IPC_technologies_categorization_criteria.html#synchronous-or-asynchronous">Synchronous or asynchronous</a></li>
 </ul>
 </li>
 </ul>
@@ -562,6 +564,7 @@
 </ul>
 </li>
 <li class="toctree-l3"><a class="reference internal" href="../../../computer_science/OS_specific/mac/index.html">Mac tips</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../../computer_science/OS_specific/mac/edit_env_variables_mac.html">Define environment variables on Mac</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../../computer_science/OS_specific/mac/command_line_aliases.html">Command Line Aliases</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../../computer_science/OS_specific/mac/useful_mac_commands.html">Mac useful terminal commands and shortcuts:</a></li>
 </ul>
@@ -712,6 +715,12 @@
 <li class="toctree-l4"><a class="reference internal" href="../../../business/finance/5_fixed_income_and_credit_risk.html#merton-s-model-implications">Merton’s Model - implications</a></li>
 </ul>
 </li>
+<li class="toctree-l3"><a class="reference internal" href="../../../business/finance/6_personal_finance.html">Personal finance</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../../business/finance/6_personal_finance.html#key-takeaways">Key takeaways</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../business/finance/6_personal_finance.html#ten-personal-finance-strategies">Ten Personal Finance Strategies</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../business/finance/6_personal_finance.html#personal-finance-principles">Personal Finance Principles</a></li>
+</ul>
+</li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="../../../business/sales/index.html">Sales</a><ul>
@@ -742,8 +751,8 @@
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="../../../extracurricular/social_dev/index.html">Social development</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="../../../extracurricular/social_dev/parenting.html">Parenting</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="../../../extracurricular/social_dev/parenting.html#financial-education">Financial education</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../extracurricular/social_dev/Parenting.html">Parenting</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../../extracurricular/social_dev/Parenting.html#financial-education">Financial education</a></li>
 </ul>
 </li>
 </ul>
@@ -772,7 +781,6 @@
             
           
         </div>
-        
       </div>
     </nav>
 
@@ -807,13 +815,11 @@
 
 
 
-
-
 <div role="navigation" aria-label="breadcrumbs navigation">
 
   <ul class="wy-breadcrumbs">
     
-      <li><a href="../../../index.html" class="icon icon-home"></a> &raquo;</li>
+      <li><a href="../../../index.html">Docs</a> &raquo;</li>
         
           <li><a href="../../index.html">Software Development</a> &raquo;</li>
         
@@ -826,7 +832,7 @@
     
       <li class="wy-breadcrumbs-aside">
         
-          
+            
             <a href="../../../_sources/software_dev/deploying/Kubernetes/kubernetes_basics_tutorial.md.txt" rel="nofollow"> View page source</a>
           
         
@@ -840,19 +846,19 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
             
-  <div class="section" id="kubernetes-basics-tutorial">
-<h1>Kubernetes Basics tutorial<a class="headerlink" href="#kubernetes-basics-tutorial" title="Permalink to this headline">¶</a></h1>
-<div class="section" id="what-is-kubernetes">
-<h2>What is Kubernetes<a class="headerlink" href="#what-is-kubernetes" title="Permalink to this headline">¶</a></h2>
+  <section id="kubernetes-basics-tutorial">
+<h1>Kubernetes Basics tutorial<a class="headerlink" href="#kubernetes-basics-tutorial" title="Permalink to this heading">¶</a></h1>
+<section id="what-is-kubernetes">
+<h2>What is Kubernetes<a class="headerlink" href="#what-is-kubernetes" title="Permalink to this heading">¶</a></h2>
 <p>Kubernetes (abbreviated k8s) is a <strong>cluster orchestration</strong> platform for automating deployment, scaling, and operations of application containers across clusters of hosts. It was initially designed by Google and now maintained by the Cloud Native Computing Foundation.</p>
 <ul class="simple">
 <li><p>Kubernetes coordinates a highly available cluster of computers that are connected to work as a single unit.</p></li>
 <li><p>The goal is to be able to deploy <strong>containerized</strong> applications to a cluster without tying them specifically to individual machines.</p></li>
 <li><p>Kubernetes automates <strong>the distribution, scaling and scheduling</strong> of application containers across a cluster in a more efficient way.</p></li>
 </ul>
-</div>
-<div class="section" id="goals-of-this-tutorial">
-<h2>Goals of this tutorial<a class="headerlink" href="#goals-of-this-tutorial" title="Permalink to this headline">¶</a></h2>
+</section>
+<section id="goals-of-this-tutorial">
+<h2>Goals of this tutorial<a class="headerlink" href="#goals-of-this-tutorial" title="Permalink to this heading">¶</a></h2>
 <p>Learn to:</p>
 <ul class="simple">
 <li><p>Deploy a containerized application on a cluster.</p></li>
@@ -860,11 +866,11 @@
 <li><p>Update the containerized application with a new software version.</p></li>
 <li><p>Debug the containerized application.</p></li>
 </ul>
-</div>
-<div class="section" id="create-a-kubernetes-cluster">
-<h2>Create a Kubernetes cluster<a class="headerlink" href="#create-a-kubernetes-cluster" title="Permalink to this headline">¶</a></h2>
-<div class="section" id="kubernetes-clusters-and-pods">
-<h3>Kubernetes Clusters (and pods)<a class="headerlink" href="#kubernetes-clusters-and-pods" title="Permalink to this headline">¶</a></h3>
+</section>
+<section id="create-a-kubernetes-cluster">
+<h2>Create a Kubernetes cluster<a class="headerlink" href="#create-a-kubernetes-cluster" title="Permalink to this heading">¶</a></h2>
+<section id="kubernetes-clusters-and-pods">
+<h3>Kubernetes Clusters (and pods)<a class="headerlink" href="#kubernetes-clusters-and-pods" title="Permalink to this heading">¶</a></h3>
 <p>A Kubernetes cluster consists of two types of resources:</p>
 <ul class="simple">
 <li><p>The <strong>Master</strong> coordinates the cluster, it is composed of:</p>
@@ -895,9 +901,9 @@
 - A pod is the smallest unit of deployment in k8s, if you want to deploy a container then a pod is created for this deployment.
 </pre></div>
 </div>
-</div>
-<div class="section" id="minikube">
-<h3>Minikube<a class="headerlink" href="#minikube" title="Permalink to this headline">¶</a></h3>
+</section>
+<section id="minikube">
+<h3>Minikube<a class="headerlink" href="#minikube" title="Permalink to this heading">¶</a></h3>
 <p>Minikube is a lightweight Kubernetes implementation that creates a VM on your local machine and deploys a simple cluster containing only one node.</p>
 <p>Minikube is available for Linux, macOS, and Windows systems.</p>
 <p>The Minikube CLI provides basic operations for working with your cluster, including start, stop, status, and delete.</p>
@@ -908,18 +914,18 @@
 <span class="n">minikube</span> <span class="n">start</span>
 </pre></div>
 </div>
-</div>
-</div>
-<div class="section" id="deploy-an-app">
-<h2>Deploy an app<a class="headerlink" href="#deploy-an-app" title="Permalink to this headline">¶</a></h2>
-<div class="section" id="kubernetes-deployments">
-<h3>Kubernetes Deployments<a class="headerlink" href="#kubernetes-deployments" title="Permalink to this headline">¶</a></h3>
+</section>
+</section>
+<section id="deploy-an-app">
+<h2>Deploy an app<a class="headerlink" href="#deploy-an-app" title="Permalink to this heading">¶</a></h2>
+<section id="kubernetes-deployments">
+<h3>Kubernetes Deployments<a class="headerlink" href="#kubernetes-deployments" title="Permalink to this heading">¶</a></h3>
 <p>Once you have a running Kubernetes cluster, you can deploy your containerized applications on top of it. To do so, you create a <strong>Kubernetes Deployment configuration</strong>. The Deployment instructs Kubernetes how to create and update instances of your application.</p>
 <p>Once you’ve created a Deployment, the Kubernetes master schedules the application instances included in that Deployment to run on individual Node in the cluster, with a self-healing mechanism to address machine failure or maintenance.</p>
 <p>When you create a Deployment, you’ll need to specify the container image for your application and the number of replicas that you want to run. You can change that information later by updating your Deployment.</p>
-</div>
-<div class="section" id="command-line-interface-kubectl">
-<h3>Command line interface kubectl<a class="headerlink" href="#command-line-interface-kubectl" title="Permalink to this headline">¶</a></h3>
+</section>
+<section id="command-line-interface-kubectl">
+<h3>Command line interface kubectl<a class="headerlink" href="#command-line-interface-kubectl" title="Permalink to this heading">¶</a></h3>
 <p>We use kubectl to interact with Kubernetes from the command line. Kubectl uses the Kubernetes API to interact with the cluster.</p>
 <p>The common format of a kubectl command is: kubectl action resource. This performs the specified action (like create, describe) on the specified resource (like node, container).</p>
 <p>The most common operations can be done with the following kubectl commands:</p>
@@ -938,9 +944,9 @@
 <span class="n">kubectl</span> <span class="n">get</span> <span class="n">nodes</span>
 </pre></div>
 </div>
-</div>
-<div class="section" id="deploying-the-app-with-kubectl">
-<h3>Deploying the app with kubectl<a class="headerlink" href="#deploying-the-app-with-kubectl" title="Permalink to this headline">¶</a></h3>
+</section>
+<section id="deploying-the-app-with-kubectl">
+<h3>Deploying the app with kubectl<a class="headerlink" href="#deploying-the-app-with-kubectl" title="Permalink to this heading">¶</a></h3>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># Deploy app (from gcr -google cloud registry- like this, include the full repository url for images hosted outside Docker hub)</span>
 <span class="n">kubectl</span> <span class="n">create</span> <span class="n">deployment</span> <span class="n">kubernetes</span><span class="o">-</span><span class="n">bootcamp</span> <span class="o">--</span><span class="n">image</span><span class="o">=</span><span class="n">gcr</span><span class="o">.</span><span class="n">io</span><span class="o">/</span><span class="n">google</span><span class="o">-</span><span class="n">samples</span><span class="o">/</span><span class="n">kubernetes</span><span class="o">-</span><span class="n">bootcamp</span><span class="p">:</span><span class="n">v1</span>
 <span class="c1"># List your deployments</span>
@@ -953,12 +959,12 @@
 <li><p>schedule the application to run on that Node</p></li>
 <li><p>configure the cluster to reschedule the instance on a new Node when needed</p></li>
 </ul>
-</div>
-</div>
-<div class="section" id="explore-your-app-viewing-pods-and-nodes">
-<h2>Explore your app: Viewing Pods and Nodes<a class="headerlink" href="#explore-your-app-viewing-pods-and-nodes" title="Permalink to this headline">¶</a></h2>
-<div class="section" id="kubernetes-pods">
-<h3>Kubernetes Pods<a class="headerlink" href="#kubernetes-pods" title="Permalink to this headline">¶</a></h3>
+</section>
+</section>
+<section id="explore-your-app-viewing-pods-and-nodes">
+<h2>Explore your app: Viewing Pods and Nodes<a class="headerlink" href="#explore-your-app-viewing-pods-and-nodes" title="Permalink to this heading">¶</a></h2>
+<section id="kubernetes-pods">
+<h3>Kubernetes Pods<a class="headerlink" href="#kubernetes-pods" title="Permalink to this heading">¶</a></h3>
 <p>A Pod is a Kubernetes abstraction that represents a group of one or more application containers, and some shared resources for those containers. Those resources include:</p>
 <ul class="simple">
 <li><p>Shared storage, as Volumes</p></li>
@@ -967,14 +973,14 @@
 </ul>
 <p>Pods are the <strong>atomic unit</strong> on the Kubernetes platform. When we create a Deployment on Kubernetes, that Deployment creates Pods with containers inside them (as opposed to creating containers directly). Each Pod is tied to the Node where it is scheduled (a Pod runs on a single node), and remains there until termination (according to restart policy) or deletion. In case of a Node failure, identical Pods are scheduled on other available Nodes in the cluster.</p>
 <p><strong>Important remark</strong>: Containers should only be scheduled together in a single Pod if they are tightly coupled and need to share resources such as disk.</p>
-</div>
-<div class="section" id="nodes">
-<h3>Nodes<a class="headerlink" href="#nodes" title="Permalink to this headline">¶</a></h3>
+</section>
+<section id="nodes">
+<h3>Nodes<a class="headerlink" href="#nodes" title="Permalink to this heading">¶</a></h3>
 <p>A Pod always runs on a Node. A Node is a <strong>worker machine</strong> in Kubernetes and may be either a virtual or a physical machine, depending on the cluster. Each Node is managed by the Master. A Node can have multiple pods, and the Kubernetes master automatically handles scheduling the pods across the Nodes in the cluster based on their available resources.</p>
 <p>Each Node should run at least two components, Kubelet for communication with the kubernetes master and node management, and Docker (or rkt) to handle containerization.</p>
-</div>
-<div class="section" id="troubleshooting-kubernetes-applications-using-the-kubectl-get-describe-logs-and-exec-commands">
-<h3>Troubleshooting Kubernetes applications using the kubectl get, describe, logs and exec commands.<a class="headerlink" href="#troubleshooting-kubernetes-applications-using-the-kubectl-get-describe-logs-and-exec-commands" title="Permalink to this headline">¶</a></h3>
+</section>
+<section id="troubleshooting-kubernetes-applications-using-the-kubectl-get-describe-logs-and-exec-commands">
+<h3>Troubleshooting Kubernetes applications using the kubectl get, describe, logs and exec commands.<a class="headerlink" href="#troubleshooting-kubernetes-applications-using-the-kubectl-get-describe-logs-and-exec-commands" title="Permalink to this heading">¶</a></h3>
 <ul>
 <li><p>Extensive description of the running pods: IP address, the ports used and a list of events related to the lifecycle of the Pod</p>
 <p>Note: the describe command can be used to get detailed information about most of the kubernetes primitives: node, pods, deployments.</p>
@@ -1017,58 +1023,58 @@ exit
 </div>
 </li>
 </ul>
-</div>
-</div>
-<div class="section" id="expose-your-app-publicly-using-a-service">
-<h2>Expose your app publicly using a service<a class="headerlink" href="#expose-your-app-publicly-using-a-service" title="Permalink to this headline">¶</a></h2>
-<div class="section" id="goals">
-<h3>Goals<a class="headerlink" href="#goals" title="Permalink to this headline">¶</a></h3>
+</section>
+</section>
+<section id="expose-your-app-publicly-using-a-service">
+<h2>Expose your app publicly using a service<a class="headerlink" href="#expose-your-app-publicly-using-a-service" title="Permalink to this heading">¶</a></h2>
+<section id="goals">
+<h3>Goals<a class="headerlink" href="#goals" title="Permalink to this heading">¶</a></h3>
 <ul class="simple">
 <li><p>Learn about a Service in Kubernetes</p></li>
 <li><p>Understand how labels and LabelSelector objects relate to a Service</p></li>
 <li><p>Expose an application outside a Kubernetes cluster using a Service</p></li>
 </ul>
-</div>
-<div class="section" id="overview-of-kubernetes-services">
-<h3>Overview of Kubernetes Services<a class="headerlink" href="#overview-of-kubernetes-services" title="Permalink to this headline">¶</a></h3>
-</div>
-</div>
-<div class="section" id="scale-up-your-app">
-<h2>Scale up your app<a class="headerlink" href="#scale-up-your-app" title="Permalink to this headline">¶</a></h2>
-</div>
-<div class="section" id="update-your-app">
-<h2>Update your app<a class="headerlink" href="#update-your-app" title="Permalink to this headline">¶</a></h2>
-</div>
-</div>
+</section>
+<section id="overview-of-kubernetes-services">
+<h3>Overview of Kubernetes Services<a class="headerlink" href="#overview-of-kubernetes-services" title="Permalink to this heading">¶</a></h3>
+</section>
+</section>
+<section id="scale-up-your-app">
+<h2>Scale up your app<a class="headerlink" href="#scale-up-your-app" title="Permalink to this heading">¶</a></h2>
+</section>
+<section id="update-your-app">
+<h2>Update your app<a class="headerlink" href="#update-your-app" title="Permalink to this heading">¶</a></h2>
+</section>
+</section>
 
 
            </div>
            
           </div>
           <footer>
+  
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
-        <a href="kubernetes_links.html" class="btn btn-neutral float-right" title="Kubernetes tutorials links" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
-        <a href="index.html" class="btn btn-neutral float-left" title="Kubernetes" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+      
+        <a href="kubernetes_links.html" class="btn btn-neutral float-right" title="Kubernetes tutorials links" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="index.html" class="btn btn-neutral float-left" title="Kubernetes" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
     </div>
+  
 
   <hr/>
 
   <div role="contentinfo">
     <p>
-        &#169; Copyright 2019, VTL LLC.
+        &copy; Copyright 2019, VTL LLC
 
     </p>
   </div>
-    
-    
-    
-    Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
-    
-    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
-    
-    provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
 
 </footer>
+
         </div>
       </div>
 
@@ -1076,6 +1082,7 @@ exit
 
   </div>
   
+
 
   <script type="text/javascript">
       jQuery(function () {

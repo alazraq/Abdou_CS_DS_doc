@@ -1,41 +1,40 @@
 
 
 <!DOCTYPE html>
-<html class="writer-html5" lang="en" >
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
 <head>
-  <meta charset="utf-8" />
-  
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta charset="utf-8">
+  <meta name="generator" content="Docutils 0.19: https://docutils.sourceforge.io/" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
   <title>Serialization: Protocol Buffer &mdash; Abdou Documentation  documentation</title>
   
 
   
-  <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
-  <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
-
+  
   
   
 
   
-  
-
-  
-
-  
-  <!--[if lt IE 9]>
-    <script src="../../_static/js/html5shiv.min.js"></script>
-  <![endif]-->
+  <script type="text/javascript" src="../../_static/js/modernizr.min.js"></script>
   
     
       <script type="text/javascript" id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
-        <script src="../../_static/jquery.js"></script>
-        <script src="../../_static/underscore.js"></script>
+        <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
         <script src="../../_static/doctools.js"></script>
+        <script src="../../_static/sphinx_highlight.js"></script>
     
     <script type="text/javascript" src="../../_static/js/theme.js"></script>
 
     
+
+  
+  <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
     <link rel="next" title="Testing Software" href="../test.html" />
@@ -57,9 +56,6 @@
           
 
           
-            
-            <img src="../../_static/logo_2.jpg" class="logo" alt="Logo"/>
-          
           </a>
 
           
@@ -79,7 +75,6 @@
           
         </div>
 
-        
         <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
           
             
@@ -87,7 +82,7 @@
               
             
             
-              <p class="caption"><span class="caption-text">Contents:</span></p>
+              <p class="caption" role="heading"><span class="caption-text">Contents:</span></p>
 <ul class="current">
 <li class="toctree-l1 current"><a class="reference internal" href="../index.html">Software Development</a><ul class="current">
 <li class="toctree-l2"><a class="reference internal" href="../Software_development_in_a_nutshell.html">Software development in a nutshell</a></li>
@@ -184,6 +179,13 @@
 </li>
 <li class="toctree-l3"><a class="reference internal" href="../deploying/ML_CI_CD/index.html">Machine Learning Models Continuous Integration and Delivery (CI/CD)</a><ul>
 <li class="toctree-l4"><a class="reference internal" href="../deploying/ML_CI_CD/Kubeflow_tutorial.html">Kubeflow Tutorial</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../communication/index.html">Inter-Process Communication</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../communication/IPC_technologies_categorization_criteria.html">IPC technologies categorization criteria</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../communication/IPC_technologies_categorization_criteria.html#synchronous-or-asynchronous">Synchronous or asynchronous</a></li>
 </ul>
 </li>
 </ul>
@@ -562,6 +564,7 @@
 </ul>
 </li>
 <li class="toctree-l3"><a class="reference internal" href="../../computer_science/OS_specific/mac/index.html">Mac tips</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../computer_science/OS_specific/mac/edit_env_variables_mac.html">Define environment variables on Mac</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../computer_science/OS_specific/mac/command_line_aliases.html">Command Line Aliases</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../computer_science/OS_specific/mac/useful_mac_commands.html">Mac useful terminal commands and shortcuts:</a></li>
 </ul>
@@ -712,6 +715,12 @@
 <li class="toctree-l4"><a class="reference internal" href="../../business/finance/5_fixed_income_and_credit_risk.html#merton-s-model-implications">Merton’s Model - implications</a></li>
 </ul>
 </li>
+<li class="toctree-l3"><a class="reference internal" href="../../business/finance/6_personal_finance.html">Personal finance</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../business/finance/6_personal_finance.html#key-takeaways">Key takeaways</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../business/finance/6_personal_finance.html#ten-personal-finance-strategies">Ten Personal Finance Strategies</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../business/finance/6_personal_finance.html#personal-finance-principles">Personal Finance Principles</a></li>
+</ul>
+</li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="../../business/sales/index.html">Sales</a><ul>
@@ -742,8 +751,8 @@
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="../../extracurricular/social_dev/index.html">Social development</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="../../extracurricular/social_dev/parenting.html">Parenting</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="../../extracurricular/social_dev/parenting.html#financial-education">Financial education</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../extracurricular/social_dev/Parenting.html">Parenting</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../extracurricular/social_dev/Parenting.html#financial-education">Financial education</a></li>
 </ul>
 </li>
 </ul>
@@ -772,7 +781,6 @@
             
           
         </div>
-        
       </div>
     </nav>
 
@@ -807,13 +815,11 @@
 
 
 
-
-
 <div role="navigation" aria-label="breadcrumbs navigation">
 
   <ul class="wy-breadcrumbs">
     
-      <li><a href="../../index.html" class="icon icon-home"></a> &raquo;</li>
+      <li><a href="../../index.html">Docs</a> &raquo;</li>
         
           <li><a href="../index.html">Software Development</a> &raquo;</li>
         
@@ -824,7 +830,7 @@
     
       <li class="wy-breadcrumbs-aside">
         
-          
+            
             <a href="../../_sources/software_dev/Serialization/Protocol_Buffers.md.txt" rel="nofollow"> View page source</a>
           
         
@@ -838,16 +844,16 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
             
-  <div class="section" id="serialization-protocol-buffer">
-<h1>Serialization: Protocol Buffer<a class="headerlink" href="#serialization-protocol-buffer" title="Permalink to this headline">¶</a></h1>
-<div class="section" id="what-are-protocol-buffers">
-<h2>What are Protocol Buffers?<a class="headerlink" href="#what-are-protocol-buffers" title="Permalink to this headline">¶</a></h2>
+  <section id="serialization-protocol-buffer">
+<h1>Serialization: Protocol Buffer<a class="headerlink" href="#serialization-protocol-buffer" title="Permalink to this heading">¶</a></h1>
+<section id="what-are-protocol-buffers">
+<h2>What are Protocol Buffers?<a class="headerlink" href="#what-are-protocol-buffers" title="Permalink to this heading">¶</a></h2>
 <blockquote>
 <div><p>Protocol buffers are Google’s language-neutral, platform-neutral, extensible mechanism for <strong>serializing</strong> structured data – think XML, but smaller, faster, and simpler. You define how you want your data to be structured once, then you can use special generated source code to easily write and read your structured data to and from a variety of data streams and using a variety of languages.</p>
 </div></blockquote>
-</div>
-<div class="section" id="how-do-they-work">
-<h2>How do they work?<a class="headerlink" href="#how-do-they-work" title="Permalink to this headline">¶</a></h2>
+</section>
+<section id="how-do-they-work">
+<h2>How do they work?<a class="headerlink" href="#how-do-they-work" title="Permalink to this heading">¶</a></h2>
 <blockquote>
 <div><p><strong>.proto files:</strong> <br />
 You specify how you want the information you’re serializing to be structured by defining protocol buffer message types in .proto files.</p>
@@ -884,53 +890,53 @@ repeated PhoneNumber phone = 4;
 <blockquote>
 <div><p>PS: This message is encoded to the protocol buffer binary format (the text format above is just a convenient human-readable representation for debugging and editing)</p>
 </div></blockquote>
-</div>
-<div class="section" id="compiling-proto-file-to-generate-classes-in-desired-programming-language">
-<h2>Compiling .proto file to generate classes in desired programming language:<a class="headerlink" href="#compiling-proto-file-to-generate-classes-in-desired-programming-language" title="Permalink to this headline">¶</a></h2>
+</section>
+<section id="compiling-proto-file-to-generate-classes-in-desired-programming-language">
+<h2>Compiling .proto file to generate classes in desired programming language:<a class="headerlink" href="#compiling-proto-file-to-generate-classes-in-desired-programming-language" title="Permalink to this heading">¶</a></h2>
 <blockquote>
 <div><p>Once you’ve defined your messages, you run the protocol buffer compiler for your application’s language on your .proto file to generate data access classes. These provide simple accessors for each field (like name() and set_name()) as well as methods to serialize/parse the whole structure to/from raw bytes\</p>
 </div></blockquote>
 <blockquote>
 <div><p><strong>Example Continued:</strong> For instance, if your chosen language is C++, running the compiler on the above example will generate a class called Person.</p>
 </div></blockquote>
-</div>
-<div class="section" id="using-the-classes-generated-by-protocol-buffer-compiler">
-<h2>Using the classes generated by protocol buffer compiler:<a class="headerlink" href="#using-the-classes-generated-by-protocol-buffer-compiler" title="Permalink to this headline">¶</a></h2>
+</section>
+<section id="using-the-classes-generated-by-protocol-buffer-compiler">
+<h2>Using the classes generated by protocol buffer compiler:<a class="headerlink" href="#using-the-classes-generated-by-protocol-buffer-compiler" title="Permalink to this heading">¶</a></h2>
 <blockquote>
 <div><p><strong>Example Continued:</strong>
 You can then use this class in your application to populate, serialize, and retrieve Person protocol buffer messages. You might then write some code like this:</p>
 </div></blockquote>
-<div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="n">Person</span> <span class="n">person</span><span class="p">;</span>
+<div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="n">Person</span><span class="w"> </span><span class="n">person</span><span class="p">;</span>
 <span class="n">person</span><span class="p">.</span><span class="n">set_name</span><span class="p">(</span><span class="s">&quot;John Doe&quot;</span><span class="p">);</span>
 <span class="n">person</span><span class="p">.</span><span class="n">set_id</span><span class="p">(</span><span class="mi">1234</span><span class="p">);</span>
 <span class="n">person</span><span class="p">.</span><span class="n">set_email</span><span class="p">(</span><span class="s">&quot;jdoe@example.com&quot;</span><span class="p">);</span>
-<span class="n">fstream</span> <span class="nf">output</span><span class="p">(</span><span class="s">&quot;myfile&quot;</span><span class="p">,</span> <span class="n">ios</span><span class="o">::</span><span class="n">out</span> <span class="o">|</span> <span class="n">ios</span><span class="o">::</span><span class="n">binary</span><span class="p">);</span>
+<span class="n">fstream</span><span class="w"> </span><span class="n">output</span><span class="p">(</span><span class="s">&quot;myfile&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">ios</span><span class="o">::</span><span class="n">out</span><span class="w"> </span><span class="o">|</span><span class="w"> </span><span class="n">ios</span><span class="o">::</span><span class="n">binary</span><span class="p">);</span>
 <span class="n">person</span><span class="p">.</span><span class="n">SerializeToOstream</span><span class="p">(</span><span class="o">&amp;</span><span class="n">output</span><span class="p">);</span>
 </pre></div>
 </div>
 <p>Then, later on, you could read your message back in:</p>
-<div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="n">fstream</span> <span class="nf">input</span><span class="p">(</span><span class="s">&quot;myfile&quot;</span><span class="p">,</span> <span class="n">ios</span><span class="o">::</span><span class="n">in</span> <span class="o">|</span> <span class="n">ios</span><span class="o">::</span><span class="n">binary</span><span class="p">);</span>
-<span class="n">Person</span> <span class="n">person</span><span class="p">;</span>
+<div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="n">fstream</span><span class="w"> </span><span class="n">input</span><span class="p">(</span><span class="s">&quot;myfile&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">ios</span><span class="o">::</span><span class="n">in</span><span class="w"> </span><span class="o">|</span><span class="w"> </span><span class="n">ios</span><span class="o">::</span><span class="n">binary</span><span class="p">);</span>
+<span class="n">Person</span><span class="w"> </span><span class="n">person</span><span class="p">;</span>
 <span class="n">person</span><span class="p">.</span><span class="n">ParseFromIstream</span><span class="p">(</span><span class="o">&amp;</span><span class="n">input</span><span class="p">);</span>
-<span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="s">&quot;Name: &quot;</span> <span class="o">&lt;&lt;</span> <span class="n">person</span><span class="p">.</span><span class="n">name</span><span class="p">()</span> <span class="o">&lt;&lt;</span> <span class="n">endl</span><span class="p">;</span>
-<span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="s">&quot;E-mail: &quot;</span> <span class="o">&lt;&lt;</span> <span class="n">person</span><span class="p">.</span><span class="n">email</span><span class="p">()</span> <span class="o">&lt;&lt;</span> <span class="n">endl</span><span class="p">;</span>
+<span class="n">cout</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">&quot;Name: &quot;</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">person</span><span class="p">.</span><span class="n">name</span><span class="p">()</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">endl</span><span class="p">;</span>
+<span class="n">cout</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">&quot;E-mail: &quot;</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">person</span><span class="p">.</span><span class="n">email</span><span class="p">()</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">endl</span><span class="p">;</span>
 </pre></div>
 </div>
-</div>
-<div class="section" id="adding-new-fields-to-existing-protocol-buffers">
-<h2>Adding new fields to existing protocol buffers<a class="headerlink" href="#adding-new-fields-to-existing-protocol-buffers" title="Permalink to this headline">¶</a></h2>
+</section>
+<section id="adding-new-fields-to-existing-protocol-buffers">
+<h2>Adding new fields to existing protocol buffers<a class="headerlink" href="#adding-new-fields-to-existing-protocol-buffers" title="Permalink to this heading">¶</a></h2>
 <blockquote>
 <div><p>You can add new fields to your message formats without breaking backwards-compatibility; old binaries simply ignore the new field when parsing. So if you have a communications protocol that uses protocol buffers as its data format, you can extend your protocol without having to worry about breaking existing code.</p>
 </div></blockquote>
-</div>
-<div class="section" id="sending-protobuf-messages-on-pubsub">
-<h2>Sending protobuf messages on pubsub:<a class="headerlink" href="#sending-protobuf-messages-on-pubsub" title="Permalink to this headline">¶</a></h2>
+</section>
+<section id="sending-protobuf-messages-on-pubsub">
+<h2>Sending protobuf messages on pubsub:<a class="headerlink" href="#sending-protobuf-messages-on-pubsub" title="Permalink to this heading">¶</a></h2>
 <blockquote>
 <div><p>If you want to send a ProtoBuf message via the Publish API, you should do so by serializing it to a ByteString and then setting it as the message’s data field.</p>
 </div></blockquote>
-</div>
-<div class="section" id="astuces">
-<h2>Astuces:<a class="headerlink" href="#astuces" title="Permalink to this headline">¶</a></h2>
+</section>
+<section id="astuces">
+<h2>Astuces:<a class="headerlink" href="#astuces" title="Permalink to this heading">¶</a></h2>
 <ul class="simple">
 <li><p>compile cmd line</p></li>
 </ul>
@@ -940,37 +946,37 @@ You can then use this class in your application to populate, serialize, and retr
 <ul class="simple">
 <li><p>No required and optional fields in proto3</p></li>
 </ul>
-</div>
-</div>
+</section>
+</section>
 
 
            </div>
            
           </div>
           <footer>
+  
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
-        <a href="../test.html" class="btn btn-neutral float-right" title="Testing Software" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
-        <a href="index.html" class="btn btn-neutral float-left" title="Serialization" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+      
+        <a href="../test.html" class="btn btn-neutral float-right" title="Testing Software" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="index.html" class="btn btn-neutral float-left" title="Serialization" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
     </div>
+  
 
   <hr/>
 
   <div role="contentinfo">
     <p>
-        &#169; Copyright 2019, VTL LLC.
+        &copy; Copyright 2019, VTL LLC
 
     </p>
   </div>
-    
-    
-    
-    Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
-    
-    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
-    
-    provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
 
 </footer>
+
         </div>
       </div>
 
@@ -978,6 +984,7 @@ You can then use this class in your application to populate, serialize, and retr
 
   </div>
   
+
 
   <script type="text/javascript">
       jQuery(function () {

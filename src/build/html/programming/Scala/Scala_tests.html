@@ -1,41 +1,40 @@
 
 
 <!DOCTYPE html>
-<html class="writer-html5" lang="en" >
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
 <head>
-  <meta charset="utf-8" />
-  
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta charset="utf-8">
+  <meta name="generator" content="Docutils 0.19: https://docutils.sourceforge.io/" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
   <title>Scala unit testing &mdash; Abdou Documentation  documentation</title>
   
 
   
-  <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
-  <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
-
+  
   
   
 
   
-  
-
-  
-
-  
-  <!--[if lt IE 9]>
-    <script src="../../_static/js/html5shiv.min.js"></script>
-  <![endif]-->
+  <script type="text/javascript" src="../../_static/js/modernizr.min.js"></script>
   
     
       <script type="text/javascript" id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
-        <script src="../../_static/jquery.js"></script>
-        <script src="../../_static/underscore.js"></script>
+        <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
         <script src="../../_static/doctools.js"></script>
+        <script src="../../_static/sphinx_highlight.js"></script>
     
     <script type="text/javascript" src="../../_static/js/theme.js"></script>
 
     
+
+  
+  <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
     <link rel="next" title="Java" href="../Java/index.html" />
@@ -57,9 +56,6 @@
           
 
           
-            
-            <img src="../../_static/logo_2.jpg" class="logo" alt="Logo"/>
-          
           </a>
 
           
@@ -79,7 +75,6 @@
           
         </div>
 
-        
         <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
           
             
@@ -87,7 +82,7 @@
               
             
             
-              <p class="caption"><span class="caption-text">Contents:</span></p>
+              <p class="caption" role="heading"><span class="caption-text">Contents:</span></p>
 <ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="../../software_dev/index.html">Software Development</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="../../software_dev/Software_development_in_a_nutshell.html">Software development in a nutshell</a></li>
@@ -184,6 +179,13 @@
 </li>
 <li class="toctree-l3"><a class="reference internal" href="../../software_dev/deploying/ML_CI_CD/index.html">Machine Learning Models Continuous Integration and Delivery (CI/CD)</a><ul>
 <li class="toctree-l4"><a class="reference internal" href="../../software_dev/deploying/ML_CI_CD/Kubeflow_tutorial.html">Kubeflow Tutorial</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../software_dev/communication/index.html">Inter-Process Communication</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../software_dev/communication/IPC_technologies_categorization_criteria.html">IPC technologies categorization criteria</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../software_dev/communication/IPC_technologies_categorization_criteria.html#synchronous-or-asynchronous">Synchronous or asynchronous</a></li>
 </ul>
 </li>
 </ul>
@@ -562,6 +564,7 @@
 </ul>
 </li>
 <li class="toctree-l3"><a class="reference internal" href="../../computer_science/OS_specific/mac/index.html">Mac tips</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../computer_science/OS_specific/mac/edit_env_variables_mac.html">Define environment variables on Mac</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../computer_science/OS_specific/mac/command_line_aliases.html">Command Line Aliases</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../computer_science/OS_specific/mac/useful_mac_commands.html">Mac useful terminal commands and shortcuts:</a></li>
 </ul>
@@ -712,6 +715,12 @@
 <li class="toctree-l4"><a class="reference internal" href="../../business/finance/5_fixed_income_and_credit_risk.html#merton-s-model-implications">Merton’s Model - implications</a></li>
 </ul>
 </li>
+<li class="toctree-l3"><a class="reference internal" href="../../business/finance/6_personal_finance.html">Personal finance</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../business/finance/6_personal_finance.html#key-takeaways">Key takeaways</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../business/finance/6_personal_finance.html#ten-personal-finance-strategies">Ten Personal Finance Strategies</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../business/finance/6_personal_finance.html#personal-finance-principles">Personal Finance Principles</a></li>
+</ul>
+</li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="../../business/sales/index.html">Sales</a><ul>
@@ -742,8 +751,8 @@
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="../../extracurricular/social_dev/index.html">Social development</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="../../extracurricular/social_dev/parenting.html">Parenting</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="../../extracurricular/social_dev/parenting.html#financial-education">Financial education</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../extracurricular/social_dev/Parenting.html">Parenting</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../extracurricular/social_dev/Parenting.html#financial-education">Financial education</a></li>
 </ul>
 </li>
 </ul>
@@ -772,7 +781,6 @@
             
           
         </div>
-        
       </div>
     </nav>
 
@@ -807,13 +815,11 @@
 
 
 
-
-
 <div role="navigation" aria-label="breadcrumbs navigation">
 
   <ul class="wy-breadcrumbs">
     
-      <li><a href="../../index.html" class="icon icon-home"></a> &raquo;</li>
+      <li><a href="../../index.html">Docs</a> &raquo;</li>
         
           <li><a href="../index.html">Programming Languages</a> &raquo;</li>
         
@@ -824,7 +830,7 @@
     
       <li class="wy-breadcrumbs-aside">
         
-          
+            
             <a href="../../_sources/programming/Scala/Scala_tests.md.txt" rel="nofollow"> View page source</a>
           
         
@@ -838,18 +844,18 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
             
-  <div class="section" id="scala-unit-testing">
-<h1>Scala unit testing<a class="headerlink" href="#scala-unit-testing" title="Permalink to this headline">¶</a></h1>
+  <section id="scala-unit-testing">
+<h1>Scala unit testing<a class="headerlink" href="#scala-unit-testing" title="Permalink to this heading">¶</a></h1>
 <p>This is a quick guide to get you started with unit testing in Scala using the <code class="docutils literal notranslate"><span class="pre">Scalatest</span></code> library.
 For more details, please refer to the <a class="reference external" href="http://www.scalatest.org/user_guide/">Scalatest library user guide</a>.</p>
-<div class="section" id="writing-your-first-test-using-scalatest">
-<h2>Writing your first test using Scalatest<a class="headerlink" href="#writing-your-first-test-using-scalatest" title="Permalink to this headline">¶</a></h2>
+<section id="writing-your-first-test-using-scalatest">
+<h2>Writing your first test using Scalatest<a class="headerlink" href="#writing-your-first-test-using-scalatest" title="Permalink to this heading">¶</a></h2>
 <p>In ScalaTest, you define tests inside classes that extend a style class such as <code class="docutils literal notranslate"><span class="pre">AnyFlatSpec</span></code> (you could also implement and extend your own base style class):</p>
-<div class="highlight-Scala notranslate"><div class="highlight"><pre><span></span><span class="k">import</span> <span class="nn">org.scalatest.flatspec.AnyFlatSpec</span>
+<div class="highlight-Scala notranslate"><div class="highlight"><pre><span></span><span class="k">import</span><span class="w"> </span><span class="nn">org</span><span class="p">.</span><span class="nn">scalatest</span><span class="p">.</span><span class="nn">flatspec</span><span class="p">.</span><span class="nc">AnyFlatSpec</span>
 
-<span class="k">class</span> <span class="nc">FirstSpec</span> <span class="k">extends</span> <span class="nc">AnyFlatSpec</span> <span class="o">{</span>
-  <span class="c1">// tests go here...</span>
-<span class="o">}</span>
+<span class="k">class</span><span class="w"> </span><span class="nc">FirstSpec</span><span class="w"> </span><span class="k">extends</span><span class="w"> </span><span class="nc">AnyFlatSpec</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="c1">// tests go here...</span>
+<span class="p">}</span>
 </pre></div>
 </div>
 <p>Each test in a AnyFlatSpec is composed of two things:</p>
@@ -860,61 +866,61 @@ For more details, please refer to the <a class="reference external" href="http:/
 <p>The sentence needs a subject, such as “A Stack”; a verb, either should, must, or can; and the rest of the sentence. Here’s an example: <code class="docutils literal notranslate"><span class="pre">&quot;A</span> <span class="pre">Stack&quot;</span> <span class="pre">should</span> <span class="pre">&quot;pop</span> <span class="pre">values</span> <span class="pre">in</span> <span class="pre">last-in-first-out</span> <span class="pre">order&quot;</span></code></p>
 <p>If you have multiple tests about the same subject, you can use the keyword <code class="docutils literal notranslate"><span class="pre">it</span></code> to refer to the previous subject: <code class="docutils literal notranslate"><span class="pre">it</span> <span class="pre">should</span> <span class="pre">&quot;throw</span> <span class="pre">NoSuchElementException</span> <span class="pre">if</span> <span class="pre">an</span> <span class="pre">empty</span> <span class="pre">stack</span> <span class="pre">is</span> <span class="pre">popped&quot;</span></code>
 After the sentence you put the word in followed by the body of the test in curly braces. Here’s a complete example:</p>
-<div class="highlight-Scala notranslate"><div class="highlight"><pre><span></span><span class="k">import</span> <span class="nn">collection.mutable.Stack</span>
-<span class="k">import</span> <span class="nn">org.scalatest.flatspec.AnyFlatSpec</span>
+<div class="highlight-Scala notranslate"><div class="highlight"><pre><span></span><span class="k">import</span><span class="w"> </span><span class="nn">collection</span><span class="p">.</span><span class="nn">mutable</span><span class="p">.</span><span class="nc">Stack</span>
+<span class="k">import</span><span class="w"> </span><span class="nn">org</span><span class="p">.</span><span class="nn">scalatest</span><span class="p">.</span><span class="nn">flatspec</span><span class="p">.</span><span class="nc">AnyFlatSpec</span>
 
-<span class="k">class</span> <span class="nc">StackSpec</span> <span class="k">extends</span> <span class="nc">AnyFlatSpec</span> <span class="o">{</span>
+<span class="k">class</span><span class="w"> </span><span class="nc">StackSpec</span><span class="w"> </span><span class="k">extends</span><span class="w"> </span><span class="nc">AnyFlatSpec</span><span class="w"> </span><span class="p">{</span>
 
-    <span class="s">&quot;A Stack&quot;</span> <span class="n">should</span> <span class="s">&quot;pop values in last-in-first-out order&quot;</span> <span class="n">in</span> <span class="o">{</span>
-        <span class="k">val</span> <span class="n">stack</span> <span class="o">=</span> <span class="k">new</span> <span class="nc">Stack</span><span class="o">[</span><span class="kt">Int</span><span class="o">]</span>
-        <span class="n">stack</span><span class="o">.</span><span class="n">push</span><span class="o">(</span><span class="mi">1</span><span class="o">)</span>
-        <span class="n">stack</span><span class="o">.</span><span class="n">push</span><span class="o">(</span><span class="mi">2</span><span class="o">)</span>
-        <span class="n">assert</span><span class="o">(</span><span class="n">stack</span><span class="o">.</span><span class="n">pop</span><span class="o">()</span> <span class="o">===</span> <span class="mi">2</span><span class="o">)</span>
-        <span class="n">assert</span><span class="o">(</span><span class="n">stack</span><span class="o">.</span><span class="n">pop</span><span class="o">()</span> <span class="o">===</span> <span class="mi">1</span><span class="o">)</span>
-    <span class="o">}</span>
+<span class="w">    </span><span class="s">&quot;A Stack&quot;</span><span class="w"> </span><span class="n">should</span><span class="w"> </span><span class="s">&quot;pop values in last-in-first-out order&quot;</span><span class="w"> </span><span class="n">in</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="kd">val</span><span class="w"> </span><span class="n">stack</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="nc">Stack</span><span class="p">[</span><span class="nc">Int</span><span class="p">]</span>
+<span class="w">        </span><span class="n">stack</span><span class="p">.</span><span class="n">push</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
+<span class="w">        </span><span class="n">stack</span><span class="p">.</span><span class="n">push</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span>
+<span class="w">        </span><span class="n">assert</span><span class="p">(</span><span class="n">stack</span><span class="p">.</span><span class="n">pop</span><span class="p">()</span><span class="w"> </span><span class="o">===</span><span class="w"> </span><span class="mi">2</span><span class="p">)</span>
+<span class="w">        </span><span class="n">assert</span><span class="p">(</span><span class="n">stack</span><span class="p">.</span><span class="n">pop</span><span class="p">()</span><span class="w"> </span><span class="o">===</span><span class="w"> </span><span class="mi">1</span><span class="p">)</span>
+<span class="w">    </span><span class="p">}</span>
 
-    <span class="n">it</span> <span class="n">should</span> <span class="s">&quot;throw NoSuchElementException if an empty stack is popped&quot;</span> <span class="n">in</span> <span class="o">{</span>
-        <span class="k">val</span> <span class="n">emptyStack</span> <span class="o">=</span> <span class="k">new</span> <span class="nc">Stack</span><span class="o">[</span><span class="kt">String</span><span class="o">]</span>
-        <span class="n">assertThrows</span><span class="o">[</span><span class="kt">NoSuchElementException</span><span class="o">]</span> <span class="o">{</span>
-            <span class="n">emptyStack</span><span class="o">.</span><span class="n">pop</span><span class="o">()</span>
-        <span class="o">}</span>
-    <span class="o">}</span>
-<span class="o">}</span>
+<span class="w">    </span><span class="n">it</span><span class="w"> </span><span class="n">should</span><span class="w"> </span><span class="s">&quot;throw NoSuchElementException if an empty stack is popped&quot;</span><span class="w"> </span><span class="n">in</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="kd">val</span><span class="w"> </span><span class="n">emptyStack</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="nc">Stack</span><span class="p">[</span><span class="nc">String</span><span class="p">]</span>
+<span class="w">        </span><span class="n">assertThrows</span><span class="p">[</span><span class="nc">NoSuchElementException</span><span class="p">]</span><span class="w"> </span><span class="p">{</span>
+<span class="w">            </span><span class="n">emptyStack</span><span class="p">.</span><span class="n">pop</span><span class="p">()</span>
+<span class="w">        </span><span class="p">}</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="p">}</span>
 </pre></div>
 </div>
 <p>If you are using Inlellij Idea, you can then launch the test, the code gets compiled and you will be to see the results in a dedicated pane.</p>
 <p>If you wish to compile the test and run it yourself from command line, please refer to the user guide linked in the beginning of this short article.</p>
-</div>
-</div>
+</section>
+</section>
 
 
            </div>
            
           </div>
           <footer>
+  
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
-        <a href="../Java/index.html" class="btn btn-neutral float-right" title="Java" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
-        <a href="Scala_tips.html" class="btn btn-neutral float-left" title="Scala tips" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+      
+        <a href="../Java/index.html" class="btn btn-neutral float-right" title="Java" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="Scala_tips.html" class="btn btn-neutral float-left" title="Scala tips" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
     </div>
+  
 
   <hr/>
 
   <div role="contentinfo">
     <p>
-        &#169; Copyright 2019, VTL LLC.
+        &copy; Copyright 2019, VTL LLC
 
     </p>
   </div>
-    
-    
-    
-    Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
-    
-    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
-    
-    provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
 
 </footer>
+
         </div>
       </div>
 
@@ -922,6 +928,7 @@ After the sentence you put the word in followed by the body of the test in curly
 
   </div>
   
+
 
   <script type="text/javascript">
       jQuery(function () {

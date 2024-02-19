@@ -11,8 +11,11 @@
 # documentation root, use os.path.abspath to make it absolute, like shown here.
 
 import sys
-sys.path.append('C://Users//Tonguz-lab-Mouse//Documents//Abdou_CS_DS_doc//src//programming//Python')
-from recommonmark.parser import CommonMarkParser
+sys.path.append('/Users/abdoulazraq/Documents/Abdou_CS_DS_doc/src/programming/Python')
+#from recommonmark.parser import CommonMarkParser
+import os
+import sys
+sys.path.insert(0, os.path.abspath("."))
 
 # -- Project information -----------------------------------------------------
 
@@ -70,8 +73,8 @@ html_theme_options = {
 }
 
 # Added by Abdou to support md docs
-source_parsers = {
-    '.md': CommonMarkParser,
-}
+# source_parsers = {
+#    '.md': CommonMarkParser,
+# }
 
 source_suffix = ['.rst', '.md']

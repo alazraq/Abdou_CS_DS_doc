@@ -1,43 +1,40 @@
 
 
 <!DOCTYPE html>
-<html class="writer-html5" lang="en" >
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
 <head>
-  <meta charset="utf-8" />
-  
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta charset="utf-8">
+  <meta name="generator" content="Docutils 0.19: https://docutils.sourceforge.io/" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
   <title>Scala basics &mdash; Abdou Documentation  documentation</title>
   
 
   
-  <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
-  <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
-
+  
   
   
 
   
-  
-
-  
-
-  
-  <!--[if lt IE 9]>
-    <script src="../../_static/js/html5shiv.min.js"></script>
-  <![endif]-->
+  <script type="text/javascript" src="../../_static/js/modernizr.min.js"></script>
   
     
       <script type="text/javascript" id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
-        <script src="../../_static/jquery.js"></script>
-        <script src="../../_static/underscore.js"></script>
+        <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
         <script src="../../_static/doctools.js"></script>
-        <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
-        <script type="text/x-mathjax-config">MathJax.Hub.Config({"tex2jax": {"inlineMath": [["\\(", "\\)"]], "displayMath": [["\\[", "\\]"]], "processRefs": false, "processEnvironments": false}})</script>
+        <script src="../../_static/sphinx_highlight.js"></script>
     
     <script type="text/javascript" src="../../_static/js/theme.js"></script>
 
     
+
+  
+  <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
     <link rel="next" title="Scala tips" href="Scala_tips.html" />
@@ -59,9 +56,6 @@
           
 
           
-            
-            <img src="../../_static/logo_2.jpg" class="logo" alt="Logo"/>
-          
           </a>
 
           
@@ -81,7 +75,6 @@
           
         </div>
 
-        
         <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
           
             
@@ -89,7 +82,7 @@
               
             
             
-              <p class="caption"><span class="caption-text">Contents:</span></p>
+              <p class="caption" role="heading"><span class="caption-text">Contents:</span></p>
 <ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="../../software_dev/index.html">Software Development</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="../../software_dev/Software_development_in_a_nutshell.html">Software development in a nutshell</a></li>
@@ -186,6 +179,13 @@
 </li>
 <li class="toctree-l3"><a class="reference internal" href="../../software_dev/deploying/ML_CI_CD/index.html">Machine Learning Models Continuous Integration and Delivery (CI/CD)</a><ul>
 <li class="toctree-l4"><a class="reference internal" href="../../software_dev/deploying/ML_CI_CD/Kubeflow_tutorial.html">Kubeflow Tutorial</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../software_dev/communication/index.html">Inter-Process Communication</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../software_dev/communication/IPC_technologies_categorization_criteria.html">IPC technologies categorization criteria</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../software_dev/communication/IPC_technologies_categorization_criteria.html#synchronous-or-asynchronous">Synchronous or asynchronous</a></li>
 </ul>
 </li>
 </ul>
@@ -564,6 +564,7 @@
 </ul>
 </li>
 <li class="toctree-l3"><a class="reference internal" href="../../computer_science/OS_specific/mac/index.html">Mac tips</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../computer_science/OS_specific/mac/edit_env_variables_mac.html">Define environment variables on Mac</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../computer_science/OS_specific/mac/command_line_aliases.html">Command Line Aliases</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../computer_science/OS_specific/mac/useful_mac_commands.html">Mac useful terminal commands and shortcuts:</a></li>
 </ul>
@@ -714,6 +715,12 @@
 <li class="toctree-l4"><a class="reference internal" href="../../business/finance/5_fixed_income_and_credit_risk.html#merton-s-model-implications">Merton’s Model - implications</a></li>
 </ul>
 </li>
+<li class="toctree-l3"><a class="reference internal" href="../../business/finance/6_personal_finance.html">Personal finance</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../business/finance/6_personal_finance.html#key-takeaways">Key takeaways</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../business/finance/6_personal_finance.html#ten-personal-finance-strategies">Ten Personal Finance Strategies</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../business/finance/6_personal_finance.html#personal-finance-principles">Personal Finance Principles</a></li>
+</ul>
+</li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="../../business/sales/index.html">Sales</a><ul>
@@ -744,8 +751,8 @@
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="../../extracurricular/social_dev/index.html">Social development</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="../../extracurricular/social_dev/parenting.html">Parenting</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="../../extracurricular/social_dev/parenting.html#financial-education">Financial education</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../extracurricular/social_dev/Parenting.html">Parenting</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../extracurricular/social_dev/Parenting.html#financial-education">Financial education</a></li>
 </ul>
 </li>
 </ul>
@@ -774,7 +781,6 @@
             
           
         </div>
-        
       </div>
     </nav>
 
@@ -809,13 +815,11 @@
 
 
 
-
-
 <div role="navigation" aria-label="breadcrumbs navigation">
 
   <ul class="wy-breadcrumbs">
     
-      <li><a href="../../index.html" class="icon icon-home"></a> &raquo;</li>
+      <li><a href="../../index.html">Docs</a> &raquo;</li>
         
           <li><a href="../index.html">Programming Languages</a> &raquo;</li>
         
@@ -826,7 +830,7 @@
     
       <li class="wy-breadcrumbs-aside">
         
-          
+            
             <a href="../../_sources/programming/Scala/Scala_basics.md.txt" rel="nofollow"> View page source</a>
           
         
@@ -840,23 +844,23 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
             
-  <div class="section" id="scala-basics">
-<h1>Scala basics<a class="headerlink" href="#scala-basics" title="Permalink to this headline">¶</a></h1>
-<div class="section" id="useful-resources">
-<h2>Useful resources<a class="headerlink" href="#useful-resources" title="Permalink to this headline">¶</a></h2>
+  <section id="scala-basics">
+<h1>Scala basics<a class="headerlink" href="#scala-basics" title="Permalink to this heading">¶</a></h1>
+<section id="useful-resources">
+<h2>Useful resources<a class="headerlink" href="#useful-resources" title="Permalink to this heading">¶</a></h2>
 <ul class="simple">
 <li><p>Learning Scala by Jason Swartz: https://www.oreilly.com/library/view/learning-scala/9781449368814/ch09.html</p></li>
 </ul>
-</div>
-<div class="section" id="importing">
-<h2>Importing<a class="headerlink" href="#importing" title="Permalink to this headline">¶</a></h2>
+</section>
+<section id="importing">
+<h2>Importing<a class="headerlink" href="#importing" title="Permalink to this heading">¶</a></h2>
 <ul class="simple">
 <li><p>Importing many classes from the same package</p></li>
 </ul>
 <p>import com.typesafe.config.{Config, ConfigFactory}</p>
-</div>
-<div class="section" id="loggers">
-<h2>Loggers<a class="headerlink" href="#loggers" title="Permalink to this headline">¶</a></h2>
+</section>
+<section id="loggers">
+<h2>Loggers<a class="headerlink" href="#loggers" title="Permalink to this heading">¶</a></h2>
 <ul class="simple">
 <li><p><strong>Importation:</strong></p></li>
 </ul>
@@ -884,15 +888,15 @@
 <appender-ref ref="CLOUD" />
 <appender-ref ref="STDOUT" />
 </root></p>
-</div>
-<div class="section" id="classes-objects-case-classes-and-traits">
-<h2>Classes, Objects, Case classes, and Traits<a class="headerlink" href="#classes-objects-case-classes-and-traits" title="Permalink to this headline">¶</a></h2>
-<div class="section" id="classes">
-<h3>Classes<a class="headerlink" href="#classes" title="Permalink to this headline">¶</a></h3>
+</section>
+<section id="classes-objects-case-classes-and-traits">
+<h2>Classes, Objects, Case classes, and Traits<a class="headerlink" href="#classes-objects-case-classes-and-traits" title="Permalink to this heading">¶</a></h2>
+<section id="classes">
+<h3>Classes<a class="headerlink" href="#classes" title="Permalink to this heading">¶</a></h3>
 <p>Classes are the core building block of object-oriented languages, a combination of data structures with functions (“methods”). A class defined with values and variables can be instantiated as many times as needed, each one initialized with its own input data. With inheritance classes can extend other classes, creating a hierarchy of subclasses and superclasses.</p>
-</div>
-<div class="section" id="objects">
-<h3>Objects<a class="headerlink" href="#objects" title="Permalink to this headline">¶</a></h3>
+</section>
+<section id="objects">
+<h3>Objects<a class="headerlink" href="#objects" title="Permalink to this heading">¶</a></h3>
 <p>An object is a type of class that can have no more than one instance, known in object-oriented design as a singleton. Instead of creating an instance with a new keyword, just access the object directly by name.</p>
 <p>When is it instanciated?  An object gets automatically instantiated the first time it is accessed in a running JVM, which also means that until it is accessed the first time it won’t get instantiated.</p>
 <ul class="simple">
@@ -904,8 +908,8 @@
 println(Hello.hi) // initialization occurs when accessed for first time
 println(Hello.hi) // no initialization, same object is used</p>
 </div></blockquote>
-<div class="section" id="the-factory-pattern-and-companion-objects">
-<h4>The “factory pattern” and companion objects:<a class="headerlink" href="#the-factory-pattern-and-companion-objects" title="Permalink to this headline">¶</a></h4>
+<section id="the-factory-pattern-and-companion-objects">
+<h4>The “factory pattern” and companion objects:<a class="headerlink" href="#the-factory-pattern-and-companion-objects" title="Permalink to this heading">¶</a></h4>
 <ul class="simple">
 <li><p><strong>Companion object of a class:</strong>
 A companion object is an object that shares the same name as a class and is defined together in the same file as the class. Having a companion object for a class is a common pattern in Scala, but there is also a feature from which they can benefit. Companion objects and classes are considered a single unit in terms of access controls, so they can access each other’s private and protected fields and methods.</p></li>
@@ -924,10 +928,10 @@ defined object Multiplier</p>
 tripler: Multiplier = Multiplier&#64;5af28b27</p>
 <p>scala&gt; val result = tripler.product(13)
 result: Int = 39</p>
-</div>
-</div>
-<div class="section" id="apply-method">
-<h3>apply method<a class="headerlink" href="#apply-method" title="Permalink to this headline">¶</a></h3>
+</section>
+</section>
+<section id="apply-method">
+<h3>apply method<a class="headerlink" href="#apply-method" title="Permalink to this heading">¶</a></h3>
 <p>Methods named “apply,” sometimes referred to as a default method or an injector method, can be invoked without the method name. The apply method is essentially a shortcut, providing functionality that can be triggered using parentheses but without a method name.</p>
 <ul class="simple">
 <li><p>Example:</p></li>
@@ -942,9 +946,9 @@ tripleMe: Multiplier = Multiplier&#64;339cde4b</p>
 tripled: Int = 30</p>
 <p>scala&gt; val tripled2 = tripleMe(10)
 tripled2: Int = 30</p>
-</div>
-<div class="section" id="case-classes">
-<h3>Case Classes<a class="headerlink" href="#case-classes" title="Permalink to this headline">¶</a></h3>
+</section>
+<section id="case-classes">
+<h3>Case Classes<a class="headerlink" href="#case-classes" title="Permalink to this heading">¶</a></h3>
 <p>A case class is an instantiable class that includes several automatically generated methods. It also includes an automatically generated companion object with its own automatically generated methods. All of these methods in the class and in the companion object are based on the class’s parameter list, with the parameters being used to formulate methods like an equals implemention that iteratively compares every field, a toString method that cleanly prints out the class name and all of its field values, an apply factory method to instanciate the case class, a copy method and unapply methos which extracts the instance into a tuple of its fields, making it possible to use case class instances for pattern matching.</p>
 <ul>
 <li><p>When to use a case class?</p>
@@ -962,13 +966,13 @@ defined class Character</p></li>
 h: Character = Character(Hadrian,true) // clean toString zhen printing the instance</p>
 <p>// Example of use of unapply method
 scala&gt; h match {
-|   case Character(x, true) =&gt; s”<span class="math notranslate nohighlight">\(x is a thief&quot;      
-     |   case Character(x, false) =&gt; s&quot;\)</span>x is not a thief”
+|   case Character(x, true) =&gt; s”$x is a thief”<br />
+|   case Character(x, false) =&gt; s”$x is not a thief”
 | }
 res1: String = Hadrian is a thief</p>
-</div>
-<div class="section" id="inner-classes">
-<h3>Inner classes:<a class="headerlink" href="#inner-classes" title="Permalink to this headline">¶</a></h3>
+</section>
+<section id="inner-classes">
+<h3>Inner classes:<a class="headerlink" href="#inner-classes" title="Permalink to this heading">¶</a></h3>
 <p>Classes defined inside classes or objects:</p>
 <p>Example:</p>
 <div class="highlight-none notranslate"><div class="highlight"><pre><span></span>// Definition
@@ -998,10 +1002,10 @@ node1.connectTo(node2)
 node3.connectTo(node1)
 </pre></div>
 </div>
-</div>
-</div>
-<div class="section" id="lazy-values">
-<h2>Lazy Values<a class="headerlink" href="#lazy-values" title="Permalink to this headline">¶</a></h2>
+</section>
+</section>
+<section id="lazy-values">
+<h2>Lazy Values<a class="headerlink" href="#lazy-values" title="Permalink to this heading">¶</a></h2>
 <p>Lazy values, however, are only created the first time they are instantiated. You can create a lazy value by adding the keyword lazy before the val keyword when defining a value.</p>
 <ul class="simple">
 <li><p>Example:</p></li>
@@ -1014,42 +1018,42 @@ defined class RandomPoint</p>
 <p>scala&gt; val p = new RandomPoint()
 creating x
 p: RandomPoint = RandomPoint&#64;6c225adb</p>
-<p>scala&gt; println(s”Location is <span class="math notranslate nohighlight">\({p.x}, \)</span>{p.y}”)
+<p>scala&gt; println(s”Location is ${p.x}, ${p.y}”)
 now y
 Location is 2019268581, -806862774</p>
-<p>scala&gt; println(s”Location is <span class="math notranslate nohighlight">\({p.x}, \)</span>{p.y}”)
+<p>scala&gt; println(s”Location is ${p.x}, ${p.y}”)
 Location is 2019268581, -806862774</p>
-</div>
-</div>
+</section>
+</section>
 
 
            </div>
            
           </div>
           <footer>
+  
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
-        <a href="Scala_tips.html" class="btn btn-neutral float-right" title="Scala tips" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
-        <a href="index.html" class="btn btn-neutral float-left" title="Scala" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+      
+        <a href="Scala_tips.html" class="btn btn-neutral float-right" title="Scala tips" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="index.html" class="btn btn-neutral float-left" title="Scala" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
     </div>
+  
 
   <hr/>
 
   <div role="contentinfo">
     <p>
-        &#169; Copyright 2019, VTL LLC.
+        &copy; Copyright 2019, VTL LLC
 
     </p>
   </div>
-    
-    
-    
-    Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
-    
-    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
-    
-    provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
 
 </footer>
+
         </div>
       </div>
 
@@ -1057,6 +1061,7 @@ Location is 2019268581, -806862774</p>
 
   </div>
   
+
 
   <script type="text/javascript">
       jQuery(function () {
