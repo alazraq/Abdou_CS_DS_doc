@@ -6,9 +6,9 @@
 Abderrahmane Lazraq's documentation
 ###################################
 
-Welcome to Abdou's documentation!
+Welcome to my personal documentation!
 
-This documentation contains tutorials, tips and tricks I accumulated during my studies at four different institutions - Ecole Polytechnique, HEC Paris, Carnegie Mellon University and EPFL - as well as during my internship at Microsoft and working as head of engineering for more than 3 years at Virtual Traffic Lights LLC. 
+This website documents tutorials, tips and tricks I accumulated during my studies at four different schools across three countries - Ecole Polytechnique, HEC Paris, Carnegie Mellon University and EPFL - as well as during my end of studies internship at Microsoft and working as software engineer, lead data scientist then head of engineering for more than 4 years at Virtual Traffic Lights LLC. 
 
 The goal is to provide a centralized documentation for future reference if faced with similar tasks to accomplish and to share knowledge. 
 

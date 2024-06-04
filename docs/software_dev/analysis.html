@@ -1,41 +1,40 @@
 
 
 <!DOCTYPE html>
-<html class="writer-html5" lang="en" >
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
 <head>
-  <meta charset="utf-8" />
-  
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta charset="utf-8">
+  <meta name="generator" content="Docutils 0.19: https://docutils.sourceforge.io/" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
   <title>Analysis of users requirements &mdash; Abdou Documentation  documentation</title>
   
 
   
-  <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
-  <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
-
+  
   
   
 
   
-  
-
-  
-
-  
-  <!--[if lt IE 9]>
-    <script src="../_static/js/html5shiv.min.js"></script>
-  <![endif]-->
+  <script type="text/javascript" src="../_static/js/modernizr.min.js"></script>
   
     
       <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
-        <script src="../_static/jquery.js"></script>
-        <script src="../_static/underscore.js"></script>
+        <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
         <script src="../_static/doctools.js"></script>
+        <script src="../_static/sphinx_highlight.js"></script>
     
     <script type="text/javascript" src="../_static/js/theme.js"></script>
 
     
+
+  
+  <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
     <link rel="next" title="Designing Software" href="design.html" />
@@ -57,9 +56,6 @@
           
 
           
-            
-            <img src="../_static/logo_2.jpg" class="logo" alt="Logo"/>
-          
           </a>
 
           
@@ -79,7 +75,6 @@
           
         </div>
 
-        
         <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
           
             
@@ -87,7 +82,7 @@
               
             
             
-              <p class="caption"><span class="caption-text">Contents:</span></p>
+              <p class="caption" role="heading"><span class="caption-text">Contents:</span></p>
 <ul class="current">
 <li class="toctree-l1 current"><a class="reference internal" href="index.html">Software Development</a><ul class="current">
 <li class="toctree-l2"><a class="reference internal" href="Software_development_in_a_nutshell.html">Software development in a nutshell</a></li>
@@ -184,6 +179,13 @@
 </li>
 <li class="toctree-l3"><a class="reference internal" href="deploying/ML_CI_CD/index.html">Machine Learning Models Continuous Integration and Delivery (CI/CD)</a><ul>
 <li class="toctree-l4"><a class="reference internal" href="deploying/ML_CI_CD/Kubeflow_tutorial.html">Kubeflow Tutorial</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="communication/index.html">Inter-Process Communication</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="communication/IPC_technologies_categorization_criteria.html">IPC technologies categorization criteria</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="communication/IPC_technologies_categorization_criteria.html#synchronous-or-asynchronous">Synchronous or asynchronous</a></li>
 </ul>
 </li>
 </ul>
@@ -307,7 +309,12 @@
 </li>
 <li class="toctree-l3"><a class="reference internal" href="../programming/Python/shebang.html">Shebang (#!)</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../programming/Python/pybuilder_build_locally.html">Building a package locally using pybuilder</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../programming/Python/poetry.html">Poetry</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../programming/Python/poetry.html">Poetry basic usage</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../programming/Python/poetry.html#project-setup">Project setup</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../programming/Python/poetry.html#using-poetry-virtual-environment">Using poetry virtual environment</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../programming/Python/poetry.html#installing-dependencies">Installing dependencies</a></li>
+</ul>
+</li>
 <li class="toctree-l3"><a class="reference internal" href="../programming/Python/pycharm.html">Pycharm issues</a></li>
 </ul>
 </li>
@@ -557,6 +564,7 @@
 </ul>
 </li>
 <li class="toctree-l3"><a class="reference internal" href="../computer_science/OS_specific/mac/index.html">Mac tips</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../computer_science/OS_specific/mac/edit_env_variables_mac.html">Define environment variables on Mac</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../computer_science/OS_specific/mac/command_line_aliases.html">Command Line Aliases</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../computer_science/OS_specific/mac/useful_mac_commands.html">Mac useful terminal commands and shortcuts:</a></li>
 </ul>
@@ -707,6 +715,12 @@
 <li class="toctree-l4"><a class="reference internal" href="../business/finance/5_fixed_income_and_credit_risk.html#merton-s-model-implications">Merton’s Model - implications</a></li>
 </ul>
 </li>
+<li class="toctree-l3"><a class="reference internal" href="../business/finance/6_personal_finance.html">Personal finance</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../business/finance/6_personal_finance.html#key-takeaways">Key takeaways</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../business/finance/6_personal_finance.html#ten-personal-finance-strategies">Ten Personal Finance Strategies</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../business/finance/6_personal_finance.html#personal-finance-principles">Personal Finance Principles</a></li>
+</ul>
+</li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="../business/sales/index.html">Sales</a><ul>
@@ -728,12 +742,17 @@
 <li class="toctree-l4"><a class="reference internal" href="../extracurricular/personal_dev/goal_planning_system.html#personal-development-concepts">Personal development concepts</a></li>
 </ul>
 </li>
-<li class="toctree-l3"><a class="reference internal" href="../extracurricular/personal_dev/atomic_habits_system.html">Atomic habits system</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../extracurricular/personal_dev/atomic_habits_system.html">Atomic Habits System</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../extracurricular/personal_dev/atomic_habits_system.html#introduction">Introduction</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../extracurricular/personal_dev/atomic_habits_system.html#how-to-build-a-good-habit">How to build a good habit</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../extracurricular/personal_dev/atomic_habits_system.html#how-to-break-a-bad-habit">How to break a bad habit</a></li>
+</ul>
+</li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="../extracurricular/social_dev/index.html">Social development</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="../extracurricular/social_dev/parenting.html">Parenting</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="../extracurricular/social_dev/parenting.html#financial-education">Financial education</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../extracurricular/social_dev/Parenting.html">Parenting</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../extracurricular/social_dev/Parenting.html#financial-education">Financial education</a></li>
 </ul>
 </li>
 </ul>
@@ -762,7 +781,6 @@
             
           
         </div>
-        
       </div>
     </nav>
 
@@ -797,13 +815,11 @@
 
 
 
-
-
 <div role="navigation" aria-label="breadcrumbs navigation">
 
   <ul class="wy-breadcrumbs">
     
-      <li><a href="../index.html" class="icon icon-home"></a> &raquo;</li>
+      <li><a href="../index.html">Docs</a> &raquo;</li>
         
           <li><a href="index.html">Software Development</a> &raquo;</li>
         
@@ -812,7 +828,7 @@
     
       <li class="wy-breadcrumbs-aside">
         
-          
+            
             <a href="../_sources/software_dev/analysis.md.txt" rel="nofollow"> View page source</a>
           
         
@@ -826,17 +842,17 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
             
-  <div class="section" id="analysis-of-users-requirements">
-<h1>Analysis of users requirements<a class="headerlink" href="#analysis-of-users-requirements" title="Permalink to this headline">¶</a></h1>
+  <section id="analysis-of-users-requirements">
+<h1>Analysis of users requirements<a class="headerlink" href="#analysis-of-users-requirements" title="Permalink to this heading">¶</a></h1>
 <p>Requirements Analysis is the process of defining the expectations of the users for an application that is to be built or modified.
 It is at the intersection of <em>Business</em> and <em>Software Development</em> since the requirement modeling should be high level to make sense to stakeholders, but should also be simple, specific and clear enough for the developers to be able to implement them.</p>
 <p>The requirements analysis process involves eliciting, analyzing, modeling and then reviewing the requirements.
 Here we only focus on the modeling part and leave the rest for the Business expertise section.</p>
-<div class="section" id="user-stories">
-<h2>User stories<a class="headerlink" href="#user-stories" title="Permalink to this headline">¶</a></h2>
+<section id="user-stories">
+<h2>User stories<a class="headerlink" href="#user-stories" title="Permalink to this heading">¶</a></h2>
 <p>This section is a summary of what I learned in the analysis of users requirements part of the <code class="docutils literal notranslate"><span class="pre">Database</span> <span class="pre">design</span> <span class="pre">and</span> <span class="pre">development</span></code> course (67262) at Carnegie Mellon University and Mike Cohn’s book <code class="docutils literal notranslate"><span class="pre">User</span> <span class="pre">Stories</span> <span class="pre">Applied</span></code>.</p>
-<div class="section" id="what-are-user-stories">
-<h3>What are user stories?<a class="headerlink" href="#what-are-user-stories" title="Permalink to this headline">¶</a></h3>
+<section id="what-are-user-stories">
+<h3>What are user stories?<a class="headerlink" href="#what-are-user-stories" title="Permalink to this heading">¶</a></h3>
 <p>User stories are the preferred format for modeling the requirements in the Agile methodology. They describe a desired functionality to achieve the user’s goal.</p>
 <p>User stories usually follow the following structure:</p>
 <ul class="simple">
@@ -844,18 +860,18 @@ Here we only focus on the modeling part and leave the rest for the Business expe
 <li><p>I want <code class="docutils literal notranslate"><span class="pre">goal</span></code></p></li>
 <li><p>So that <code class="docutils literal notranslate"><span class="pre">business</span> <span class="pre">value</span></code></p></li>
 </ul>
-</div>
-<div class="section" id="components-of-a-user-story">
-<h3>Components of a user story<a class="headerlink" href="#components-of-a-user-story" title="Permalink to this headline">¶</a></h3>
+</section>
+<section id="components-of-a-user-story">
+<h3>Components of a user story<a class="headerlink" href="#components-of-a-user-story" title="Permalink to this heading">¶</a></h3>
 <p>There are three parts to a user story:</p>
 <ul class="simple">
 <li><p>A <strong>card</strong> used for planning and as a reminder, traditionally written but can be digital.</p></li>
 <li><p>A <strong>conversation</strong> with the product owner to flesh out details of the story that can then be turned into:</p></li>
 <li><p>Acceptance <strong>tests</strong> that can be used to determine when the story was coded correctly.</p></li>
 </ul>
-</div>
-<div class="section" id="writing-good-stories-invest-criteria">
-<h3>Writing good stories: INVEST criteria<a class="headerlink" href="#writing-good-stories-invest-criteria" title="Permalink to this headline">¶</a></h3>
+</section>
+<section id="writing-good-stories-invest-criteria">
+<h3>Writing good stories: INVEST criteria<a class="headerlink" href="#writing-good-stories-invest-criteria" title="Permalink to this heading">¶</a></h3>
 <p>A good user story should be:</p>
 <ul class="simple">
 <li><p>I ndependent</p></li>
@@ -874,46 +890,46 @@ Here we only focus on the modeling part and leave the rest for the Business expe
 <li><p><strong>Small</strong> means that if they are too big, compound and complex stories may be split into multi- ple smaller stories.</p></li>
 <li><p><strong>Testable</strong> means that we should be able to assess when the coding of a story is complete, and providing the test cases prior to the implementation of that user story is best.</p></li>
 </ul>
-</div>
-<div class="section" id="examples-of-good-user-stories">
-<h3>Examples of good user stories<a class="headerlink" href="#examples-of-good-user-stories" title="Permalink to this headline">¶</a></h3>
+</section>
+<section id="examples-of-good-user-stories">
+<h3>Examples of good user stories<a class="headerlink" href="#examples-of-good-user-stories" title="Permalink to this heading">¶</a></h3>
 <p>These are from Construction Junction company:</p>
 <ul class="simple">
 <li><p>We would like online users to be able to add specific categories to a wish list so that they can receive notifications whenever those types of items are received at Construction Junction.</p></li>
 <li><p>We would like online purchases to be held in a queue so that Construction Junction staff can confirm that the item is available before the customer credit card gets debited.</p></li>
 </ul>
-</div>
-</div>
-</div>
+</section>
+</section>
+</section>
 
 
            </div>
            
           </div>
           <footer>
+  
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
-        <a href="design.html" class="btn btn-neutral float-right" title="Designing Software" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
-        <a href="Software_development_in_a_nutshell.html" class="btn btn-neutral float-left" title="Software development in a nutshell" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+      
+        <a href="design.html" class="btn btn-neutral float-right" title="Designing Software" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="Software_development_in_a_nutshell.html" class="btn btn-neutral float-left" title="Software development in a nutshell" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
     </div>
+  
 
   <hr/>
 
   <div role="contentinfo">
     <p>
-        &#169; Copyright 2019, VTL LLC.
+        &copy; Copyright 2019, VTL LLC
 
     </p>
   </div>
-    
-    
-    
-    Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
-    
-    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
-    
-    provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
 
 </footer>
+
         </div>
       </div>
 
@@ -921,6 +937,7 @@ Here we only focus on the modeling part and leave the rest for the Business expe
 
   </div>
   
+
 
   <script type="text/javascript">
       jQuery(function () {

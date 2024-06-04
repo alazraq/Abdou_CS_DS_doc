@@ -13,4 +13,5 @@ It also focuses on students with Data Science Backgrounds like myself.
    3_Market_Efficiency
    4_limit_order_books
    5_fixed_income_and_credit_risk
+   6_personal_finance
    

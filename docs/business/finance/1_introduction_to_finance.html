@@ -1,43 +1,40 @@
 
 
 <!DOCTYPE html>
-<html class="writer-html5" lang="en" >
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
 <head>
-  <meta charset="utf-8" />
-  
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta charset="utf-8">
+  <meta name="generator" content="Docutils 0.19: https://docutils.sourceforge.io/" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
   <title>Introduction to finance &mdash; Abdou Documentation  documentation</title>
   
 
   
-  <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
-  <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
-
+  
   
   
 
   
-  
-
-  
-
-  
-  <!--[if lt IE 9]>
-    <script src="../../_static/js/html5shiv.min.js"></script>
-  <![endif]-->
+  <script type="text/javascript" src="../../_static/js/modernizr.min.js"></script>
   
     
       <script type="text/javascript" id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
-        <script src="../../_static/jquery.js"></script>
-        <script src="../../_static/underscore.js"></script>
+        <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
         <script src="../../_static/doctools.js"></script>
-        <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
-        <script type="text/x-mathjax-config">MathJax.Hub.Config({"tex2jax": {"inlineMath": [["\\(", "\\)"]], "displayMath": [["\\[", "\\]"]], "processRefs": false, "processEnvironments": false}})</script>
+        <script src="../../_static/sphinx_highlight.js"></script>
     
     <script type="text/javascript" src="../../_static/js/theme.js"></script>
 
     
+
+  
+  <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
     <link rel="next" title="Asset Valuation" href="2_Asset_Valuation.html" />
@@ -59,9 +56,6 @@
           
 
           
-            
-            <img src="../../_static/logo_2.jpg" class="logo" alt="Logo"/>
-          
           </a>
 
           
@@ -81,7 +75,6 @@
           
         </div>
 
-        
         <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
           
             
@@ -89,7 +82,7 @@
               
             
             
-              <p class="caption"><span class="caption-text">Contents:</span></p>
+              <p class="caption" role="heading"><span class="caption-text">Contents:</span></p>
 <ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="../../software_dev/index.html">Software Development</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="../../software_dev/Software_development_in_a_nutshell.html">Software development in a nutshell</a></li>
@@ -186,6 +179,13 @@
 </li>
 <li class="toctree-l3"><a class="reference internal" href="../../software_dev/deploying/ML_CI_CD/index.html">Machine Learning Models Continuous Integration and Delivery (CI/CD)</a><ul>
 <li class="toctree-l4"><a class="reference internal" href="../../software_dev/deploying/ML_CI_CD/Kubeflow_tutorial.html">Kubeflow Tutorial</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../software_dev/communication/index.html">Inter-Process Communication</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../software_dev/communication/IPC_technologies_categorization_criteria.html">IPC technologies categorization criteria</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../software_dev/communication/IPC_technologies_categorization_criteria.html#synchronous-or-asynchronous">Synchronous or asynchronous</a></li>
 </ul>
 </li>
 </ul>
@@ -309,7 +309,12 @@
 </li>
 <li class="toctree-l3"><a class="reference internal" href="../../programming/Python/shebang.html">Shebang (#!)</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../programming/Python/pybuilder_build_locally.html">Building a package locally using pybuilder</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../../programming/Python/poetry.html">Poetry</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../programming/Python/poetry.html">Poetry basic usage</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../programming/Python/poetry.html#project-setup">Project setup</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../programming/Python/poetry.html#using-poetry-virtual-environment">Using poetry virtual environment</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../programming/Python/poetry.html#installing-dependencies">Installing dependencies</a></li>
+</ul>
+</li>
 <li class="toctree-l3"><a class="reference internal" href="../../programming/Python/pycharm.html">Pycharm issues</a></li>
 </ul>
 </li>
@@ -559,6 +564,7 @@
 </ul>
 </li>
 <li class="toctree-l3"><a class="reference internal" href="../../computer_science/OS_specific/mac/index.html">Mac tips</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../computer_science/OS_specific/mac/edit_env_variables_mac.html">Define environment variables on Mac</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../computer_science/OS_specific/mac/command_line_aliases.html">Command Line Aliases</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../computer_science/OS_specific/mac/useful_mac_commands.html">Mac useful terminal commands and shortcuts:</a></li>
 </ul>
@@ -709,6 +715,12 @@
 <li class="toctree-l4"><a class="reference internal" href="5_fixed_income_and_credit_risk.html#merton-s-model-implications">Merton’s Model - implications</a></li>
 </ul>
 </li>
+<li class="toctree-l3"><a class="reference internal" href="6_personal_finance.html">Personal finance</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="6_personal_finance.html#key-takeaways">Key takeaways</a></li>
+<li class="toctree-l4"><a class="reference internal" href="6_personal_finance.html#ten-personal-finance-strategies">Ten Personal Finance Strategies</a></li>
+<li class="toctree-l4"><a class="reference internal" href="6_personal_finance.html#personal-finance-principles">Personal Finance Principles</a></li>
+</ul>
+</li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="../sales/index.html">Sales</a><ul>
@@ -730,12 +742,17 @@
 <li class="toctree-l4"><a class="reference internal" href="../../extracurricular/personal_dev/goal_planning_system.html#personal-development-concepts">Personal development concepts</a></li>
 </ul>
 </li>
-<li class="toctree-l3"><a class="reference internal" href="../../extracurricular/personal_dev/atomic_habits_system.html">Atomic habits system</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../extracurricular/personal_dev/atomic_habits_system.html">Atomic Habits System</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../extracurricular/personal_dev/atomic_habits_system.html#introduction">Introduction</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../extracurricular/personal_dev/atomic_habits_system.html#how-to-build-a-good-habit">How to build a good habit</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../extracurricular/personal_dev/atomic_habits_system.html#how-to-break-a-bad-habit">How to break a bad habit</a></li>
+</ul>
+</li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="../../extracurricular/social_dev/index.html">Social development</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="../../extracurricular/social_dev/parenting.html">Parenting</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="../../extracurricular/social_dev/parenting.html#financial-education">Financial education</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../extracurricular/social_dev/Parenting.html">Parenting</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../extracurricular/social_dev/Parenting.html#financial-education">Financial education</a></li>
 </ul>
 </li>
 </ul>
@@ -764,7 +781,6 @@
             
           
         </div>
-        
       </div>
     </nav>
 
@@ -799,13 +815,11 @@
 
 
 
-
-
 <div role="navigation" aria-label="breadcrumbs navigation">
 
   <ul class="wy-breadcrumbs">
     
-      <li><a href="../../index.html" class="icon icon-home"></a> &raquo;</li>
+      <li><a href="../../index.html">Docs</a> &raquo;</li>
         
           <li><a href="../index.html">Business</a> &raquo;</li>
         
@@ -816,7 +830,7 @@
     
       <li class="wy-breadcrumbs-aside">
         
-          
+            
             <a href="../../_sources/business/finance/1_introduction_to_finance.md.txt" rel="nofollow"> View page source</a>
           
         
@@ -830,12 +844,12 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
             
-  <div class="section" id="introduction-to-finance">
-<h1>Introduction to finance<a class="headerlink" href="#introduction-to-finance" title="Permalink to this headline">¶</a></h1>
-<div class="section" id="overview-of-finance-and-financial-markets">
-<h2>Overview of finance and financial markets<a class="headerlink" href="#overview-of-finance-and-financial-markets" title="Permalink to this headline">¶</a></h2>
-<div class="section" id="broad-definition">
-<h3>Broad definition<a class="headerlink" href="#broad-definition" title="Permalink to this headline">¶</a></h3>
+  <section id="introduction-to-finance">
+<h1>Introduction to finance<a class="headerlink" href="#introduction-to-finance" title="Permalink to this heading">¶</a></h1>
+<section id="overview-of-finance-and-financial-markets">
+<h2>Overview of finance and financial markets<a class="headerlink" href="#overview-of-finance-and-financial-markets" title="Permalink to this heading">¶</a></h2>
+<section id="broad-definition">
+<h3>Broad definition<a class="headerlink" href="#broad-definition" title="Permalink to this heading">¶</a></h3>
 <p>Finance is the exchange of money against money (in different forms), for example:</p>
 <ul class="simple">
 <li><p>Loans: money today against future repayment.</p></li>
@@ -844,21 +858,21 @@
 <li><p>Foreign exchange: one currency against another.</p></li>
 <li><p>etc</p></li>
 </ul>
-</div>
-<div class="section" id="standard-definition">
-<h3>Standard definition<a class="headerlink" href="#standard-definition" title="Permalink to this headline">¶</a></h3>
+</section>
+<section id="standard-definition">
+<h3>Standard definition<a class="headerlink" href="#standard-definition" title="Permalink to this heading">¶</a></h3>
 <p>Finance is a term for matters regarding the management, creation, and study of money and investments. Specifically, it deals with the questions of how and why an individual, company or government acquires the money needed – called capital in the company context – and how they spend or invest that money.</p>
-</div>
-<div class="section" id="important-concepts">
-<h3>Important concepts<a class="headerlink" href="#important-concepts" title="Permalink to this headline">¶</a></h3>
+</section>
+<section id="important-concepts">
+<h3>Important concepts<a class="headerlink" href="#important-concepts" title="Permalink to this heading">¶</a></h3>
 <ul class="simple">
 <li><p>Financial institutions.</p></li>
 <li><p>Financial instruments.</p></li>
 <li><p>Finance concepts.</p></li>
 </ul>
-</div>
-<div class="section" id="macroeconomic-view">
-<h3>Macroeconomic view<a class="headerlink" href="#macroeconomic-view" title="Permalink to this headline">¶</a></h3>
+</section>
+<section id="macroeconomic-view">
+<h3>Macroeconomic view<a class="headerlink" href="#macroeconomic-view" title="Permalink to this heading">¶</a></h3>
 <p>Who gives money today against money tomorrow?
 Old Households lend to:</p>
 <ul class="simple">
@@ -866,21 +880,21 @@ Old Households lend to:</p>
 <li><p>Governement</p></li>
 <li><p>Firms</p></li>
 </ul>
-</div>
-<div class="section" id="intermediation">
-<h3>Intermediation<a class="headerlink" href="#intermediation" title="Permalink to this headline">¶</a></h3>
+</section>
+<section id="intermediation">
+<h3>Intermediation<a class="headerlink" href="#intermediation" title="Permalink to this heading">¶</a></h3>
 <ul class="simple">
 <li><p><strong>Definition:</strong> A financial institution receives money from one counterparty and gives it to the other.</p></li>
 <li><p><strong>Types</strong> Main two types of intermediation:</p></li>
 </ul>
-<div class="section" id="bank-intermediation-assets-and-liabilities">
-<h4>Bank Intermediation - assets and liabilities<a class="headerlink" href="#bank-intermediation-assets-and-liabilities" title="Permalink to this headline">¶</a></h4>
+<section id="bank-intermediation-assets-and-liabilities">
+<h4>Bank Intermediation - assets and liabilities<a class="headerlink" href="#bank-intermediation-assets-and-liabilities" title="Permalink to this heading">¶</a></h4>
 <ul class="simple">
 <li><p><strong>Commercial Banks</strong> are financial institutions that collect deposits (see more in the deposits section below) from old households and make loans to young households and firms.</p></li>
 <li><p>The <strong>Net worth</strong> of a bank is the difference between assets and liabilities, both listed on <strong>bank’s balance sheet</strong>.</p></li>
 </ul>
-<div class="section" id="bank-assets">
-<h5>Bank assets<a class="headerlink" href="#bank-assets" title="Permalink to this headline">¶</a></h5>
+<section id="bank-assets">
+<h5>Bank assets<a class="headerlink" href="#bank-assets" title="Permalink to this heading">¶</a></h5>
 <ul class="simple">
 <li><p><strong>Bank assets</strong> are all the loans, securities (see Market Finance subsection), reserves, physical assets etc that a bank owns, they are listed on the left-hand side of a bank’s balance sheet. The largest asset category of most bank is loans, which generates interest revenue. A critical asset category used to maintain the safety of deposits is reserves (vault cash and Federal Reserve deposits).</p></li>
 <li><p>A <strong>loan</strong> is a financial contract where the lender gives money to the borrower in exchange for predetermined future repayments. Examples of loans include:</p>
@@ -894,45 +908,45 @@ Old Households lend to:</p>
 </li>
 <li><p>Bank <strong>reserves</strong> are the cash minimums that must be kept on hand by financial institutions in order to meet central bank requirements. The bank cannot lend the money but must keep it in the vault, on-site or at the central bank, in order to meet any large and unexpected demand for withdrawals.</p></li>
 </ul>
-</div>
-<div class="section" id="bank-liabilities">
-<h5>Bank liabilities<a class="headerlink" href="#bank-liabilities" title="Permalink to this headline">¶</a></h5>
+</section>
+<section id="bank-liabilities">
+<h5>Bank liabilities<a class="headerlink" href="#bank-liabilities" title="Permalink to this heading">¶</a></h5>
 <ul class="simple">
 <li><p><strong>Bank liabilities</strong> are what a bank owes, they are listed on the right-hand side of a bank’s balance sheet.</p></li>
 <li><p>A (demand) <strong>deposit</strong> is a financial contract: the depositor gives money to the bank today and can collect it at any future point in time on demand. Deposits are typically insured by the government (the government steps in of the bank cannot repay the depositor). The deposit itself is a liability owed by the bank to the depositor.</p></li>
 </ul>
-</div>
-</div>
-<div class="section" id="market-finance-securities">
-<h4>Market finance - securities<a class="headerlink" href="#market-finance-securities" title="Permalink to this headline">¶</a></h4>
+</section>
+</section>
+<section id="market-finance-securities">
+<h4>Market finance - securities<a class="headerlink" href="#market-finance-securities" title="Permalink to this heading">¶</a></h4>
 <ul class="simple">
 <li><p>A <strong>security</strong> is a financial instrument negotiable on a market that can be readily transferred or sold for cash. Stocks are one form of security, as are bonds, notes, mineral royalties, options and futures contracts.</p></li>
 <li><p>Here we explore Stocks and Bonds more in depth.</p></li>
 </ul>
-<div class="section" id="bonds">
-<h5>Bonds<a class="headerlink" href="#bonds" title="Permalink to this headline">¶</a></h5>
+<section id="bonds">
+<h5>Bonds<a class="headerlink" href="#bonds" title="Permalink to this heading">¶</a></h5>
 <ul class="simple">
 <li><p>A <strong>Bond</strong> is a debt security entitling the owner to predetermined future repayments.</p></li>
 <li><p><strong>Bond vs Stock</strong> Bonds are debts while stocks are stakes of ownership in a company.</p></li>
-<li><p>Example: Boing is issuing new bonds with a value of <span class="math notranslate nohighlight">\(3 000 000 00\)</span>, repayment is due 2023 with the rate of 4.508% interest rate every year.</p></li>
+<li><p>Example: Boing is issuing new bonds with a value of $3 000 000 00$, repayment is due 2023 with the rate of 4.508% interest rate every year.</p></li>
 <li><p>Debt securities slide: All the bonds that are still standing on the market (not yet due)</p></li>
 <li><p>Sometimes the governement chooses to bail-out a company that goes bankrupt. Repay the bonds as well.</p></li>
 </ul>
-</div>
-<div class="section" id="stocks">
-<h5>Stocks<a class="headerlink" href="#stocks" title="Permalink to this headline">¶</a></h5>
+</section>
+<section id="stocks">
+<h5>Stocks<a class="headerlink" href="#stocks" title="Permalink to this heading">¶</a></h5>
 <ul class="simple">
 <li><p><strong>Initial Public Offering (IPO)</strong> or stock market launch is a type of public offering in which new shares of a company are sold to institutional investors and usually also retail investors. Usually during the IPO the share price is quite low so it is usually a good deal to buy at the IPO, but not always haha.</p></li>
 <li><p><strong>Market capitalization</strong>, commonly called market cap, is the market value of a publicly traded company’s outstanding shares (ex: lemonade.png).</p></li>
 <li><p>Q&amp;A:</p>
-<ol class="simple">
+<ol class="arabic simple">
 <li><p>Q: How are share price determined? A: valuation by a financial expert</p></li>
 <li><p>Q: Does selling more shares make current shareholders loose a lot of money? A: If the price per share at the IPO is correctly set, then you own less shares as a more valuable company so it should be fine.</p></li>
 </ol>
 </li>
 <li><p><strong>Seasoned equity offering:</strong> already public company issuing new shares.</p></li>
 <li><p><strong>Listing decision:</strong> choose where to issue your shares, prices in all market are virtually identical</p></li>
-<li><p><strong>Stock split:</strong> ex: from 100 million shares at 50<span class="math notranslate nohighlight">\( to 200 mil shares at 25\)</span></p></li>
+<li><p><strong>Stock split:</strong> ex: from 100 million shares at 50$ to 200 mil shares at 25$</p></li>
 <li><p><strong>Share turnover</strong> is a measure of stock liquidity calculated by dividing the total number of shares traded over a period by the average number of shares outstanding for the period. The higher the share turnover, the more liquid company shares are.</p></li>
 <li><p>Life of a Stock:</p>
 <ul>
@@ -944,9 +958,9 @@ Old Households lend to:</p>
 </ul>
 </li>
 </ul>
-</div>
-<div class="section" id="types-of-financial-markets">
-<h5>Types of financial markets<a class="headerlink" href="#types-of-financial-markets" title="Permalink to this headline">¶</a></h5>
+</section>
+<section id="types-of-financial-markets">
+<h5>Types of financial markets<a class="headerlink" href="#types-of-financial-markets" title="Permalink to this heading">¶</a></h5>
 <p>We distinguish two markets:</p>
 <ul class="simple">
 <li><p>Primary market: market for newly issued securities (Bond, stock etc)</p></li>
@@ -958,10 +972,10 @@ Old Households lend to:</p>
 <li><p>NASDAQ</p></li>
 <li><p>Tokyo Stock exchange</p></li>
 </ul>
-</div>
-</div>
-<div class="section" id="more-intermediation">
-<h4>More intermediation<a class="headerlink" href="#more-intermediation" title="Permalink to this headline">¶</a></h4>
+</section>
+</section>
+<section id="more-intermediation">
+<h4>More intermediation<a class="headerlink" href="#more-intermediation" title="Permalink to this heading">¶</a></h4>
 <ul class="simple">
 <li><p><strong>Investment banks (IBs)</strong> help firm issue securities: pricing, placement, legal documentation etc</p></li>
 <li><p><strong>Market-makers and dealers (often IBs)</strong> buy and sell securities on their own account, intermediating between final investors, more in article 3.</p></li>
@@ -973,39 +987,39 @@ Old Households lend to:</p>
 </ul>
 </li>
 </ul>
-</div>
-</div>
-</div>
-</div>
+</section>
+</section>
+</section>
+</section>
 
 
            </div>
            
           </div>
           <footer>
+  
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
-        <a href="2_Asset_Valuation.html" class="btn btn-neutral float-right" title="Asset Valuation" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
-        <a href="index.html" class="btn btn-neutral float-left" title="Finance" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+      
+        <a href="2_Asset_Valuation.html" class="btn btn-neutral float-right" title="Asset Valuation" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="index.html" class="btn btn-neutral float-left" title="Finance" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
     </div>
+  
 
   <hr/>
 
   <div role="contentinfo">
     <p>
-        &#169; Copyright 2019, VTL LLC.
+        &copy; Copyright 2019, VTL LLC
 
     </p>
   </div>
-    
-    
-    
-    Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
-    
-    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
-    
-    provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
 
 </footer>
+
         </div>
       </div>
 
@@ -1013,6 +1027,7 @@ Old Households lend to:</p>
 
   </div>
   
+
 
   <script type="text/javascript">
       jQuery(function () {

@@ -1,43 +1,41 @@
 
 
 <!DOCTYPE html>
-<html class="writer-html5" lang="en" >
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
 <head>
-  <meta charset="utf-8" />
-  
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta charset="utf-8">
+  <meta name="generator" content="Docutils 0.19: https://docutils.sourceforge.io/" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
   <title>Value functions, Policies and optimality &mdash; Abdou Documentation  documentation</title>
   
 
   
-  <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
-  <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
-
+  
   
   
 
   
-  
-
-  
-
-  
-  <!--[if lt IE 9]>
-    <script src="../../_static/js/html5shiv.min.js"></script>
-  <![endif]-->
+  <script type="text/javascript" src="../../_static/js/modernizr.min.js"></script>
   
     
       <script type="text/javascript" id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
-        <script src="../../_static/jquery.js"></script>
-        <script src="../../_static/underscore.js"></script>
+        <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
         <script src="../../_static/doctools.js"></script>
-        <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
-        <script type="text/x-mathjax-config">MathJax.Hub.Config({"tex2jax": {"inlineMath": [["\\(", "\\)"]], "displayMath": [["\\[", "\\]"]], "processRefs": false, "processEnvironments": false}})</script>
+        <script src="../../_static/sphinx_highlight.js"></script>
+        <script async="async" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     
     <script type="text/javascript" src="../../_static/js/theme.js"></script>
 
     
+
+  
+  <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
     <link rel="next" title="Value Iteration" href="Value_Iteration.html" />
@@ -59,9 +57,6 @@
           
 
           
-            
-            <img src="../../_static/logo_2.jpg" class="logo" alt="Logo"/>
-          
           </a>
 
           
@@ -81,7 +76,6 @@
           
         </div>
 
-        
         <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
           
             
@@ -89,7 +83,7 @@
               
             
             
-              <p class="caption"><span class="caption-text">Contents:</span></p>
+              <p class="caption" role="heading"><span class="caption-text">Contents:</span></p>
 <ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="../../software_dev/index.html">Software Development</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="../../software_dev/Software_development_in_a_nutshell.html">Software development in a nutshell</a></li>
@@ -186,6 +180,13 @@
 </li>
 <li class="toctree-l3"><a class="reference internal" href="../../software_dev/deploying/ML_CI_CD/index.html">Machine Learning Models Continuous Integration and Delivery (CI/CD)</a><ul>
 <li class="toctree-l4"><a class="reference internal" href="../../software_dev/deploying/ML_CI_CD/Kubeflow_tutorial.html">Kubeflow Tutorial</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../software_dev/communication/index.html">Inter-Process Communication</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../software_dev/communication/IPC_technologies_categorization_criteria.html">IPC technologies categorization criteria</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../software_dev/communication/IPC_technologies_categorization_criteria.html#synchronous-or-asynchronous">Synchronous or asynchronous</a></li>
 </ul>
 </li>
 </ul>
@@ -309,7 +310,12 @@
 </li>
 <li class="toctree-l3"><a class="reference internal" href="../../programming/Python/shebang.html">Shebang (#!)</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../programming/Python/pybuilder_build_locally.html">Building a package locally using pybuilder</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../../programming/Python/poetry.html">Poetry</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../programming/Python/poetry.html">Poetry basic usage</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../programming/Python/poetry.html#project-setup">Project setup</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../programming/Python/poetry.html#using-poetry-virtual-environment">Using poetry virtual environment</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../programming/Python/poetry.html#installing-dependencies">Installing dependencies</a></li>
+</ul>
+</li>
 <li class="toctree-l3"><a class="reference internal" href="../../programming/Python/pycharm.html">Pycharm issues</a></li>
 </ul>
 </li>
@@ -559,6 +565,7 @@
 </ul>
 </li>
 <li class="toctree-l3"><a class="reference internal" href="../../computer_science/OS_specific/mac/index.html">Mac tips</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../computer_science/OS_specific/mac/edit_env_variables_mac.html">Define environment variables on Mac</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../computer_science/OS_specific/mac/command_line_aliases.html">Command Line Aliases</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../computer_science/OS_specific/mac/useful_mac_commands.html">Mac useful terminal commands and shortcuts:</a></li>
 </ul>
@@ -709,6 +716,12 @@
 <li class="toctree-l4"><a class="reference internal" href="../../business/finance/5_fixed_income_and_credit_risk.html#merton-s-model-implications">Merton’s Model - implications</a></li>
 </ul>
 </li>
+<li class="toctree-l3"><a class="reference internal" href="../../business/finance/6_personal_finance.html">Personal finance</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../business/finance/6_personal_finance.html#key-takeaways">Key takeaways</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../business/finance/6_personal_finance.html#ten-personal-finance-strategies">Ten Personal Finance Strategies</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../business/finance/6_personal_finance.html#personal-finance-principles">Personal Finance Principles</a></li>
+</ul>
+</li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="../../business/sales/index.html">Sales</a><ul>
@@ -730,12 +743,17 @@
 <li class="toctree-l4"><a class="reference internal" href="../../extracurricular/personal_dev/goal_planning_system.html#personal-development-concepts">Personal development concepts</a></li>
 </ul>
 </li>
-<li class="toctree-l3"><a class="reference internal" href="../../extracurricular/personal_dev/atomic_habits_system.html">Atomic habits system</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../extracurricular/personal_dev/atomic_habits_system.html">Atomic Habits System</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../extracurricular/personal_dev/atomic_habits_system.html#introduction">Introduction</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../extracurricular/personal_dev/atomic_habits_system.html#how-to-build-a-good-habit">How to build a good habit</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../extracurricular/personal_dev/atomic_habits_system.html#how-to-break-a-bad-habit">How to break a bad habit</a></li>
+</ul>
+</li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="../../extracurricular/social_dev/index.html">Social development</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="../../extracurricular/social_dev/parenting.html">Parenting</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="../../extracurricular/social_dev/parenting.html#financial-education">Financial education</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../extracurricular/social_dev/Parenting.html">Parenting</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../extracurricular/social_dev/Parenting.html#financial-education">Financial education</a></li>
 </ul>
 </li>
 </ul>
@@ -764,7 +782,6 @@
             
           
         </div>
-        
       </div>
     </nav>
 
@@ -799,13 +816,11 @@
 
 
 
-
-
 <div role="navigation" aria-label="breadcrumbs navigation">
 
   <ul class="wy-breadcrumbs">
     
-      <li><a href="../../index.html" class="icon icon-home"></a> &raquo;</li>
+      <li><a href="../../index.html">Docs</a> &raquo;</li>
         
           <li><a href="../index.html">Machine Learning</a> &raquo;</li>
         
@@ -816,7 +831,7 @@
     
       <li class="wy-breadcrumbs-aside">
         
-          
+            
             <a href="../../_sources/machine_learning/RL/Value_functions_and_policies.rst.txt" rel="nofollow"> View page source</a>
           
         
@@ -830,15 +845,15 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
             
-  <div class="section" id="value-functions-policies-and-optimality">
-<h1>Value functions, Policies and optimality<a class="headerlink" href="#value-functions-policies-and-optimality" title="Permalink to this headline">¶</a></h1>
-<div class="section" id="policies-how-probable-is-it-for-an-agent-to-select-any-action-from-a-given-state">
-<h2>Policies: How probable is it for an agent to select any action from a given state?<a class="headerlink" href="#policies-how-probable-is-it-for-an-agent-to-select-any-action-from-a-given-state" title="Permalink to this headline">¶</a></h2>
+  <section id="value-functions-policies-and-optimality">
+<h1>Value functions, Policies and optimality<a class="headerlink" href="#value-functions-policies-and-optimality" title="Permalink to this heading">¶</a></h1>
+<section id="policies-how-probable-is-it-for-an-agent-to-select-any-action-from-a-given-state">
+<h2>Policies: How probable is it for an agent to select any action from a given state?<a class="headerlink" href="#policies-how-probable-is-it-for-an-agent-to-select-any-action-from-a-given-state" title="Permalink to this heading">¶</a></h2>
 <p>A policy is an agent’s strategy. It is a function that maps a given
 state to probabilities of selecting each possible action from that
 state. We will use the symbol <span class="math notranslate nohighlight">\(\pi\)</span> to denote a policy.</p>
-<div class="section" id="informal-example">
-<h3>Informal example<a class="headerlink" href="#informal-example" title="Permalink to this headline">¶</a></h3>
+<section id="informal-example">
+<h3>Informal example<a class="headerlink" href="#informal-example" title="Permalink to this heading">¶</a></h3>
 <p>For example, imagine a world where a robot moves across the room and the
 task is to get to the target point (x, y), where it gets a reward. Here:</p>
 <ul class="simple">
@@ -858,16 +873,16 @@ goal (policy #3)</p></li>
 <p>Obviously, some policies are better than others, and there are multiple
 ways to assess them, namely state-value function and action-value
 function. The goal of RL is to learn the best policy.</p>
-</div>
-<div class="section" id="formal-definition-of-a-policy">
-<h3>Formal definition of a policy<a class="headerlink" href="#formal-definition-of-a-policy" title="Permalink to this headline">¶</a></h3>
+</section>
+<section id="formal-definition-of-a-policy">
+<h3>Formal definition of a policy<a class="headerlink" href="#formal-definition-of-a-policy" title="Permalink to this heading">¶</a></h3>
 <p>If <span class="math notranslate nohighlight">\((S, A, R(s,a), P(s'/ s, a), \gamma)\)</span> is an MDP, then a policy
 <span class="math notranslate nohighlight">\(\pi\)</span> is a probability distribution over actions given states.
 That is <span class="math notranslate nohighlight">\(\pi(a/s)\)</span> the probability that the agent takes action
 <span class="math notranslate nohighlight">\(a\)</span> when in state <span class="math notranslate nohighlight">\(s\)</span>.</p>
-</div>
-<div class="section" id="alternate-definition-cmu">
-<h3>Alternate definition (CMU)<a class="headerlink" href="#alternate-definition-cmu" title="Permalink to this headline">¶</a></h3>
+</section>
+<section id="alternate-definition-cmu">
+<h3>Alternate definition (CMU)<a class="headerlink" href="#alternate-definition-cmu" title="Permalink to this heading">¶</a></h3>
 <p>We can separate stochasticity induced by the transition probabilities of
 the environment <span class="math notranslate nohighlight">\(P(s_{t+1}/ s_t, a_t)\)</span> and the actual policy that
 we choose for our agent <span class="math notranslate nohighlight">\(\pi\)</span> which is then deterministic in which
@@ -876,10 +891,10 @@ action <span class="math notranslate nohighlight">\(a\)</span> under the policy 
 <span class="math notranslate nohighlight">\(\pi(s) =a\)</span>.</p>
 <p>The <strong>state trajectory</strong> is
 <span class="math notranslate nohighlight">\(s_0 \xrightarrow{a_0 = \pi(s_0)} s_1 \xrightarrow{a_1 = \pi(s_1)} s_2 ...\)</span></p>
-</div>
-</div>
-<div class="section" id="value-functions-how-good-is-a-state-or-an-action-at-a-given-state">
-<h2>Value functions: How good is a state, or an action at a given state?<a class="headerlink" href="#value-functions-how-good-is-a-state-or-an-action-at-a-given-state" title="Permalink to this headline">¶</a></h2>
+</section>
+</section>
+<section id="value-functions-how-good-is-a-state-or-an-action-at-a-given-state">
+<h2>Value functions: How good is a state, or an action at a given state?<a class="headerlink" href="#value-functions-how-good-is-a-state-or-an-action-at-a-given-state" title="Permalink to this heading">¶</a></h2>
 <p>Value functions are functions of states <span class="math notranslate nohighlight">\(V_\pi(s)\)</span>, or of
 state-action pairs <span class="math notranslate nohighlight">\(Q_\pi(s,a)\)</span>, that estimate how good it is for
 an agent to be in a given state, or how good it is for the agent to
@@ -888,8 +903,8 @@ perform a given action in a given state under a certain policy.</p>
 easy then) and the goal of RL algorithms is to estimate the value
 function in order to find the optimal policy that maximizes it for any
 given state.</p>
-<div class="section" id="state-value-function-v-pi-s-and-the-bellman-equations-value-function">
-<h3>State-value function <span class="math notranslate nohighlight">\(V_\pi(s)\)</span> and the Bellman equations (Value function)<a class="headerlink" href="#state-value-function-v-pi-s-and-the-bellman-equations-value-function" title="Permalink to this headline">¶</a></h3>
+<section id="state-value-function-v-pi-s-and-the-bellman-equations-value-function">
+<h3>State-value function <span class="math notranslate nohighlight">\(V_\pi(s)\)</span> and the Bellman equations (Value function)<a class="headerlink" href="#state-value-function-v-pi-s-and-the-bellman-equations-value-function" title="Permalink to this heading">¶</a></h3>
 <p>The state-value function for policy <span class="math notranslate nohighlight">\(\pi\)</span>, denoted as
 <span class="math notranslate nohighlight">\(V_\pi(s)\)</span>, and most commonly referred to as just value function,
 tells us how good any given state is for an agent following policy
@@ -910,9 +925,9 @@ for the state-value function.</p>
 \[V_\pi(s) = R(s_0,a_0) + \gamma \sum_{s_1 \in S} P(s_1/ s_0, a_0) V_\pi(s_1)\]</div>
 <p>This is a system of <span class="math notranslate nohighlight">\(|S|\)</span> equations and <span class="math notranslate nohighlight">\(|S|\)</span> variables
 called te <strong>Bellman equations</strong>.</p>
-</div>
-<div class="section" id="action-value-function-q-pi-s-a-q-function">
-<h3>Action-value function <span class="math notranslate nohighlight">\(Q_\pi(s,a)\)</span> (Q-Function)<a class="headerlink" href="#action-value-function-q-pi-s-a-q-function" title="Permalink to this headline">¶</a></h3>
+</section>
+<section id="action-value-function-q-pi-s-a-q-function">
+<h3>Action-value function <span class="math notranslate nohighlight">\(Q_\pi(s,a)\)</span> (Q-Function)<a class="headerlink" href="#action-value-function-q-pi-s-a-q-function" title="Permalink to this heading">¶</a></h3>
 <p>Similarly, the action-value function for policy <span class="math notranslate nohighlight">\(\pi\)</span>, denoted as
 <span class="math notranslate nohighlight">\(Q_\pi(s,a)\)</span>, tells us how good it is for the agent to take any
 given action from a given state while following policy <span class="math notranslate nohighlight">\(\pi\)</span>. In
@@ -928,12 +943,12 @@ we define <span class="math notranslate nohighlight">\(Q_\pi(s,a)\)</span> as:</
 to as the <strong>Q-function</strong>, and the output from the function for any given
 state-action pair is called a <strong>Q-value</strong>. The letter “Q” is used to
 represent the quality of taking a given action in a given state.</p>
-</div>
-</div>
-<div class="section" id="optimality">
-<h2>Optimality<a class="headerlink" href="#optimality" title="Permalink to this headline">¶</a></h2>
-<div class="section" id="optimal-policy">
-<h3>Optimal policy<a class="headerlink" href="#optimal-policy" title="Permalink to this headline">¶</a></h3>
+</section>
+</section>
+<section id="optimality">
+<h2>Optimality<a class="headerlink" href="#optimality" title="Permalink to this heading">¶</a></h2>
+<section id="optimal-policy">
+<h3>Optimal policy<a class="headerlink" href="#optimal-policy" title="Permalink to this heading">¶</a></h3>
 <ul>
 <li><p>A policy <span class="math notranslate nohighlight">\(\pi\)</span> is considered to be better than or the same as
 policy <span class="math notranslate nohighlight">\(\pi'\)</span> if the expected return of <span class="math notranslate nohighlight">\(\pi\)</span> is greater
@@ -952,9 +967,9 @@ the one which gives better or at least the same state-value
 \[\pi^* = argmax(V_\pi(s)) \forall s \in S\]</div>
 </li>
 </ul>
-</div>
-<div class="section" id="optimal-state-value-function">
-<h3>Optimal state-value function<a class="headerlink" href="#optimal-state-value-function" title="Permalink to this headline">¶</a></h3>
+</section>
+<section id="optimal-state-value-function">
+<h3>Optimal state-value function<a class="headerlink" href="#optimal-state-value-function" title="Permalink to this heading">¶</a></h3>
 <p>The optimal state-value function <span class="math notranslate nohighlight">\(V_{\pi^*}\)</span> or simply <span class="math notranslate nohighlight">\(V_*\)</span>
 is the one corresponding to the optimal policy <span class="math notranslate nohighlight">\(\pi^*\)</span> and that
 assigns a larger state-value than any other state-value function
@@ -963,9 +978,9 @@ assigns a larger state-value than any other state-value function
 <span class="math notranslate nohighlight">\(\pi\)</span> for each state.</p>
 <div class="math notranslate nohighlight">
 \[V_*(s) = max_\pi(V_\pi(s)) \forall s \in S\]</div>
-</div>
-<div class="section" id="optimal-action-value-function">
-<h3>Optimal action-value function<a class="headerlink" href="#optimal-action-value-function" title="Permalink to this headline">¶</a></h3>
+</section>
+<section id="optimal-action-value-function">
+<h3>Optimal action-value function<a class="headerlink" href="#optimal-action-value-function" title="Permalink to this heading">¶</a></h3>
 <p>Similarly, the optimal policy has an optimal action-value function, or
 optimal Q-function, which we denote as <span class="math notranslate nohighlight">\(Q_*\)</span> and define as</p>
 <div class="math notranslate nohighlight">
@@ -977,38 +992,38 @@ pair.</p>
 Q-function is:</p>
 <div class="math notranslate nohighlight">
 \[V_*(s) = max_a Q_*(s, a)\]</div>
-</div>
-</div>
-</div>
+</section>
+</section>
+</section>
 
 
            </div>
            
           </div>
           <footer>
+  
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
-        <a href="Value_Iteration.html" class="btn btn-neutral float-right" title="Value Iteration" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
-        <a href="Markov_Decision_Process.html" class="btn btn-neutral float-left" title="Markov Decision Process (MDP)" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+      
+        <a href="Value_Iteration.html" class="btn btn-neutral float-right" title="Value Iteration" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="Markov_Decision_Process.html" class="btn btn-neutral float-left" title="Markov Decision Process (MDP)" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
     </div>
+  
 
   <hr/>
 
   <div role="contentinfo">
     <p>
-        &#169; Copyright 2019, VTL LLC.
+        &copy; Copyright 2019, VTL LLC
 
     </p>
   </div>
-    
-    
-    
-    Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
-    
-    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
-    
-    provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
 
 </footer>
+
         </div>
       </div>
 
@@ -1016,6 +1031,7 @@ Q-function is:</p>
 
   </div>
   
+
 
   <script type="text/javascript">
       jQuery(function () {

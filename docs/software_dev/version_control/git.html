@@ -1,41 +1,40 @@
 
 
 <!DOCTYPE html>
-<html class="writer-html5" lang="en" >
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
 <head>
-  <meta charset="utf-8" />
-  
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta charset="utf-8">
+  <meta name="generator" content="Docutils 0.19: https://docutils.sourceforge.io/" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
   <title>Git intoduction &mdash; Abdou Documentation  documentation</title>
   
 
   
-  <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
-  <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
-
+  
   
   
 
   
-  
-
-  
-
-  
-  <!--[if lt IE 9]>
-    <script src="../../_static/js/html5shiv.min.js"></script>
-  <![endif]-->
+  <script type="text/javascript" src="../../_static/js/modernizr.min.js"></script>
   
     
       <script type="text/javascript" id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
-        <script src="../../_static/jquery.js"></script>
-        <script src="../../_static/underscore.js"></script>
+        <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
         <script src="../../_static/doctools.js"></script>
+        <script src="../../_static/sphinx_highlight.js"></script>
     
     <script type="text/javascript" src="../../_static/js/theme.js"></script>
 
     
+
+  
+  <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
     <link rel="next" title="Useful git commands" href="git_commands.html" />
@@ -57,9 +56,6 @@
           
 
           
-            
-            <img src="../../_static/logo_2.jpg" class="logo" alt="Logo"/>
-          
           </a>
 
           
@@ -79,7 +75,6 @@
           
         </div>
 
-        
         <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
           
             
@@ -87,7 +82,7 @@
               
             
             
-              <p class="caption"><span class="caption-text">Contents:</span></p>
+              <p class="caption" role="heading"><span class="caption-text">Contents:</span></p>
 <ul class="current">
 <li class="toctree-l1 current"><a class="reference internal" href="../index.html">Software Development</a><ul class="current">
 <li class="toctree-l2"><a class="reference internal" href="../Software_development_in_a_nutshell.html">Software development in a nutshell</a></li>
@@ -184,6 +179,13 @@
 </li>
 <li class="toctree-l3"><a class="reference internal" href="../deploying/ML_CI_CD/index.html">Machine Learning Models Continuous Integration and Delivery (CI/CD)</a><ul>
 <li class="toctree-l4"><a class="reference internal" href="../deploying/ML_CI_CD/Kubeflow_tutorial.html">Kubeflow Tutorial</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../communication/index.html">Inter-Process Communication</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../communication/IPC_technologies_categorization_criteria.html">IPC technologies categorization criteria</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../communication/IPC_technologies_categorization_criteria.html#synchronous-or-asynchronous">Synchronous or asynchronous</a></li>
 </ul>
 </li>
 </ul>
@@ -307,7 +309,12 @@
 </li>
 <li class="toctree-l3"><a class="reference internal" href="../../programming/Python/shebang.html">Shebang (#!)</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../programming/Python/pybuilder_build_locally.html">Building a package locally using pybuilder</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../../programming/Python/poetry.html">Poetry</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../programming/Python/poetry.html">Poetry basic usage</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../programming/Python/poetry.html#project-setup">Project setup</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../programming/Python/poetry.html#using-poetry-virtual-environment">Using poetry virtual environment</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../programming/Python/poetry.html#installing-dependencies">Installing dependencies</a></li>
+</ul>
+</li>
 <li class="toctree-l3"><a class="reference internal" href="../../programming/Python/pycharm.html">Pycharm issues</a></li>
 </ul>
 </li>
@@ -557,6 +564,7 @@
 </ul>
 </li>
 <li class="toctree-l3"><a class="reference internal" href="../../computer_science/OS_specific/mac/index.html">Mac tips</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../computer_science/OS_specific/mac/edit_env_variables_mac.html">Define environment variables on Mac</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../computer_science/OS_specific/mac/command_line_aliases.html">Command Line Aliases</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../computer_science/OS_specific/mac/useful_mac_commands.html">Mac useful terminal commands and shortcuts:</a></li>
 </ul>
@@ -707,6 +715,12 @@
 <li class="toctree-l4"><a class="reference internal" href="../../business/finance/5_fixed_income_and_credit_risk.html#merton-s-model-implications">Merton’s Model - implications</a></li>
 </ul>
 </li>
+<li class="toctree-l3"><a class="reference internal" href="../../business/finance/6_personal_finance.html">Personal finance</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../business/finance/6_personal_finance.html#key-takeaways">Key takeaways</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../business/finance/6_personal_finance.html#ten-personal-finance-strategies">Ten Personal Finance Strategies</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../business/finance/6_personal_finance.html#personal-finance-principles">Personal Finance Principles</a></li>
+</ul>
+</li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="../../business/sales/index.html">Sales</a><ul>
@@ -728,12 +742,17 @@
 <li class="toctree-l4"><a class="reference internal" href="../../extracurricular/personal_dev/goal_planning_system.html#personal-development-concepts">Personal development concepts</a></li>
 </ul>
 </li>
-<li class="toctree-l3"><a class="reference internal" href="../../extracurricular/personal_dev/atomic_habits_system.html">Atomic habits system</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../extracurricular/personal_dev/atomic_habits_system.html">Atomic Habits System</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../extracurricular/personal_dev/atomic_habits_system.html#introduction">Introduction</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../extracurricular/personal_dev/atomic_habits_system.html#how-to-build-a-good-habit">How to build a good habit</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../extracurricular/personal_dev/atomic_habits_system.html#how-to-break-a-bad-habit">How to break a bad habit</a></li>
+</ul>
+</li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="../../extracurricular/social_dev/index.html">Social development</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="../../extracurricular/social_dev/parenting.html">Parenting</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="../../extracurricular/social_dev/parenting.html#financial-education">Financial education</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../extracurricular/social_dev/Parenting.html">Parenting</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../extracurricular/social_dev/Parenting.html#financial-education">Financial education</a></li>
 </ul>
 </li>
 </ul>
@@ -762,7 +781,6 @@
             
           
         </div>
-        
       </div>
     </nav>
 
@@ -797,13 +815,11 @@
 
 
 
-
-
 <div role="navigation" aria-label="breadcrumbs navigation">
 
   <ul class="wy-breadcrumbs">
     
-      <li><a href="../../index.html" class="icon icon-home"></a> &raquo;</li>
+      <li><a href="../../index.html">Docs</a> &raquo;</li>
         
           <li><a href="../index.html">Software Development</a> &raquo;</li>
         
@@ -814,7 +830,7 @@
     
       <li class="wy-breadcrumbs-aside">
         
-          
+            
             <a href="../../_sources/software_dev/version_control/git.md.txt" rel="nofollow"> View page source</a>
           
         
@@ -828,41 +844,41 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
             
-  <div class="section" id="git-intoduction">
-<h1>Git intoduction<a class="headerlink" href="#git-intoduction" title="Permalink to this headline">¶</a></h1>
-<div class="section" id="what-is-git">
-<h2>What is git?<a class="headerlink" href="#what-is-git" title="Permalink to this headline">¶</a></h2>
+  <section id="git-intoduction">
+<h1>Git intoduction<a class="headerlink" href="#git-intoduction" title="Permalink to this heading">¶</a></h1>
+<section id="what-is-git">
+<h2>What is git?<a class="headerlink" href="#what-is-git" title="Permalink to this heading">¶</a></h2>
 <p>Git is a distributed version-control system for tracking changes in source code during software development. It is designed for coordinating work among programmers, but it can be used to track changes in any set of files. There is a lot of version control software such as Subversion, Bazaar, etc. Git, however, is the most popular with more than 40M users. Git is also open-source.</p>
-</div>
-<div class="section" id="characteristics-of-git">
-<h2>Characteristics of git<a class="headerlink" href="#characteristics-of-git" title="Permalink to this headline">¶</a></h2>
+</section>
+<section id="characteristics-of-git">
+<h2>Characteristics of git<a class="headerlink" href="#characteristics-of-git" title="Permalink to this heading">¶</a></h2>
 <ul class="simple">
 <li><p>Strong support for non-linear development</p></li>
 <li><p>Distributed development</p></li>
 <li><p>Safeguards (be able to access previous verions of your code)</p></li>
 </ul>
-</div>
-<div class="section" id="some-nomenclature">
-<h2>Some nomenclature<a class="headerlink" href="#some-nomenclature" title="Permalink to this headline">¶</a></h2>
+</section>
+<section id="some-nomenclature">
+<h2>Some nomenclature<a class="headerlink" href="#some-nomenclature" title="Permalink to this heading">¶</a></h2>
 <ul class="simple">
 <li><p><code class="docutils literal notranslate"><span class="pre">HEAD</span></code> is a reference to the last commit in the currently checked-out branch, <code class="docutils literal notranslate"><span class="pre">HEAD~1</span></code> or <code class="docutils literal notranslate"><span class="pre">Head^</span></code> the previous one etc</p></li>
 </ul>
-</div>
-<div class="section" id="git-configuration">
-<h2>Git configuration<a class="headerlink" href="#git-configuration" title="Permalink to this headline">¶</a></h2>
+</section>
+<section id="git-configuration">
+<h2>Git configuration<a class="headerlink" href="#git-configuration" title="Permalink to this heading">¶</a></h2>
 <p>Git has a command called <code class="docutils literal notranslate"><span class="pre">config</span></code> which takes an argument to specify which configuration levels to specify on:</p>
 <ul class="simple">
 <li><p>Use <code class="docutils literal notranslate"><span class="pre">--system</span></code> for system wide config (all users and all repos).</p></li>
 <li><p>Use <code class="docutils literal notranslate"><span class="pre">--global</span></code> for user wide config (just the operating user).</p></li>
 <li><p>Use <code class="docutils literal notranslate"><span class="pre">--local</span></code> for repository level config.</p></li>
 </ul>
-</div>
-<div class="section" id="git-initialization">
-<h2>Git initialization<a class="headerlink" href="#git-initialization" title="Permalink to this headline">¶</a></h2>
+</section>
+<section id="git-initialization">
+<h2>Git initialization<a class="headerlink" href="#git-initialization" title="Permalink to this heading">¶</a></h2>
 <p>The <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">init</span></code> command creates an empty Git repository - basically a <code class="docutils literal notranslate"><span class="pre">.git</span></code> directory with subdirectories for <code class="docutils literal notranslate"><span class="pre">objects</span></code>, <code class="docutils literal notranslate"><span class="pre">refs/heads</span></code>, <code class="docutils literal notranslate"><span class="pre">refs/tags</span></code>, and template files. An initial <code class="docutils literal notranslate"><span class="pre">HEAD</span></code> file that references the HEAD of the master branch is also created.</p>
-</div>
-<div class="section" id="how-does-git-save-work">
-<h2>How does git save work?<a class="headerlink" href="#how-does-git-save-work" title="Permalink to this headline">¶</a></h2>
+</section>
+<section id="how-does-git-save-work">
+<h2>How does git save work?<a class="headerlink" href="#how-does-git-save-work" title="Permalink to this heading">¶</a></h2>
 <ul class="simple">
 <li><p><code class="docutils literal notranslate"><span class="pre">Working</span> <span class="pre">directory</span> <span class="pre">(Untracked</span> <span class="pre">changes)</span></code>: also known as <code class="docutils literal notranslate"><span class="pre">working</span> <span class="pre">tree</span></code> is the area where you are currently working. It is where your files live.This area is also known as the “untracked” area of git. The <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">status</span></code> command shows you the files in your working directory and the files in your staging area.</p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">Staging</span> <span class="pre">area</span> <span class="pre">(Tracked</span> <span class="pre">changes)</span></code>: also known as <code class="docutils literal notranslate"><span class="pre">index</span></code> is when git starts tracking and saving changes that occur in files. These saved changes reflect in the <code class="docutils literal notranslate"><span class="pre">.git</span></code> directory. Use <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">add</span></code> command to move files from the working directory to the staging area.
@@ -870,48 +886,48 @@ The Staging works on a per change basis (you have to restage your file after mod
 This <a class="reference external" href="https://gitolite.com/uses-of-index.html#:~:text=staging%20helps%20you%20keep%20extra,practice%20but%20can%20happen%20sometimes">article</a> contains many reasons why the staging area is of use, among which the ability to split big changes into multiple commits, the ability to review changes etc.</p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">Local</span> <span class="pre">repository</span> <span class="pre">(Saved</span> <span class="pre">changes)</span></code>: it is everything in your <code class="docutils literal notranslate"><span class="pre">.git</span></code> directory. The git command <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">commit</span></code> takes all changes in the Staging Area, wraps them together and puts them in your Local Repository.</p></li>
 </ul>
-</div>
-<div class="section" id="git-commit-tricks">
-<h2>Git commit tricks<a class="headerlink" href="#git-commit-tricks" title="Permalink to this headline">¶</a></h2>
-<div class="section" id="modify-previous-commit">
-<h3>Modify previous commit<a class="headerlink" href="#modify-previous-commit" title="Permalink to this headline">¶</a></h3>
+</section>
+<section id="git-commit-tricks">
+<h2>Git commit tricks<a class="headerlink" href="#git-commit-tricks" title="Permalink to this heading">¶</a></h2>
+<section id="modify-previous-commit">
+<h3>Modify previous commit<a class="headerlink" href="#modify-previous-commit" title="Permalink to this heading">¶</a></h3>
 <p>The git commit –amend command is a convenient way to modify the most recent commit. It lets you combine staged changes with the previous commit instead of creating an entirely new commit. It can also be used to simply edit the previous commit message without changing its snapshot. Use carefully because this completely overwrites the previous commit (changes history).</p>
-</div>
-<div class="section" id="skip-staging-area-for-tracked-files">
-<h3>Skip staging area for tracked files<a class="headerlink" href="#skip-staging-area-for-tracked-files" title="Permalink to this headline">¶</a></h3>
+</section>
+<section id="skip-staging-area-for-tracked-files">
+<h3>Skip staging area for tracked files<a class="headerlink" href="#skip-staging-area-for-tracked-files" title="Permalink to this heading">¶</a></h3>
 <p>The -a parameter on commit says to add all changes of <strong>tracked</strong> files (files already added to staging area at some point previously) and commit them. So <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">commit</span> <span class="pre">-a</span></code> will not commit a new file you created. You must explicitly add this.</p>
-</div>
-</div>
-</div>
+</section>
+</section>
+</section>
 
 
            </div>
            
           </div>
           <footer>
+  
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
-        <a href="git_commands.html" class="btn btn-neutral float-right" title="Useful git commands" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
-        <a href="index.html" class="btn btn-neutral float-left" title="Version control" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+      
+        <a href="git_commands.html" class="btn btn-neutral float-right" title="Useful git commands" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="index.html" class="btn btn-neutral float-left" title="Version control" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
     </div>
+  
 
   <hr/>
 
   <div role="contentinfo">
     <p>
-        &#169; Copyright 2019, VTL LLC.
+        &copy; Copyright 2019, VTL LLC
 
     </p>
   </div>
-    
-    
-    
-    Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
-    
-    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
-    
-    provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
 
 </footer>
+
         </div>
       </div>
 
@@ -919,6 +935,7 @@ This <a class="reference external" href="https://gitolite.com/uses-of-index.html
 
   </div>
   
+
 
   <script type="text/javascript">
       jQuery(function () {

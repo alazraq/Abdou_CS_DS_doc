@@ -18,4 +18,4 @@ It aims at taking you from independence to true interdependence, and achieving p
    :caption: Contents:
    :glob:
 
-   parenting
+   Parenting
